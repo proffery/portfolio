@@ -11,9 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        display: flex;
         /* align-items: center; */
-        justify-content: center;
         background-color: ${theme.light.colors.background.primary};
         margin: 0;
         height: 100vh;
