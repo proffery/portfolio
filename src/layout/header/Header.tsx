@@ -9,7 +9,7 @@ export const Header = () => {
             <Logo />
             <div>
                 <Menu />
-                <Icon iconId={'moon'}/>
+                <Icon iconId={'moon'} width="36px" height="36px"/>
             </div>
         </StyledHeader>
     )

@@ -15,6 +15,7 @@ export const GlobalStyles = createGlobalStyle`
         background-color: ${theme.light.colors.background.primary};
         margin: 0;
         height: 100vh;
+        min-width: 300px;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
             'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
             sans-serif;
