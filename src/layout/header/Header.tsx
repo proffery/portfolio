@@ -2,15 +2,16 @@ import styled from "styled-components"
 import { Logo } from "../../components/logo/Logo"
 import { Menu } from "../../components/menu/Menu"
 import { Icon } from "../../components/icon/Icon"
+import { FlexWrapper } from "../../components/FlexWrapper"
 
 export const Header = () => {
     return (
         <StyledHeader>
             <Logo />
-            <div>
+            <FlexWrapper align="center" gap="30px">
                 <Menu />
-                <Icon iconId={'moon'} width="36px" height="36px"/>
-            </div>
+                <Icon iconId={'moon'} width="30px" height="50px" viewBox="-4 6 37 35"/>
+            </FlexWrapper>
         </StyledHeader>
     )
 }
@@ -20,9 +21,5 @@ const StyledHeader = styled.header`
     align-items: center;
     justify-content: space-between;
     background-color: aliceblue;
-    div {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-    }
+    padding: 0 30px;
 `

@@ -13,7 +13,7 @@ export const Card = (props: CardPropsType) => {
             <ProjectCardContent direction="column" width="100%" height="40%" justify="space-between" >
                 <ProjectCardTitle>{props.title}</ProjectCardTitle>
                 <FlexWrapper align="center" justify="center" gap="20px">
-                    <Link type="button" color="white" background="blue" borderRadius="12px" padding="3px 20px" fontSize="14px">Code</Link>
+                    <Link type="button" color="white" background="blue" borderRadius="12px" padding="6px 20px" fontSize="14px">Code</Link>
                     <Link color="blue" fontSize="14px">see preview</Link>
                 </FlexWrapper>
             </ProjectCardContent>
@@ -24,11 +24,6 @@ type ProjectCardPropsType = {
     backgroundImage: string
 }
 
-const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType>`
-    background-image: ${props => props.backgroundImage};
-    border-radius: 30px;
-`
-
 const ProjectCardContent = styled(FlexWrapper)`
     background-color: white;
     position: relative;
@@ -36,10 +31,6 @@ const ProjectCardContent = styled(FlexWrapper)`
     transform: translateY(-100%);
     border-radius: 0 0 30px 30px; 
     padding: 22px;
-    &:hover {
-        color: white;
-        background-color: aqua;
-    }
 `
 
 const ProjectCardTitle = styled.h3`
@@ -47,8 +38,25 @@ const ProjectCardTitle = styled.h3`
     text-align: left;
     font-size: 20px;
     font-weight: 700;
+`
+
+const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType>`
+    background-image: ${props => props.backgroundImage};
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    border-radius: 30px;
     &:hover {
-        color: white;
-        background-color: aqua;
+        ${ProjectCardContent} {
+            color: white;
+            background-color: aqua;
+        }
+        ${ProjectCardTitle} {
+            color: white;
+        }
+        ${FlexWrapper} ${Link} {
+            color: white;
+        }
     }
 `
+

@@ -15,7 +15,7 @@ export const Main = () => {
     return (
         <StyledMain direction="column" align="center" gap="50px">
             <DecorationCross positionLeft="40%" positionTop="2%" />
-            <DecorationZero positionLeft="77%" positionTop="40%"/>
+            <DecorationZero positionLeft="75%" positionTop="40%"/>
             <MainBannerWrapper align="center" wrap="wrap" justify="center" width="70%" gap="25px">
                 <FlexWrapper align="center" justify="center" width="50%">
                     <MainPhoto src={photo} alt="Photography" />
@@ -85,6 +85,6 @@ const MainBannerWrapper = styled(FlexWrapper)`
     background-color: lightblue;
     border-radius: 150px 0;
     min-width: 400px;
-    padding: 20px;
+    padding: 30px;
     margin-top: 50px;
 `
