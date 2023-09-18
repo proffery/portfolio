@@ -1,20 +1,21 @@
 import styled from "styled-components"
+import { Link } from "../link/Link.styled"
 
 export const Menu = () => {
     return (
         <StyledMenu>
             <ul>
                 <li>
-                    <a href="#">Home</a>
+                    <Link href="#">Home</Link>
                 </li>
                 <li>
-                    <a href="#">Projects</a>
+                    <Link href="#">Projects</Link>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <Link href="#">About</Link>
                 </li>
                 <li>
-                    <a href="#">Content</a>
+                    <Link href="#">Content</Link>
                 </li>
             </ul>
         </StyledMenu>
@@ -25,5 +26,6 @@ const StyledMenu = styled.nav`
     ul {
         display: flex;
         gap: 30px;
+        list-style-type: none;
     }
 `

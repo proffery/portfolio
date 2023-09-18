@@ -11,9 +11,8 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        /* align-items: center; */
         background-color: ${theme.light.colors.background.primary};
-        margin: 0;
+        margin: 0 auto;
         height: 100vh;
         min-width: 300px;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
