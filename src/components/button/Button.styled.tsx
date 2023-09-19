@@ -20,6 +20,7 @@ export const Button = styled.button<ButtonPropsType>`
     border-width: ${props => props.borderWidth || "0px"};
     border-style: ${props => props.borderStyle || "none"};
     min-width: 100px;
+    cursor: pointer;
     &:hover {
         background-color: ${props => props.borderColor || "transparent"};
         color: ${props => props.background || "transparent"};;

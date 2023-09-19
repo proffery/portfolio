@@ -1,4 +1,3 @@
-import { type } from 'os'
 import iconsSprite from '../../assets/images/icons-sprite.svg'
 
 

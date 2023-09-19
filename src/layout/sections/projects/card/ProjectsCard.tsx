@@ -2,12 +2,12 @@ import styled from "styled-components"
 import { FlexWrapper } from "../../../../components/FlexWrapper"
 import { Link } from "../../../../components/link/Link.styled"
 
-type CardPropsType = {
+type ProjectsCardPropsType = {
     imageUrl: string,
     title: string
 }
 
-export const Card = (props: CardPropsType) => {
+export const ProgectsCard = (props: ProjectsCardPropsType) => {
     return (
         <ProjectCard backgroundImage={`url("${props.imageUrl}")`} direction="column" align="center" width="270px" height="394px" >
             <ProjectCardContent direction="column" width="100%" height="40%" justify="space-between" >

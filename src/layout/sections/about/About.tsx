@@ -44,20 +44,20 @@ const StyledAbout = styled.section`
     align-items: center;
     justify-content: center;
     background-color: #d3daee;
-    padding: 3rem;
     height: 100vh;
     background-image: url(${aboutMap});
     background-repeat: no-repeat;
     background-position: top;
-    background-size: cover;
+    background-size: contain;
     overflow: hidden;
 `
 
 const Photo = styled.img`
     position: relative;
-    height: 90%;
-    top: 30%;
-    left: 28%;
+    height: 60%;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
     filter: grayscale(70%)
 `
 

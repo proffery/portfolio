@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { Button } from "../../../components/button/Button.styled"
 import { SectionTitle } from "../../../components/SectionTitle.styled"
-import { Card } from "./card/Card"
+import { ProgectsCard } from "./card/ProjectsCard"
 import project1 from "../../../assets/images/Project1.webp"
 import project2 from "../../../assets/images/Project2.webp"
 import project3 from "../../../assets/images/Project3.webp"
@@ -14,20 +14,21 @@ export const Projects = () => {
     return (
         <StyledProjects>
             <SectionTitle>Projects<DecorationDot /></SectionTitle>
-            <FlexWrapper align="center" justify="center" gap="40px">
-                <Button background="white" color="black" padding="6px" borderWidth="3px" borderColor="blue" borderStyle="solid">Story</Button>
-                <Button background="white" color="black" padding="6px" borderWidth="3px" borderColor="blue" borderStyle="solid">Post</Button>
-                <Button background="white" color="black" padding="6px" borderWidth="3px" borderColor="blue" borderStyle="solid">Banner</Button>
-            </FlexWrapper>
+            <StyledProjectsMenu align="center" justify="center" gap="40px">
+                <Button background="white" color="black" padding="7px" borderWidth="3px" borderColor="blue" borderStyle="solid">All</Button>
+                <Button background="white" color="black" padding="7px" borderWidth="3px" borderColor="blue" borderStyle="solid">Landing Page</Button>
+                <Button background="white" color="black" padding="7px" borderWidth="3px" borderColor="blue" borderStyle="solid">React</Button>
+                <Button background="white" color="black" padding="7px" borderWidth="3px" borderColor="blue" borderStyle="solid">SPA</Button>
+            </StyledProjectsMenu>
             <FlexWrapper wrap="wrap" align="center" justify="center" gap="40px">
-                <Card imageUrl={project1} title="Story motion for sale English cources" />
-                <Card imageUrl={project2} title="Story motion for sale English cources" />
-                <Card imageUrl={project3} title="Story motion for sale English cources" />
-                <Card imageUrl={project4} title="Story motion for sale English cources" />
-                <Card imageUrl={project1} title="Story motion for sale English cources" />
-                <Card imageUrl={project2} title="Story motion for sale English cources" />
-                <Card imageUrl={project3} title="Story motion for sale English cources" />
-                <Card imageUrl={project4} title="Story motion for sale English cources" />
+                <ProgectsCard imageUrl={project1} title="Story motion for sale English cources" />
+                <ProgectsCard imageUrl={project2} title="Story motion for sale English cources" />
+                <ProgectsCard imageUrl={project3} title="Story motion for sale English cources" />
+                <ProgectsCard imageUrl={project4} title="Story motion for sale English cources" />
+                <ProgectsCard imageUrl={project1} title="Story motion for sale English cources" />
+                <ProgectsCard imageUrl={project2} title="Story motion for sale English cources" />
+                <ProgectsCard imageUrl={project3} title="Story motion for sale English cources" />
+                <ProgectsCard imageUrl={project4} title="Story motion for sale English cources" />
             </FlexWrapper>
         </StyledProjects>
     )
@@ -38,11 +39,14 @@ const StyledProjects = styled.section`
     flex-direction: column;
     align-items: center;
     background-color: #d3eeee;
-    gap: 40px;
-    padding: 3rem;
     background-image: url(${decorationDots});
     background-repeat: no-repeat;
     background-position: 20% 7%;
+    padding-bottom: 60px;
+`
+
+const StyledProjectsMenu = styled(FlexWrapper)`
+    margin-bottom: 40px;
 `
 
 
