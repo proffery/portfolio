@@ -44,18 +44,18 @@ const StyledAbout = styled.section`
     align-items: center;
     justify-content: center;
     background-color: #d3daee;
-    height: 100vh;
+    height: 90vh;
     background-image: url(${aboutMap});
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
     background-size: contain;
     overflow: hidden;
 `
 
 const Photo = styled.img`
     position: relative;
-    height: 60%;
-    top: 40%;
+    height: 80%;
+    top: 30%;
     left: 50%;
     transform: translateX(-50%);
     filter: grayscale(70%)
@@ -63,8 +63,8 @@ const Photo = styled.img`
 
 const StyledAboutMe = styled(FlexWrapper)`
     position: relative;
-    top: -50%;
-    left: -20%;
+    top: -15%;
+    left: -10%;
     background-color: lightblue;
     border-radius: 75px 0;
     min-width: 250px;
