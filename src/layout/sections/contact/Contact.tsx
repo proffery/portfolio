@@ -85,7 +85,6 @@ const StyledContact = styled.section`
     padding-left: 75px;
     padding-right: 75px;
     padding-bottom: 96px;
-    background-color: #d0f1e6;
     gap: 20px;
 `
 
@@ -128,4 +127,5 @@ const FixedContact = styled(FlexWrapper)`
     top: 60%;
     background-color: blueviolet;
     border-radius: 0 25px 25px 0;
+    z-index: 200;
 `
