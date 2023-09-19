@@ -5,6 +5,7 @@ import { Main } from './layout/sections/main/Main';
 import { Projects } from './layout/sections/projects/Projects';
 import { About } from './layout/sections/about/About';
 import { Services } from './layout/sections/services/Services';
+import { Learning } from './layout/sections/learning/Learning';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Projects />
             <About />
             <Services />
+            <Learning />
         </>
     );
 }

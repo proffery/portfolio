@@ -9,7 +9,7 @@ type ProjectsCardPropsType = {
 
 export const ProgectsCard = (props: ProjectsCardPropsType) => {
     return (
-        <ProjectCard backgroundImage={`url("${props.imageUrl}")`} direction="column" align="center" width="270px" height="394px" >
+        <ProjectCard backgroundImage={`url("${props.imageUrl}")`} direction="column" align="center" height="394px" >
             <ProjectCardContent direction="column" width="100%" height="40%" justify="space-between" >
                 <ProjectCardTitle>{props.title}</ProjectCardTitle>
                 <FlexWrapper align="center" justify="center" gap="20px">
@@ -46,6 +46,7 @@ const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType>`
     background-position: top;
     background-size: cover;
     border-radius: 30px;
+    width: 270px;
     &:hover {
         ${ProjectCardContent} {
             color: white;
