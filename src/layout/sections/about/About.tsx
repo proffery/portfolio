@@ -19,7 +19,7 @@ export const About = () => {
                     <Icon iconId="aboutInstagram" width="30px"/>
                 </Link>
                 <Link href="#">
-                    <Icon iconId="aboutTelegram" viewBox="-4 -2 37 35" />
+                    <Icon iconId="aboutTelegram" width="46px" viewBox="-4 -2 37 35" />
                 </Link>
             </StyledLinks>
             <FlexWrapper direction="column" align="flex-start" wrap="wrap">

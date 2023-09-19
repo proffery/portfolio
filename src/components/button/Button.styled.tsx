@@ -8,13 +8,14 @@ type ButtonPropsType = {
     borderColor?: string,
     borderWidth?: string,
     borderStyle?: string
+    borderRadius?: string
 }
 
 export const Button = styled.button<ButtonPropsType>`
     background-color: ${props => props.background || "transparent"};
     color: ${props => props.color || "none"};
     font-size: ${props => props.fontSize || "none"};
-    border-radius: 100px;
+    border-radius: ${props => props.borderRadius || "100px"};
     padding: ${props => props.padding || "0px"};
     border-color: ${props => props.borderColor || "transparent"};
     border-width: ${props => props.borderWidth || "0px"};
@@ -22,7 +23,7 @@ export const Button = styled.button<ButtonPropsType>`
     min-width: 100px;
     cursor: pointer;
     &:hover {
-        background-color: ${props => props.borderColor || "transparent"};
-        color: ${props => props.background || "transparent"};;
+        background-color: transparent;
+        color: ${props => props.background || "transparent"};
     }
 `
