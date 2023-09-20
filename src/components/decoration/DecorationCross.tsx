@@ -18,5 +18,5 @@ export const DecorationCross = styled.div<DecorationCrossPropsType>`
     font-size: ${props => props.size || "150px"};
     font-weight: 600;
     color: ${props => props.color || "rgb(224, 207, 207)"};
-    z-index: -1;
+    z-index: 0;
 `

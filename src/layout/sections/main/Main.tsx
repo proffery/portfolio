@@ -16,46 +16,62 @@ import { theme } from "../../../styles/Theme.styled"
 
 
 export const Main = () => {
-    const theme = useContext(ThemeContext)
+    const themeName = useContext(ThemeContext)
     return (
-        <StyledMain theme={theme}>
+        <StyledMain id="main" theme={themeName}>
             <Container>
-                <DecorationCross positionLeft="40%" positionTop="2%" />
-                <DecorationZero positionLeft="75%" positionTop="40%" />
-                <MainBannerWrapper align="center" wrap="wrap" justify="center" gap="10px" width="80%">
+                <DecorationCross positionLeft="40%" 
+                    positionTop="14%"
+                    color={themeName === 'light' ? 
+                            theme.light.color.background.second :
+                            theme.dark.color.background.second
+                        }
+                 />
+                <DecorationZero positionLeft="75%" 
+                    positionTop="70%"
+                    color={themeName === 'light' ? 
+                            theme.light.color.background.second :
+                            theme.dark.color.background.second
+                        }
+                />
+                <MainBannerWrapper theme={themeName} align="center" wrap="wrap" justify="center" gap="10px" width="80%">
                     <FlexWrapper align="center" justify="center" width="52%">
-                        <MainPhoto src={photo} alt="Photography" />
+                        <MainPhoto theme={themeName} src={photo} alt="Photography" />
                     </FlexWrapper>
-                    <FlexWrapper direction="column" width="46%" gap="30px">
+                    <FlexWrapper direction="column" width="46%" gap="20px">
                         <FlexWrapper wrap="wrap">
-                            <StyledH2>I’m &nbsp;
-                                <Link href="#">Dmitry Shamko,&nbsp;</Link>
-                                <StyledH1>Web developer</StyledH1>
+                            <StyledH2 theme={themeName}>I’m &nbsp;
+                                <Link href="#">Dmitry Shamko&nbsp;</Link>
+                                <StyledH1 theme={themeName}>Web developer</StyledH1>
                             </StyledH2>
                         </FlexWrapper>
-                        <p>Draft is a revolutionary mobile app built to help you manage your business easily and save your money.</p>
-                        <FlexWrapper align="center" justify="start" gap="28px">
-                            <Link type="button" color="white" background="blue" borderRadius="20px" padding="5px 20px">See Projects
+                        <StyledText>Draft is a revolutionary mobile app built to help you manage your business easily and save your money.</StyledText>
+                        <FlexWrapper align="center" justify="start" gap="28px" wrap="wrap">
+                            <StyledLinkButton type="button" color="white" background="blue" borderRadius="20px" padding="5px 20px">See Projects
                                 <Icon viewBox="-8 -5 37 35" iconId="arrowRight" />
-                            </Link>
+                            </StyledLinkButton>
                             <Link href="#">Download Resume</Link>
                         </FlexWrapper>
                     </FlexWrapper>
                 </MainBannerWrapper>
-                <StyledLeft theme={theme} width="30%"></StyledLeft>
+                <StyledLeft theme={themeName} width="30%"></StyledLeft>
                 <StyledRight width="70%" direction="column" justify="end" height="100%">
                     <FlexWrapper justify="center" wrap="wrap" gap="12px">
-                        <MainApps>
-                            <MainAppsIcon src={photoshop} />
+                        <MainApps theme={themeName}>
+                            <MainAppsIcon theme={themeName} src={photoshop} />
+                            <AppText>Photoshop</AppText>
                         </MainApps>
-                        <MainApps>
-                            <MainAppsIcon src={illustrator} />
+                        <MainApps theme={themeName}>
+                            <MainAppsIcon theme={themeName} src={illustrator} />
+                            <AppText>Illustrator</AppText>
                         </MainApps>
-                        <MainApps>
-                            <MainAppsIcon src={afterEffect} />
+                        <MainApps theme={themeName}>
+                            <MainAppsIcon theme={themeName} src={afterEffect} />
+                            <AppText>After Effects</AppText>
                         </MainApps>
-                        <MainApps>
-                            <MainAppsIcon src={figma} />
+                        <MainApps theme={themeName}>
+                            <MainAppsIcon theme={themeName} src={figma} />
+                            <AppText>Figma</AppText>
                         </MainApps>
                     </FlexWrapper>
                 </StyledRight>
@@ -64,8 +80,8 @@ export const Main = () => {
     )
 }
 
-const StyledMain = styled(FlexWrapper)`
-    height: 100vh;
+const StyledMain = styled.section`
+    height: 130vh;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.primary :
         theme.dark.color.background.primary
@@ -82,30 +98,59 @@ const MainPhoto = styled.img`
     min-width: 188px;
     height: auto;
     border-radius: 50% 50%;
-    border: 15px solid white;
+    border: 15px solid ${props => props.theme === 'light' ?
+        theme.light.color.background.primary :
+        theme.dark.color.background.primary 
+    };
     object-fit: cover;
 `
 const MainApps = styled.div`
     display: flex;
+    flex-direction: column;
     min-width: 160px;
     height: 90px;
     border-radius: 24px;
-    background-color: bisque;
+    background-color: ${props => props.theme === 'light' ?
+        theme.light.color.background.second :
+        theme.dark.color.background.second
+    };
     justify-content: center;
     align-items: center;
 `
+const AppText = styled.span`
+    position: relative;
+    top: -30%;
+    color: ${theme.light.color.text.second};
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 136%;
+`
+
 const MainAppsIcon = styled.img`
     position: relative;
-    top: -50%;
-    border: 10px solid white;
+    top: -35%;
+    border: 10px solid ${props => props.theme === 'light' ?
+        theme.light.color.background.primary :
+        theme.dark.color.background.primary 
+    };
     border-radius: 50% 50%;
 `
 const MainBannerWrapper = styled(FlexWrapper)`
     position: absolute;
-    top: 25%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -25%);
-    background-color: lightblue;
+    transform: translate(-50%, -50%);
+    background: ${props => props.theme === 'light' ?
+        theme.light.gradient.banner :
+        theme.dark.gradient.banner
+    };
+    backdrop-filter: blur(10px);
+    border: 2px solid ${props => props.theme === 'light' ?
+        theme.light.color.background.bannerBorder :
+        theme.dark.color.background.bannerBorder 
+    };
     border-radius: 150px 0;
     min-width: 300px;
     max-width: 1158px;
@@ -114,6 +159,11 @@ const MainBannerWrapper = styled(FlexWrapper)`
     margin-top: 50px;
     z-index: 1;
 `
+
+const StyledLinkButton = styled(Link)`
+    min-width: 200px;
+`
+
 const StyledLeft = styled(FlexWrapper)`
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
@@ -129,11 +179,31 @@ const StyledH1 = styled.h1`
     font-family: 'Roboto';
     font-weight: 700;
     font-size: 60px;
+    line-height: 136%;
+    font-style: normal;
+    text-shadow: ${props => props.theme === 'light' ?
+        theme.light.shadow.text :
+        theme.dark.shadow.text
+    };
 `
 
 const StyledH2 = styled.h2`
     font-family: 'Roboto';
     font-weight: 700;
     font-size: 60px;
+    line-height: 136%;
+    font-style: normal;
+    text-shadow: ${props => props.theme === 'light' ?
+        theme.light.shadow.text :
+        theme.dark.shadow.text
+    };
+`
+
+const StyledText = styled.p`
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
 `
 

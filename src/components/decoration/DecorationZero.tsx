@@ -15,5 +15,5 @@ export const DecorationZero = styled.div<DecorationZeroPropsType>`
     position: absolute;
     top: ${props => props.positionTop || "80%"};
     left: ${props => props.positionLeft || "60%"};
-    z-index: -1;
+    z-index: 0;
 `

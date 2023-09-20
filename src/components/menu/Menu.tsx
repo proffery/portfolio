@@ -2,23 +2,48 @@ import styled from "styled-components"
 import { Link } from "../link/Link.styled"
 import { useContext } from "react"
 import { ThemeContext } from "../../context/ThemeContext"
+import { theme }  from "../../styles/Theme.styled"
 
 export const Menu = () => {
-    const theme = useContext(ThemeContext)
+    const themeName = useContext(ThemeContext)
     return (
         <StyledMenu>
             <ul>
                 <li>
-                    <Link theme={theme} fontWeight="400" href="#">Home</Link>
+                    <Link theme={themeName} 
+                        color={themeName === 'light' ? 
+                            theme.light.color.text.primary :
+                            theme.dark.color.text.primary
+                        } 
+                        fontWeight="400" 
+                        href="#main">Home</Link>
                 </li>
                 <li>
-                    <Link theme={theme} fontWeight="400" href="#">Projects</Link>
+                    <Link theme={themeName} 
+                        color={themeName === 'light' ? 
+                            theme.light.color.text.primary :
+                            theme.dark.color.text.primary
+                        } 
+                        fontWeight="400" 
+                        href="#">Projects</Link>
                 </li>
                 <li>
-                    <Link theme={theme} fontWeight="400" href="#">About</Link>
-                </li>
+                    <Link theme={themeName} 
+                        color={themeName === 'light' ? 
+                            theme.light.color.text.primary :
+                            theme.dark.color.text.primary
+                        } 
+                        fontWeight="400" 
+                        href="#">About</Link>
+                </li>                
                 <li>
-                    <Link theme={theme} fontWeight="400" href="#">Content</Link>
+                    <Link theme={themeName} 
+                        color={themeName === 'light' ? 
+                            theme.light.color.text.primary :
+                            theme.dark.color.text.primary
+                        } 
+                        fontWeight="400" 
+                        href="#">Connect</Link>
                 </li>
             </ul>
         </StyledMenu>
@@ -26,6 +51,7 @@ export const Menu = () => {
 }
 
 const StyledMenu = styled.nav`
+    text-align: center;
     ul {
         display: flex;
         gap: 30px;
