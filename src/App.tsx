@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-import { theme } from './components/styles/Theme.styled';
 import { Header } from './layout/header/Header';
 import { Main } from './layout/sections/main/Main';
 import { Projects } from './layout/sections/projects/Projects';
@@ -8,19 +6,24 @@ import { Services } from './layout/sections/services/Services';
 import { Learning } from './layout/sections/learning/Learning';
 import { Contact } from './layout/sections/contact/Contact';
 import { Footer } from './layout/footer/Footer';
+import { ThemeContext } from './context/ThemeContext';
+import { useState } from 'react';
 
 
 function App() {
+    const [currentTheme, setCurrentTheme] = useState('light')
     return ( 
         <>
-            <Header />
-            <Main />
-            <Projects />
-            <About />
-            <Services />
-            <Learning />
-            <Contact />
-            <Footer />
+            <ThemeContext.Provider value={currentTheme === 'light' ? 'light' : 'dark'}>
+                <Header setCurrentTheme={setCurrentTheme}/>
+                <Main />
+                <Projects />
+                <About />
+                <Services />
+                <Learning />
+                <Contact />
+                <Footer />
+            </ThemeContext.Provider>
         </>
     );
 }

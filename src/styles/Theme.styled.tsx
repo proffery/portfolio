@@ -1,11 +1,12 @@
 export const theme = {
     light: {
-        colors: {
+        color: {
             background: {
                 primary: 'rgb(255, 255, 255)',
                 second: ' rgb(166, 188, 250)',
                 input: ' rgba(245, 245, 245, 1)',
                 form: ' rgba(0, 0, 0, 0.05)',
+                card: ' rgba(249, 249, 252, 1)',
             },
             text: {
                 primary: 'rgba(57, 57, 57, 1)',
@@ -25,12 +26,13 @@ export const theme = {
         }
     },
     dark: {
-        colors: {
+        color: {
             background: {
                 primary: 'rgba(34, 34, 34, 1)',
                 second: ' rgba(36, 51, 92, 1)',
                 input: ' rgba(57, 56, 56, 1)',
                 form: ' rgba(0, 0, 0, 0.05)',
+                card: ' rgba(53, 53, 53, 1)',
             },
             text: {
                 primary: 'rgb(255, 255, 255)',

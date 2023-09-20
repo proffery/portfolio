@@ -1,21 +1,24 @@
 import styled from "styled-components"
 import { Link } from "../link/Link.styled"
+import { useContext } from "react"
+import { ThemeContext } from "../../context/ThemeContext"
 
 export const Menu = () => {
+    const theme = useContext(ThemeContext)
     return (
         <StyledMenu>
             <ul>
                 <li>
-                    <Link href="#">Home</Link>
+                    <Link theme={theme} fontWeight="400" href="#">Home</Link>
                 </li>
                 <li>
-                    <Link href="#">Projects</Link>
+                    <Link theme={theme} fontWeight="400" href="#">Projects</Link>
                 </li>
                 <li>
-                    <Link href="#">About</Link>
+                    <Link theme={theme} fontWeight="400" href="#">About</Link>
                 </li>
                 <li>
-                    <Link href="#">Content</Link>
+                    <Link theme={theme} fontWeight="400" href="#">Content</Link>
                 </li>
             </ul>
         </StyledMenu>

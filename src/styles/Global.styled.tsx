@@ -11,19 +11,25 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        background-color: ${theme.light.colors.background.primary};
+        background-color: ${theme.light.color.background.primary};
         margin: 0 auto;
         height: 100vh;
         min-width: 300px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
             'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
             sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         overflow-x: hidden;
+        scroll-behavior: smooth;
     }
 
     code {
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     }
+
+    a {
+        text-decoration: none;
+    }
+
 `
