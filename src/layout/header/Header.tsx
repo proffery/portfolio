@@ -24,9 +24,9 @@ export const Header = ({ setCurrentTheme }: HeaderTypes) => {
                 <StyledLeft theme={theme} width="30%">
                     <Logo />
                 </StyledLeft>
-                <FlexWrapper width="70%" align="center" justify="end" gap="30px">
+                <StyledRight theme={theme} width="70%" align="center" justify="end" gap="30px">
                     <Menu />
-                    <Button borderColor="transparent" background="transparent" onClick={themeChangeHandler}>
+                    <Button borderColor="transparent" background="transparent" aria-label="Theme change button" onClick={themeChangeHandler}>
                         <Icon
                             iconId={theme === 'light' ? 'moon' : 'sun'}
                             width="40px"
@@ -34,7 +34,7 @@ export const Header = ({ setCurrentTheme }: HeaderTypes) => {
                             viewBox={theme === 'light' ? '0 0 50 50' : '30 20 500 500'}
                         />
                     </Button>
-                </FlexWrapper>
+                </StyledRight>
             </Container>
         </StyledHeader>
     )
@@ -45,8 +45,8 @@ const StyledHeader = styled.header`
     align-items: center;
     justify-content: space-between;
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.primary :
-        theme.dark.color.background.primary
+        theme.light.color.background.second :
+        theme.dark.color.background.second
     };
     color: ${props => props.theme === 'light' ?
         theme.light.color.text.primary :
@@ -58,5 +58,12 @@ const StyledLeft = styled(FlexWrapper)`
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second
+    };
+`
+
+const StyledRight = styled(FlexWrapper)`
+    background-color: ${props => props.theme === 'light' ?
+        theme.light.color.background.primary :
+        theme.dark.color.background.primary
     };
 `

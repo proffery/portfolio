@@ -47,7 +47,7 @@ export const Main = () => {
                         </FlexWrapper>
                         <StyledText>Draft is a revolutionary mobile app built to help you manage your business easily and save your money.</StyledText>
                         <FlexWrapper align="center" justify="start" gap="28px" wrap="wrap">
-                            <StyledLinkButton type="button" color="white" background="blue" borderRadius="20px" padding="5px 20px">See Projects
+                            <StyledLinkButton href="#projects" type="button" color="white" background="blue" borderRadius="20px" padding="5px 20px">See Projects
                                 <Icon viewBox="-8 -5 37 35" iconId="arrowRight" />
                             </StyledLinkButton>
                             <Link href="#">Download Resume</Link>
@@ -55,22 +55,22 @@ export const Main = () => {
                     </FlexWrapper>
                 </MainBannerWrapper>
                 <StyledLeft theme={themeName} width="30%"></StyledLeft>
-                <StyledRight width="70%" direction="column" justify="end" height="100%">
+                <StyledRight theme={themeName} width="70%" direction="column" justify="end" height="100%">
                     <FlexWrapper justify="center" wrap="wrap" gap="12px">
                         <MainApps theme={themeName}>
-                            <MainAppsIcon theme={themeName} src={photoshop} />
+                            <MainAppsIcon theme={themeName} src={photoshop} alt="Photoshop icon"/>
                             <AppText>Photoshop</AppText>
                         </MainApps>
                         <MainApps theme={themeName}>
-                            <MainAppsIcon theme={themeName} src={illustrator} />
+                            <MainAppsIcon theme={themeName} src={illustrator} alt="Illustrator icon"/>
                             <AppText>Illustrator</AppText>
                         </MainApps>
                         <MainApps theme={themeName}>
-                            <MainAppsIcon theme={themeName} src={afterEffect} />
+                            <MainAppsIcon theme={themeName} src={afterEffect} alt="After Effect icon"/>
                             <AppText>After Effects</AppText>
                         </MainApps>
                         <MainApps theme={themeName}>
-                            <MainAppsIcon theme={themeName} src={figma} />
+                            <MainAppsIcon theme={themeName} src={figma} alt="Figma icon"/>
                             <AppText>Figma</AppText>
                         </MainApps>
                     </FlexWrapper>
@@ -81,10 +81,10 @@ export const Main = () => {
 }
 
 const StyledMain = styled.section`
-    height: 130vh;
+    height: 100vh;
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.primary :
-        theme.dark.color.background.primary
+        theme.light.color.background.second :
+        theme.dark.color.background.second
     };
     color: ${props => props.theme === 'light' ?
         theme.light.color.text.primary :
@@ -173,6 +173,10 @@ const StyledLeft = styled(FlexWrapper)`
 
 const StyledRight = styled(FlexWrapper)`
     padding-bottom: 80px;
+    background-color: ${props => props.theme === 'light' ?
+        theme.light.color.background.primary :
+        theme.dark.color.background.primary
+    };
 `
 
 const StyledH1 = styled.h1`

@@ -46,7 +46,7 @@ export const theme = {
         shadow: {
             main: 'rgba(0, 0, 0, 0.05) 8px 8px 34px',
             card: 'rgba(0, 0, 0, 0.15) 0 4px 6px',
-            text: 'rgba(0, 0, 0,  0) 0 4px 4px'
+            text: 'rgba(0, 0, 0,  0.25) 0 4px 4px'
         },
         gradient: {
             dot: 'linear-gradient(180deg, rgba(166, 188, 250, 1), rgba(33, 87, 242, 1))',

@@ -1,11 +1,14 @@
 import styled from "styled-components"
 import { Link } from "../../components/link/Link.styled"
+import { Container } from "../../components/Container"
 
 export const Footer = () => {
     return (
         <StyledFooter>
-            <Name>Coded by&nbsp;<Link href="#" color="white" fontSize="16px">Dmitry Shamko</Link></Name>
-            <Copyrights>All Rights Reserved 2022</Copyrights>
+            <Container direction="column" align="center" justify="center" gap="10px">
+                <Name>Coded by&nbsp;<Link href="#" color="white" fontSize="16px">Dmitry Shamko</Link></Name>
+                <Copyrights>All Rights Reserved 2023@</Copyrights>
+            </Container>
         </StyledFooter>
     )
 }
@@ -17,8 +20,6 @@ const StyledFooter = styled.footer`
     justify-content: center;
     background-color: #f1d0d0;
     padding: 72px;
-    width: 200%;
-    transform: translateX(-25%);
     height: 200px;
     border-radius: 50% 50% 0 0;
 `

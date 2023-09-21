@@ -20,6 +20,7 @@ export const Contact = () => {
                                 <Field type="text" placeholder="Phone"/>
                             </FlexWrapper>
                             <Field as={"textarea"} placeholder="Message"/>
+                            <SubmitButton background="blue" type="submit" padding="6px" borderWidth="3px" borderStyle="solid" borderRadius="9px" color="white" borderColor="blue">Send</SubmitButton>
                         </FlexWrapper>
                     </StyledForm>
                     <FlexWrapper direction="column" align="start" justify="center" width="23%">
@@ -46,9 +47,6 @@ export const Contact = () => {
                         </FlexWrapper>
                     </FlexWrapper>
                 </FormWrapper>
-                <FlexWrapper>
-                    <Button background="blue" type="submit" padding="6px" borderWidth="3px" borderStyle="solid" borderRadius="9px" color="white" borderColor="blue">Send</Button>
-                </FlexWrapper>
             </ContactWrapper>
             <FlexWrapper>
                 <Link href="#">
@@ -62,13 +60,13 @@ export const Contact = () => {
                 </Link>
             </FlexWrapper>
             <FixedContact height="200px" direction="column" align="center" justify="center">
-                <Link href="#">
+                <Link href="#" aria-label="Whatsapp link">
                     <Icon iconId="aboutWhatsapp" viewBox="-4 -5 37 35"/>
                 </Link>
-                <Link href="#">
+                <Link href="#" aria-label="Instagram link">
                     <Icon iconId="aboutInstagram" width="30px" viewBox="-2 -5 37 35" />
                 </Link>
-                <Link href="#">
+                <Link href="#" aria-label="Telegram link">
                     <Icon iconId="aboutTelegram" width="45px" viewBox="0 1 37 35" />
                 </Link>
             </FixedContact>
@@ -104,6 +102,10 @@ const StyledForm = styled.form`
     min-width: 200px;
     width: 60%;
     display: flex;
+`
+
+const SubmitButton = styled(Button)`
+    align-self: flex-start;
 `
 
 const Field = styled.input`
