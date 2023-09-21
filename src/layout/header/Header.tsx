@@ -26,7 +26,7 @@ export const Header = ({ setCurrentTheme }: HeaderTypes) => {
                 </StyledLeft>
                 <FlexWrapper width="70%" align="center" justify="end" gap="30px">
                     <Menu />
-                    <Button onClick={themeChangeHandler}>
+                    <Button borderColor="transparent" background="transparent" onClick={themeChangeHandler}>
                         <Icon
                             iconId={theme === 'light' ? 'moon' : 'sun'}
                             width="40px"

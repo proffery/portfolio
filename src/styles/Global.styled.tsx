@@ -21,7 +21,6 @@ export const GlobalStyles = createGlobalStyle`
             sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        overflow-x: hidden;
         
     }
 
