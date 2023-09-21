@@ -7,7 +7,7 @@ export const theme = {
                 input: ' rgba(245, 245, 245, 1)',
                 form: ' rgba(0, 0, 0, 0.05)',
                 card: ' rgba(249, 249, 252, 1)',
-                bannerBorder: 'rgb(255, 255, 255)'
+                bannerBorder: 'rgba(255, 255, 255, 0.6)'
             },
             text: {
                 primary: 'rgb(57, 57, 57)',

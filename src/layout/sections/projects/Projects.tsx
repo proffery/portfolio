@@ -17,7 +17,7 @@ import { Container } from "../../../components/Container"
 export const Projects = () => {
     const theme = useContext(ThemeContext)
     return (
-        <StyledProjects theme={theme}>
+        <StyledProjects id="projects" theme={theme}>
             <Container direction="column">
             <SectionTitle theme={theme}>Projects<DecorationDot /></SectionTitle>
                 <StyledProjectsMenu align="center" justify="center" gap="40px">

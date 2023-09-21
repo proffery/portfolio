@@ -25,7 +25,7 @@ export const Menu = () => {
                             theme.dark.color.text.primary
                         } 
                         fontWeight="400" 
-                        href="#">Projects</Link>
+                        href="#projects">Projects</Link>
                 </li>
                 <li>
                     <Link theme={themeName} 
@@ -34,7 +34,7 @@ export const Menu = () => {
                             theme.dark.color.text.primary
                         } 
                         fontWeight="400" 
-                        href="#">About</Link>
+                        href="#about">About</Link>
                 </li>                
                 <li>
                     <Link theme={themeName} 

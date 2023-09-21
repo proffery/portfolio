@@ -1,10 +1,8 @@
 import styled from "styled-components";
+import { FlexWrapper } from "./FlexWrapper";
 
-type ContainerTypes = {
-    direction?: string
-}
 
-export const Container = styled.div<ContainerTypes>`
+export const Container = styled(FlexWrapper)`
     display: flex;
     flex-direction: ${props => props.direction || "row"};
     max-width: 1440px;

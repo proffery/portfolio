@@ -38,6 +38,10 @@ const ProjectCardContent = styled(FlexWrapper)`
     transform: translateY(-100%);
     border-radius: 0 0 30px 30px; 
     padding: 22px;
+    box-shadow: ${props => props.theme === 'light' ?
+        theme.light.shadow.card :
+        theme.dark.shadow.card
+    };
 `
 
 const ProjectCardTitle = styled.h3`
