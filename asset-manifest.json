@@ -1,19 +1,29 @@
 {
   "files": {
-    "main.js": "/portfolio/static/js/main.4b8bf721.js",
-    "static/media/Photo2.webp": "/portfolio/static/media/Photo2.cdfda7eb0e8a70e9935c.webp",
+    "main.js": "/portfolio/static/js/main.df02770f.js",
+    "static/media/Photo-my.webp": "/portfolio/static/media/Photo-my.b6b562309b5998ff1789.webp",
+    "static/media/Photo2-my.webp": "/portfolio/static/media/Photo2-my.2cfb7a637c4d8de382f3.webp",
     "static/media/decorations-dots.svg": "/portfolio/static/media/decorations-dots.49f9618a01bb3141f9d54667c7d081b5.svg",
     "static/media/Project4.webp": "/portfolio/static/media/Project4.545715e20caebf6bbef9.webp",
-    "static/media/Photo.webp": "/portfolio/static/media/Photo.5d0f7b51275ec4aac7a3.webp",
-    "static/media/icons-sprite.svg": "/portfolio/static/media/icons-sprite.e35bbbe30445847e240b9155bd31b631.svg",
+    "static/media/icons-sprite.svg": "/portfolio/static/media/icons-sprite.e49face0d16d86459641baa98b201d2a.svg",
     "static/media/Project2.webp": "/portfolio/static/media/Project2.7c9a3af61da0b33bff09.webp",
     "static/media/Project1.webp": "/portfolio/static/media/Project1.7666120b4a1390052adb.webp",
     "static/media/Project3.webp": "/portfolio/static/media/Project3.4f2b00e8747b9083dfc5.webp",
     "static/media/Map.webp": "/portfolio/static/media/Map.bbc67a20b4840aed2423.webp",
+    "static/media/learning-react.svg": "/portfolio/static/media/learning-react.4e0c97009b885bfa75c5412262a46f5f.svg",
+    "static/media/learning-javascript.svg": "/portfolio/static/media/learning-javascript.bacc3387f463f5b56f433827347c6155.svg",
+    "static/media/learning-bootstrap.svg": "/portfolio/static/media/learning-bootstrap.b74f5e327438aeb217a910827f441e34.svg",
+    "static/media/wave-dark.svg": "/portfolio/static/media/wave-dark.9d34101954c267dc44b2d663681faec8.svg",
+    "static/media/wave-light.svg": "/portfolio/static/media/wave-light.18009ac0a4b50c263f2753de5174c4af.svg",
+    "static/media/learning-typescript.svg": "/portfolio/static/media/learning-typescript.76fe4b0a77bb1549ec20379b6a6d81f5.svg",
     "index.html": "/portfolio/index.html",
-    "main.4b8bf721.js.map": "/portfolio/static/js/main.4b8bf721.js.map"
+    "static/media/learning-tailwindcss.svg": "/portfolio/static/media/learning-tailwindcss.e7b4a92d5aefbddd6f0651c024144be2.svg",
+    "static/media/learning-css3.svg": "/portfolio/static/media/learning-css3.4f50b33af1d2115e9ee75ed4b1570e17.svg",
+    "static/media/learning-html5.svg": "/portfolio/static/media/learning-html5.69274ea277b1ee86ba50abd24b291122.svg",
+    "static/media/learning-firebase.svg": "/portfolio/static/media/learning-firebase.0d5ec3e60614ea8e4d7abbf0729e969b.svg",
+    "main.df02770f.js.map": "/portfolio/static/js/main.df02770f.js.map"
   },
   "entrypoints": [
-    "static/js/main.4b8bf721.js"
+    "static/js/main.df02770f.js"
   ]
 }
