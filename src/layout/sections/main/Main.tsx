@@ -9,14 +9,50 @@ import illustrator from '../../../assets/images/icon-llustrator.png'
 import afterEffect from '../../../assets/images/icon-after-effects.png'
 import figma from '../../../assets/images/icon-figma.png'
 import { Link } from "../../../components/link/Link.styled"
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { ThemeContext } from "../../../context/ThemeContext"
 import { Container } from "../../../components/Container"
 import { theme } from "../../../styles/Theme.styled"
 
 
 export const Main = () => {
+    const [loopNumber, setLoopNumber] = useState(0)
+    const [isDeleting, setIsDeleting] = useState(false)
+    const toRotate = ['Web Developer', 'Web Designer', 'UI/UX Designer']
+    const [text, setText] = useState('')
+    const [delta, setDelta] = useState(300 - Math.random() * 100)
+    const period = 2000
     const themeName = useContext(ThemeContext)
+
+    useEffect(() => {
+        let ticker = setInterval(() => {
+            tick()
+        }, delta)
+
+        return () => { clearInterval(ticker) }
+    }, [text])
+
+    const tick = () => {
+        let i = loopNumber % toRotate.length
+        let fullText = toRotate[i]
+        let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1)
+        setText(updatedText)
+
+        if (isDeleting) {
+            setDelta(prevDelta => prevDelta / 2)
+        }
+
+        if (!isDeleting && updatedText === fullText) {
+            setIsDeleting(true)
+            setDelta(period)
+        }
+        else if (isDeleting && updatedText === '') {
+            setIsDeleting(false)
+            setLoopNumber(loopNumber + 1)
+            setDelta(500)
+        }
+    }
+
     return (
         <StyledMain id="main" theme={themeName}>
             <Container>
@@ -42,7 +78,7 @@ export const Main = () => {
                         <FlexWrapper wrap="wrap">
                             <StyledH2 theme={themeName}>I’m &nbsp;
                                 <Link href="#">Dmitry Shamko&nbsp;</Link>
-                                <StyledH1 theme={themeName}>Web developer</StyledH1>
+                                <StyledH1 theme={themeName}>{text}&nbsp;</StyledH1>
                             </StyledH2>
                         </FlexWrapper>
                         <StyledText>Draft is a revolutionary mobile app built to help you manage your business easily and save your money.</StyledText>
@@ -83,13 +119,14 @@ export const Main = () => {
 const StyledMain = styled.section`
     height: 100vh;
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.second :
-        theme.dark.color.background.second
+        theme.light.color.background.primary :
+        theme.dark.color.background.primary
     };
     color: ${props => props.theme === 'light' ?
         theme.light.color.text.primary :
         theme.dark.color.text.primary
     };
+    
 `
 
 const MainPhoto = styled.img`

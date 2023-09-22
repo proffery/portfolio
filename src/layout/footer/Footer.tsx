@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { Link } from "../../components/link/Link.styled"
-import { Container } from "../../components/Container"
 import footerLight from "../../assets/images/wave-light.svg"
 import footerDark from "../../assets/images/wave-dark.svg"
 import { theme } from "../../styles/Theme.styled"

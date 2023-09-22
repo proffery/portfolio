@@ -1,4 +1,4 @@
-import logotype from '../../assets/images/logo.png'
+import logotype from '../../assets/images/logo-gray.png'
 export const Logo = () => {
     return (
         <a href="/">
