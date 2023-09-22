@@ -29,14 +29,14 @@ export const About = () => {
                     </Link>
                 </StyledLinks>
                 <FlexWrapper direction="column" align="flex-start" wrap="wrap">
-                    <h2>I’m&nbsp;</h2>
-                    <h2><Link href="#">Dmitry Shamko</Link></h2>
+                    <StyledH2>I’m&nbsp;</StyledH2>
+                    <StyledH2><Link href="#">Dmitry Shamko</Link></StyledH2>
                     <StyledList>
-                        <li>I was born in Belarus</li>
-                        <li>I’m 36 years old</li>
-                        <li>I have started my interest in this field from 2022</li>
-                        <li>I’m designer, video editor, web developer and ...</li>
-                        <li>My phone number +989212073348</li>
+                        <li><DecorationDot />I was born in Belarus</li>
+                        <li><DecorationDot />I’m 36 years old</li>
+                        <li><DecorationDot />I have started my interest in this field from 2022</li>
+                        <li><DecorationDot />I’m designer, video editor, web developer and ...</li>
+                        <li><DecorationDot />My phone number +989212073348</li>
                     </StyledList>
                 </FlexWrapper>
                 </StyledAboutMe>
@@ -100,9 +100,26 @@ const StyledLinks = styled(FlexWrapper)`
 `
 
 const StyledList = styled.ul`
-    padding-left: 20px;
-    li::marker {
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 136%;
+    list-style: none;
+    li {
+        display: flex;
+        align-items: center;
+    }
+    /* li::marker {
         font-size: 25px;
         color: rgba(33, 87, 242, 1);
-    }
+    } */
+`
+
+const StyledH2 = styled.h2`
+    font-family: Roboto;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 136%;
 `

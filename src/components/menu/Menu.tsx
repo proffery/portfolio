@@ -43,7 +43,7 @@ export const Menu = () => {
                             theme.dark.color.text.primary
                         } 
                         fontWeight="400" 
-                        href="#">Connect</Link>
+                        href="#contact">Contact</Link>
                 </li>
             </ul>
         </StyledMenu>

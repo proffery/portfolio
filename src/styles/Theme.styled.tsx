@@ -5,7 +5,7 @@ export const theme = {
                 primary: 'rgb(255, 255, 255)',
                 second: ' rgb(166, 188, 250)',
                 input: ' rgba(245, 245, 245, 1)',
-                form: ' rgba(0, 0, 0, 0.05)',
+                form: ' rgb(255, 255, 255)',
                 card: ' rgba(249, 249, 252, 1)',
                 bannerBorder: 'rgba(255, 255, 255, 0.6)'
             },
@@ -32,7 +32,7 @@ export const theme = {
                 primary: 'rgba(34, 34, 34, 1)',
                 second: ' rgba(36, 51, 92, 1)',
                 input: ' rgba(57, 56, 56, 1)',
-                form: ' rgba(0, 0, 0, 0.05)',
+                form: ' rgba(44, 43, 43, 1)',
                 card: ' rgba(53, 53, 53, 1)',
                 bannerBorder: 'rgba(71, 71, 71, 0.30)'
             },
