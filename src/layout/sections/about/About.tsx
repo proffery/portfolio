@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import aboutMap from "../../../assets/images/Map.webp"
-import photo from "../../../assets/images/Photo2.webp"
+import photo from "../../../assets/images/Photo2-my.webp"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { Link } from "../../../components/link/Link.styled"
 import { Icon } from "../../../components/icon/Icon"
@@ -69,7 +69,7 @@ const StyledAbout = styled.section`
 const Photo = styled.img`
     position: relative;
     height: 80%;
-    top: 30%;
+    top: 35%;
     left: 70%;
     transform: translateX(-70%);
     filter: grayscale(70%)

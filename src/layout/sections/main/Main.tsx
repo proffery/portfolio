@@ -1,5 +1,5 @@
 import { Icon } from "../../../components/icon/Icon"
-import photo from '../../../assets/images/Photo.webp'
+import photo from '../../../assets/images/Photo-my.webp'
 import styled from "styled-components"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { DecorationCross } from "../../../components/decoration/DecorationCross"
@@ -126,7 +126,7 @@ const StyledMain = styled.section`
         theme.light.color.text.primary :
         theme.dark.color.text.primary
     };
-    
+
 `
 
 const MainPhoto = styled.img`

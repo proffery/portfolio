@@ -77,7 +77,7 @@ const StyledHeader = styled.header<StyledHeaderTypes>`
         theme.dark.color.text.primary
     };
     box-shadow: ${props => props.scrolled && theme.light.shadow.main};
-    transition: all ease-in .15s;
+    transition: all ease-in .2s;
 `
 
 const StyledLeft = styled(FlexWrapper)<StyledHeaderTypes>`
@@ -89,7 +89,7 @@ const StyledLeft = styled(FlexWrapper)<StyledHeaderTypes>`
         theme.dark.color.background.primary :
         theme.dark.color.background.second
     };
-    transition: all ease-in .15s;
+    transition: all ease-in .2s;
 `
 
 const StyledRight = styled(FlexWrapper)`
@@ -97,4 +97,5 @@ const StyledRight = styled(FlexWrapper)`
         theme.light.color.background.primary :
         theme.dark.color.background.primary
     };
+    transition: all ease-in .2s;
 `
