@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { theme } from "../../styles/Theme.styled";
 
 type ButtonPropsType = {
@@ -10,7 +10,8 @@ type ButtonPropsType = {
     borderWidth?: string,
     borderStyle?: string
     borderRadius?: string,
-    theme: string
+    theme: string,
+    hover?: string
 }
 
 export const Button = styled.button<ButtonPropsType>`
@@ -24,8 +25,8 @@ export const Button = styled.button<ButtonPropsType>`
     border-style: ${props => props.borderStyle || "none"};
     min-width: 100px;
     cursor: pointer;
+    transition: all ease-in .2s;
     &:hover {
-        background-color: ${props => props.background || (props => props.theme === 'light' ? theme.light.color.background.second : theme.dark.color.background.second)};
-        color: $${props => props.color || (props => props.theme === 'light' ? theme.light.color.text.primary : theme.dark.color.text.primary)};
+        box-shadow: ${props => props.hover || (props => props.theme === 'light' ? theme.light.shadow.card : theme.dark.shadow.card)};
     }
 `

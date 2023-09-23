@@ -7,7 +7,9 @@ import { theme } from "../../../../styles/Theme.styled"
 
 type ProjectsCardPropsType = {
     imageUrl: string,
-    title: string
+    title: string,
+    previewUrl: string,
+    githubUrl: string
 }
 
 export const ProgectsCard = (props: ProjectsCardPropsType) => {
@@ -17,8 +19,8 @@ export const ProgectsCard = (props: ProjectsCardPropsType) => {
             <ProjectCardContent theme={theme} direction="column" width="100%" height="40%" justify="space-between" >
                 <ProjectCardTitle theme={theme}>{props.title}</ProjectCardTitle>
                 <FlexWrapper align="center" justify="center" gap="20px">
-                    <Link theme={theme} type="button" borderRadius="12px" padding="6px 20px" fontSize="14px">Code</Link>
-                    <Link theme={theme} fontSize="14px">see preview</Link>
+                    <Link href={props.githubUrl} target='_blank' theme={theme} type="button" borderRadius="12px" padding="6px 20px" fontSize="14px">Code</Link>
+                    <Link href={props.previewUrl} target='_blank' theme={theme} fontSize="14px">see preview</Link>
                 </FlexWrapper>
             </ProjectCardContent>
         </ProjectCard>

@@ -20,7 +20,7 @@ export const Learning = () => {
     const theme = useContext(ThemeContext)
     return (
         <StyledLearning theme={theme}>
-            <Container direction="column" align="center" justify="center">
+            <StyledContainer theme={theme} direction="column" align="center" justify="center">
                 <SectionTitle theme={theme} color="white">Learning<DecorationDot /></SectionTitle>
                 <FlexWrapper direction="column">
                     <FlexWrapper>
@@ -42,7 +42,7 @@ export const Learning = () => {
                         <LerningCard title="Firebase" imageUrl={cardFirebase}/>
                     </FlexWrapper>
                 </FlexWrapper>
-            </Container>
+            </StyledContainer>
         </StyledLearning>
     )
 }
@@ -53,11 +53,19 @@ const StyledLearning = styled.section`
     align-items: center;
     justify-content: center;
     background-color: ${props => props.theme === 'light' ?
+        theme.light.color.background.primary :
+        theme.dark.color.background.primary
+    };
+    padding: 60px 0;
+`
+const StyledContainer = styled(Container)`
+    background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second
     };
-    padding-bottom: 96px;
+    padding: 60px;
 `
+
 const LearningSkillsTitle = styled.h3`
     margin: 0 auto 0 0;
     font-family: Roboto;

@@ -14,8 +14,7 @@ export const About = () => {
     const theme = useContext(ThemeContext)
     return (
         <StyledAbout theme={theme} id="about">
-            <Container direction="column" align="center" justify="center">
-                <Photo src={photo} alt="Photography" />
+            <StyledContainer theme={theme} direction="column" align="center" justify="center">
                 <StyledAboutMe theme={theme} direction="column" align="center" wrap="wrap" justify="center">
                 <StyledLinks align="center" >
                     <Link href="#">
@@ -40,7 +39,7 @@ export const About = () => {
                     </StyledList>
                 </FlexWrapper>
                 </StyledAboutMe>
-            </Container>
+            </StyledContainer>
         </StyledAbout>
     )
 }
@@ -51,28 +50,26 @@ const StyledAbout = styled.section`
     align-items: center;
     justify-content: center;
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.second :
-        theme.dark.color.background.second
+        theme.light.color.background.primary :
+        theme.dark.color.background.primary
     };
     color: ${props => props.theme === 'light' ?
         theme.light.color.text.primary :
         theme.dark.color.text.primary
     };
     height: 100vh;
-    background-image: url(${aboutMap});
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
     overflow: hidden;
-`
+    `
 
-const Photo = styled.img`
-    position: relative;
-    height: 80%;
-    top: 35%;
-    left: 70%;
-    transform: translateX(-70%);
-    filter: grayscale(70%)
+const StyledContainer = styled(Container)`
+    background-color: ${props => props.theme === 'light' ?
+        theme.light.color.background.second :
+        theme.dark.color.background.second
+    };
+    background-image: url(${photo}), url(${aboutMap});
+    background-repeat: no-repeat;
+    background-position: bottom right, center;
+    background-size: contain;
 `
 
 const StyledAboutMe = styled(FlexWrapper)`

@@ -12,9 +12,10 @@ export const Footer = () => {
     return (
         <StyledFooter theme={theme}>
             <StyledBackgroundTop theme={theme} height="100%" width="100%"></StyledBackgroundTop>
-            <Name theme={theme}>Coded by&nbsp;<Link href="#" color="white" fontSize="16px">Dmitry Shamko</Link></Name>
-            <Copyrights theme={theme}>All Rights Reserved 2023@</Copyrights>
-            <StyledBackgroundBottom theme={theme} height="50%" width="100%"></StyledBackgroundBottom>
+            <StyledBackgroundBottom theme={theme} direction="column" height="50%" width="100%">
+                <Name theme={theme}>Coded by&nbsp;<Link href="#" color="white" fontSize="16px">Dmitry Shamko</Link></Name>
+                <Copyrights theme={theme}>All Rights Reserved 2023@</Copyrights>
+            </StyledBackgroundBottom>
         </StyledFooter>
     )
 }
@@ -70,10 +71,11 @@ const StyledBackgroundTop = styled(FlexWrapper)`
     background-image: url(${props => props.theme === 'light' ? footerLight : footerDark});
     background-size: contain;
     background-repeat: repeat-x;
-    background-position: center;
+    background-position: center bottom;
 `
 
 const StyledBackgroundBottom = styled(FlexWrapper)`
+    height: 100%;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second

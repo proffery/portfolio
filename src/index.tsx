@@ -11,6 +11,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <ThemeProvider theme={theme}>
     <App />
-    <GlobalStyles />
+    <GlobalStyles theme={theme}/>
   </ThemeProvider>
 );

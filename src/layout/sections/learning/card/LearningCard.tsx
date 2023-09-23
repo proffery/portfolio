@@ -14,8 +14,7 @@ export const LerningCard = (props: LearningCardPropsType) => {
     const theme = useContext(ThemeContext)
     return (
         <StyledLearningCard theme={theme} backgroundImage={`url("${props.imageUrl}")`} 
-            height="192px" 
-            width="22%"
+            width="23%"
             align="end"
             justify="end"
         >
@@ -54,7 +53,8 @@ const StyledLearningCard = styled(FlexWrapper)<StyledLearningCarPropsType>`
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    min-width: 330px;
+    min-width: 230px;
+    min-height: 130px;
     border-radius: 10px;
     padding-right: 10px;
     `

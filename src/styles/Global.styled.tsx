@@ -1,18 +1,24 @@
 import { createGlobalStyle } from "styled-components";
 import { theme } from "./Theme.styled";
 
-export const GlobalStyles = createGlobalStyle`
+type GlobalStylesTypes = {
+    theme: string
+}
+
+export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
     *,
     *::before,
     *::after {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+    }
+    
+    html {
         scroll-behavior: smooth;
     }
-
+    
     body {
-        background-color: ${theme.light.color.background.primary};
         margin: 0 auto;
         height: 100vh;
         min-width: 300px;

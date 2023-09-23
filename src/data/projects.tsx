@@ -48,16 +48,9 @@ export const projects = [
         projectCategory: 'HTML, CSS'
     },
     {
-        imageUrl: AdminDashboard,
+        imageUrl: RockPaperScissors,
         projectDemo: 'https://proffery.github.io/odin-rock-paper-scissors/',
         projectCode: 'https://github.com/proffery/odin-rock-paper-scissors',
-        projectTitle: 'Project: Rock Paper Scissors',
-        projectCategory: 'Java Script'
-    },
-    {
-        imageUrl: RockPaperScissors,
-        projectDemo: 'https://proffery.github.io/odin-admin-dashboard/',
-        projectCode: 'https://github.com/proffery/odin-admin-dashboard',
         projectTitle: 'Project: Rock Paper Scissors',
         projectCategory: 'Java Script'
     },
@@ -135,12 +128,12 @@ export const projects = [
         imageUrl: PortfolioProject,
         projectDemo: 'https://proffery.github.io/portfolio-project-one/',
         projectCode: 'https://github.com/proffery/portfolio-project-one',
-        projectTitle: 'Animated Portfolio Page',
+        projectTitle: 'Responsive Animated Portfolio Page',
         projectCategory: 'React'
     },
     {
         imageUrl: PhotographerHomePage,
-        projectDemo: 'https://proffery.github.io/portfolio-project-one/',
+        projectDemo: 'https://proffery.github.io/portfolio-project-two/',
         projectCode: 'https://github.com/proffery/portfolio-project-two',
         projectTitle: 'Responsive Photographer Website React-Bootstrap',
         projectCategory: 'React'

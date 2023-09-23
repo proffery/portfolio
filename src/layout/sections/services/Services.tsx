@@ -33,5 +33,5 @@ const StyledServices = styled.section`
         theme.light.color.background.primary :
         theme.dark.color.background.primary
     };
-    padding-bottom: 60px;
+    padding: 60px 0;
 `
