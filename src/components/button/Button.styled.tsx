@@ -11,7 +11,9 @@ type ButtonPropsType = {
     borderStyle?: string
     borderRadius?: string,
     theme: string,
-    hover?: string
+    hoverShadow?: string,
+    hoverBackground?: string,
+    hoverColor?: string
 }
 
 export const Button = styled.button<ButtonPropsType>`
@@ -27,6 +29,8 @@ export const Button = styled.button<ButtonPropsType>`
     cursor: pointer;
     transition: all ease-in .2s;
     &:hover {
-        box-shadow: ${props => props.hover || (props => props.theme === 'light' ? theme.light.shadow.card : theme.dark.shadow.card)};
+        box-shadow: ${props => props.hoverShadow || (props => props.theme === 'light' ? theme.light.shadow.card : theme.dark.shadow.card)};
+        background-color: ${props => props.hoverBackground || (props => props.theme === 'light' ? theme.light.color.background.second : theme.dark.color.background.second)};
+        color: ${props => props.hoverColor || (props => props.theme === 'light' ? theme.light.color.text.primary : theme.dark.color.text.primary)};
     }
 `

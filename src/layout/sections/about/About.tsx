@@ -4,7 +4,6 @@ import photo from "../../../assets/images/Photo2-my.webp"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { Link } from "../../../components/link/Link.styled"
 import { Icon } from "../../../components/icon/Icon"
-import { DecorationDot } from "../../../components/decoration/DecorationDot"
 import { useContext } from "react"
 import { ThemeContext } from "../../../context/ThemeContext"
 import { Container } from "../../../components/Container"
@@ -30,12 +29,12 @@ export const About = () => {
                 <FlexWrapper direction="column" align="flex-start" wrap="wrap">
                     <StyledH2>I’m&nbsp;</StyledH2>
                     <StyledH2><Link href="#">Dmitry Shamko</Link></StyledH2>
-                    <StyledList>
-                        <li><DecorationDot />I was born in Belarus</li>
-                        <li><DecorationDot />I’m 36 years old</li>
-                        <li><DecorationDot />I have started my interest in this field from 2022</li>
-                        <li><DecorationDot />I’m designer, video editor, web developer and ...</li>
-                        <li><DecorationDot />My phone number +989212073348</li>
+                    <StyledList theme={theme}>
+                        <li>I was born in Belarus</li>
+                        <li>I’m 36 years old</li>
+                        <li>I have started my interest in this field from 2022</li>
+                        <li>I’m designer, video editor, web developer and ...</li>
+                        <li>My phone number +989212073348</li>
                     </StyledList>
                 </FlexWrapper>
                 </StyledAboutMe>
@@ -62,6 +61,7 @@ const StyledAbout = styled.section`
     `
 
 const StyledContainer = styled(Container)`
+    position: relative;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second
@@ -73,9 +73,10 @@ const StyledContainer = styled(Container)`
 `
 
 const StyledAboutMe = styled(FlexWrapper)`
-    position: relative;
-    top: -15%;
-    left: -20%;
+    position: absolute;
+    top: 90%;
+    left: 10%;
+    transform: translate(-10%, -90%);
     background: ${props => props.theme === 'light' ?
         theme.light.gradient.banner :
         theme.dark.gradient.banner
@@ -97,20 +98,28 @@ const StyledLinks = styled(FlexWrapper)`
 `
 
 const StyledList = styled.ul`
-    font-family: Roboto;
+    position: relative;
     font-size: 20px;
-    font-style: normal;
     font-weight: 400;
     line-height: 136%;
     list-style: none;
+    
     li {
         display: flex;
-        align-items: center;
+        align-items: start;
+        margin-left: 28px;
     }
-    /* li::marker {
-        font-size: 25px;
-        color: rgba(33, 87, 242, 1);
-    } */
+
+    li::before {
+        position: absolute;
+        content: '';
+        border-radius: 50% 50%;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        margin-top: 3px;
+        background-image: ${props => props.theme === 'light' ? theme.light.gradient.dot : theme.dark.gradient.dot};
+    }
 `
 
 const StyledH2 = styled.h2`

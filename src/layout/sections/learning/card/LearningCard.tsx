@@ -27,18 +27,16 @@ type StyledLearningCarPropsType = {
     backgroundImage: string,
 }
 
-const StyledTitle = styled(SectionTitle)`
-    font-family: Roboto;
+const StyledTitle = styled.h3`
     font-size: 24px;
-    font-style: normal;
+    color: ${props => props.color || (props => props.theme === 'light' ? theme.light.color.text.primary : theme.dark.color.text.primary)};
     font-weight: 700;
     line-height: 136%;
     text-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.text :
         theme.dark.shadow.text
     };
-    padding: 0;
-    `
+`
 
 const StyledLearningCard = styled(FlexWrapper)<StyledLearningCarPropsType>`
     background-color: ${props => props.theme === 'light' ?

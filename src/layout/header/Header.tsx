@@ -43,7 +43,7 @@ export const Header = ({ setCurrentTheme }: HeaderTypes) => {
                 </StyledLeft>
                 <StyledRight theme={theme} width="70%" align="center" justify="end" gap="30px">
                     <Menu />
-                    <Button borderColor="transparent" background="transparent" aria-label="Theme change button" hover="none" onClick={themeChangeHandler}>
+                    <Button borderColor="transparent" background="transparent" aria-label="Theme change button" hoverShadow="none" hoverBackground="none" onClick={themeChangeHandler}>
                         <Icon
                             iconId={theme === 'light' ? 'moon' : 'sun'}
                             width="40px"

@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { SectionTitle } from "../../../components/SectionTitle.styled"
-import { DecorationDot } from "../../../components/decoration/DecorationDot"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { ServicesCard } from "./card/ServicesCard"
 import { Container } from "../../../components/Container"
@@ -13,7 +12,7 @@ export const Services = () => {
     return (
         <StyledServices id="services" theme={theme}>
             <Container direction="column">
-                <SectionTitle theme={theme}>Services<DecorationDot /></SectionTitle>
+                <SectionTitle theme={theme}>Services</SectionTitle>
                 <FlexWrapper wrap="wrap" align="center" justify="center" gap="30px">
                     <ServicesCard iconId="servicesVideo" title="Video Edit Service" link="#" />
                     <ServicesCard iconId="servicesDesign" title="Ui/Ux Designer" link="#" />
@@ -33,5 +32,5 @@ const StyledServices = styled.section`
         theme.light.color.background.primary :
         theme.dark.color.background.primary
     };
-    padding: 60px 0;
+    padding-top: 0;
 `

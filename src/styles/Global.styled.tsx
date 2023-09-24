@@ -38,4 +38,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
         text-decoration: none;
     }
 
+    section {
+        padding: 60px 0;
+    }
 `

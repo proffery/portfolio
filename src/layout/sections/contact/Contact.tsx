@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { SectionTitle } from "../../../components/SectionTitle.styled"
-import { DecorationDot } from "../../../components/decoration/DecorationDot"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { Button } from "../../../components/button/Button.styled"
 import { Icon } from "../../../components/icon/Icon"
@@ -15,10 +14,10 @@ export const Contact = () => {
     return (
         <StyledContact id="contact" theme={theme}>
             <Container direction="column" align="center" justify="center">
-                <SectionTitle theme={theme}>Contact Us<DecorationDot /></SectionTitle>
-                <ContactWrapper theme={theme} direction="column">
+                <SectionTitle theme={theme}>Contact Us</SectionTitle>
+                <ContactWrapper theme={theme} direction="column" width="100%" height="100%">
                     <FormTitle theme={theme}>Get in touch</FormTitle>
-                    <FormWrapper theme={theme} gap="80px" align="start" justify="center">
+                    <FormWrapper theme={theme} gap="80px" align="start" height="100%">
                         <StyledForm>
                             <FlexWrapper direction="column" align="center" justify="center" gap="30px">
                                 <FlexWrapper gap="10px">
@@ -34,6 +33,7 @@ export const Contact = () => {
                                     borderRadius="9px" 
                                     color="white" 
                                     borderColor="blue"
+                                    hoverBackground="none"
                                 >Send</SubmitButton>
                             </FlexWrapper>
                         </StyledForm>
@@ -115,13 +115,12 @@ const ContactWrapper = styled(FlexWrapper)`
         theme.dark.shadow.main
     };
     max-width: 932px;
+    min-width: 300px;
 `
 
 const FormTitle = styled.h3`
     display: flex;
-    font-family: Roboto;
     font-size: 36px;
-    font-style: normal;
     font-weight: 500;
     line-height: 136%;
     color: ${props => props.theme === 'light' ?
@@ -139,9 +138,7 @@ const StyledForm = styled.form`
 
 const SubmitButton = styled(Button)`
     align-self: flex-start;
-    font-family: Roboto;
     font-size: 16px;
-    font-style: normal;
     font-weight: 500;
     line-height: 136%;
 `
@@ -151,7 +148,7 @@ const Field = styled.input.attrs((type) => ({
 }))`
     display: flex;
     width: 100%;
-    min-width: 210px;
+    /* min-width: 210px; */
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.input :
         theme.dark.color.background.input
@@ -195,9 +192,7 @@ const FixedContact = styled(FlexWrapper)`
 `
 
 const ContactTitleH4 = styled.h4`
-    font-family: Roboto;
     font-size: 16px;
-    font-style: normal;
     font-weight: 500;
     line-height: 136%;
     color: ${props => props.theme === 'light' ?
@@ -207,9 +202,7 @@ const ContactTitleH4 = styled.h4`
 `
 
 const ContactDescription = styled.span`
-    font-family: Roboto;
     font-size: 12px;
-    font-style: normal;
     font-weight: 400;
     line-height: 136%;
     color: ${props => props.theme === 'light' ?

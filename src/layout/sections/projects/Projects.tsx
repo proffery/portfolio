@@ -4,7 +4,6 @@ import { Button } from "../../../components/button/Button.styled"
 import { SectionTitle } from "../../../components/SectionTitle.styled"
 import { ProgectsCard } from "./card/ProjectsCard"
 import decorationDots from "../../../assets/images/decorations-dots.svg"
-import { DecorationDot } from "../../../components/decoration/DecorationDot"
 import { useContext, useEffect, useState } from "react"
 import { ThemeContext } from "../../../context/ThemeContext"
 import { theme } from "../../../styles/Theme.styled"
@@ -30,8 +29,8 @@ export const Projects = () => {
     return (
         <StyledProjects id="projects" theme={themeName}>
             <StyledContainer direction="column">
-            <SectionTitle theme={themeName}>Projects<DecorationDot /></SectionTitle>
-                <StyledProjectsMenu align="center" justify="center" wrap="wrap" gap="40px">
+            <SectionTitle theme={themeName}>Projects</SectionTitle>
+                <FlexWrapper align="center" justify="center" wrap="wrap" gap="40px">
                     {categories.map((category, index) => { 
                         return <Button 
                             key={index} 
@@ -39,6 +38,11 @@ export const Projects = () => {
                             padding="7px" 
                             borderWidth="3px" 
                             borderStyle="solid"
+                            hoverColor={theme.light.color.text.second}
+                            color={category === activeCategory ? 
+                                (themeName === 'light' ? theme.light.color.text.second : theme.dark.color.text.primary) :
+                                (themeName === 'light' ? theme.light.color.text.primary : theme.dark.color.text.primary)
+                            }
                             background={category === activeCategory ? 
                                 (themeName === 'light' ? theme.light.color.background.second : theme.dark.color.background.second) :
                                 (themeName === 'light' ? theme.light.color.background.primary : theme.dark.color.background.primary)
@@ -49,8 +53,8 @@ export const Projects = () => {
                         </Button>
                     })}
                     
-                </StyledProjectsMenu>
-                <FlexWrapper wrap="wrap" align="center" justify="center" gap="40px">
+                </FlexWrapper>
+                <StyledProjectWrapper wrap="wrap" align="center" justify="center" gap="40px">
                     {filteredProjects.map((project, index) => <ProgectsCard 
                         key={index + project.projectCategory}
                         imageUrl={project.imageUrl} 
@@ -58,7 +62,7 @@ export const Projects = () => {
                         githubUrl={project.projectCode}
                         previewUrl={project.projectDemo}
                     />)}
-                </FlexWrapper>
+                </StyledProjectWrapper>
             </StyledContainer>
         </StyledProjects>
     )
@@ -76,18 +80,15 @@ const StyledProjects = styled.section`
         theme.light.color.text.primary :
         theme.dark.color.text.primary
     };
-    padding: 60px 0;
 `
 const StyledContainer = styled(Container)`
     background-image: url(${decorationDots});
     background-repeat: no-repeat;
     background-position: top left;
 `
-
-const StyledProjectsMenu = styled(FlexWrapper)`
-    margin-bottom: 40px;
+const StyledProjectWrapper = styled(FlexWrapper)`
+    margin-top: 40px;
 `
-
 
 
 

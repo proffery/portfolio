@@ -2,8 +2,6 @@ import { Icon } from "../../../components/icon/Icon"
 import photo from '../../../assets/images/Photo-my.webp'
 import styled from "styled-components"
 import { FlexWrapper } from "../../../components/FlexWrapper"
-import { DecorationCross } from "../../../components/decoration/DecorationCross"
-import { DecorationZero } from "../../../components/decoration/DecorationZero"
 import photoshop from '../../../assets/images/icon-photoshop.png'
 import illustrator from '../../../assets/images/icon-llustrator.png'
 import afterEffect from '../../../assets/images/icon-after-effects.png'
@@ -56,20 +54,6 @@ export const Main = () => {
     return (
         <StyledMain id="main" theme={themeName}>
             <Container>
-                <DecorationCross positionLeft="40%" 
-                    positionTop="14%"
-                    color={themeName === 'light' ? 
-                            theme.light.color.background.second :
-                            theme.dark.color.background.second
-                        }
-                 />
-                <DecorationZero positionLeft="75%" 
-                    positionTop="70%"
-                    color={themeName === 'light' ? 
-                            theme.light.color.background.second :
-                            theme.dark.color.background.second
-                        }
-                />
                 <MainBannerWrapper theme={themeName} align="center" wrap="wrap" justify="center" gap="10px" width="80%">
                     <FlexWrapper align="center" justify="center" width="52%">
                         <MainPhoto theme={themeName} src={photo} alt="Photography" />
@@ -126,7 +110,35 @@ const StyledMain = styled.section`
         theme.light.color.text.primary :
         theme.dark.color.text.primary
     };
+    padding: 0;
+    &::before {
+        content: "+";
+        position: absolute;
+        top: 15%;
+        left: 40%;
+        transform: rotate(45deg);
+        font-size: 150px;
+        font-weight: 600;
+        color: ${props => props.theme === 'light' ?
+            theme.light.color.background.second :
+            theme.dark.color.background.second};
+        z-index: 0;
+    }
 
+    &::after {
+        content: "";
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        border-radius: 50% 50%;
+        border: 25px solid ${props => props.theme === 'light' ?
+            theme.light.color.background.second :
+            theme.dark.color.background.second};
+        top: 80%;
+        left: 80%;
+        transform: translate( -80%, -80%);
+        z-index: 0;
+    }
 `
 
 const MainPhoto = styled.img`

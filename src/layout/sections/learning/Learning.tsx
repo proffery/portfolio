@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { SectionTitle } from "../../../components/SectionTitle.styled"
-import { DecorationDot } from "../../../components/decoration/DecorationDot"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { LerningCard } from "./card/LearningCard"
 import { ThemeContext } from "../../../context/ThemeContext"
@@ -21,10 +20,10 @@ export const Learning = () => {
     return (
         <StyledLearning theme={theme}>
             <StyledContainer theme={theme} direction="column" align="center" justify="center">
-                <SectionTitle theme={theme} color="white">Learning<DecorationDot /></SectionTitle>
+                <SectionTitle theme={theme} color="white">Learning</SectionTitle>
                 <FlexWrapper direction="column">
                     <FlexWrapper>
-                        <LearningSkillsTitle>Website:</LearningSkillsTitle>
+                        <LearningSkillsTitle theme={theme}>Website:</LearningSkillsTitle>
                     </FlexWrapper>
                     <FlexWrapper justify="space-between" gap="12px" wrap="wrap">
                         <LerningCard title="HTML" imageUrl={cardHtml}/>
@@ -33,7 +32,7 @@ export const Learning = () => {
                         <LerningCard title="TypeScript" imageUrl={cardTs}/>
                     </FlexWrapper>
                     <FlexWrapper>
-                        <LearningSkillsTitle>Technologies:</LearningSkillsTitle>
+                        <LearningSkillsTitle theme={theme}>Technologies:</LearningSkillsTitle>
                     </FlexWrapper>
                     <FlexWrapper justify="space-between" gap="12px" wrap="wrap">
                         <LerningCard title="React" imageUrl={cardReact}/>
@@ -56,7 +55,6 @@ const StyledLearning = styled.section`
         theme.light.color.background.primary :
         theme.dark.color.background.primary
     };
-    padding: 60px 0;
 `
 const StyledContainer = styled(Container)`
     background-color: ${props => props.theme === 'light' ?
@@ -68,11 +66,10 @@ const StyledContainer = styled(Container)`
 
 const LearningSkillsTitle = styled.h3`
     margin: 0 auto 0 0;
-    font-family: Roboto;
     font-size: 20px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 136%;
-    color: #FFF;
+    color: ${props => props.theme === 'light' ?
+        theme.light.color.text.second :
+        theme.dark.color.text.primary};
     margin-top: 10px;
 `
