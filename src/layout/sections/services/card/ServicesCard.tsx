@@ -18,7 +18,7 @@ export const ServicesCard = (props: ServicesCardPropsType) => {
         <StyledServicesCard theme={theme} direction="column" justify="space-between" align="start" height="402px" width="30%">
             <Icon iconId={props.iconId} viewBox="0 0 70 70"/>
             <ServicesCardTitle theme={theme}>{props.title}</ServicesCardTitle>
-            <Link fontSize="16px" href={props.link} theme={theme}>View More<Icon iconId="arrowRightBlue" width="30"/></Link>
+            <StyledLink fontSize="16px" href={props.link} theme={theme}>View More<Icon iconId="arrowRight" width="30"/></StyledLink>
         </StyledServicesCard>
     )
 }
@@ -35,6 +35,13 @@ const StyledServicesCard = styled(FlexWrapper)`
     };
     max-width: 334px;
     min-width: 250px;
+`
+
+const StyledLink = styled(Link)`
+    color: ${props => props.theme === 'light' ?
+        theme.light.color.text.link :
+        theme.dark.color.text.link
+    };
 `
 
 const ServicesCardTitle = styled.h3`
