@@ -13,6 +13,13 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
         padding: 0;
         box-sizing: border-box;
     }
+
+    *:focus-visible {
+        outline: 2px solid ${props => props.theme === 'light' ?
+            theme.light.color.text.link :
+            theme.dark.color.text.link
+        };
+    }
     
     html {
         scroll-behavior: smooth;
@@ -27,7 +34,10 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
             sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        
+        background-color: ${props => props.theme === 'light' ?
+            theme.light.color.background.primary :
+            theme.dark.color.background.primary
+        };
     }
 
     code {
@@ -40,5 +50,9 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
 
     section {
         padding: 60px 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        animation: unset;
     }
 `

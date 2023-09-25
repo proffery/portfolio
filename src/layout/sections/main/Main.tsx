@@ -60,10 +60,10 @@ export const Main = () => {
                     </FlexWrapper>
                     <FlexWrapper direction="column" width="46%" gap="20px">
                         <FlexWrapper wrap="wrap">
-                            <StyledH2 theme={themeName}>I’m &nbsp;
+                            <StyledTitleH2 theme={themeName}>I’m &nbsp;
                                 <Link href="#">Dmitry Shamko&nbsp;</Link>
-                                <StyledH1 theme={themeName}>{text}&nbsp;</StyledH1>
-                            </StyledH2>
+                            </StyledTitleH2>
+                            <StyledTitleH1 theme={themeName} aria-label="Web Developer">{text}&nbsp;</StyledTitleH1>
                         </FlexWrapper>
                         <StyledText>Draft is a revolutionary mobile app built to help you manage your business easily and save your money.</StyledText>
                         <FlexWrapper align="center" justify="start" gap="28px" wrap="wrap">
@@ -228,24 +228,20 @@ const StyledRight = styled(FlexWrapper)`
     };
 `
 
-const StyledH1 = styled.h1`
-    font-family: 'Roboto';
+const StyledTitleH1 = styled.h1`
     font-weight: 700;
     font-size: 60px;
     line-height: 136%;
-    font-style: normal;
     text-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.text :
         theme.dark.shadow.text
     };
 `
 
-const StyledH2 = styled.h2`
-    font-family: 'Roboto';
+const StyledTitleH2 = styled.h2`
     font-weight: 700;
     font-size: 60px;
     line-height: 136%;
-    font-style: normal;
     text-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.text :
         theme.dark.shadow.text

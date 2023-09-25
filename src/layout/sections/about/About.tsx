@@ -16,17 +16,17 @@ export const About = () => {
             <StyledContainer theme={theme} direction="column" align="center" justify="center">
                 <StyledAboutMe theme={theme} direction="column" align="center" wrap="wrap" justify="center">
                 <StyledLinks align="center" >
-                    <Link href="#">
+                    <Link href="#" aria-label="Open Whatsapp group">
                         <Icon iconId="aboutWhatsapp" />
                     </Link>
-                    <Link href="#">
+                    <Link href="#" aria-label="Open Instagram account" >
                         <Icon iconId="aboutInstagram" width="30px"/>
                     </Link>
-                    <Link href="#">
+                    <Link href="#" aria-label="Open Telegram group" >
                         <Icon iconId="aboutTelegram" width="46px" viewBox="-4 -2 37 35" />
                     </Link>
                 </StyledLinks>
-                <FlexWrapper direction="column" align="flex-start" wrap="wrap">
+                <FlexWrapper direction="column" align="flex-start" wrap="wrap" >
                     <StyledH2>I’m&nbsp;</StyledH2>
                     <StyledH2><Link href="#">Dmitry Shamko</Link></StyledH2>
                     <StyledList theme={theme}>

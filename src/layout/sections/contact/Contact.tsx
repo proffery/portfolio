@@ -21,10 +21,10 @@ export const Contact = () => {
                         <StyledForm>
                             <FlexWrapper direction="column" align="center" justify="center" width="100%" gap="30px">
                                 <FlexWrapper gap="10px" width="100%">
-                                    <Field theme={theme} type="text" placeholder="E-mail" />
-                                    <Field theme={theme} type="text" placeholder="Phone"/>
+                                    <Field theme={theme} type="text" aria-label="enter email" placeholder="E-mail" />
+                                    <Field theme={theme} type="text" aria-label="enter phone number" placeholder="Phone"/>
                                 </FlexWrapper>
-                                <Field theme={theme} as={"textarea"} rows={10} placeholder="Message"/>
+                                <Field theme={theme} as={"textarea"} rows={10} aria-label="enter your message" placeholder="Message"/>
                                 <SubmitButton background="blue" 
                                     type="submit" 
                                     padding="10px 40px" 
@@ -63,24 +63,24 @@ export const Contact = () => {
                     </FormWrapper>
                 </ContactWrapper>
                 <SocialWrapper>
-                    <Link href="#">
+                    <Link href="#" aria-label="Instagram account link">
                         <Icon iconId="instagramColor" height="34px" viewBox="0 0 50 50"/>
                     </Link>
-                    <Link href="#">
+                    <Link href="#" aria-label="Whatsapp group link">
                         <Icon iconId="whatsappColor" height="34px" viewBox="0 0 50 50"/>
                     </Link>
-                    <Link href="#">
+                    <Link href="#" aria-label="Telegram group link">
                         <Icon iconId="telegramColor" height="30px" viewBox="0 -1 50 50"/>
                     </Link>
                 </SocialWrapper>
                 <FixedContact theme={theme} height="200px" direction="column" align="center" justify="center">
-                    <Link href="#" aria-label="Whatsapp link">
+                    <Link href="#" aria-label="Whatsapp group link">
                         <Icon iconId="aboutWhatsapp" width="60px" viewBox="-4 -3 37 30"/>
                     </Link>
-                    <Link href="#" aria-label="Instagram link">
+                    <Link href="#" aria-label="Instagram account link">
                         <Icon iconId="aboutInstagram" width="35px" viewBox="-2 -5 37 35" />
                     </Link>
-                    <Link href="#" aria-label="Telegram link">
+                    <Link href="#" aria-label="Telegram group link">
                         <Icon iconId="aboutTelegram" width="50px" viewBox="0 1 37 35" />
                     </Link>
                 </FixedContact>

@@ -8,8 +8,8 @@ export const Menu = () => {
     const themeName = useContext(ThemeContext)
     return (
         <StyledMenu>
-            <ul>
-                <li>
+            <ul role="menu" aria-label="menu">
+                <li role="menuitem">
                     <Link theme={themeName} 
                         color={themeName === 'light' ? 
                             theme.light.color.text.primary :
@@ -18,7 +18,7 @@ export const Menu = () => {
                         fontWeight="400" 
                         href="#main">Home</Link>
                 </li>
-                <li>
+                <li role="menuitem">
                     <Link theme={themeName} 
                         color={themeName === 'light' ? 
                             theme.light.color.text.primary :
@@ -27,7 +27,7 @@ export const Menu = () => {
                         fontWeight="400" 
                         href="#projects">Projects</Link>
                 </li>
-                <li>
+                <li role="menuitem">
                     <Link theme={themeName} 
                         color={themeName === 'light' ? 
                             theme.light.color.text.primary :
@@ -36,7 +36,7 @@ export const Menu = () => {
                         fontWeight="400" 
                         href="#about">About</Link>
                 </li>                
-                <li>
+                <li role="menuitem">
                     <Link theme={themeName} 
                         color={themeName === 'light' ? 
                             theme.light.color.text.primary :
