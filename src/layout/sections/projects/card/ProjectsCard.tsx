@@ -64,10 +64,6 @@ const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType>`
     border-radius: 30px;
     width: 270px;
     ${Link} {
-        color: ${props => props.theme === 'light' ?
-            theme.light.color.text.link :
-            theme.dark.color.text.placeholder
-        };
         background-color: "transparent";
     }
     ${Link}[type="button"] {

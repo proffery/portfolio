@@ -39,7 +39,7 @@ export const theme = {
             text: {
                 primary: 'rgb(255, 255, 255)',
                 second: 'rgba(57, 57, 57, 1)',
-                link: 'rgb(33, 87, 242)',
+                link: 'rgb(68, 116, 248)',
                 placeholder: 'rgba(165, 165, 165, 1)',
             },
         },

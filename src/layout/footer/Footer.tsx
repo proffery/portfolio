@@ -37,12 +37,16 @@ const Name = styled.span`
     width: 100%;
     align-items: center;
     justify-content: center;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     color: white;
+    outline: 1px solid ${props => props.theme === 'light' ?
+        theme.light.color.background.second :
+        theme.dark.color.background.second
+    };
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second
@@ -54,7 +58,7 @@ const Copyrights = styled.span`
     width: 100%;
     align-items: center;
     justify-content: center;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-size: 11px;
     font-style: normal;
     font-weight: 400;

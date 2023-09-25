@@ -56,12 +56,11 @@ const StyledAbout = styled.section`
         theme.light.color.text.primary :
         theme.dark.color.text.primary
     };
-    height: 100vh;
-    overflow: hidden;
-    `
+`
 
 const StyledContainer = styled(Container)`
     position: relative;
+    min-height: 946px;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second
@@ -102,7 +101,6 @@ const StyledList = styled.ul`
     font-size: 20px;
     font-weight: 400;
     line-height: 136%;
-    list-style: none;
     
     li {
         display: flex;
@@ -123,9 +121,7 @@ const StyledList = styled.ul`
 `
 
 const StyledH2 = styled.h2`
-    font-family: Roboto;
     font-size: 60px;
-    font-style: normal;
     font-weight: 700;
     line-height: 136%;
 `

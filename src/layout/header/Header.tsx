@@ -39,7 +39,8 @@ export const Header = ({ setCurrentTheme }: HeaderTypes) => {
         <StyledHeader scrolled={scrolled} theme={theme}>
             <Container>
                 <StyledLeft scrolled={scrolled} theme={theme} width="30%">
-                    <Logo />
+                    {theme === 'light' && !scrolled ? <Logo color="white" /> : theme === 'light' && scrolled ? <Logo color="gray" /> : <Logo color="white" />}
+                    
                 </StyledLeft>
                 <StyledRight theme={theme} width="70%" align="center" justify="end" gap="30px">
                     <Menu />
@@ -62,6 +63,7 @@ type StyledHeaderTypes = {
 }
 
 const StyledHeader = styled.header<StyledHeaderTypes>`
+    height: 75px;
     position: sticky;
     top: 0;
     display: flex;

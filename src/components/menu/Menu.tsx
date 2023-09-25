@@ -51,6 +51,7 @@ export const Menu = () => {
 }
 
 const StyledMenu = styled.nav`
+    display: flex;
     text-align: center;
     ul {
         display: flex;

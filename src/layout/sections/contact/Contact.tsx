@@ -19,8 +19,8 @@ export const Contact = () => {
                     <FormTitle theme={theme}>Get in touch</FormTitle>
                     <FormWrapper theme={theme} gap="80px" align="start" height="100%">
                         <StyledForm>
-                            <FlexWrapper direction="column" align="center" justify="center" gap="30px">
-                                <FlexWrapper gap="10px">
+                            <FlexWrapper direction="column" align="center" justify="center" width="100%" gap="30px">
+                                <FlexWrapper gap="10px" width="100%">
                                     <Field theme={theme} type="text" placeholder="E-mail" />
                                     <Field theme={theme} type="text" placeholder="Phone"/>
                                 </FlexWrapper>
@@ -130,10 +130,14 @@ const FormTitle = styled.h3`
 `
 
 const StyledForm = styled.form`
+    display: flex;
+    align-items: center;
     max-width: 429px;
     min-width: 200px;
-    width: 60%;
-    display: flex;
+    width: 100%;
+    textarea {
+        width: 100%;
+    }
 `
 
 const SubmitButton = styled(Button)`
@@ -147,8 +151,17 @@ const Field = styled.input.attrs((type) => ({
     type: type
 }))`
     display: flex;
-    width: 100%;
-    /* min-width: 210px; */
+    width: 50%;
+    font-family: Roboto, sans-serif; 
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 136%;
+    padding: 10px;
+    color: ${props => props.theme === 'light' ?
+        theme.light.color.text.placeholder :
+        theme.dark.color.text.placeholder
+    };
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.input :
         theme.dark.color.background.input
@@ -162,8 +175,14 @@ const Field = styled.input.attrs((type) => ({
             theme.light.color.text.placeholder :
             theme.dark.color.text.placeholder
         };
-        padding: 10px;
     }
+    &:focus-visible {
+        outline: 1px solid ${props => props.theme === 'light' ?
+            theme.light.color.text.placeholder :
+            theme.dark.color.text.placeholder
+        };
+    }
+    
 `
 
 
