@@ -76,21 +76,29 @@ export const Main = () => {
                 </MainBannerWrapper>
                 <StyledLeft theme={themeName} width="30%"></StyledLeft>
                 <StyledRight theme={themeName} width="70%" direction="column" justify="end" height="100%">
-                    <FlexWrapper justify="center" wrap="wrap" gap="12px">
+                    <FlexWrapper justify="start" wrap="wrap">
                         <MainApps theme={themeName}>
-                            <MainAppsIcon theme={themeName} src={photoshop} alt="Photoshop icon"/>
+                            <MainAppsIconWrapper theme={themeName}>
+                                <MainAppsIcon src={photoshop} alt="Photoshop icon"/>
+                            </MainAppsIconWrapper>
                             <AppText>Photoshop</AppText>
                         </MainApps>
                         <MainApps theme={themeName}>
-                            <MainAppsIcon theme={themeName} src={illustrator} alt="Illustrator icon"/>
+                        <MainAppsIconWrapper theme={themeName}>
+                            <MainAppsIcon src={illustrator} alt="Illustrator icon"/>
+                        </MainAppsIconWrapper>
                             <AppText>Illustrator</AppText>
                         </MainApps>
                         <MainApps theme={themeName}>
-                            <MainAppsIcon theme={themeName} src={afterEffect} alt="After Effect icon"/>
+                        <MainAppsIconWrapper theme={themeName}>
+                            <MainAppsIcon src={afterEffect} alt="After Effect icon"/>
+                        </MainAppsIconWrapper>
                             <AppText>After Effects</AppText>
                         </MainApps>
                         <MainApps theme={themeName}>
-                            <MainAppsIcon theme={themeName} src={figma} alt="Figma icon"/>
+                        <MainAppsIconWrapper theme={themeName}>
+                            <MainAppsIcon src={figma} alt="Figma icon"/>
+                        </MainAppsIconWrapper>
                             <AppText>Figma</AppText>
                         </MainApps>
                     </FlexWrapper>
@@ -154,38 +162,55 @@ const MainPhoto = styled.img`
     object-fit: cover;
 `
 const MainApps = styled.div`
-    display: flex;
-    flex-direction: column;
+    position: relative;
     min-width: 160px;
-    height: 90px;
-    border-radius: 24px;
-    background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.second :
-        theme.dark.color.background.second
-    };
-    justify-content: center;
-    align-items: center;
+    min-height: 90px;
+    margin-left: 12px;
+    margin-bottom: 80px;
+    &::before {
+        position: absolute;
+        content: '';
+        display: flex;
+        flex-direction: column;
+        min-width: 160px;
+        min-height: 90px;
+        border-radius: 24px;
+        background-color: ${props => props.theme === 'light' ?
+            theme.light.color.background.second :
+            theme.dark.color.background.second
+        };
+    }
 `
 const AppText = styled.span`
-    position: relative;
-    top: -30%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
     color: ${theme.light.color.text.second};
-    font-family: Roboto;
     font-size: 20px;
-    font-style: normal;
     font-weight: 600;
     line-height: 136%;
 `
 
 const MainAppsIcon = styled.img`
-    position: relative;
-    top: -35%;
+    display: flex;
+    border-radius: 50% 50%;
+`
+
+const MainAppsIconWrapper = styled.div`
+    position: absolute;
     border: 10px solid ${props => props.theme === 'light' ?
         theme.light.color.background.primary :
         theme.dark.color.background.primary 
     };
     border-radius: 50% 50%;
+    top: -65%;
+    left: 50%;
+    transform: translate(-50%, 35%);
 `
+
 const MainBannerWrapper = styled(FlexWrapper)`
     position: absolute;
     top: 50%;
@@ -221,7 +246,6 @@ const StyledLeft = styled(FlexWrapper)`
 `
 
 const StyledRight = styled(FlexWrapper)`
-    padding-bottom: 80px;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.primary :
         theme.dark.color.background.primary

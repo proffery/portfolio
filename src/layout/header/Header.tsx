@@ -40,7 +40,6 @@ export const Header = ({ setCurrentTheme }: HeaderTypes) => {
             <Container>
                 <StyledLeft scrolled={scrolled} theme={theme} width="30%">
                     {theme === 'light' && !scrolled ? <Logo color="white" /> : theme === 'light' && scrolled ? <Logo color="gray" /> : <Logo color="white" />}
-                    
                 </StyledLeft>
                 <StyledRight theme={theme} width="70%" align="center" justify="end" gap="30px">
                     <Menu />
@@ -49,6 +48,7 @@ export const Header = ({ setCurrentTheme }: HeaderTypes) => {
                         aria-label="Theme change button" 
                         hoverShadow="none" 
                         hoverBackground="none" 
+                        padding="0px"
                         onClick={themeChangeHandler}
                     >
                         <Icon
