@@ -12,7 +12,7 @@ export const theme = {
             text: {
                 primary: 'rgb(57, 57, 57)',
                 second: 'rgb(255, 255, 255)',
-                link: 'rgb(33, 87, 242)',
+                link: 'rgba(33, 87, 242, 1)',
                 placeholder: 'rgba(165, 165, 165, 1)',
             },
         },
@@ -52,5 +52,10 @@ export const theme = {
             dot: 'linear-gradient(180deg, rgba(166, 188, 250, 1), rgba(33, 87, 242, 1))',
             banner: 'linear-gradient(147deg, rgba(57, 57, 57, 0.50) -6.76%, rgba(0, 66, 255, 0.05) 102.96%)',
         }
+    },
+
+    media: {
+        tablet: "screen and (max-width: 768px)",
+        mobile: "screen and (max-width: 576px)",
     }
 }

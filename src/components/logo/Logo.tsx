@@ -22,5 +22,4 @@ const StyledLogoImg = styled.img`
     display: flex;
     height: 100%;
     width: auto;
-    margin-left: 25px;
 `

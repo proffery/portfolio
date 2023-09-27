@@ -54,7 +54,7 @@ export const Main = () => {
     return (
         <StyledMain id="main" theme={themeName}>
             <Container>
-                <MainBannerWrapper theme={themeName} align="center" wrap="wrap" justify="center" gap="10px" width="80%">
+                <MainBannerWrapper theme={themeName} align="center" wrap="wrap" justify="center" gap="10px" width="70%">
                     <FlexWrapper align="center" justify="center" width="52%">
                         <MainPhoto theme={themeName} src={photo} alt="Photography" />
                     </FlexWrapper>
@@ -67,7 +67,7 @@ export const Main = () => {
                         </FlexWrapper>
                         <StyledText>Draft is a revolutionary mobile app built to help you manage your business easily and save your money.</StyledText>
                         <FlexWrapper align="center" justify="start" gap="28px" wrap="wrap">
-                            <StyledLinkButton href="#projects" type="button" color="white" background="blue" borderRadius="20px" padding="5px 20px">See Projects
+                            <StyledLinkButton href="#projects" type="button" color="white" borderRadius="20px" padding="5px 20px">See Projects
                                 <Icon viewBox="-8 -5 37 35" iconId="arrowRight" />
                             </StyledLinkButton>
                             <Link href="#">Download Resume</Link>
@@ -76,7 +76,7 @@ export const Main = () => {
                 </MainBannerWrapper>
                 <StyledLeft theme={themeName} width="30%"></StyledLeft>
                 <StyledRight theme={themeName} width="70%" direction="column" justify="end" height="100%">
-                    <FlexWrapper justify="start" wrap="wrap">
+                    <FlexWrapper justify="start" wrap="wrap" gap="12px">
                         <MainApps theme={themeName}>
                             <MainAppsIconWrapper theme={themeName}>
                                 <MainAppsIcon src={photoshop} alt="Photoshop icon"/>
@@ -165,7 +165,6 @@ const MainApps = styled.div`
     position: relative;
     min-width: 160px;
     min-height: 90px;
-    margin-left: 12px;
     margin-bottom: 80px;
     &::before {
         position: absolute;
@@ -250,6 +249,7 @@ const StyledRight = styled(FlexWrapper)`
         theme.light.color.background.primary :
         theme.dark.color.background.primary
     };
+    padding-left: 32px;
 `
 
 const StyledTitleH1 = styled.h1`

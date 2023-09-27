@@ -1,10 +1,10 @@
 import styled from "styled-components"
-import { Link } from "../link/Link.styled"
+import { Link } from "../../../components/link/Link.styled"
 import { useContext } from "react"
-import { ThemeContext } from "../../context/ThemeContext"
-import { theme }  from "../../styles/Theme.styled"
+import { ThemeContext } from "../../../context/ThemeContext"
+import { theme }  from "../../../styles/Theme.styled"
 
-export const Menu = () => {
+export const HeaderMenu = () => {
     const themeName = useContext(ThemeContext)
     return (
         <StyledMenu>
@@ -52,10 +52,18 @@ export const Menu = () => {
 
 const StyledMenu = styled.nav`
     display: flex;
+    width: 100%;
+    justify-content: end;
     text-align: center;
     ul {
         display: flex;
-        gap: 30px;
+        justify-content: end;
         list-style-type: none;
+    }
+    li {
+        margin-right: 35px;
+    }
+    @media ${theme.media.mobile} {
+        display: none;
     }
 `

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Logo } from "../../components/logo/Logo"
-import { Menu } from "../../components/menu/Menu"
+import { HeaderMenu } from "./headerMenu/HeaderMenu"
 import { Icon } from "../../components/icon/Icon"
 import { FlexWrapper } from "../../components/FlexWrapper"
 import { ThemeContext } from "../../context/ThemeContext"
@@ -8,6 +8,7 @@ import { useContext, useEffect, useState } from "react"
 import { theme } from "../../styles/Theme.styled"
 import { Button } from "../../components/button/Button.styled"
 import { Container } from "../../components/Container"
+import { MobileMenu } from "./mobileMenu/mobileMenu"
 
 type HeaderTypes = {
     setCurrentTheme: any,
@@ -41,14 +42,16 @@ export const Header = ({ setCurrentTheme }: HeaderTypes) => {
                 <StyledLeft scrolled={scrolled} theme={theme} width="30%">
                     {theme === 'light' && !scrolled ? <Logo color="white" /> : theme === 'light' && scrolled ? <Logo color="gray" /> : <Logo color="white" />}
                 </StyledLeft>
-                <StyledRight theme={theme} width="70%" align="center" justify="end" gap="30px">
-                    <Menu />
+                <StyledRight theme={theme} width="70%" align="center" justify="end">
+                    <HeaderMenu />
+                    <MobileMenu />
                     <Button borderColor="transparent" 
                         background="transparent" 
                         aria-label="Theme change button" 
                         hoverShadow="none" 
                         hoverBackground="none" 
                         padding="0px"
+                        minWidth="0px"
                         onClick={themeChangeHandler}
                     >
                         <Icon
@@ -70,8 +73,10 @@ type StyledHeaderTypes = {
 
 const StyledHeader = styled.header<StyledHeaderTypes>`
     height: 75px;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -89,6 +94,7 @@ const StyledHeader = styled.header<StyledHeaderTypes>`
 `
 
 const StyledLeft = styled(FlexWrapper)<StyledHeaderTypes>`
+    display: flex;
     background-color: ${props => props.theme === 'light' && props.scrolled ?
         theme.light.color.background.primary :
         props => props.theme === 'light' ? 
@@ -101,6 +107,8 @@ const StyledLeft = styled(FlexWrapper)<StyledHeaderTypes>`
 `
 
 const StyledRight = styled(FlexWrapper)`
+    display: flex;
+    
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.primary :
         theme.dark.color.background.primary
