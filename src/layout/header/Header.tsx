@@ -8,7 +8,7 @@ import { useContext, useEffect, useState } from "react"
 import { theme } from "../../styles/Theme.styled"
 import { Button } from "../../components/button/Button.styled"
 import { Container } from "../../components/Container"
-import { MobileMenu } from "./mobileMenu/mobileMenu"
+import { MobileMenu } from "./mobileMenu/MobileMenu"
 
 type HeaderTypes = {
     setCurrentTheme: any,

@@ -9,7 +9,7 @@ export const MobileMenu = () => {
     const [isOpen, setIsOpen] = useState(false)
     return (
         <StyledMobileMenu>
-            <BurgerButton theme={themeName} isOpen={isOpen} onClick={() => {setIsOpen(!isOpen)}}>
+            <BurgerButton theme={themeName} aria-label="Burger menu button" isOpen={isOpen} onClick={() => {setIsOpen(!isOpen)}}>
                 <span></span>
             </BurgerButton>
             <MobileMenuPopup theme={themeName} isOpen={isOpen}>
