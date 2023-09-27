@@ -114,10 +114,11 @@ const BurgerButton = styled.button<MobileMenuTypes>`
     z-index: 9999;
     background-color: transparent;
     border: none;
+
     span {
         display: block;
         width: 36px;
-        height: 2px;
+        height: 3px;
         background-color: ${props => props.theme === 'light' ?
             theme.light.color.text.primary :
             theme.dark.color.text.primary
@@ -135,7 +136,7 @@ const BurgerButton = styled.button<MobileMenuTypes>`
             position: absolute;
             display: block;
             width: 36px;
-            height: 2px;
+            height: 3px;
             background-color: ${props => props.theme === 'light' ?
                 theme.light.color.text.primary :
                 theme.dark.color.text.primary
@@ -151,8 +152,8 @@ const BurgerButton = styled.button<MobileMenuTypes>`
             content: "";
             position: absolute;
             display: block;
-            width: 14px;
-            height: 2px;
+            width: 36px;
+            height: 3px;
             background-color: ${props => props.theme === 'light' ?
                 theme.light.color.text.primary :
                 theme.dark.color.text.primary

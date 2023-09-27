@@ -80,7 +80,7 @@ const StyledHeader = styled.header<StyledHeaderTypes>`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 100;
+    z-index: 999999;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.primary :
         theme.dark.color.background.primary

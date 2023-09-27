@@ -53,30 +53,35 @@ export const Main = () => {
 
     return (
         <StyledMain id="main" theme={themeName}>
-            <Container>
-                <MainBannerWrapper theme={themeName} align="center" wrap="wrap" justify="center" gap="10px" width="70%">
-                    <FlexWrapper align="center" justify="center" width="52%">
-                        <MainPhoto theme={themeName} src={photo} alt="Photography" />
-                    </FlexWrapper>
-                    <FlexWrapper direction="column" width="46%" gap="20px">
-                        <FlexWrapper wrap="wrap">
-                            <StyledTitleH2 theme={themeName}>I’m &nbsp;
-                                <Link href="#">Dmitry Shamko&nbsp;</Link>
-                            </StyledTitleH2>
-                            <StyledTitleH1 theme={themeName} aria-label="Web Developer">{text}&nbsp;</StyledTitleH1>
-                        </FlexWrapper>
-                        <StyledText>Draft is a revolutionary mobile app built to help you manage your business easily and save your money.</StyledText>
-                        <FlexWrapper align="center" justify="start" gap="28px" wrap="wrap">
-                            <StyledLinkButton href="#projects" type="button" color="white" borderRadius="20px" padding="5px 20px">See Projects
-                                <Icon viewBox="-8 -5 37 35" iconId="arrowRight" />
-                            </StyledLinkButton>
-                            <Link href="#">Download Resume</Link>
-                        </FlexWrapper>
-                    </FlexWrapper>
-                </MainBannerWrapper>
+            <BannerContainer theme={themeName}>
                 <StyledLeft theme={themeName} width="30%"></StyledLeft>
-                <StyledRight theme={themeName} width="70%" direction="column" justify="end" height="100%">
-                    <FlexWrapper justify="start" wrap="wrap" gap="12px">
+                <StyledBannerRight theme={themeName} width="70%">
+                    <MainBannerWrapper theme={themeName} align="center" justify="center" wrap="wrap" width="100%" gap="50px">
+                        <FlexWrapper align="center" justify="center" width="47%">
+                            <MainPhoto theme={themeName} src={photo} alt="Photography" />
+                        </FlexWrapper>
+                        <TitleWrapper direction="column" gap="20px" width="47%">
+                            <FlexWrapper wrap="wrap">
+                                <StyledTitleH2 theme={themeName}>I’m &nbsp;
+                                    <Link href="#">Dmitry Shamko&nbsp;</Link>
+                                </StyledTitleH2>
+                                <StyledTitleH1 theme={themeName} aria-label="Web Developer">{text}&nbsp;</StyledTitleH1>
+                            </FlexWrapper>
+                            <StyledText>Draft is a revolutionary mobile app built to help you manage your business easily and save your money.</StyledText>
+                            <FlexWrapper align="center" justify="start" gap="28px" wrap="wrap">
+                                <StyledLinkButton href="#projects" type="button" color="white" borderRadius="20px" padding="5px 20px">See Projects
+                                    <Icon viewBox="-8 -5 37 35" iconId="arrowRight" />
+                                </StyledLinkButton>
+                                <Link href="#">Download Resume</Link>
+                            </FlexWrapper>
+                        </TitleWrapper>
+                    </MainBannerWrapper>
+                </StyledBannerRight>
+            </BannerContainer>
+            <AppsContainer>
+                <StyledLeft theme={themeName} width="30%"></StyledLeft>
+                <StyledRight theme={themeName} width="70%" direction="column" justify="end">
+                    <AppsWrapper justify="start" gap="12px" wrap="wrap">
                         <MainApps theme={themeName}>
                             <MainAppsIconWrapper theme={themeName}>
                                 <MainAppsIcon src={photoshop} alt="Photoshop icon"/>
@@ -101,15 +106,16 @@ export const Main = () => {
                         </MainAppsIconWrapper>
                             <AppText>Figma</AppText>
                         </MainApps>
-                    </FlexWrapper>
+                    </AppsWrapper>
                 </StyledRight>
-            </Container>
+            </AppsContainer>
         </StyledMain>
     )
 }
 
 const StyledMain = styled.section`
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.primary :
         theme.dark.color.background.primary
@@ -118,35 +124,11 @@ const StyledMain = styled.section`
         theme.light.color.text.primary :
         theme.dark.color.text.primary
     };
-    padding: 0;
-    &::before {
-        content: "+";
-        position: absolute;
-        top: 15%;
-        left: 40%;
-        transform: rotate(45deg);
-        font-size: 150px;
-        font-weight: 600;
-        color: ${props => props.theme === 'light' ?
-            theme.light.color.background.second :
-            theme.dark.color.background.second};
-        z-index: 0;
-    }
+    z-index: 0;
+`
 
-    &::after {
-        content: "";
-        position: absolute;
-        height: 150px;
-        width: 150px;
-        border-radius: 50% 50%;
-        border: 25px solid ${props => props.theme === 'light' ?
-            theme.light.color.background.second :
-            theme.dark.color.background.second};
-        top: 80%;
-        left: 80%;
-        transform: translate( -80%, -80%);
-        z-index: 0;
-    }
+const BannerContainer = styled(Container)`
+    height: 100%;
 `
 
 const MainPhoto = styled.img`
@@ -161,6 +143,10 @@ const MainPhoto = styled.img`
     };
     object-fit: cover;
 `
+const AppsContainer = styled(Container)`
+   
+`
+
 const MainApps = styled.div`
     position: relative;
     min-width: 160px;
@@ -193,6 +179,11 @@ const AppText = styled.span`
     line-height: 136%;
 `
 
+const AppsWrapper = styled(FlexWrapper)`
+    position: relative;
+    bottom: 0;
+`
+
 const MainAppsIcon = styled.img`
     display: flex;
     border-radius: 50% 50%;
@@ -211,10 +202,12 @@ const MainAppsIconWrapper = styled.div`
 `
 
 const MainBannerWrapper = styled(FlexWrapper)`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    padding: 40px 44px;
+    min-height: 508px;
+    left: -20%;
     background: ${props => props.theme === 'light' ?
         theme.light.gradient.banner :
         theme.dark.gradient.banner
@@ -225,12 +218,7 @@ const MainBannerWrapper = styled(FlexWrapper)`
         theme.dark.color.background.bannerBorder 
     };
     border-radius: 150px 0;
-    min-width: 300px;
-    max-width: 1158px;
-    min-height: 508px;
-    padding: 30px;
-    margin-top: 50px;
-    z-index: 1;
+    z-index: 999999;
 `
 
 const StyledLinkButton = styled(Link)`
@@ -245,11 +233,47 @@ const StyledLeft = styled(FlexWrapper)`
 `
 
 const StyledRight = styled(FlexWrapper)`
+    position: relative;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.primary :
         theme.dark.color.background.primary
     };
     padding-left: 32px;
+    z-index: 0;
+`
+const StyledBannerRight = styled(FlexWrapper)`
+    position: relative;
+    z-index: 1;
+    &::before {
+        content: "+";
+        position: absolute;
+        top: 2%;
+        left: 20%;
+        height: 88px;
+        width: 88px;
+        transform: rotate(45deg) translate(-20%, -2%);
+        font-size: 150px;
+        font-weight: 600;
+        color: ${props => props.theme === 'light' ?
+            theme.light.color.background.second :
+            theme.dark.color.background.second};
+        z-index: 0;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        border-radius: 50% 50%;
+        border: 25px solid ${props => props.theme === 'light' ?
+            theme.light.color.background.second :
+            theme.dark.color.background.second};
+        top: 90%;
+        left: 75%;
+        transform: translate( -75%, -90%);
+        z-index: 1;
+    }
 `
 
 const StyledTitleH1 = styled.h1`
@@ -273,10 +297,11 @@ const StyledTitleH2 = styled.h2`
 `
 
 const StyledText = styled.p`
-    font-family: Roboto;
     font-size: 20px;
-    font-style: normal;
     font-weight: 400;
     line-height: 150%;
+`
+const TitleWrapper = styled(FlexWrapper)`
+    min-width: 276px;
 `
 
