@@ -11,6 +11,7 @@ import { useContext, useEffect, useState } from "react"
 import { ThemeContext } from "../../../context/ThemeContext"
 import { Container } from "../../../components/Container"
 import { theme } from "../../../styles/Theme.styled"
+import { link } from "fs"
 
 
 export const Main = () => {
@@ -54,8 +55,8 @@ export const Main = () => {
     return (
         <StyledMain id="main" theme={themeName}>
             <BannerContainer theme={themeName}>
-                <StyledLeft theme={themeName} width="30%"></StyledLeft>
-                <StyledBannerRight theme={themeName} width="70%">
+                <StyledBannerLeft theme={themeName}></StyledBannerLeft>
+                <StyledBannerRight theme={themeName} justify="center" >
                     <MainBannerWrapper theme={themeName} align="center" justify="center" wrap="wrap" width="100%" gap="50px">
                         <FlexWrapper align="center" justify="center" width="47%">
                             <MainPhoto theme={themeName} src={photo} alt="Photography" />
@@ -69,19 +70,21 @@ export const Main = () => {
                             </FlexWrapper>
                             <StyledText>Draft is a revolutionary mobile app built to help you manage your business easily and save your money.</StyledText>
                             <FlexWrapper align="center" justify="start" gap="28px" wrap="wrap">
-                                <StyledLinkButton href="#projects" type="button" color="white" borderRadius="20px" padding="5px 20px">See Projects
-                                    <Icon viewBox="-8 -5 37 35" iconId="arrowRight" />
+                                <StyledLinkButton href="#projects" type="button" color="white">See Projects
+                                    <IconButtonWrapper>
+                                        <Icon viewBox="-8 -5 37 35" iconId="arrowRight" />
+                                    </IconButtonWrapper>
                                 </StyledLinkButton>
-                                <Link href="#">Download Resume</Link>
+                                <StyledResumeLink href="#">Download Resume</StyledResumeLink>
                             </FlexWrapper>
                         </TitleWrapper>
                     </MainBannerWrapper>
                 </StyledBannerRight>
             </BannerContainer>
-            <AppsContainer>
-                <StyledLeft theme={themeName} width="30%"></StyledLeft>
-                <StyledRight theme={themeName} width="70%" direction="column" justify="end">
-                    <AppsWrapper justify="start" gap="12px" wrap="wrap">
+            <Container>
+                <StyledAppsLeft theme={themeName}></StyledAppsLeft>
+                <StyledAppsRight theme={themeName} direction="column" justify="end">
+                    <AppsWrapper justify="center" gap="12px" wrap="wrap">
                         <MainApps theme={themeName}>
                             <MainAppsIconWrapper theme={themeName}>
                                 <MainAppsIcon src={photoshop} alt="Photoshop icon"/>
@@ -107,8 +110,8 @@ export const Main = () => {
                             <AppText>Figma</AppText>
                         </MainApps>
                     </AppsWrapper>
-                </StyledRight>
-            </AppsContainer>
+                </StyledAppsRight>
+            </Container>
         </StyledMain>
     )
 }
@@ -133,7 +136,7 @@ const BannerContainer = styled(Container)`
 
 const MainPhoto = styled.img`
     display: flex;
-    max-width: 300px;
+    max-width: 400px;
     min-width: 188px;
     height: auto;
     border-radius: 50% 50%;
@@ -143,15 +146,12 @@ const MainPhoto = styled.img`
     };
     object-fit: cover;
 `
-const AppsContainer = styled(Container)`
-   
-`
 
 const MainApps = styled.div`
     position: relative;
     min-width: 160px;
     min-height: 90px;
-    margin-bottom: 80px;
+    margin: 80px 0;
     &::before {
         position: absolute;
         content: '';
@@ -164,6 +164,28 @@ const MainApps = styled.div`
             theme.light.color.background.second :
             theme.dark.color.background.second
         };
+        @media ${theme.media.tablet} {
+            margin-bottom: 0;
+            min-width: 270px;
+            min-height: 152px;
+        }
+        
+        @media ${theme.media.mobile} {
+            margin-bottom: 0;
+            min-width: 146px;
+            min-height: 82px;
+        }
+    }
+    @media ${theme.media.tablet} {
+        margin-bottom: 0;
+        min-width: 270px;
+        min-height: 152px;
+    }
+    
+    @media ${theme.media.mobile} {
+        margin-bottom: 0;
+        min-width: 146px;
+        min-height: 82px;
     }
 `
 const AppText = styled.span`
@@ -177,16 +199,34 @@ const AppText = styled.span`
     font-size: 20px;
     font-weight: 600;
     line-height: 136%;
+    @media ${theme.media.tablet} {
+        font-size: 34px;
+    }
+    
+    @media ${theme.media.mobile} {
+        font-size: 18px;
+    }
 `
 
 const AppsWrapper = styled(FlexWrapper)`
-    position: relative;
     bottom: 0;
+    margin-right: auto;
 `
 
 const MainAppsIcon = styled.img`
     display: flex;
     border-radius: 50% 50%;
+    width: 55px;
+    height: 55px;
+    @media ${theme.media.tablet} {
+        width: 92px;
+        height: 92px;
+    }
+    
+    @media ${theme.media.mobile} {
+        width: 50px;
+        height: 50px;
+    }
 `
 
 const MainAppsIconWrapper = styled.div`
@@ -196,9 +236,22 @@ const MainAppsIconWrapper = styled.div`
         theme.dark.color.background.primary 
     };
     border-radius: 50% 50%;
-    top: -65%;
     left: 50%;
-    transform: translate(-50%, 35%);
+    top: -50%;
+    transform: translate(-50%, 10%);
+    @media ${theme.media.tablet} {
+        border: 16px solid ${props => props.theme === 'light' ?
+            theme.light.color.background.primary :
+            theme.dark.color.background.primary 
+        };
+    }
+    
+    @media ${theme.media.mobile} {
+        border: 9px solid ${props => props.theme === 'light' ?
+            theme.light.color.background.primary :
+            theme.dark.color.background.primary 
+        };
+    }
 `
 
 const MainBannerWrapper = styled(FlexWrapper)`
@@ -207,7 +260,7 @@ const MainBannerWrapper = styled(FlexWrapper)`
     margin-bottom: 80px;
     padding: 40px 44px;
     min-height: 508px;
-    left: -20%;
+    left: -5%;
     background: ${props => props.theme === 'light' ?
         theme.light.gradient.banner :
         theme.dark.gradient.banner
@@ -223,41 +276,102 @@ const MainBannerWrapper = styled(FlexWrapper)`
 
 const StyledLinkButton = styled(Link)`
     min-width: 200px;
+    min-height: 54px;
+    border-radius: 20px; 
+    padding: 5px 20px;
+    @media ${theme.media.mobile} {
+        font-size: 8px;
+        min-width: 112px;
+        min-height: 30px;
+        border-radius: 11px; 
+        padding: 0px 10px;
+    }
+`
+const StyledResumeLink = styled(Link)`
+    @media ${theme.media.mobile} {
+        font-size: 8px;
+    }
 `
 
-const StyledLeft = styled(FlexWrapper)`
+const IconButtonWrapper = styled(FlexWrapper)`
+    height: 30px;
+    width: 30px;
+    align-items: center;
+`
+
+const StyledBannerLeft = styled(FlexWrapper)`
+    position: relative;
+    width: 10%;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second
     };
+    &::after {
+        position: absolute;
+        content: "";
+        width: 300%;
+        height: 100%;
+        background-color: ${props => props.theme === 'light' ?
+            theme.light.color.background.second :
+            theme.dark.color.background.second
+        };
+        @media ${theme.media.tablet} {
+            width: 500%;
+        }
+    }
 `
 
-const StyledRight = styled(FlexWrapper)`
-    position: relative;
+const StyledAppsRight = styled(FlexWrapper)`
+    width: 70%;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.primary :
         theme.dark.color.background.primary
     };
     padding-left: 32px;
     z-index: 0;
+    @media ${theme.media.tablet} {
+        width: 100%;
+    }
+`
+const StyledAppsLeft = styled(FlexWrapper)`
+    width: 30%;
+    background-color: ${props => props.theme === 'light' ?
+        theme.light.color.background.second :
+        theme.dark.color.background.second
+    };
+    @media ${theme.media.tablet} {
+        width: 0;
+    }
 `
 const StyledBannerRight = styled(FlexWrapper)`
     position: relative;
+    width: 90%;
     z-index: 1;
     &::before {
         content: "+";
         position: absolute;
         top: 2%;
-        left: 20%;
+        left: 30%;
+        transform: rotate(45deg) translate(-20%, -2%);
         height: 88px;
         width: 88px;
-        transform: rotate(45deg) translate(-20%, -2%);
         font-size: 150px;
         font-weight: 600;
         color: ${props => props.theme === 'light' ?
             theme.light.color.background.second :
             theme.dark.color.background.second};
         z-index: 0;
+        @media ${theme.media.tablet} {
+            top: 5%;
+            left: 80%;
+            transform: rotate(45deg) translate(-80%, -5%);
+        }
+        @media ${theme.media.mobile} {
+            top: 12%;
+            left: 80%;
+            transform: rotate(45deg) translate(-80%, -12%);
+            font-size: 100px;
+        }
     }
 
     &::after {
@@ -270,9 +384,14 @@ const StyledBannerRight = styled(FlexWrapper)`
             theme.light.color.background.second :
             theme.dark.color.background.second};
         top: 90%;
-        left: 75%;
-        transform: translate( -75%, -90%);
+        left: 95%;
+        transform: translate( -95%, -90%);
         z-index: 1;
+        @media ${theme.media.mobile} {
+            height: 100px;
+            width: 100px;
+            border-width: 15px;
+        }
     }
 `
 
@@ -284,6 +403,9 @@ const StyledTitleH1 = styled.h1`
         theme.light.shadow.text :
         theme.dark.shadow.text
     };
+    @media ${theme.media.mobile} {
+        font-size: 34px;
+    }
 `
 
 const StyledTitleH2 = styled.h2`
@@ -294,14 +416,23 @@ const StyledTitleH2 = styled.h2`
         theme.light.shadow.text :
         theme.dark.shadow.text
     };
+    @media ${theme.media.mobile} {
+        font-size: 34px;
+    }
 `
 
 const StyledText = styled.p`
     font-size: 20px;
     font-weight: 400;
     line-height: 150%;
+    @media ${theme.media.mobile} {
+        font-size: 11px;
+    }
 `
 const TitleWrapper = styled(FlexWrapper)`
-    min-width: 276px;
+    min-width: 376px;
+    @media ${theme.media.mobile} {
+        min-width: 210px;
+    }
 `
 

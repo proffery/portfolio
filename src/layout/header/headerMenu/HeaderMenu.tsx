@@ -63,7 +63,14 @@ const StyledMenu = styled.nav`
     li {
         margin-right: 35px;
     }
+    z-index: 999;
     @media ${theme.media.mobile} {
         display: none;
+        font-size: 8px;
+    }
+    @media ${theme.media.tablet} {
+        li {
+            margin-right: 20px;
+        }
     }
 `

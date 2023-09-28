@@ -62,6 +62,9 @@ const StyledContainer = styled(Container)`
         theme.dark.color.background.second
     };
     padding: 60px;
+    @media ${theme.media.mobile} {
+        padding: 27px;
+    }
 `
 
 const LearningSkillsTitle = styled.h3`

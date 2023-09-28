@@ -15,28 +15,28 @@ export const About = () => {
         <StyledAbout theme={theme} id="about">
             <StyledContainer theme={theme} direction="column" align="center" justify="center">
                 <StyledAboutMe theme={theme} direction="column" align="center" wrap="wrap" justify="center">
-                <StyledLinks align="center" >
-                    <Link href="#" aria-label="Open Whatsapp group">
-                        <Icon iconId="aboutWhatsapp" />
-                    </Link>
-                    <Link href="#" aria-label="Open Instagram account" >
-                        <Icon iconId="aboutInstagram" width="30px"/>
-                    </Link>
-                    <Link href="#" aria-label="Open Telegram group" >
-                        <Icon iconId="aboutTelegram" width="46px" viewBox="-4 -2 37 35" />
-                    </Link>
-                </StyledLinks>
-                <FlexWrapper direction="column" align="flex-start" wrap="wrap" >
-                    <StyledH2>I’m&nbsp;</StyledH2>
-                    <StyledH2><Link href="#">Dmitry Shamko</Link></StyledH2>
-                    <StyledList theme={theme}>
-                        <li>I was born in Belarus</li>
-                        <li>I’m 36 years old</li>
-                        <li>I have started my interest in this field from 2022</li>
-                        <li>I’m designer, video editor, web developer and ...</li>
-                        <li>My phone number +989212073348</li>
-                    </StyledList>
-                </FlexWrapper>
+                    <StyledLinks align="center" >
+                        <Link href="#" aria-label="Open Whatsapp group">
+                            <Icon iconId="aboutWhatsapp" />
+                        </Link>
+                        <Link href="#" aria-label="Open Instagram account" >
+                            <Icon iconId="aboutInstagram" width="30px"/>
+                        </Link>
+                        <Link href="#" aria-label="Open Telegram group" >
+                            <Icon iconId="aboutTelegram" width="46px" viewBox="-4 -2 37 35" />
+                        </Link>
+                    </StyledLinks>
+                    <FlexWrapper direction="column" align="flex-start" wrap="wrap" >
+                        <StyledH2>I’m&nbsp;</StyledH2>
+                        <StyledH2><Link href="#">Dmitry Shamko</Link></StyledH2>
+                        <StyledList theme={theme}>
+                            <li>I was born in Belarus</li>
+                            <li>I’m 36 years old</li>
+                            <li>I have started my interest in this field from 2022</li>
+                            <li>I’m designer, video editor, web developer and ...</li>
+                            <li>My phone number +989212073348</li>
+                        </StyledList>
+                    </FlexWrapper>
                 </StyledAboutMe>
             </StyledContainer>
         </StyledAbout>
@@ -60,15 +60,18 @@ const StyledAbout = styled.section`
 
 const StyledContainer = styled(Container)`
     position: relative;
-    min-height: 946px;
+    height: 100vh;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second
     };
     background-image: url(${photo}), url(${aboutMap});
     background-repeat: no-repeat;
-    background-position: bottom right, center;
-    background-size: contain;
+    background-position: bottom right, bottom center;
+    background-size: contain, cover;
+    @media ${theme.media.mobile} {
+        background-position: bottom right, center;
+    }
 `
 
 const StyledAboutMe = styled(FlexWrapper)`
@@ -90,10 +93,25 @@ const StyledAboutMe = styled(FlexWrapper)`
     padding: 30px;
     padding-top: 10px;
     margin-left: 30px;
+    @media ${theme.media.tablet} {
+        top: 10%;
+        left: 10%;
+        transform: translate(-10%, -10%);
+    }
+    
+    @media ${theme.media.mobile} {
+        top: 20%;
+        left: 0%;
+        transform: translate(-10%, -20%);
+        padding-top: 30px;
+    }
 `
 
 const StyledLinks = styled(FlexWrapper)`
     align-self: flex-end;
+    @media ${theme.media.mobile} {
+        display: none;
+    }
 `
 
 const StyledList = styled.ul`
@@ -101,11 +119,14 @@ const StyledList = styled.ul`
     font-size: 20px;
     font-weight: 400;
     line-height: 136%;
-    
+
     li {
         display: flex;
         align-items: start;
         margin-left: 28px;
+        @media ${theme.media.mobile} {
+            margin-left: 18px;
+        }
     }
 
     li::before {
@@ -117,6 +138,15 @@ const StyledList = styled.ul`
         height: 18px;
         margin-top: 3px;
         background-image: ${props => props.theme === 'light' ? theme.light.gradient.dot : theme.dark.gradient.dot};
+        
+        @media ${theme.media.mobile} {
+            width: 10px;
+            height: 10px;
+        }
+    }
+    
+    @media ${theme.media.mobile} {
+        font-size: 11px;
     }
 `
 
@@ -124,4 +154,7 @@ const StyledH2 = styled.h2`
     font-size: 60px;
     font-weight: 700;
     line-height: 136%;
+    @media ${theme.media.mobile} {
+        font-size: 32px;
+    }
 `

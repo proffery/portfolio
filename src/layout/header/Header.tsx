@@ -38,8 +38,8 @@ export const Header = ({ setCurrentTheme }: HeaderTypes) => {
     }
     return (
         <StyledHeader scrolled={scrolled} theme={theme}>
-            <Container>
-                <StyledLeft scrolled={scrolled} theme={theme} width="30%">
+            <Container justify="space-between">
+                <StyledLeft scrolled={scrolled} theme={theme}>
                     {theme === 'light' && !scrolled ? <Logo color="white" /> : theme === 'light' && scrolled ? <Logo color="gray" /> : <Logo color="white" />}
                 </StyledLeft>
                 <StyledRight theme={theme} width="70%" align="center" justify="end">
@@ -50,7 +50,7 @@ export const Header = ({ setCurrentTheme }: HeaderTypes) => {
                         aria-label="Theme change button" 
                         hoverShadow="none" 
                         hoverBackground="none" 
-                        padding="0px"
+                        padding="0 5px 0 0"
                         minWidth="0px"
                         onClick={themeChangeHandler}
                     >
@@ -95,6 +95,8 @@ const StyledHeader = styled.header<StyledHeaderTypes>`
 
 const StyledLeft = styled(FlexWrapper)<StyledHeaderTypes>`
     display: flex;
+    position: relative;
+    width: 10%;
     background-color: ${props => props.theme === 'light' && props.scrolled ?
         theme.light.color.background.primary :
         props => props.theme === 'light' ? 
@@ -104,6 +106,24 @@ const StyledLeft = styled(FlexWrapper)<StyledHeaderTypes>`
         theme.dark.color.background.second
     };
     transition: all ease-in .2s;
+    &::after {
+        position: absolute;
+        content: "";
+        width: 300%;
+        height: 100%;
+        background-color: ${props => props.theme === 'light' && props.scrolled ?
+            theme.light.color.background.primary :
+            props => props.theme === 'light' ? 
+            theme.light.color.background.second :
+            props => props.theme === 'dark' && props.scrolled ?
+            theme.dark.color.background.primary :
+            theme.dark.color.background.second
+        };
+
+        @media ${theme.media.tablet} {
+            width: 500%;
+        }
+    }
 `
 
 const StyledRight = styled(FlexWrapper)`

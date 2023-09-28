@@ -28,7 +28,6 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
     body {
         margin: 0 auto;
         height: 100vh;
-        min-width: 300px;
         font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
             'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
             sans-serif;
@@ -50,6 +49,9 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
 
     section {
         padding: 60px 0;
+        @media ${theme.media.mobile} {
+            padding: 27px 0;
+        }
     }
 
     @media (prefers-reduced-motion: reduce) {

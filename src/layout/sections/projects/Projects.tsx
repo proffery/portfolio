@@ -32,7 +32,7 @@ export const Projects = () => {
             <SectionTitle theme={themeName}>Projects</SectionTitle>
                 <FlexWrapper align="center" justify="center" wrap="wrap" gap="40px">
                     {categories.map((category, index) => { 
-                        return <Button 
+                        return <CategoryButton 
                             key={index} 
                             theme={themeName} 
                             padding="7px" 
@@ -50,7 +50,7 @@ export const Projects = () => {
                             onClick={() => {setActiveCategory(category)}}
                             >
                                 {category}
-                        </Button>
+                        </CategoryButton>
                     })}
                     
                 </FlexWrapper>
@@ -88,6 +88,17 @@ const StyledContainer = styled(Container)`
 `
 const StyledProjectWrapper = styled(FlexWrapper)`
     margin-top: 40px;
+`
+
+const CategoryButton = styled(Button)`
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 136%;
+    min-width: 160px;
+    @media ${theme.media.mobile} {
+        font-size: 12px;
+        min-width: 96px;
+    }
 `
 
 

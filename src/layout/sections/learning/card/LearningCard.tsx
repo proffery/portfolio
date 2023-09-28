@@ -3,7 +3,6 @@ import { FlexWrapper } from "../../../../components/FlexWrapper"
 import { ThemeContext } from "../../../../context/ThemeContext"
 import { useContext } from "react"
 import { theme } from "../../../../styles/Theme.styled"
-import { SectionTitle } from "../../../../components/SectionTitle.styled"
 
 type LearningCardPropsType = {
     imageUrl: string,

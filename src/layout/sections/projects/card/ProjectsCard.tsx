@@ -15,12 +15,12 @@ type ProjectsCardPropsType = {
 export const ProgectsCard = (props: ProjectsCardPropsType) => {
     const theme = useContext(ThemeContext)
     return (
-        <ProjectCard theme={theme} backgroundImage={`url("${props.imageUrl}")`} direction="column" align="center" height="394px" >
+        <ProjectCard theme={theme} backgroundImage={`url("${props.imageUrl}")`} direction="column" align="center" >
             <ProjectCardContent theme={theme} direction="column" width="100%" height="40%" justify="space-between" >
                 <ProjectCardTitle theme={theme}>{props.title}</ProjectCardTitle>
-                <FlexWrapper align="center" justify="center" gap="20px">
-                    <Link href={props.githubUrl} target='_blank' theme={theme} type="button" borderRadius="12px" padding="6px 20px" fontSize="14px">Code</Link>
-                    <Link href={props.previewUrl} target='_blank' theme={theme} fontSize="14px">see preview</Link>
+                <FlexWrapper align="center" justify="center">
+                    <CardLink href={props.githubUrl} target='_blank' theme={theme} type="button">Code</CardLink>
+                    <CardLink href={props.previewUrl} target='_blank' theme={theme}>see preview</CardLink>
                 </FlexWrapper>
             </ProjectCardContent>
         </ProjectCard>
@@ -44,6 +44,10 @@ const ProjectCardContent = styled(FlexWrapper)`
         theme.light.shadow.card :
         theme.dark.shadow.card
     };
+    @media ${theme.media.mobile} {
+        border-radius: 0 0 16px 16px;
+        padding: 16px;
+    }
 `
 
 const ProjectCardTitle = styled.h3`
@@ -51,9 +55,29 @@ const ProjectCardTitle = styled.h3`
         theme.light.color.text.link :
         theme.dark.color.text.primary
     };
+
     text-align: left;
+    font-family: Kalameh, sans-serif;
     font-size: 20px;
     font-weight: 700;
+    @media ${theme.media.mobile} {
+        font-size: 12px;
+    }
+`
+const CardLink = styled(Link)`
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 148%;
+    min-width: 110px;
+    min-height: 30px;
+    border-radius: 12px;
+    @media ${theme.media.mobile} {
+        font-size: 8px;
+        min-width: 66px;
+        min-height: 18px;
+        border-radius: 7px;
+    }    
 `
 
 const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType>`
@@ -63,10 +87,18 @@ const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType>`
     background-size: cover;
     border-radius: 30px;
     width: 270px;
-    ${Link} {
+    height: 394px;
+
+    @media ${theme.media.mobile} {
+        width: 163px;
+        height: 238px;
+        border-radius: 16px;
+    }
+
+    ${CardLink} {
         background-color: "transparent";
     }
-    ${Link}[type="button"] {
+    ${CardLink}[type="button"] {
         color: ${props => props.theme === 'light' ?
             theme.light.color.text.second :
             theme.dark.color.text.second
