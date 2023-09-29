@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/portfolio/static/js/main.89bb4158.js",
+    "main.js": "/portfolio/static/js/main.422628aa.js",
     "static/media/Library.webp": "/portfolio/static/media/Library.7455b8205028ef89ea36.webp",
     "static/media/PhotographerHomePage.webp": "/portfolio/static/media/PhotographerHomePage.d68c8dec8fa2ad7fc1a0.webp",
     "static/media/MemoryCard.webp": "/portfolio/static/media/MemoryCard.d547cd803f7e638591c9.webp",
@@ -13,10 +13,11 @@
     "static/media/ShoppingCart.webp": "/portfolio/static/media/ShoppingCart.5a43a1967c4ddcd71e85.webp",
     "static/media/LandingPage.webp": "/portfolio/static/media/LandingPage.19e5712eee2cb1735282.webp",
     "static/media/BlogApp.webp": "/portfolio/static/media/BlogApp.f10fe899de8002ae02b9.webp",
-    "static/media/icons-sprite.svg": "/portfolio/static/media/icons-sprite.ca0253c92a0492d9c53cca95db6155be.svg",
+    "static/media/icons-sprite.svg": "/portfolio/static/media/icons-sprite.a26acd4a15634a19dd3169be20c7f17a.svg",
     "static/media/PortfolioProject.webp": "/portfolio/static/media/PortfolioProject.0c607225816b86681517.webp",
     "static/media/TodoList.webp": "/portfolio/static/media/TodoList.cdb133f8cf82f35e0d9c.webp",
     "static/media/MyFirstWebpage.webp": "/portfolio/static/media/MyFirstWebpage.69e7292c6a223a029281.webp",
+    "static/media/OpenAIClientApp.webp": "/portfolio/static/media/OpenAIClientApp.acf1db1c179bf1284e70.webp",
     "static/media/Map.webp": "/portfolio/static/media/Map.bbc67a20b4840aed2423.webp",
     "static/media/AdminDashboard.webp": "/portfolio/static/media/AdminDashboard.87acd550ff0b610f055c.webp",
     "static/media/CvApplication.webp": "/portfolio/static/media/CvApplication.c4b4d04acbc4c081fbd2.webp",
@@ -34,9 +35,9 @@
     "static/media/learning-css3.svg": "/portfolio/static/media/learning-css3.4f50b33af1d2115e9ee75ed4b1570e17.svg",
     "static/media/learning-html5.svg": "/portfolio/static/media/learning-html5.69274ea277b1ee86ba50abd24b291122.svg",
     "static/media/learning-firebase.svg": "/portfolio/static/media/learning-firebase.0d5ec3e60614ea8e4d7abbf0729e969b.svg",
-    "main.89bb4158.js.map": "/portfolio/static/js/main.89bb4158.js.map"
+    "main.422628aa.js.map": "/portfolio/static/js/main.422628aa.js.map"
   },
   "entrypoints": [
-    "static/js/main.89bb4158.js"
+    "static/js/main.422628aa.js"
   ]
 }
