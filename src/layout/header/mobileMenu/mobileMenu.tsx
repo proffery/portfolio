@@ -3,8 +3,13 @@ import { Link } from "../../../components/link/Link.styled"
 import { useContext, useState } from "react"
 import { ThemeContext } from "../../../context/ThemeContext"
 import { theme }  from "../../../styles/Theme.styled"
+import { ThemeChangeButton } from "../themeChangeButton/ThemeChangeButton"
 
-export const MobileMenu = () => {
+type MobileMenuTypes = {
+    setCurrentTheme: any,
+}
+
+export const MobileMenu = (props: MobileMenuTypes) => {
     const themeName = useContext(ThemeContext)
     const [isOpen, setIsOpen] = useState(false)
     return (
@@ -50,6 +55,9 @@ export const MobileMenu = () => {
                             fontWeight="400" 
                             href="#contact">Contact</Link>
                     </li>
+                    <li>
+                        <ThemeChangeButton setCurrentTheme={props.setCurrentTheme}/>
+                    </li>
                 </ul>
             </MobileMenuPopup>
         </StyledMobileMenu>
@@ -57,7 +65,7 @@ export const MobileMenu = () => {
 }
 
 
-type MobileMenuTypes = {
+type StyledMobileMenuTypes = {
     isOpen: boolean,
 }
 
@@ -69,10 +77,10 @@ const StyledMobileMenu = styled.nav`
     }
 `
 
-const MobileMenuPopup = styled.div<MobileMenuTypes>`
+const MobileMenuPopup = styled.div<StyledMobileMenuTypes>`
     display: none;
 
-    ${props => props.isOpen && css<MobileMenuTypes>`
+    ${props => props.isOpen && css<StyledMobileMenuTypes>`
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -95,7 +103,7 @@ const MobileMenuPopup = styled.div<MobileMenuTypes>`
     ul {
         align-items: center;
         list-style-type: none;
-        font-size: 60px;
+        font-size: 40px;
         font-weight: 700;
         line-height: 136%;
     }
@@ -104,17 +112,16 @@ const MobileMenuPopup = styled.div<MobileMenuTypes>`
     }
 `
 
-const BurgerButton = styled.button<MobileMenuTypes>`
+const BurgerButton = styled.button<StyledMobileMenuTypes>`
     position: fixed;
-    left: 50%;
-    top: 50px;
-    transform: translateX(-160%);
+    right: 25px;
+    top: 15px;
     width: 36px;
     height: 36px;
     z-index: 99999;
     background-color: transparent;
     border: none;
-
+    cursor: pointer;
     span {
         display: block;
         width: 36px;
@@ -124,13 +131,11 @@ const BurgerButton = styled.button<MobileMenuTypes>`
             theme.dark.color.text.primary
         };
 
-        ${props => props.isOpen && css<MobileMenuTypes>`
+        ${props => props.isOpen && css<StyledMobileMenuTypes>`
             background-color: rgba(255, 255, 255, 0);
         `}
 
         position: absolute;
-        left: 40px;
-        bottom: 50px;
         &::before {
             content: "";
             position: absolute;

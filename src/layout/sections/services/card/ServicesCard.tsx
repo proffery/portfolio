@@ -20,7 +20,7 @@ export const ServicesCard = (props: ServicesCardPropsType) => {
                 <Icon iconId={props.iconId} height="73px" width="73px" viewBox="0 0 70 70"/>
             </IconWrapper>
             <ServicesCardTitle theme={theme}>{props.title}</ServicesCardTitle>
-            <StyledLink fontSize="16px" href={props.link} theme={theme}>View More<Icon iconId="arrowRight" width="30%"/></StyledLink>
+            <StyledLink fontSize="16px" href={props.link} theme={theme}>View More<Icon iconId="arrowRight" width="20%"/></StyledLink>
         </StyledServicesCard>
     )
 }
@@ -37,6 +37,7 @@ const StyledServicesCard = styled(FlexWrapper)`
         theme.dark.shadow.card
     };
     min-width: 334px;
+
     @media ${theme.media.tablet} {
         min-width: 280px;
         min-height: 336px;

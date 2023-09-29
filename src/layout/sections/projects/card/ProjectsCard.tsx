@@ -16,7 +16,7 @@ export const ProgectsCard = (props: ProjectsCardPropsType) => {
     const theme = useContext(ThemeContext)
     return (
         <ProjectCard theme={theme} backgroundImage={`url("${props.imageUrl}")`} direction="column" align="center" >
-            <ProjectCardContent theme={theme} direction="column" width="100%" height="40%" justify="space-between" >
+            <ProjectCardContent theme={theme} direction="column" width="100%" justify="space-between" >
                 <ProjectCardTitle theme={theme}>{props.title}</ProjectCardTitle>
                 <FlexWrapper align="center" justify="center">
                     <CardLink href={props.githubUrl} target='_blank' theme={theme} type="button">Code</CardLink>
@@ -30,6 +30,7 @@ type ProjectCardPropsType = {
     backgroundImage: string,
 }
 
+
 const ProjectCardContent = styled(FlexWrapper)`
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.card :
@@ -38,16 +39,20 @@ const ProjectCardContent = styled(FlexWrapper)`
     position: relative;
     top: 100%;
     transform: translateY(-100%);
+    height: 40%;
     border-radius: 0 0 30px 30px; 
     padding: 22px;
     box-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.card :
         theme.dark.shadow.card
     };
+    transition: height ease-in .5s;
+
     @media ${theme.media.mobile} {
         border-radius: 0 0 16px 16px;
         padding: 16px;
     }
+    
 `
 
 const ProjectCardTitle = styled.h3`
@@ -55,7 +60,10 @@ const ProjectCardTitle = styled.h3`
         theme.light.color.text.link :
         theme.dark.color.text.primary
     };
-
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     text-align: left;
     font-family: Kalameh, sans-serif;
     font-size: 20px;
@@ -114,12 +122,14 @@ const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType>`
                 theme.light.color.background.second :
                 theme.dark.color.background.second
             };
+            height: 50%;
         }
         ${ProjectCardTitle} {
             color: ${props => props.theme === 'light' ?
                 theme.light.color.text.second :
                 theme.dark.color.text.primary
             };
+            display: inline-block;
         }
         ${FlexWrapper} ${Link} {
             color: ${props => props.theme === 'light' ?

@@ -26,6 +26,7 @@ export const theme = {
             banner: 'linear-gradient(147deg, rgba(255, 255, 255, 0.50) -6.76%, rgba(0, 71, 255, 0.05) 102.96%)',
         }
     },
+    
     dark: {
         color: {
             background: {

@@ -35,7 +35,7 @@ export const Contact = () => {
                         <StyledContactWrapper direction="column" align="start" gap="30px" width="100%" height="100%">
                             <ContactIconWrapper theme={theme} align="center">
                                 <IconWrapper>
-                                    <Icon iconId="location" height="100%" width="100%" viewBox="95 405 46 46"/>
+                                    <Icon iconId="location" height="100%" width="100%" viewBox="94 405 47 47"/>
                                 </IconWrapper>
                                 <FlexWrapper direction="column">
                                     <ContactTitleH4 theme={theme}>Location</ContactTitleH4>
@@ -53,7 +53,7 @@ export const Contact = () => {
                             </ContactIconWrapper>
                             <ContactIconWrapper theme={theme} align="center">
                                 <IconWrapper>
-                                    <Icon iconId="email" height="100%" width="100%" viewBox="-2 -3 31 31"/>
+                                    <Icon iconId="email" height="100%" width="100%" viewBox="-3 -4 31 31"/>
                                 </IconWrapper>
                                 <FlexWrapper direction="column">
                                     <ContactTitleH4 theme={theme}>Email</ContactTitleH4>
@@ -146,7 +146,7 @@ const StyledForm = styled.form`
         height: 152px;
         padding: 10px 18px;
         &::placeholder {
-            padding: 10px 0px;
+            padding: 0px;
         }
         &:focus {
             padding: 10px 18px;

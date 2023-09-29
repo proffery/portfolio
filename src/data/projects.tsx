@@ -16,6 +16,7 @@ import ShoppingCart from '../assets/images/projects/ShoppingCart.webp'
 import BlogApp from '../assets/images/projects/BlogApp.webp'
 import PortfolioProject from '../assets/images/projects/PortfolioProject.webp'
 import PhotographerHomePage from '../assets/images/projects/PhotographerHomePage.webp'
+import OpenAIClient from '../assets/images/projects/OpenAIClientApp.webp'
 
 
 export const projects = [
@@ -94,6 +95,13 @@ export const projects = [
         projectDemo: 'https://proffery.github.io/odin-weather-app/',
         projectCode: 'https://github.com/proffery/odin-weather-app',
         projectTitle: 'Project: Weather App',
+        projectCategory: 'Java Script'
+    },
+    {
+        imageUrl: OpenAIClient,
+        projectDemo: 'https://proffery.github.io/openaiclient/',
+        projectCode: 'https://github.com/proffery/openaiclient',
+        projectTitle: 'OpenAI API client',
         projectCategory: 'Java Script'
     },
     {
