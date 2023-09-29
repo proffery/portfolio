@@ -14,7 +14,7 @@ export const About = () => {
     return (
         <StyledAbout theme={theme} id="about">
             <StyledContainer theme={theme} direction="column" align="center" justify="center">
-                <StyledAboutMe theme={theme} direction="column" align="center" wrap="wrap" justify="center">
+                <AboutMe theme={theme} direction="column" align="center" wrap="wrap" justify="center">
                     <StyledLinks align="center" >
                         <Link href="#" aria-label="Open Whatsapp group">
                             <Icon iconId="aboutWhatsapp" />
@@ -37,7 +37,7 @@ export const About = () => {
                             <li>My phone number +989212073348</li>
                         </StyledList>
                     </FlexWrapper>
-                </StyledAboutMe>
+                </AboutMe>
             </StyledContainer>
         </StyledAbout>
     )
@@ -60,7 +60,7 @@ const StyledAbout = styled.section`
 
 const StyledContainer = styled(Container)`
     position: relative;
-    height: 100vh;
+    height: 70vh;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second
@@ -68,13 +68,13 @@ const StyledContainer = styled(Container)`
     background-image: url(${photo}), url(${aboutMap});
     background-repeat: no-repeat;
     background-position: bottom right, bottom center;
-    background-size: contain, cover;
+    background-size: contain;
     @media ${theme.media.mobile} {
         background-position: bottom right, center;
     }
 `
 
-const StyledAboutMe = styled(FlexWrapper)`
+const AboutMe = styled(FlexWrapper)`
     position: absolute;
     top: 90%;
     left: 10%;
@@ -92,18 +92,19 @@ const StyledAboutMe = styled(FlexWrapper)`
     min-width: 250px;
     padding: 30px;
     padding-top: 10px;
-    margin-left: 30px;
     @media ${theme.media.tablet} {
         top: 10%;
-        left: 10%;
-        transform: translate(-10%, -10%);
+        left: 50%;
+        transform: translate(-50%, -10%);
+        width: 90%;
     }
     
     @media ${theme.media.mobile} {
-        top: 20%;
-        left: 0%;
-        transform: translate(-10%, -20%);
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -10%);
         padding-top: 30px;
+        width: auto;
     }
 `
 

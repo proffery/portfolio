@@ -12,9 +12,9 @@ export const Footer = () => {
     return (
         <StyledFooter theme={theme}>
             <StyledBackgroundTop theme={theme} height="100%" width="100%"></StyledBackgroundTop>
-            <StyledBackgroundBottom theme={theme} direction="column" height="50%" width="100%">
+            <StyledBackgroundBottom theme={theme} direction="column" width="100%">
                 <Name theme={theme}>Coded by&nbsp;<Link href="#" color="white" fontSize="16px">Dmitry Shamko</Link></Name>
-                <Copyrights theme={theme}>All Rights Reserved 2023@</Copyrights>
+                <Copyrights theme={theme}>All Rights Reserved 2023</Copyrights>
             </StyledBackgroundBottom>
         </StyledFooter>
     )
@@ -39,9 +39,7 @@ const Name = styled.span`
     justify-content: center;
     font-family: Inter, sans-serif;
     font-size: 16px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
     color: white;
     outline: 1px solid ${props => props.theme === 'light' ?
         theme.light.color.background.second :
@@ -79,7 +77,7 @@ const StyledBackgroundTop = styled(FlexWrapper)`
 `
 
 const StyledBackgroundBottom = styled(FlexWrapper)`
-    height: 100%;
+    height: 70%;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second

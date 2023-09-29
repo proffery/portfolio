@@ -1,13 +1,14 @@
-import logoWhite from '../../assets/images/logo.png'
-import logoGray from '../../assets/images/logo-gray.png'
 import styled from 'styled-components'
+import { theme }  from "../../styles/Theme.styled"
+
 type LogoPropsType = {
     color: "white" | "gray"
 }
 export const Logo = (props: LogoPropsType) => {
+
     return (
-        <StyledLogoLink href="#">
-            <StyledLogoImg src={props.color === "white" ? logoWhite : logoGray} alt="Logo" />
+        <StyledLogoLink href="#" aria-label='Logotype main page link'>
+            <StyledLogoText color={props.color}>DS</StyledLogoText>
         </StyledLogoLink>
     )
 }
@@ -16,11 +17,13 @@ const StyledLogoLink = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 999;
+    z-index: 1;
 `
 
-const StyledLogoImg = styled.img`
-    display: flex;
-    height: 100%;
-    width: auto;
+const StyledLogoText = styled.span`
+font-family: Kalam, sans-serif;
+font-weight: 700;
+font-size: 40px;
+margin-left: 3px;
+    color: ${props => props.color === "gray" ? theme.light.color.text.primary : theme.light.color.text.second};
 `

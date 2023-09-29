@@ -80,7 +80,7 @@ const StyledHeader = styled.header<StyledHeaderTypes>`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 999999;
+    z-index: 99999;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.primary :
         theme.dark.color.background.primary
@@ -97,6 +97,7 @@ const StyledLeft = styled(FlexWrapper)<StyledHeaderTypes>`
     display: flex;
     position: relative;
     width: 10%;
+    z-index: 0;
     background-color: ${props => props.theme === 'light' && props.scrolled ?
         theme.light.color.background.primary :
         props => props.theme === 'light' ? 

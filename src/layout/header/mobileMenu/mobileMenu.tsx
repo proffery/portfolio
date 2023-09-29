@@ -86,7 +86,7 @@ const MobileMenuPopup = styled.div<MobileMenuTypes>`
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 999;
+    z-index: 9999;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.primary :
         theme.dark.color.background.primary
@@ -107,11 +107,11 @@ const MobileMenuPopup = styled.div<MobileMenuTypes>`
 const BurgerButton = styled.button<MobileMenuTypes>`
     position: fixed;
     left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 85px;
-    z-index: 9999;
+    top: 50px;
+    transform: translateX(-160%);
+    width: 36px;
+    height: 36px;
+    z-index: 99999;
     background-color: transparent;
     border: none;
 

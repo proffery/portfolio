@@ -270,8 +270,11 @@ const MainBannerWrapper = styled(FlexWrapper)`
         theme.light.color.background.bannerBorder :
         theme.dark.color.background.bannerBorder 
     };
-    border-radius: 150px 0;
+    border-radius: 200px 0;
     z-index: 999999;
+    @media ${theme.media.mobile} {
+        border-radius: 112px 0;
+    }
 `
 
 const StyledLinkButton = styled(Link)`
@@ -330,6 +333,10 @@ const StyledAppsRight = styled(FlexWrapper)`
     padding-left: 32px;
     z-index: 0;
     @media ${theme.media.tablet} {
+        width: 100%;
+        padding-left: 0px;
+    }
+    @media ${theme.media.mobile} {
         width: 100%;
     }
 `
