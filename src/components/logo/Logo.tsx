@@ -8,7 +8,7 @@ export const Logo = (props: LogoPropsType) => {
 
     return (
         <StyledLogoLink href="#" aria-label='Logotype main page link'>
-            <StyledLogoText color={props.color}>DS</StyledLogoText>
+            <StyledLogoText color={props.color}>&nbsp;DS</StyledLogoText>
         </StyledLogoLink>
     )
 }
@@ -16,14 +16,15 @@ export const Logo = (props: LogoPropsType) => {
 const StyledLogoLink = styled.a`
     display: flex;
     align-items: center;
-    justify-content: center;
     z-index: 1;
 `
 
 const StyledLogoText = styled.span`
-font-family: Kalam, sans-serif;
-font-weight: 700;
-font-size: 40px;
-margin-left: 3px;
+    font-family: Kalam, sans-serif;
+    font-weight: 700;
+    font-size: 35px;
     color: ${props => props.color === "gray" ? theme.light.color.text.primary : theme.light.color.text.second};
+    @media ${theme.media.mobile} {
+        font-size: 26px;
+    }
 `

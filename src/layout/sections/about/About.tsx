@@ -34,7 +34,7 @@ export const About = () => {
                             <li>I’m 36 years old</li>
                             <li>I have started my interest in this field from 2022</li>
                             <li>I’m designer, video editor, web developer and ...</li>
-                            <li>My phone number +989212073348</li>
+                            <li>My phone number +375256979075</li>
                         </StyledList>
                     </FlexWrapper>
                 </AboutMe>

@@ -8,6 +8,8 @@ import { theme } from "../../styles/Theme.styled"
 import { Container } from "../../components/Container"
 import { MobileMenu } from "./mobileMenu/MobileMenu"
 import { ThemeChangeButton } from "./themeChangeButton/ThemeChangeButton"
+import { Icon } from "../../components/icon/Icon"
+import { Link } from "../../components/link/Link.styled"
 
 type HeaderTypes = {
     setCurrentTheme: any,
@@ -44,6 +46,17 @@ export const Header = ({ setCurrentTheme }: HeaderTypes) => {
                     <StyledThemeChangeButton setCurrentTheme={setCurrentTheme}/>
                 </StyledRight>
             </Container>
+            {scrolled && 
+                <TopButton type="button" href="#" theme={theme}>
+                    <Icon 
+                        height="100%"
+                        width="100%" 
+                        viewBox="-6 -2 37 35" 
+                        iconId="arrowRight"
+                        aria-label="Go to top" 
+                    />
+                </TopButton>
+            }
         </StyledHeader>
     )
 }
@@ -72,6 +85,9 @@ const StyledHeader = styled.header<StyledHeaderTypes>`
     };
     box-shadow: ${props => props.scrolled && theme.light.shadow.main};
     transition: all ease-in .2s;
+    @media ${theme.media.mobile} {
+        height: 44px;
+    }
 `
 
 const StyledThemeChangeButton = styled(ThemeChangeButton)`
@@ -123,4 +139,42 @@ const StyledRight = styled(FlexWrapper)`
         theme.dark.color.background.primary
     };
     transition: all ease-in .2s;
+`
+
+const TopButton = styled(Link)`
+    display: none;
+    position: fixed;
+    height: 50px;
+    left: 0;
+    top: 90%;
+    transform-origin: top left;
+    transform: rotate(-90deg);
+    background-color: ${props => props.theme === 'light' ?
+        theme.light.color.background.second :
+        theme.dark.color.background.second
+    };
+    border-radius: 0 0 22px 22px;
+    border: 2px solid ${props => props.theme === 'light' ?
+        theme.light.color.background.bannerBorder :
+        theme.dark.color.background.bannerBorder 
+    };
+
+    color: ${props => props.theme === 'light' ?
+        theme.light.color.text.second :
+        theme.dark.color.text.primary
+    };
+    z-index: -1;
+    border-top: none;
+    opacity: .8;
+
+
+    @media ${theme.media.tablet} {
+        display: flex;
+    }
+    
+    @media ${theme.media.mobile} {
+        height: 40px;
+        min-width: 80px;
+        border-radius: 0 0 16px 16px;
+    }
 `

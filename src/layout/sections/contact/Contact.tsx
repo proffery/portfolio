@@ -48,7 +48,7 @@ export const Contact = () => {
                                 </IconWrapper>
                                 <FlexWrapper direction="column">
                                     <ContactTitleH4 theme={theme}>Phone</ContactTitleH4>
-                                    <ContactDescription theme={theme}>+989150063913</ContactDescription>
+                                    <ContactDescription theme={theme}>+375256979075</ContactDescription>
                                 </FlexWrapper>
                             </ContactIconWrapper>
                             <ContactIconWrapper theme={theme} align="center">
@@ -57,7 +57,7 @@ export const Contact = () => {
                                 </IconWrapper>
                                 <FlexWrapper direction="column">
                                     <ContactTitleH4 theme={theme}>Email</ContactTitleH4>
-                                    <ContactDescription theme={theme}>arkn3913@gmail.com</ContactDescription>
+                                    <ContactDescription theme={theme}>proffery@gmail.com</ContactDescription>
                                 </FlexWrapper>
                             </ContactIconWrapper>
                         </StyledContactWrapper>
@@ -265,7 +265,7 @@ const FormWrapper = styled(FlexWrapper)`
 const FixedContact = styled(FlexWrapper)`
     position: fixed;
     left: 0;
-    top: 60%;
+    top: 70%;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second
@@ -277,6 +277,7 @@ const FixedContact = styled(FlexWrapper)`
     };
     border-left: none;
     z-index: 200;
+    opacity: 0.8;
     @media ${theme.media.tablet} {
         display: none;
     }

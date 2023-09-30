@@ -108,14 +108,14 @@ export const projects = [
         imageUrl: CvApplication,
         projectDemo: 'https://proffery.github.io/odin-cv-application/',
         projectCode: 'https://github.com/proffery/odin-cv-application',
-        projectTitle: 'Project: CV Application',
+        projectTitle: 'Project: CV Application. Tailwind CSS',
         projectCategory: 'React'
     },
     {
         imageUrl: MemoryCard,
         projectDemo: 'https://proffery.github.io/odin-memory-card/',
         projectCode: 'https://github.com/proffery/odin-memory-card',
-        projectTitle: 'Project: Memory Card',
+        projectTitle: 'Project: Memory Card.',
         projectCategory: 'React'
     },
     {
@@ -136,7 +136,7 @@ export const projects = [
         imageUrl: PortfolioProject,
         projectDemo: 'https://proffery.github.io/portfolio-project-one/',
         projectCode: 'https://github.com/proffery/portfolio-project-one',
-        projectTitle: 'Responsive Animated Portfolio Page',
+        projectTitle: 'Responsive Animated Portfolio Page React-Bootstrap',
         projectCategory: 'React'
     },
     {

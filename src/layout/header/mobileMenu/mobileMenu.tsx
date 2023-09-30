@@ -115,17 +115,17 @@ const MobileMenuPopup = styled.div<StyledMobileMenuTypes>`
 const BurgerButton = styled.button<StyledMobileMenuTypes>`
     position: fixed;
     right: 25px;
-    top: 15px;
-    width: 36px;
-    height: 36px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
     z-index: 99999;
     background-color: transparent;
     border: none;
     cursor: pointer;
     span {
         display: block;
-        width: 36px;
-        height: 3px;
+        width: 30px;
+        height: 2px;
         background-color: ${props => props.theme === 'light' ?
             theme.light.color.text.primary :
             theme.dark.color.text.primary
@@ -140,13 +140,13 @@ const BurgerButton = styled.button<StyledMobileMenuTypes>`
             content: "";
             position: absolute;
             display: block;
-            width: 36px;
-            height: 3px;
+            width: 30px;
+            height: 2px;
             background-color: ${props => props.theme === 'light' ?
                 theme.light.color.text.primary :
                 theme.dark.color.text.primary
             };
-            transform: translateY(-10px);
+            transform: translateY(-8px);
 
             ${props => props.isOpen && css<{isOpen: boolean}>`
                 transform: translateY(0) rotate(-45deg);
@@ -157,17 +157,17 @@ const BurgerButton = styled.button<StyledMobileMenuTypes>`
             content: "";
             position: absolute;
             display: block;
-            width: 36px;
-            height: 3px;
+            width: 30px;
+            height: 2px;
             background-color: ${props => props.theme === 'light' ?
                 theme.light.color.text.primary :
                 theme.dark.color.text.primary
             };
-            transform: translateY(10px);
+            transform: translateY(8px);
 
             ${props => props.isOpen && css<{isOpen: boolean}>`
                 transform: translateY(0) rotate(45deg);
-                width: 36px;
+                width: 30px;
             `}
         }
     }
