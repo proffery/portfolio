@@ -69,14 +69,14 @@ export const Main = () => {
                                 <StyledTitleH1 theme={themeName} aria-label="Web Developer">{text}&nbsp;</StyledTitleH1>
                             </FlexWrapper>
                             <StyledText>Draft is a revolutionary mobile app built to help you manage your business easily and save your money.</StyledText>
-                            <FlexWrapper align="center" justify="start" gap="28px" wrap="wrap">
+                            <ResumeLinksWrapper align="center" justify="start" wrap="wrap">
                                 <StyledLinkButton href="#projects" type="button" color="white">See Projects
                                     <IconButtonWrapper>
                                         <Icon viewBox="-8 -5 37 35" iconId="arrowRight" />
                                     </IconButtonWrapper>
                                 </StyledLinkButton>
                                 <StyledResumeLink href="#">Download Resume</StyledResumeLink>
-                            </FlexWrapper>
+                            </ResumeLinksWrapper>
                         </TitleWrapper>
                     </MainBannerWrapper>
                 </StyledBannerRight>
@@ -146,6 +146,13 @@ const MainPhoto = styled.img`
     };
     object-fit: cover;
 `
+const ResumeLinksWrapper = styled(FlexWrapper)`
+    gap: 26px;
+    @media ${theme.media.mobile} {
+        gap: 16px;
+    }
+`
+
 
 const MainApps = styled.div`
     position: relative;
