@@ -11,34 +11,34 @@ export const skills = [
     {
         title: "HTML",
         imageUrl: cardHtml,
-        category: "Web",
+        category: "front",
     },{
         title: "CSS",
         imageUrl: cardCss,
-        category: "Web",
+        category: "front",
     },{
         title: "JavaScript",
         imageUrl: cardJs,
-        category: "Web",
+        category: "front",
     },{
         title: "TypeScript",
         imageUrl: cardTs,
-        category: "Web",
+        category: "front",
     },{
         title: "React",
         imageUrl: cardReact,
-        category: "Technology",
+        category: "front",
     },{
         title: "Bootstrap",
         imageUrl: cardBootstrap,
-        category: "Technology",
+        category: "front",
     },{
         title: "Tailwind",
         imageUrl: cardTailwind,
-        category: "Technology",
+        category: "front",
     },{
         title: "Firebase",
         imageUrl: cardFirebase,
-        category: "Technology",
+        category: "back",
     },
 ]

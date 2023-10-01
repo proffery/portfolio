@@ -2,10 +2,6 @@ import { Icon } from "../../../components/icon/Icon"
 import photo from '../../../assets/images/Photo-my.webp'
 import styled from "styled-components"
 import { FlexWrapper } from "../../../components/FlexWrapper"
-import photoshop from '../../../assets/images/icon-photoshop.png'
-import illustrator from '../../../assets/images/icon-llustrator.png'
-import afterEffect from '../../../assets/images/icon-after-effects.png'
-import figma from '../../../assets/images/icon-figma.png'
 import { Link } from "../../../components/link/Link.styled"
 import { useContext, useEffect, useState } from "react"
 import { ThemeContext } from "../../../context/ThemeContext"
@@ -17,7 +13,7 @@ import { link } from "fs"
 export const Main = () => {
     const [loopNumber, setLoopNumber] = useState(0)
     const [isDeleting, setIsDeleting] = useState(false)
-    const toRotate = ['Web Developer', 'Web Designer', 'UI/UX Designer']
+    const toRotate = ['Web Developer', 'JS/TS Developer', 'React Developer']
     const [text, setText] = useState('')
     const [delta, setDelta] = useState(300 - Math.random() * 100)
     const period = 2000
@@ -87,27 +83,27 @@ export const Main = () => {
                     <AppsWrapper justify="center" gap="12px" wrap="wrap">
                         <MainApps theme={themeName}>
                             <MainAppsIconWrapper theme={themeName}>
-                                <MainAppsIcon src={photoshop} alt="Photoshop icon"/>
+                                <MainAppsIcon iconId="typeScript" height="100%" width="100%" viewBox="-26 -28 180 180" />
                             </MainAppsIconWrapper>
-                            <AppText>Photoshop</AppText>
+                            <AppText>TypeScript</AppText>
                         </MainApps>
                         <MainApps theme={themeName}>
                         <MainAppsIconWrapper theme={themeName}>
-                            <MainAppsIcon src={illustrator} alt="Illustrator icon"/>
+                            <MainAppsIcon iconId="react" height="100%" width="100%" viewBox="-10 -12 150 150" />
                         </MainAppsIconWrapper>
-                            <AppText>Illustrator</AppText>
+                            <AppText>React</AppText>
                         </MainApps>
                         <MainApps theme={themeName}>
                         <MainAppsIconWrapper theme={themeName}>
-                            <MainAppsIcon src={afterEffect} alt="After Effect icon"/>
+                            <MainAppsIcon iconId="redux" height="100%" width="100%" viewBox="-18 -10 165 165" />
                         </MainAppsIconWrapper>
-                            <AppText>After Effects</AppText>
+                            <AppText>Redux</AppText>
                         </MainApps>
                         <MainApps theme={themeName}>
                         <MainAppsIconWrapper theme={themeName}>
-                            <MainAppsIcon src={figma} alt="Figma icon"/>
+                            <MainAppsIcon iconId="styled" height="100%" width="100%" viewBox="2 -0 30 30" />
                         </MainAppsIconWrapper>
-                            <AppText>Figma</AppText>
+                            <AppText>Styled Components</AppText>
                         </MainApps>
                     </AppsWrapper>
                 </StyledAppsRight>
@@ -199,13 +195,13 @@ const AppText = styled.span`
     position: absolute;
     width: 100%;
     text-align: center;
-    top: 50%;
+    top: 80%;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -80%);
     color: ${theme.light.color.text.second};
     font-size: 20px;
     font-weight: 600;
-    line-height: 136%;
+    line-height: 80%;
     @media ${theme.media.tablet} {
         font-size: 34px;
     }
@@ -220,20 +216,8 @@ const AppsWrapper = styled(FlexWrapper)`
     margin-right: auto;
 `
 
-const MainAppsIcon = styled.img`
+const MainAppsIcon = styled(Icon)`
     display: flex;
-    border-radius: 50% 50%;
-    width: 55px;
-    height: 55px;
-    @media ${theme.media.tablet} {
-        width: 92px;
-        height: 92px;
-    }
-    
-    @media ${theme.media.mobile} {
-        width: 50px;
-        height: 50px;
-    }
 `
 
 const MainAppsIconWrapper = styled.div`
@@ -242,15 +226,22 @@ const MainAppsIconWrapper = styled.div`
         theme.light.color.background.primary :
         theme.dark.color.background.primary 
     };
-    border-radius: 50% 50%;
+    border-radius: 50%;
     left: 50%;
     top: -50%;
     transform: translate(-50%, 10%);
+    background-color: black;
+    overflow: hidden;
+    width: 75px;
+    height: 75px;
+
     @media ${theme.media.tablet} {
         border: 16px solid ${props => props.theme === 'light' ?
             theme.light.color.background.primary :
             theme.dark.color.background.primary 
         };
+        width: 125px;
+        height: 125px;
     }
     
     @media ${theme.media.mobile} {
@@ -258,6 +249,8 @@ const MainAppsIconWrapper = styled.div`
             theme.light.color.background.primary :
             theme.dark.color.background.primary 
         };
+        width: 72px;
+        height: 72px;
     }
 `
 

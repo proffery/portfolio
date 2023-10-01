@@ -24,7 +24,7 @@ export const projects = [
         imageUrl: Recipes,
         projectDemo: 'https://proffery.github.io/odin-recipes/',
         projectCode: 'https://github.com/proffery/odin-recipes',
-        projectTitle: 'My First Webpage. Project: Recipes',
+        projectTitle: 'My First Webpage. Project: Recipes. Foundations Course',
         projectCategory: 'HTML, CSS'
     },
     {
@@ -52,63 +52,63 @@ export const projects = [
         imageUrl: RockPaperScissors,
         projectDemo: 'https://proffery.github.io/odin-rock-paper-scissors/',
         projectCode: 'https://github.com/proffery/odin-rock-paper-scissors',
-        projectTitle: 'Project: Rock Paper Scissors',
+        projectTitle: 'Project: Rock Paper Scissors. Foundations Course',
         projectCategory: 'Java Script'
     },
     {
         imageUrl: Calculator,
         projectDemo: 'https://proffery.github.io/odin-calculator/',
         projectCode: 'https://github.com/proffery/odin-calculator',
-        projectTitle: 'Project: Calculator',
+        projectTitle: 'Project: Calculator. Foundations Course',
         projectCategory: 'Java Script'
     },
     {
         imageUrl: EtchASketch,
         projectDemo: 'https://proffery.github.io/odin-etch-a-sketch/',
         projectCode: 'https://github.com/proffery/odin-etch-a-sketch',
-        projectTitle: 'Project: Etch-a-Sketch',
+        projectTitle: 'Project: Etch-a-Sketch. Foundations Course',
         projectCategory: 'Java Script'
     },
     {
         imageUrl: Library,
         projectDemo: 'https://proffery.github.io/odin-library/',
         projectCode: 'https://github.com/proffery/odin-library',
-        projectTitle: 'Project: Library',
+        projectTitle: 'Project: Library. Foundations Course',
         projectCategory: 'Java Script'
     },
     {
         imageUrl: TicTacToe,
         projectDemo: 'https://proffery.github.io/odin-tic-tac-toe/',
         projectCode: 'https://github.com/proffery/odin-tic-tac-toe',
-        projectTitle: 'Project: Tic Tac Toe',
+        projectTitle: 'Project: Tic Tac Toe. Foundations Course',
         projectCategory: 'Java Script'
     },
     {
         imageUrl: TodoList,
         projectDemo: 'https://proffery.github.io/odin-todo-list/',
         projectCode: 'https://github.com/proffery/odin-todo-list',
-        projectTitle: 'Project: Todo List',
+        projectTitle: 'Project: Todo List. Foundations Course',
         projectCategory: 'Java Script'
     },
     {
         imageUrl: WeatherApp,
         projectDemo: 'https://proffery.github.io/odin-weather-app/',
         projectCode: 'https://github.com/proffery/odin-weather-app',
-        projectTitle: 'Project: Weather App',
+        projectTitle: 'Project: Weather App. Foundations Course',
         projectCategory: 'Java Script'
     },
     {
         imageUrl: OpenAIClient,
         projectDemo: 'https://proffery.github.io/openaiclient/',
         projectCode: 'https://github.com/proffery/openaiclient',
-        projectTitle: 'OpenAI API client',
+        projectTitle: 'OpenAI API Client',
         projectCategory: 'Java Script'
     },
     {
         imageUrl: CvApplication,
         projectDemo: 'https://proffery.github.io/odin-cv-application/',
         projectCode: 'https://github.com/proffery/odin-cv-application',
-        projectTitle: 'Project: CV Application. Tailwind CSS',
+        projectTitle: 'Project: CV Application.',
         projectCategory: 'React'
     },
     {
@@ -129,21 +129,21 @@ export const projects = [
         imageUrl: BlogApp,
         projectDemo: 'https://proffery.github.io/blog-app/',
         projectCode: 'https://github.com/proffery/blog-app',
-        projectTitle: 'Simple Blog App',
+        projectTitle: 'Simple Blog App. Firebase',
         projectCategory: 'React'
     },
     {
         imageUrl: PortfolioProject,
         projectDemo: 'https://proffery.github.io/portfolio-project-one/',
         projectCode: 'https://github.com/proffery/portfolio-project-one',
-        projectTitle: 'Responsive Animated Portfolio Page React-Bootstrap',
+        projectTitle: 'Responsive Animated Portfolio Page. React-Bootstrap. Firebase',
         projectCategory: 'React'
     },
     {
         imageUrl: PhotographerHomePage,
         projectDemo: 'https://proffery.github.io/portfolio-project-two/',
         projectCode: 'https://github.com/proffery/portfolio-project-two',
-        projectTitle: 'Responsive Photographer Website React-Bootstrap',
+        projectTitle: 'Responsive Photographer Website React-Bootstrap. Firebase',
         projectCategory: 'React'
     },
 ]

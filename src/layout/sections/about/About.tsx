@@ -33,7 +33,7 @@ export const About = () => {
                             <li>I was born in Belarus</li>
                             <li>I’m 36 years old</li>
                             <li>I have started my interest in this field from 2022</li>
-                            <li>I’m designer, video editor, web developer and ...</li>
+                            <li>I’m web developer</li>
                             <li>My phone number +375256979075</li>
                         </StyledList>
                     </FlexWrapper>
@@ -137,7 +137,7 @@ const StyledList = styled.ul`
         left: 0;
         width: 18px;
         height: 18px;
-        margin-top: 3px;
+        margin-top: 4px;
         background-image: ${props => props.theme === 'light' ? theme.light.gradient.dot : theme.dark.gradient.dot};
         
         @media ${theme.media.mobile} {

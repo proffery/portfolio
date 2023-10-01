@@ -88,6 +88,8 @@ const StyledContainer = styled(Container)`
 `
 const StyledProjectWrapper = styled(FlexWrapper)`
     margin-top: 40px;
+    max-height: 100vh;
+    overflow-y: auto;
 `
 
 const CategoryButton = styled(Button)`

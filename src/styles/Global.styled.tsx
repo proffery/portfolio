@@ -37,6 +37,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
             theme.light.color.background.primary :
             theme.dark.color.background.primary
         };
+        
     }
 
     code {
@@ -53,6 +54,28 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
             padding: 27px 0;
         }
     }
+    //////SCROLLBAR//////
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888; 
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
+
 
     @media (prefers-reduced-motion: reduce) {
         animation: unset;

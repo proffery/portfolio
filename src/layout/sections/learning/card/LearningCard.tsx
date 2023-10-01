@@ -16,9 +16,9 @@ export const LerningCard = (props: LearningCardPropsType) => {
             theme={theme} 
             backgroundImage={`url("${props.imageUrl}")`} 
             align="end"
-            justify="end"
+            justify="center"
         >
-            {/* <StyledTitle theme={theme}>{props.title}</StyledTitle> */}
+            <StyledTitle theme={theme}>{props.title}</StyledTitle>
         </StyledLearningCard>
     )
 }
@@ -28,34 +28,24 @@ type StyledLearningCarPropsType = {
 }
 
 const StyledTitle = styled.h3`
+    position: absolute;
+    top: 100%;
     font-size: 22px;
-    color: ${props => props.color || (props => props.theme === 'light' ? theme.light.color.text.primary : theme.dark.color.text.primary)};
+    color: ${props => props.color || (props => props.theme === 'light' ? theme.light.color.text.second : theme.dark.color.text.primary)};
     font-weight: 700;
     line-height: 136%;
-    text-shadow: ${props => props.theme === 'light' ?
-        theme.light.shadow.text :
-        theme.dark.shadow.text
-    };
     @media ${theme.media.mobile} {
         font-size: 11px;
     }
 `
 
 const StyledLearningCard = styled(FlexWrapper)<StyledLearningCarPropsType>`
-    background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.card :
-        theme.dark.color.background.card
-    };
-    box-shadow: ${props => props.theme === 'light' ?
-        theme.light.shadow.card :
-        theme.dark.shadow.card
-    };
     background-image: ${props => props.backgroundImage};
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    min-width: 330px;
-    min-height: 192px;
+    min-width: 100px;
+    min-height: 100px;
     border-radius: 10px;
     padding-right: 10px;
     padding-left: 12px;
