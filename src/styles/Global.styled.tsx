@@ -28,6 +28,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
     body {
         margin: 0 auto;
         height: 100vh;
+        min-width: 320px;
         font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
             'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
             sans-serif;

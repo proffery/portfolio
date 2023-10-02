@@ -7,7 +7,6 @@ import { useContext, useEffect, useState } from "react"
 import { ThemeContext } from "../../../context/ThemeContext"
 import { Container } from "../../../components/Container"
 import { theme } from "../../../styles/Theme.styled"
-import { link } from "fs"
 import { font } from "../../../styles/Font"
 
 
@@ -60,14 +59,15 @@ export const Main = () => {
                         </FlexWrapper>
                         <TitleWrapper direction="column" gap="20px" width="47%">
                             <FlexWrapper wrap="wrap">
-                                <StyledTitleH2 theme={themeName}>I’m &nbsp;
+                                <StyledTitleH2 theme={themeName}>I’m &nbsp;</StyledTitleH2>
+                                <StyledTitleH2 theme={themeName}>
                                     <Link href="#">Dmitry Shamko&nbsp;</Link>
                                 </StyledTitleH2>
                                 <StyledTitleH1 theme={themeName} aria-label="Web Developer">{text}&nbsp;</StyledTitleH1>
                             </FlexWrapper>
                             <StyledText>Draft is a revolutionary mobile app built to help you manage your business easily and save your money.</StyledText>
                             <ResumeLinksWrapper align="center" justify="start" wrap="wrap">
-                                <StyledLinkButton href="#projects" type="button" color="white">See Projects
+                                <StyledLinkButton href="#projects" type="button" color={theme.light.color.text.second}>See Projects
                                     <IconButtonWrapper>
                                         <Icon viewBox="-8 -5 37 35" iconId="arrowRight" />
                                     </IconButtonWrapper>
@@ -257,8 +257,7 @@ const MainAppsIconWrapper = styled.div`
 
 const MainBannerWrapper = styled(FlexWrapper)`
     position: relative;
-    margin-top: 100px;
-    margin-bottom: 80px;
+    margin: 80px 0;
     padding: 40px 44px;
     min-height: 508px;
     left: -5%;
@@ -356,9 +355,9 @@ const StyledBannerRight = styled(FlexWrapper)`
     &::before {
         content: "+";
         position: absolute;
-        top: 2%;
+        top: 1%;
         left: 30%;
-        transform: rotate(45deg) translate(-20%, -2%);
+        transform: rotate(45deg) translate(-20%, -1%);
         height: 88px;
         width: 88px;
         ${font({weight: 600, lineHeight: 1.36, Fmin: 100, Fmax: 150})}
@@ -372,9 +371,9 @@ const StyledBannerRight = styled(FlexWrapper)`
             transform: rotate(45deg) translate(-80%, -10%);
         }
         @media ${theme.media.mobile} {
-            top: 12%;
+            top: 8%;
             left: 80%;
-            transform: rotate(45deg) translate(-80%, -12%);
+            transform: rotate(45deg) translate(-80%, -8%);
         }
     }
 

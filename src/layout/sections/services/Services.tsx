@@ -13,7 +13,7 @@ export const Services = () => {
         <StyledServices id="services" theme={theme}>
             <Container direction="column">
                 <SectionTitle theme={theme}>Services</SectionTitle>
-                <FlexWrapper wrap="wrap" align="center" justify="center" gap="30px">
+                <FlexWrapper wrap="wrap" align="center" justify="center">
                     <ServicesCard iconId="servicesVideo" title="Video Edit Service" link="#" />
                     <ServicesCard iconId="servicesDesign" title="Ui/Ux Designer" link="#" />
                     <ServicesCard iconId="servicesDevelop" title="Website Developer" link="#" />
@@ -24,6 +24,15 @@ export const Services = () => {
 }
 
 const StyledServices = styled.section`
+    ${FlexWrapper} {
+        gap: 30px;
+        @media ${theme.media.tablet} {
+            gap: 26px;
+        }
+        @media ${theme.media.mobile} {
+            gap: 14px;
+        }
+    }
     display: flex;
     flex-direction: column;
     align-items: center;

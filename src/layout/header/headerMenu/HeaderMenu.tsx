@@ -15,8 +15,7 @@ export const HeaderMenu = () => {
                         color={themeName === 'light' ? 
                             theme.light.color.text.primary :
                             theme.dark.color.text.primary
-                        } 
-                        fontWeight="400" 
+                        }
                         href="#main">Home</Link>
                 </li>
                 <li role="menuitem">
@@ -25,7 +24,6 @@ export const HeaderMenu = () => {
                             theme.light.color.text.primary :
                             theme.dark.color.text.primary
                         } 
-                        fontWeight="400" 
                         href="#projects">Projects</Link>
                 </li>
                 <li role="menuitem">
@@ -34,7 +32,6 @@ export const HeaderMenu = () => {
                             theme.light.color.text.primary :
                             theme.dark.color.text.primary
                         } 
-                        fontWeight="400" 
                         href="#about">About</Link>
                 </li>                
                 <li role="menuitem">
@@ -43,7 +40,6 @@ export const HeaderMenu = () => {
                             theme.light.color.text.primary :
                             theme.dark.color.text.primary
                         } 
-                        fontWeight="400" 
                         href="#contact">Contact</Link>
                 </li>
             </ul>

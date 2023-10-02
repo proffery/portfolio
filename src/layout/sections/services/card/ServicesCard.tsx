@@ -21,7 +21,7 @@ export const ServicesCard = (props: ServicesCardPropsType) => {
                 <Icon iconId={props.iconId} height="73px" width="73px" viewBox="0 0 70 70"/>
             </IconWrapper>
             <ServicesCardTitle theme={theme}>{props.title}</ServicesCardTitle>
-            <StyledLink fontSize="16px" href={props.link} theme={theme}>View More<Icon iconId="arrowRight" width="20%"/></StyledLink>
+            <StyledLink href={props.link} theme={theme}>View More<Icon iconId="arrowRight" width="20%"/></StyledLink>
         </StyledServicesCard>
     )
 }

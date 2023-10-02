@@ -25,8 +25,7 @@ export const MobileMenu = (props: MobileMenuTypes) => {
                             color={themeName === 'light' ? 
                                 theme.light.color.text.primary :
                                 theme.dark.color.text.primary
-                            } 
-                            fontWeight="400" 
+                            }
                             href="#main"
                             onClick={() => {setIsOpen(!isOpen)}}>Home</Link>
                     </li>
@@ -36,8 +35,7 @@ export const MobileMenu = (props: MobileMenuTypes) => {
                             color={themeName === 'light' ? 
                                 theme.light.color.text.primary :
                                 theme.dark.color.text.primary
-                            } 
-                            fontWeight="400" 
+                            }
                             href="#projects"
                             onClick={() => {setIsOpen(!isOpen)}}>Projects</Link>
                     </li>
@@ -47,8 +45,7 @@ export const MobileMenu = (props: MobileMenuTypes) => {
                             color={themeName === 'light' ? 
                                 theme.light.color.text.primary :
                                 theme.dark.color.text.primary
-                            } 
-                            fontWeight="400" 
+                            }
                             href="#about"
                             onClick={() => {setIsOpen(!isOpen)}}>About</Link>
                     </li>                
@@ -58,8 +55,7 @@ export const MobileMenu = (props: MobileMenuTypes) => {
                             color={themeName === 'light' ? 
                                 theme.light.color.text.primary :
                                 theme.dark.color.text.primary
-                            } 
-                            fontWeight="400" 
+                            }
                             href="#contact"
                             onClick={() => {setIsOpen(!isOpen)}}>Contact</Link>
                     </li>

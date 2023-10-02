@@ -59,7 +59,7 @@ const Copyrights = styled.span`
     width: 100%;
     align-items: center;
     justify-content: center;
-    ${font({family: 'Inter, sans-serif', weight: 700, lineHeight: 1, Fmin: 8, Fmax: 11})}
+    ${font({family: 'Inter, sans-serif', weight: 400, lineHeight: 1, Fmin: 8, Fmax: 11})}
     color: ${props => props.theme === 'light' ?
         theme.light.color.text.second :
         theme.dark.color.text.primary

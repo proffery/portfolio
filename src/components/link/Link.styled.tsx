@@ -4,8 +4,6 @@ import { theme } from "../../styles/Theme.styled"
 
 type StyledLinkPropsType = {
     type?: 'button',
-    fontSize?: string,
-    fontWeight?: string,
     color?: string,
     background?: string,
     borderRadius?: string,
@@ -14,12 +12,10 @@ type StyledLinkPropsType = {
 }
 
 export const Link = styled.a<StyledLinkPropsType>`
-    font-weight: ${props => props.fontWeight || "0"};
     display: flex;
     align-items: center;
     justify-content: center;
-    color: ${props => props.color || (props => props.theme === 'light' ? theme.light.color.text.link : theme.dark.color.text.link)};
-    font-size: ${props => props.fontSize || "none"};
+    color: ${props => props.color || (props.theme === 'light' ? theme.light.color.text.link : theme.dark.color.text.link)};
     text-decoration: none;
     cursor: pointer;
     &:hover {

@@ -55,7 +55,7 @@ export const Projects = () => {
                     })}
                     
                 </FlexWrapper>
-                <StyledProjectWrapper wrap="wrap" align="center" justify="center" gap="40px">
+                <StyledProjectWrapper wrap="wrap" align="center" justify="center">
                     {filteredProjects.map((project, index) => <ProgectsCard 
                         key={index + project.projectCategory}
                         imageUrl={project.imageUrl} 
@@ -91,6 +91,10 @@ const StyledProjectWrapper = styled(FlexWrapper)`
     margin-top: 40px;
     max-height: 100vh;
     overflow-y: auto;
+    gap: 38px;
+    @media ${theme.media.mobile} {
+        gap: 22px;
+    }
 `
 
 const CategoryButton = styled(Button)`
