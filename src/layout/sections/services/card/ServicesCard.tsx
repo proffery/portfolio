@@ -5,6 +5,7 @@ import { Link } from "../../../../components/link/Link.styled"
 import { useContext } from "react"
 import { ThemeContext } from "../../../../context/ThemeContext"
 import { theme } from "../../../../styles/Theme.styled"
+import { font } from "../../../../styles/Font"
 
 type ServicesCardPropsType = {
     iconId: string,
@@ -65,34 +66,18 @@ const IconWrapper = styled(FlexWrapper)`
 `
 
 const StyledLink = styled(Link)`
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 196%;
+    ${font({weight: 400, lineHeight: 1.96, Fmin: 8, Fmax: 16})}
     justify-content: flex-start;
     color: ${props => props.theme === 'light' ?
         theme.light.color.text.link :
         theme.dark.color.text.link
     };
-    @media ${theme.media.tablet} {
-        font-size: 13px;
-    }
-    @media ${theme.media.mobile} {
-        font-size: 8px;
-    }
 `
 
 const ServicesCardTitle = styled.h3`
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 125%;
+    ${font({weight: 500, lineHeight: 1.25, Fmin: 15, Fmax: 32})}
     color: ${props => props.theme === 'light' ?
         theme.light.color.text.primary :
         theme.dark.color.text.primary
     };
-    @media ${theme.media.tablet} {
-        font-size: 26px;
-    }
-    @media ${theme.media.mobile} {
-        font-size: 15px;
-    }
 `

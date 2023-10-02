@@ -165,7 +165,6 @@ const TopButton = styled(Link)`
     };
     z-index: -1;
     border-top: none;
-    opacity: .8;
 
 
     @media ${theme.media.tablet} {

@@ -8,6 +8,7 @@ import { Container } from "../../../components/Container"
 import { theme } from "../../../styles/Theme.styled"
 import { useContext } from "react"
 import { ThemeContext } from "../../../context/ThemeContext"
+import { font } from "../../../styles/Font"
 
 export const Contact = () => {
     const theme = useContext(ThemeContext)
@@ -123,17 +124,12 @@ const ContactWrapper = styled(FlexWrapper)`
 const FormTitle = styled.h3`
     display: flex;
     align-self: flex-start;
-    font-size: 36px;
-    font-weight: 500;
-    line-height: 136%;
+    ${font({weight: 500, lineHeight: 1.36, Fmin: 22, Fmax: 36})}
+
     color: ${props => props.theme === 'light' ?
         theme.light.color.text.primary :
         theme.dark.color.text.primary
     };
-
-    @media ${theme.media.mobile} {
-        font-size: 22px;
-    }
 `
 
 const StyledForm = styled.form`
@@ -184,17 +180,21 @@ const SubmitButton = styled(Button)`
     width: 118px;
     height: 44px;
     border-radius: 9px;
+    align-self: flex-start;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.text.link :
         theme.dark.color.text.link
     };
-    align-self: flex-start;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 136%;
+    ${font({weight: 500, lineHeight: 1.36, Fmin: 10, Fmax: 16})}
+
+    @media ${theme.media.tablet} {
+        min-width: 92px;
+        width: 92px;
+        height: 36px;
+        border-radius: 5.5px;
+    }
     
     @media ${theme.media.mobile} {
-        font-size: 10px;
         min-width: 72px;
         width: 72px;
         height: 26px;
@@ -207,9 +207,8 @@ const Field = styled.input.attrs((type) => ({
 }))`
     display: flex;
     width: 50%;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 136%;
+    ${font({weight: 400, lineHeight: 1.36, Fmin: 7, Fmax: 13})}
+
     padding: 0 18px;
     color: ${props => props.theme === 'light' ?
         theme.light.color.text.placeholder :
@@ -228,10 +227,6 @@ const Field = styled.input.attrs((type) => ({
             theme.light.color.text.placeholder :
             theme.dark.color.text.placeholder
         };
-
-        @media ${theme.media.mobile} {
-            font-size: 7px;
-        }
     }
     
     &:focus-visible {
@@ -243,7 +238,6 @@ const Field = styled.input.attrs((type) => ({
     @media ${theme.media.mobile} {
         height: 22px;
         border-radius: 5.5px;
-        font-size: 7px ;
     }
 `
 
@@ -277,7 +271,6 @@ const FixedContact = styled(FlexWrapper)`
     };
     border-left: none;
     z-index: 200;
-    opacity: 0.8;
     @media ${theme.media.tablet} {
         display: none;
     }
@@ -291,9 +284,11 @@ const ContactTitleH4 = styled.h4`
         theme.light.color.text.primary :
         theme.dark.color.text.primary
     };
+
     @media ${theme.media.tablet} {
         font-size: 30px;
     }
+
     @media ${theme.media.mobile} {
         font-size: 18px;
     }

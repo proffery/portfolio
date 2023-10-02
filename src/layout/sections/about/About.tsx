@@ -8,6 +8,7 @@ import { useContext } from "react"
 import { ThemeContext } from "../../../context/ThemeContext"
 import { Container } from "../../../components/Container"
 import { theme } from "../../../styles/Theme.styled"
+import { font } from "../../../styles/Font"
 
 export const About = () => {
     const theme = useContext(ThemeContext)
@@ -117,37 +118,43 @@ const StyledLinks = styled(FlexWrapper)`
 
 const StyledList = styled.ul`
     position: relative;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 136%;
-
+    ${font({weight: 400, lineHeight: 1.36, Fmin: 12, Fmax: 20})}
     li {
         display: flex;
         align-items: start;
         margin-left: 28px;
-        @media ${theme.media.mobile} {
+        
+        @media ${theme.media.tablet} {
             margin-left: 18px;
+        }
+        
+        @media ${theme.media.mobile} {
+            margin-left: 14px;
         }
     }
 
     li::before {
         position: absolute;
+        display: flex;
+        align-self: center;
         content: '';
         border-radius: 50% 50%;
         left: 0;
         width: 18px;
         height: 18px;
-        margin-top: 4px;
         background-image: ${props => props.theme === 'light' ? theme.light.gradient.dot : theme.dark.gradient.dot};
         
+        @media ${theme.media.tablet} {
+            width: 14px;
+            height: 14px;
+        }
+        
         @media ${theme.media.mobile} {
+            align-self: flex-start;
             width: 10px;
             height: 10px;
+            margin-top: 2px;
         }
-    }
-    
-    @media ${theme.media.mobile} {
-        font-size: 11px;
     }
 `
 

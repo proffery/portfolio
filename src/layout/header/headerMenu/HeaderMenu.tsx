@@ -3,6 +3,7 @@ import { Link } from "../../../components/link/Link.styled"
 import { useContext } from "react"
 import { ThemeContext } from "../../../context/ThemeContext"
 import { theme }  from "../../../styles/Theme.styled"
+import { font } from "../../../styles/Font"
 
 export const HeaderMenu = () => {
     const themeName = useContext(ThemeContext)
@@ -62,11 +63,11 @@ const StyledMenu = styled.nav`
     }
     li {
         margin-right: 35px;
+        ${font({Fmin: 8, Fmax: 16})}
     }
     z-index: 999;
     @media ${theme.media.mobile} {
         display: none;
-        font-size: 8px;
     }
     @media ${theme.media.tablet} {
         li {

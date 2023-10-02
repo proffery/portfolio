@@ -6,6 +6,7 @@ import { theme } from "../../styles/Theme.styled"
 import { ThemeContext } from "../../context/ThemeContext"
 import { useContext } from "react"
 import { FlexWrapper } from "../../components/FlexWrapper"
+import { font } from "../../styles/Font"
 
 export const Footer = () => {
     const theme = useContext(ThemeContext)
@@ -37,10 +38,12 @@ const Name = styled.span`
     width: 100%;
     align-items: center;
     justify-content: center;
-    font-family: Inter, sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: white;
+    ${font({family: 'Inter, sans-serif', weight: 700, lineHeight: 1, Fmin: 13, Fmax: 16})}
+    
+    color: ${props => props.theme === 'light' ?
+        theme.light.color.text.second :
+        theme.dark.color.text.primary
+    };
     outline: 1px solid ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second
@@ -49,9 +52,6 @@ const Name = styled.span`
         theme.light.color.background.second :
         theme.dark.color.background.second
     };
-    @media ${theme.media.mobile} {
-        font-size: 13px;
-    }
 `
 
 const Copyrights = styled.span`
@@ -59,18 +59,16 @@ const Copyrights = styled.span`
     width: 100%;
     align-items: center;
     justify-content: center;
-    font-family: Inter, sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    color: white;
+    ${font({family: 'Inter, sans-serif', weight: 700, lineHeight: 1, Fmin: 8, Fmax: 11})}
+    color: ${props => props.theme === 'light' ?
+        theme.light.color.text.second :
+        theme.dark.color.text.primary
+    };
     padding-top: 6px;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second
     };
-    @media ${theme.media.mobile} {
-        font-size: 8px;
-    }
 `
 
 const StyledBackgroundTop = styled(FlexWrapper)`

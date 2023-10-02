@@ -4,6 +4,7 @@ import { Link } from "../../../../components/link/Link.styled"
 import { useContext } from "react"
 import { ThemeContext } from "../../../../context/ThemeContext"
 import { theme } from "../../../../styles/Theme.styled"
+import { font } from "../../../../styles/Font"
 
 type ProjectsCardPropsType = {
     imageUrl: string,
@@ -41,7 +42,7 @@ const ProjectCardContent = styled(FlexWrapper)`
     transform: translateY(-100%);
     height: 40%;
     border-radius: 0 0 30px 30px; 
-    padding: 22px;
+    padding: 22px 32px;
     box-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.card :
         theme.dark.shadow.card
@@ -65,23 +66,14 @@ const ProjectCardTitle = styled.h3`
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-align: left;
-    font-family: Kalameh, sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    @media ${theme.media.mobile} {
-        font-size: 12px;
-    }
+    ${font({family: 'Kalameh, sans-serif', weight: 700, lineHeight: 1.36 ,Fmin: 12, Fmax: 20})}
 `
 const CardLink = styled(Link)`
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 148%;
+    ${font({weight: 700, lineHeight: 1.48, Fmin: 8, Fmax: 14})}
     min-width: 110px;
     min-height: 30px;
     border-radius: 12px;
     @media ${theme.media.mobile} {
-        font-size: 8px;
         min-width: 66px;
         min-height: 18px;
         border-radius: 7px;

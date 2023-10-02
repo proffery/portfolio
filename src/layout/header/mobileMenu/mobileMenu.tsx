@@ -20,43 +20,51 @@ export const MobileMenu = (props: MobileMenuTypes) => {
             <MobileMenuPopup theme={themeName} isOpen={isOpen}>
                 <ul role="menu" aria-label="menu">
                     <li role="menuitem">
-                        <Link theme={themeName} 
+                        <Link 
+                            theme={themeName} 
                             color={themeName === 'light' ? 
                                 theme.light.color.text.primary :
                                 theme.dark.color.text.primary
                             } 
                             fontWeight="400" 
-                            href="#main">Home</Link>
+                            href="#main"
+                            onClick={() => {setIsOpen(!isOpen)}}>Home</Link>
                     </li>
                     <li role="menuitem">
-                        <Link theme={themeName} 
+                        <Link 
+                            theme={themeName} 
                             color={themeName === 'light' ? 
                                 theme.light.color.text.primary :
                                 theme.dark.color.text.primary
                             } 
                             fontWeight="400" 
-                            href="#projects">Projects</Link>
+                            href="#projects"
+                            onClick={() => {setIsOpen(!isOpen)}}>Projects</Link>
                     </li>
                     <li role="menuitem">
-                        <Link theme={themeName} 
+                        <Link 
+                            theme={themeName} 
                             color={themeName === 'light' ? 
                                 theme.light.color.text.primary :
                                 theme.dark.color.text.primary
                             } 
                             fontWeight="400" 
-                            href="#about">About</Link>
+                            href="#about"
+                            onClick={() => {setIsOpen(!isOpen)}}>About</Link>
                     </li>                
                     <li role="menuitem">
-                        <Link theme={themeName} 
+                        <Link 
+                            theme={themeName} 
                             color={themeName === 'light' ? 
                                 theme.light.color.text.primary :
                                 theme.dark.color.text.primary
                             } 
                             fontWeight="400" 
-                            href="#contact">Contact</Link>
+                            href="#contact"
+                            onClick={() => {setIsOpen(!isOpen)}}>Contact</Link>
                     </li>
                     <li>
-                        <ThemeChangeButton setCurrentTheme={props.setCurrentTheme}/>
+                        <ThemeChangeButton setCurrentTheme={props.setCurrentTheme} />
                     </li>
                 </ul>
             </MobileMenuPopup>

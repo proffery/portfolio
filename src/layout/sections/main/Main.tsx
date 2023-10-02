@@ -8,6 +8,7 @@ import { ThemeContext } from "../../../context/ThemeContext"
 import { Container } from "../../../components/Container"
 import { theme } from "../../../styles/Theme.styled"
 import { link } from "fs"
+import { font } from "../../../styles/Font"
 
 
 export const Main = () => {
@@ -88,22 +89,22 @@ export const Main = () => {
                             <AppText>TypeScript</AppText>
                         </MainApps>
                         <MainApps theme={themeName}>
-                        <MainAppsIconWrapper theme={themeName}>
-                            <MainAppsIcon iconId="react" height="100%" width="100%" viewBox="-10 -12 150 150" />
-                        </MainAppsIconWrapper>
+                            <MainAppsIconWrapper theme={themeName}>
+                                <MainAppsIcon iconId="react" height="100%" width="100%" viewBox="-10 -12 150 150" />
+                            </MainAppsIconWrapper>
                             <AppText>React</AppText>
                         </MainApps>
                         <MainApps theme={themeName}>
-                        <MainAppsIconWrapper theme={themeName}>
-                            <MainAppsIcon iconId="redux" height="100%" width="100%" viewBox="-18 -10 165 165" />
-                        </MainAppsIconWrapper>
-                            <AppText>Redux</AppText>
+                            <MainAppsIconWrapper theme={themeName}>
+                                <MainAppsIcon iconId="styled" height="100%" width="100%" viewBox="2 -0 30 30" />
+                            </MainAppsIconWrapper>
+                            <AppText>Styled Components</AppText>
                         </MainApps>
                         <MainApps theme={themeName}>
-                        <MainAppsIconWrapper theme={themeName}>
-                            <MainAppsIcon iconId="styled" height="100%" width="100%" viewBox="2 -0 30 30" />
-                        </MainAppsIconWrapper>
-                            <AppText>Styled Components</AppText>
+                            <MainAppsIconWrapper theme={themeName}>
+                                <MainAppsIcon iconId="git" height="100%" width="100%" viewBox="-18 -18 165 165" />
+                            </MainAppsIconWrapper>
+                            <AppText>Git</AppText>
                         </MainApps>
                     </AppsWrapper>
                 </StyledAppsRight>
@@ -278,12 +279,12 @@ const MainBannerWrapper = styled(FlexWrapper)`
 `
 
 const StyledLinkButton = styled(Link)`
-    min-width: 200px;
+    ${font({weight: 600, lineHeight: 1.5, Fmin: 8, Fmax: 15})}
+    max-width: 200px;
     min-height: 54px;
     border-radius: 20px; 
-    padding: 5px 20px;
+    padding: 5px 30px;
     @media ${theme.media.mobile} {
-        font-size: 8px;
         min-width: 112px;
         min-height: 30px;
         border-radius: 11px; 
@@ -291,9 +292,7 @@ const StyledLinkButton = styled(Link)`
     }
 `
 const StyledResumeLink = styled(Link)`
-    @media ${theme.media.mobile} {
-        font-size: 8px;
-    }
+    ${font({weight: 600, lineHeight: 1.5, Fmin: 8, Fmax: 15})}
 `
 
 const IconButtonWrapper = styled(FlexWrapper)`
@@ -362,22 +361,20 @@ const StyledBannerRight = styled(FlexWrapper)`
         transform: rotate(45deg) translate(-20%, -2%);
         height: 88px;
         width: 88px;
-        font-size: 150px;
-        font-weight: 600;
+        ${font({weight: 600, lineHeight: 1.36, Fmin: 100, Fmax: 150})}
         color: ${props => props.theme === 'light' ?
             theme.light.color.background.second :
             theme.dark.color.background.second};
         z-index: 0;
         @media ${theme.media.tablet} {
-            top: 5%;
+            top: 10%;
             left: 80%;
-            transform: rotate(45deg) translate(-80%, -5%);
+            transform: rotate(45deg) translate(-80%, -10%);
         }
         @media ${theme.media.mobile} {
             top: 12%;
             left: 80%;
             transform: rotate(45deg) translate(-80%, -12%);
-            font-size: 100px;
         }
     }
 
@@ -403,38 +400,23 @@ const StyledBannerRight = styled(FlexWrapper)`
 `
 
 const StyledTitleH1 = styled.h1`
-    font-weight: 700;
-    font-size: 60px;
-    line-height: 136%;
+    ${font({weight: 700, lineHeight: 1.36, Fmin: 34, Fmax: 60})}
     text-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.text :
         theme.dark.shadow.text
-    };
-    @media ${theme.media.mobile} {
-        font-size: 34px;
     }
 `
 
 const StyledTitleH2 = styled.h2`
-    font-weight: 700;
-    font-size: 60px;
-    line-height: 136%;
+    ${font({weight: 700, lineHeight: 1.36, Fmin: 34, Fmax: 60})}
     text-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.text :
         theme.dark.shadow.text
     };
-    @media ${theme.media.mobile} {
-        font-size: 34px;
-    }
 `
 
 const StyledText = styled.p`
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 150%;
-    @media ${theme.media.mobile} {
-        font-size: 11px;
-    }
+    ${font({weight: 400, lineHeight: 1.5, Fmin: 11, Fmax: 20})}
 `
 const TitleWrapper = styled(FlexWrapper)`
     min-width: 376px;

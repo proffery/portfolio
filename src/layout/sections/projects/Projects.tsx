@@ -9,6 +9,7 @@ import { ThemeContext } from "../../../context/ThemeContext"
 import { theme } from "../../../styles/Theme.styled"
 import { Container } from "../../../components/Container"
 import { projects } from "../../../data/projects"
+import { font } from "../../../styles/Font"
 
 export const Projects = () => {
     const themeName = useContext(ThemeContext)
@@ -93,12 +94,12 @@ const StyledProjectWrapper = styled(FlexWrapper)`
 `
 
 const CategoryButton = styled(Button)`
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 136%;
+    ${font({weight: 400, lineHeight: 1.36, Fmin: 12, Fmax: 20})}
     min-width: 160px;
+    @media ${theme.media.tablet} {
+        min-width: 110px;
+    }
     @media ${theme.media.mobile} {
-        font-size: 12px;
         min-width: 96px;
     }
 `

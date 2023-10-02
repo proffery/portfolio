@@ -3,6 +3,7 @@ import { FlexWrapper } from "../../../../components/FlexWrapper"
 import { ThemeContext } from "../../../../context/ThemeContext"
 import { useContext } from "react"
 import { theme } from "../../../../styles/Theme.styled"
+import { font } from "../../../../styles/Font"
 
 type LearningCardPropsType = {
     imageUrl: string,
@@ -30,13 +31,8 @@ type StyledLearningCarPropsType = {
 const StyledTitle = styled.h3`
     position: absolute;
     top: 100%;
-    font-size: 22px;
+    ${font({weight: 700, lineHeight: 1.36, Fmin: 11, Fmax: 22})}
     color: ${props => props.color || (props => props.theme === 'light' ? theme.light.color.text.second : theme.dark.color.text.primary)};
-    font-weight: 700;
-    line-height: 136%;
-    @media ${theme.media.mobile} {
-        font-size: 11px;
-    }
 `
 
 const StyledLearningCard = styled(FlexWrapper)<StyledLearningCarPropsType>`

@@ -7,6 +7,7 @@ import { theme } from "../../../styles/Theme.styled"
 import { skills } from "../../../data/skills"
 import { SkillSet } from "./skillSet/SkillSet"
 import { FlexWrapper } from "../../../components/FlexWrapper"
+import { font } from "../../../styles/Font"
 
 
 export const Learning = () => {
@@ -64,13 +65,11 @@ const LearningSkillsTitle = styled.h3`
     min-width: 30%;
     padding: 30px;
     padding-top: 0;
-    font-size: 22px;
-    font-weight: 700;
+    ${font({weight: 700, lineHeight: 1.36, Fmin: 11, Fmax: 22})}
     color: ${props => props.theme === 'light' ?
         theme.light.color.text.second :
         theme.dark.color.text.primary};
     @media ${theme.media.mobile} {
-        font-size: 11px;
         padding-top: 0;
         margin-top: 10px;
     }
