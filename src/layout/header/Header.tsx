@@ -1,23 +1,21 @@
-import styled from "styled-components"
 import { Logo } from "../../components/logo/Logo"
-import { HeaderMenu } from "./headerMenu/HeaderMenu"
-import { FlexWrapper } from "../../components/FlexWrapper"
+import { DesktopMenu } from "./desktopMenu/DesktopMenu"
 import { ThemeContext } from "../../context/ThemeContext"
-import { useContext, useEffect, useState } from "react"
-import { theme } from "../../styles/Theme.styled"
+import React, { useContext, useEffect, useState } from "react"
 import { Container } from "../../components/Container"
 import { MobileMenu } from "./mobileMenu/MobileMenu"
-import { ThemeChangeButton } from "./themeChangeButton/ThemeChangeButton"
 import { Icon } from "../../components/icon/Icon"
-import { Link } from "../../components/link/Link.styled"
+import {S} from "./Header_Styles"
 
 type HeaderTypes = {
     setCurrentTheme: any,
 }
 
-export const Header = ({ setCurrentTheme }: HeaderTypes) => {
+export const Header: React.FC<HeaderTypes> = ({ setCurrentTheme }: HeaderTypes) => {
     const theme = useContext(ThemeContext)
     const [scrolled, setScrolled] = useState(false)
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const breakpoint = 576;
     
     useEffect(() => {
         const onScroll = () => {
@@ -28,26 +26,37 @@ export const Header = ({ setCurrentTheme }: HeaderTypes) => {
                 setScrolled(false)
             }
         }
-
         window.addEventListener('scroll', onScroll)
-
         return () => window.removeEventListener('scroll', onScroll)
     }, [])
     
+    useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth)
+        window.addEventListener("resize", handleWindowResize);
+    
+        return () => window.removeEventListener("resize", handleWindowResize);
+    }, [])
+
     return (
-        <StyledHeader scrolled={scrolled} theme={theme}>
+        <S.Header scrolled={scrolled} theme={theme}>
             <Container justify="space-between">
-                <StyledLeft scrolled={scrolled} theme={theme}>
-                    {theme === 'light' && !scrolled ? <Logo color="white" /> : theme === 'light' && scrolled ? <Logo color="gray" /> : <Logo color="white" />}
-                </StyledLeft>
-                <StyledRight theme={theme} width="70%" align="center" justify="end">
-                    <HeaderMenu />
-                    <MobileMenu setCurrentTheme={setCurrentTheme} />
-                    <StyledThemeChangeButton setCurrentTheme={setCurrentTheme}/>
-                </StyledRight>
+                <S.Left scrolled={scrolled} theme={theme}>
+                    {theme === 'light' && !scrolled ? <Logo color="white" /> : 
+                        theme === 'light' && scrolled ? <Logo color="gray" /> : 
+                        <Logo color="white" />
+                    }
+                </S.Left>
+                <S.Right theme={theme} align="center" justify="end">
+                    {width < breakpoint ? <MobileMenu setCurrentTheme={setCurrentTheme} /> :
+                        <>
+                            <DesktopMenu />
+                            <S.HeaderThemeChangeButton setCurrentTheme={setCurrentTheme}/>
+                        </>
+                    }
+                </S.Right>
             </Container>
             {scrolled && 
-                <TopButton type="button" href="#" theme={theme}>
+                <S.TopButton type="button" href="#" theme={theme}>
                     <Icon 
                         height="100%"
                         width="100%" 
@@ -55,125 +64,9 @@ export const Header = ({ setCurrentTheme }: HeaderTypes) => {
                         iconId="arrowRight"
                         aria-label="Go to top" 
                     />
-                </TopButton>
+                </S.TopButton>
             }
-        </StyledHeader>
+        </S.Header>
     )
 }
 
-type StyledHeaderTypes = {
-    scrolled: boolean
-}
-
-const StyledHeader = styled.header<StyledHeaderTypes>`
-    height: 75px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 99999;
-    background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.primary :
-        theme.dark.color.background.primary
-    };
-    color: ${props => props.theme === 'light' ?
-        theme.light.color.text.primary :
-        theme.dark.color.text.primary
-    };
-    box-shadow: ${props => props.scrolled && theme.light.shadow.main};
-    transition: all ease-in .2s;
-    @media ${theme.media.mobile} {
-        height: 44px;
-    }
-`
-
-const StyledThemeChangeButton = styled(ThemeChangeButton)`
-    display: inline-block;
-    @media ${theme.media.mobile} {
-        display: none;
-    }
-`
-
-const StyledLeft = styled(FlexWrapper)<StyledHeaderTypes>`
-    display: flex;
-    position: relative;
-    width: 10%;
-    z-index: 0;
-    background-color: ${props => props.theme === 'light' && props.scrolled ?
-        theme.light.color.background.primary :
-        props => props.theme === 'light' ? 
-        theme.light.color.background.second :
-        props => props.theme === 'dark' && props.scrolled ?
-        theme.dark.color.background.primary :
-        theme.dark.color.background.second
-    };
-    transition: all ease-in .2s;
-    &::after {
-        position: absolute;
-        content: "";
-        width: 300%;
-        height: 100%;
-        background-color: ${props => props.theme === 'light' && props.scrolled ?
-            theme.light.color.background.primary :
-            props => props.theme === 'light' ? 
-            theme.light.color.background.second :
-            props => props.theme === 'dark' && props.scrolled ?
-            theme.dark.color.background.primary :
-            theme.dark.color.background.second
-        };
-
-        @media ${theme.media.tablet} {
-            width: 500%;
-        }
-    }
-`
-
-const StyledRight = styled(FlexWrapper)`
-    display: flex;
-    
-    background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.primary :
-        theme.dark.color.background.primary
-    };
-    transition: all ease-in .2s;
-`
-
-const TopButton = styled(Link)`
-    display: none;
-    position: fixed;
-    height: 50px;
-    left: 0;
-    top: 90%;
-    transform-origin: top left;
-    transform: rotate(-90deg);
-    background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.second :
-        theme.dark.color.background.second
-    };
-    border-radius: 0 0 22px 22px;
-    border: 2px solid ${props => props.theme === 'light' ?
-        theme.light.color.background.bannerBorder :
-        theme.dark.color.background.bannerBorder 
-    };
-
-    color: ${props => props.theme === 'light' ?
-        theme.light.color.text.second :
-        theme.dark.color.text.primary
-    };
-    z-index: -1;
-    border-top: none;
-
-
-    @media ${theme.media.tablet} {
-        display: flex;
-    }
-    
-    @media ${theme.media.mobile} {
-        height: 40px;
-        min-width: 80px;
-        border-radius: 0 0 16px 16px;
-    }
-`

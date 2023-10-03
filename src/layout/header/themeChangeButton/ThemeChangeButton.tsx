@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import React, { useContext } from "react"
 import { Button } from "../../../components/button/Button.styled"
 import { Icon } from "../../../components/icon/Icon"
 import { ThemeContext } from "../../../context/ThemeContext"
@@ -8,7 +8,7 @@ type ThemeChangeButtonTypes = {
     setCurrentTheme: any,
 }
 
-export const ThemeChangeButton = ({ className, setCurrentTheme }: ThemeChangeButtonTypes) => {
+export const ThemeChangeButton: React.FC<ThemeChangeButtonTypes> = ({ className, setCurrentTheme }: ThemeChangeButtonTypes) => {
     const theme = useContext(ThemeContext)
     const themeChangeHandler = () => {
         theme === 'light' ? setCurrentTheme('dark') : setCurrentTheme('light')
