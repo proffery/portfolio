@@ -22,8 +22,8 @@ const About = styled.section`
 `
 
 const AboutContainer = styled(Container)`
+    min-height: 100vh;
     position: relative;
-    height: 70vh;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second
@@ -59,7 +59,7 @@ const AboutBanner = styled(FlexWrapper)`
         top: 10%;
         left: 50%;
         transform: translate(-50%, -10%);
-        width: 90%;
+        width: auto;
     }
     
     @media ${theme.media.mobile} {
@@ -78,12 +78,7 @@ const SocialLinksWrapper = styled(FlexWrapper)`
     }
 `
 const AboutBannerTitle = styled.h2`
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 136%;
-    @media ${theme.media.mobile} {
-        font-size: 32px;
-    }
+    ${font({weight: 700, lineHeight: 1.36, Fmin: 32, Fmax: 60})}
 `
 
 const AboutBannerList = styled.ul`

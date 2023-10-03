@@ -8,6 +8,7 @@ import { font } from "../../../styles/Font"
 
 const Projects = styled.section`
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
     background-color: ${props => props.theme === 'light' ?
@@ -18,6 +19,22 @@ const Projects = styled.section`
         theme.light.color.text.primary :
         theme.dark.color.text.primary
     };
+    &::before {
+        content: "+";
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        transform: rotate(45deg) translate(-50%, -110%);
+        opacity: .3;
+        ${font({weight: 600, lineHeight: 1.36, Fmin: 350, Fmax: 550})}
+        color: ${props => props.theme === 'light' ?
+            theme.light.color.background.second :
+            theme.dark.color.background.second};
+        z-index: 0;
+        @media ${theme.media.tablet} {
+            opacity: 0;
+        }
+    }
 `
 const ProjectsContainer = styled(Container)`
     background-image: url(${decorationDots});
@@ -26,7 +43,7 @@ const ProjectsContainer = styled(Container)`
 `
 const ProjectWrapper = styled(FlexWrapper)`
     margin-top: 40px;
-    max-height: 100vh;
+    max-height: 90vh;
     overflow-y: auto;
     gap: 38px;
     @media ${theme.media.mobile} {

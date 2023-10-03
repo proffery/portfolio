@@ -18,6 +18,7 @@ const ProjectCardContent = styled(FlexWrapper)`
     top: 100%;
     transform: translateY(-100%);
     height: 40%;
+    width: 100%;
     border-radius: 0 0 30px 30px; 
     padding: 22px 32px;
     box-shadow: ${props => props.theme === 'light' ?
@@ -64,9 +65,11 @@ const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType>`
     background-size: cover;
     border-radius: 30px;
     max-width: 270px;
+    width: 100%;
     height: 394px;
     flex-grow: 1;
     margin-bottom: 10px;
+    z-index: 0;
     @media ${theme.media.mobile} {
         max-width: 163px;
         height: 238px;

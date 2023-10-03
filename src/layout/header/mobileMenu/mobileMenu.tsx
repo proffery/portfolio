@@ -20,8 +20,8 @@ export const MobileMenu: React.FC<MobileMenuTypes> = (props: MobileMenuTypes) =>
             </S.BurgerButton>
             <S.MobileMenuPopup theme={themeName} isOpen={isOpen}>
                 <ul role="menu" aria-label="menu">
-                    {menuItems.map(item => (
-                        <li role="menuitem">
+                    {menuItems.map((item, index) => (
+                        <li role="menuitem" key={index}>
                             <Link 
                                 theme={themeName} 
                                 color={themeName === 'light' ? 

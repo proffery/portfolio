@@ -5,7 +5,9 @@ import { Link } from "../../../../components/link/Link.styled"
 import { font } from "../../../../styles/Font"
 
 const ServicesCard = styled(FlexWrapper)`
+    min-width: 334px;
     min-height: 402px;
+    width: 30%;
     padding: 45px 60px;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.card :
@@ -15,7 +17,6 @@ const ServicesCard = styled(FlexWrapper)`
         theme.light.shadow.card :
         theme.dark.shadow.card
     };
-    min-width: 334px;
 
     @media ${theme.media.tablet} {
         min-width: 280px;

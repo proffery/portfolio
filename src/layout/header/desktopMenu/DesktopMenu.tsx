@@ -10,8 +10,8 @@ export const DesktopMenu: React.FC = () => {
     return (
         <S.DesktopMenu>
             <ul role="menu" aria-label="menu">
-                {menuItems.map(item => (
-                    <li role="menuitem">
+                {menuItems.map((item, index) => (
+                    <li role="menuitem" key={index}>
                         <Link 
                             theme={themeName} 
                             color={themeName === 'light' ? 
