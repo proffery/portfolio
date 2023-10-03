@@ -1,87 +1,17 @@
-import styled from "styled-components"
 import { Link } from "../../components/link/Link.styled"
-import footerLight from "../../assets/images/wave-light.svg"
-import footerDark from "../../assets/images/wave-dark.svg"
-import { theme } from "../../styles/Theme.styled"
 import { ThemeContext } from "../../context/ThemeContext"
 import { useContext } from "react"
-import { FlexWrapper } from "../../components/FlexWrapper"
-import { font } from "../../styles/Font"
+import { S } from "./Footer_Styles"
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
     const theme = useContext(ThemeContext)
     return (
-        <StyledFooter theme={theme}>
-            <StyledBackgroundTop theme={theme} height="100%" width="100%"></StyledBackgroundTop>
-            <StyledBackgroundBottom theme={theme} direction="column" width="100%">
-                <Name theme={theme}>Coded by&nbsp;<Link href="#" color="white">Dmitry Shamko</Link></Name>
-                <Copyrights theme={theme}>All Rights Reserved 2023</Copyrights>
-            </StyledBackgroundBottom>
-        </StyledFooter>
+        <S.Footer theme={theme}>
+            <S.BackgroundImgTop theme={theme} height="100%" width="100%"></S.BackgroundImgTop>
+            <S.BackgroundBottom theme={theme} direction="column" width="100%">
+                <S.Name theme={theme}>Coded by&nbsp;<Link href="#" color="white">Dmitry Shamko</Link></S.Name>
+                <S.Copyrights theme={theme}>All Rights Reserved 2023</S.Copyrights>
+            </S.BackgroundBottom>
+        </S.Footer>
     )
 }
-
-const StyledFooter = styled.footer`
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-    background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.primary :
-        theme.dark.color.background.primary
-    };
-`
-
-const Name = styled.span`
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    ${font({family: 'Inter, sans-serif', weight: 700, lineHeight: 1, Fmin: 13, Fmax: 16})}
-    
-    color: ${props => props.theme === 'light' ?
-        theme.light.color.text.second :
-        theme.dark.color.text.primary
-    };
-    outline: 1px solid ${props => props.theme === 'light' ?
-        theme.light.color.background.second :
-        theme.dark.color.background.second
-    };
-    background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.second :
-        theme.dark.color.background.second
-    };
-`
-
-const Copyrights = styled.span`
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    ${font({family: 'Inter, sans-serif', weight: 400, lineHeight: 1, Fmin: 8, Fmax: 11})}
-    color: ${props => props.theme === 'light' ?
-        theme.light.color.text.second :
-        theme.dark.color.text.primary
-    };
-    padding-top: 6px;
-    background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.second :
-        theme.dark.color.background.second
-    };
-`
-
-const StyledBackgroundTop = styled(FlexWrapper)`
-    background-image: url(${props => props.theme === 'light' ? footerLight : footerDark});
-    background-size: contain;
-    background-repeat: repeat-x;
-    background-position: center bottom;
-`
-
-const StyledBackgroundBottom = styled(FlexWrapper)`
-    height: 70%;
-    background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.second :
-        theme.dark.color.background.second
-    };
-`
