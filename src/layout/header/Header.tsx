@@ -39,7 +39,7 @@ export const Header: React.FC<HeaderTypes> = ({ setCurrentTheme }: HeaderTypes) 
 
     return (
         <S.Header scrolled={scrolled} theme={theme}>
-            <Container justify="space-between">
+            <S.HeaderContainer justify="space-between">
                 <S.Left scrolled={scrolled} theme={theme}>
                     {theme === 'light' && !scrolled ? <Logo color="white" /> : 
                         theme === 'light' && scrolled ? <Logo color="gray" /> : 
@@ -54,7 +54,7 @@ export const Header: React.FC<HeaderTypes> = ({ setCurrentTheme }: HeaderTypes) 
                         </>
                     }
                 </S.Right>
-            </Container>
+            </S.HeaderContainer>
             {scrolled && 
                 <S.TopButton type="button" href="#" theme={theme}>
                     <Icon 

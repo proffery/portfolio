@@ -7,6 +7,8 @@ import { ThemeContext } from "../../../context/ThemeContext"
 import { Container } from "../../../components/Container"
 import { theme } from "../../../styles/Theme.styled"
 import { S } from "./Main_Styles"
+import Tilt from 'react-parallax-tilt'
+
 
 export const Main: React.FC = () => {
     const [loopNumber, setLoopNumber] = useState(0)
@@ -16,6 +18,8 @@ export const Main: React.FC = () => {
     const toRotate = ['Web Developer', 'JS/TS Developer', 'React Developer']
     const themeName = useContext(ThemeContext)
     const period = 2000
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const breakpoint = 768;
 
     useEffect(() => {
         let ticker = setInterval(() => {
@@ -46,12 +50,20 @@ export const Main: React.FC = () => {
         }
     }
 
+    useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth)
+        window.addEventListener("resize", handleWindowResize);
+    
+        return () => window.removeEventListener("resize", handleWindowResize);
+    }, [])
+
     return (
         <S.Main id="main" theme={themeName}>
-            <Container theme={themeName}>
+            <S.MainContainer theme={themeName}>
                 <S.BannerLeft theme={themeName}></S.BannerLeft>
                 <S.BannerRight theme={themeName} justify="center" >
-                    <S.BannerWrapper theme={themeName} align="center" justify="center" wrap="wrap" width="100%" gap="50px">
+                <Tilt tiltEnable={width < breakpoint ? false : true}>
+                    <S.BannerWrapper theme={themeName} align="center" justify="center">
                         <FlexWrapper align="center" justify="center" width="47%">
                             <S.BannerPhoto theme={themeName} src={photo} alt="Photography" />
                         </FlexWrapper>
@@ -63,7 +75,7 @@ export const Main: React.FC = () => {
                                 </S.BannerTitleSecond>
                                 <S.BannerTitleMain theme={themeName} aria-label="Web Developer">{text}&nbsp;</S.BannerTitleMain>
                             </FlexWrapper>
-                            <S.BannerDescription>Draft is a revolutionary mobile app built to help you manage your business easily and save your money.</S.BannerDescription>
+                            <S.BannerDescription>Draft is a revolutionary web app built to help you manage your business easily and save your money.</S.BannerDescription>
                             <S.BannerLinksWrapper align="center" justify="start" wrap="wrap">
                                 <S.ProjectsLink href="#projects" type="button" color={theme.light.color.text.second}>See Projects
                                     <S.ArrowIconWrapper>
@@ -74,9 +86,10 @@ export const Main: React.FC = () => {
                             </S.BannerLinksWrapper>
                         </S.BannerTitleWrapper>
                     </S.BannerWrapper>
+                </Tilt>
                 </S.BannerRight>
-            </Container>
-            <Container>
+            </S.MainContainer>
+            <S.MainContainer>
                 <S.AppsLeft theme={themeName}></S.AppsLeft>
                 <S.AppsRight theme={themeName} direction="column" justify="end">
                     <S.AppsWrapper justify="center" gap="12px" wrap="wrap">
@@ -106,7 +119,7 @@ export const Main: React.FC = () => {
                         </S.App>
                     </S.AppsWrapper>
                 </S.AppsRight>
-            </Container>
+            </S.MainContainer>
         </S.Main>
     )
 }

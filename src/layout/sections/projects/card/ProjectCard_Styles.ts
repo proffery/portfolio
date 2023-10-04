@@ -48,12 +48,16 @@ const ProjectCardTitle = styled.h3`
     `
 const ProjectCardLink = styled(Link)`
     ${font({weight: 700, lineHeight: 1.48, Fmin: 8, Fmax: 14})}
-    min-width: 110px;
-    min-height: 30px;
+    min-width: 66px;
+    max-height: 30px;
+    aspect-ratio: 11 / 3;
+    width: 50%;
     border-radius: 12px;
+    @media ${theme.media.tablet} {
+        border-radius: 10px;
+    }
     @media ${theme.media.mobile} {
-        min-width: 66px;
-        min-height: 18px;
+        aspect-ratio: 17 / 5;
         border-radius: 7px;
     }    
 `
@@ -65,14 +69,15 @@ const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType>`
     background-size: cover;
     border-radius: 30px;
     max-width: 270px;
-    width: 100%;
-    height: 394px;
+    min-width: 163;
+    min-height: 238px;
+    width: 30%;
+    aspect-ratio: 9 / 13;
     flex-grow: 1;
     margin-bottom: 10px;
     z-index: 0;
     @media ${theme.media.mobile} {
         max-width: 163px;
-        height: 238px;
         border-radius: 16px;
         margin-bottom: 7px;
     }
@@ -96,7 +101,7 @@ const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType>`
                 theme.light.color.background.second :
                 theme.dark.color.background.second
             };
-            height: 50%;
+            height: 45%;
         }
         ${ProjectCardTitle} {
             color: ${props => props.theme === 'light' ?

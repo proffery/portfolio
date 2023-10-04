@@ -20,7 +20,6 @@ const Services = styled.section`
         theme.light.color.background.primary :
         theme.dark.color.background.primary
     };
-    padding-top: 0;
 `
 
 export const S = {

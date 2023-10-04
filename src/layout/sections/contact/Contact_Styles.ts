@@ -14,9 +14,14 @@ const Contact = styled.section`
         theme.dark.color.background.primary
     };
     gap: 20px;
+    @media ${theme.media.mobile} {
+        padding-top: 60px 0;
+    }
 `
 
 const ContactWrapper = styled(FlexWrapper)`
+    height: 100%;
+    width: 100%;
     padding: 53px 82px;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.form :
@@ -37,6 +42,7 @@ const ContactWrapper = styled(FlexWrapper)`
 const ContactFormWrapper = styled(FlexWrapper)`
     flex-wrap: wrap;
     align-items: center;
+    height: 100%;
     justify-content: space-between;
     @media ${theme.media.tablet} {
         gap: 0;
@@ -220,6 +226,7 @@ const AddDescription = styled.span`
 `
 
 const SocialIconsWrapper = styled(FlexWrapper)`
+    height: 200px;
     margin-top: 65px;
     @media ${theme.media.tablet} {
         margin-top: 43px;

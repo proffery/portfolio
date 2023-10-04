@@ -16,7 +16,7 @@ export const ProgectsCard: React.FC<ProjectsCardPropsTypes> = (props: ProjectsCa
         <S.ProjectCard theme={theme} backgroundImage={`url("${props.imageUrl}")`} direction="column" align="center" >
             <S.ProjectCardContent theme={theme} direction="column" justify="space-between" >
                 <S.ProjectCardTitle theme={theme}>{props.title}</S.ProjectCardTitle>
-                <FlexWrapper align="center" justify="center">
+                <FlexWrapper align="center" justify="center" width="100%">
                     <S.ProjectCardLink href={props.githubUrl} target='_blank' theme={theme} type="button">Code</S.ProjectCardLink>
                     <S.ProjectCardLink href={props.previewUrl} target='_blank' theme={theme}>see preview</S.ProjectCardLink>
                 </FlexWrapper>

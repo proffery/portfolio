@@ -22,8 +22,8 @@ const About = styled.section`
 `
 
 const AboutContainer = styled(Container)`
-    min-height: 100vh;
     position: relative;
+    height: 100vh;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second
@@ -33,7 +33,7 @@ const AboutContainer = styled(Container)`
     background-position: bottom right, bottom center;
     background-size: contain;
     @media ${theme.media.mobile} {
-        background-position: bottom right, center;
+        height: 70vh;
     }
 `
 
@@ -51,7 +51,7 @@ const AboutBanner = styled(FlexWrapper)`
         theme.light.color.background.bannerBorder :
         theme.dark.color.background.bannerBorder 
     };
-    border-radius: 75px 0;
+    border-radius: 100px 0;
     min-width: 250px;
     padding: 30px;
     padding-top: 10px;
@@ -63,11 +63,8 @@ const AboutBanner = styled(FlexWrapper)`
     }
     
     @media ${theme.media.mobile} {
-        top: 10%;
-        left: 50%;
-        transform: translate(-50%, -10%);
         padding-top: 30px;
-        width: auto;
+        border-radius: 54px 0;
     }
 `
 

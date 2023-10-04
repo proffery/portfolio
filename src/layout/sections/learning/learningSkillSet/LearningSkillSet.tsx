@@ -2,9 +2,10 @@ import { LerningCard } from '../card/LearningCard'
 import { S } from './LearningSkillSet_Styles'
   
 interface Slides {
-    imageUrl: string,
+    imageId: string,
     title: string,
-    category?: string
+    category?: string,
+    viewBox?: string
 }
 
 type PropType = {
@@ -17,7 +18,7 @@ export const LearningSkillSet = (props: PropType) => {
   return (
     <S.Skills>
         {slides.map((slide, index) => (
-            <LerningCard imageUrl={slide.imageUrl} title={slide.title} key={slide.category + index.toString()}/>
+            <LerningCard imageId={slide.imageId} viewBox={slide.viewBox || "0 0 128 128"} title={slide.title} key={slide.category + index.toString()}/>
         ))}
     </S.Skills>
   )

@@ -13,8 +13,8 @@ export const Contact: React.FC = () => {
         <S.Contact id="contact" theme={theme}>
             <Container direction="column" align="center" justify="center">
                 <SectionTitle theme={theme}>Contact</SectionTitle>
-                <S.ContactWrapper theme={theme} direction="column" width="100%" height="100%">
-                    <S.ContactFormWrapper theme={theme} align="start" height="100%">
+                <S.ContactWrapper theme={theme} direction="column" >
+                    <S.ContactFormWrapper theme={theme} align="start">
                         <S.ContactForm>
                             <FlexWrapper direction="column" align="center" justify="center" width="100%" gap="30px">
                                 <S.ContactFormTitle theme={theme}>Get in touch</S.ContactFormTitle>
@@ -72,7 +72,7 @@ export const Contact: React.FC = () => {
                         <Icon iconId="telegramColor" height="30px" viewBox="0 -1 50 50"/>
                     </Link>
                 </S.SocialIconsWrapper>
-                <S.FixedSocialIconsWrapper theme={theme} height="200px" direction="column" align="center" justify="center">
+                <S.FixedSocialIconsWrapper theme={theme} direction="column" align="center" justify="center">
                     <Link href="#" aria-label="Whatsapp group link">
                         <Icon iconId="aboutWhatsapp" height="50px" width="50px" viewBox="-1 1 30 30"/>
                     </Link>

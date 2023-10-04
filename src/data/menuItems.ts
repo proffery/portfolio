@@ -12,6 +12,10 @@ export const menuItems = [
         item_href: "#about",
     },
     {
+        item_name: "Skills",
+        item_href: "#skills",
+    },
+    {
         item_name: "Contact",
         item_href: "#contact",
     }

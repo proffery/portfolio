@@ -11,6 +11,7 @@ const Projects = styled.section`
     position: relative;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.primary :
         theme.dark.color.background.primary

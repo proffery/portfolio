@@ -1,44 +1,53 @@
-import cardHtml from "../../src/assets/images/learning-html5.svg"
-import cardCss from "../../src/assets/images/learning-css3.svg"
-import cardJs from "../../src/assets/images/learning-javascript.svg"
-import cardTs from "../../src/assets/images/learning-typescript.svg"
-import cardReact from "../../src/assets/images/learning-react.svg"
-import cardBootstrap from "../../src/assets/images/learning-bootstrap.svg"
-import cardTailwind from "../../src/assets/images/learning-tailwindcss.svg"
-import cardFirebase from "../../src/assets/images/learning-firebase.svg"
-
 export const skills = [
     {
         title: "HTML",
-        imageUrl: cardHtml,
+        imageId: "html",
         category: "front",
+        viewBox: "0 0 128 128"
     },{
         title: "CSS",
-        imageUrl: cardCss,
+        imageId: "css",
         category: "front",
+        viewBox: "0 0 128 128"
     },{
         title: "JavaScript",
-        imageUrl: cardJs,
+        imageId: "javaScript",
         category: "front",
+        viewBox: "0 0 128 128"
     },{
         title: "TypeScript",
-        imageUrl: cardTs,
+        imageId: "typeScript",
         category: "front",
+        viewBox: "0 0 128 128"
     },{
         title: "React",
-        imageUrl: cardReact,
+        imageId: "react",
         category: "front",
+        viewBox: "0 0 128 128"
+    },{
+        title: "Redux",
+        imageId: "redux",
+        category: "front",
+        viewBox: "0 0 128 128"
+    },{
+        title: "Styled Components",
+        imageId: "styled",
+        category: "front",
+        viewBox: "0 1 30 30"
     },{
         title: "Bootstrap",
-        imageUrl: cardBootstrap,
+        imageId: "bootstrap",
         category: "front",
-    },{
-        title: "Tailwind",
-        imageUrl: cardTailwind,
-        category: "front",
+        viewBox: "0 0 128 128"
     },{
         title: "Firebase",
-        imageUrl: cardFirebase,
-        category: "back",
+        imageId: "firebase",
+        category: "other",
+        viewBox: "0 0 128 128"
+    },{
+        title: "Git",
+        imageId: "git",
+        category: "other",
+        viewBox: "0 0 128 128"
     },
 ]

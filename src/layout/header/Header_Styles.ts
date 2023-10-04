@@ -3,6 +3,7 @@ import { FlexWrapper } from "../../components/FlexWrapper"
 import { Link } from "../../components/link/Link.styled"
 import { theme } from "../../styles/Theme.styled"
 import { ThemeChangeButton } from "./themeChangeButton/ThemeChangeButton"
+import { Container } from "../../components/Container"
 
 type StyledHeaderTypes = {
     scrolled: boolean
@@ -28,6 +29,14 @@ const Header = styled.header<StyledHeaderTypes>`
     };
     box-shadow: ${props => props.scrolled && theme.light.shadow.main};
     transition: all ease-in .2s;
+    @media ${theme.media.mobile} {
+        height: 44px;
+    }
+`
+
+const HeaderContainer = styled(Container)`
+    padding: 0;
+    height: 75px;
     @media ${theme.media.mobile} {
         height: 44px;
     }
@@ -123,6 +132,7 @@ const TopButton = styled(Link)`
 
 export const S = {
     Header,
+    HeaderContainer,
     Left,
     Right,
     TopButton,

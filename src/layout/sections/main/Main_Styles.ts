@@ -3,6 +3,7 @@ import { font } from "../../../styles/Font"
 import { theme } from "../../../styles/Theme.styled"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { Link } from "../../../components/link/Link.styled"
+import { Container } from "../../../components/Container"
 
 const Main = styled.section`
     display: flex;
@@ -16,14 +17,25 @@ const Main = styled.section`
         theme.dark.color.text.primary
     };
     z-index: 0;
+    overflow-x: hidden;
 `
 
+const MainContainer = styled(Container)`
+    padding: 0;
+    height: 100%;
+`
+
+
+
 const BannerWrapper = styled(FlexWrapper)`
-    position: relative;
-    margin: 80px 0;
+    margin: 80px auto;
     padding: 40px 44px;
     min-height: 508px;
-    left: -5%;
+    width: 95%;
+    left: 5%;
+    flex-wrap: wrap;
+    gap: 50px;
+    transform: translateX(-5%);
     background: ${props => props.theme === 'light' ?
         theme.light.gradient.banner :
         theme.dark.gradient.banner
@@ -37,6 +49,7 @@ const BannerWrapper = styled(FlexWrapper)`
     z-index: 999999;
     @media ${theme.media.mobile} {
         border-radius: 112px 0;
+        width: 60%;
     }
 `
 
@@ -103,7 +116,7 @@ const BannerRight = styled(FlexWrapper)`
         top: 90%;
         left: 95%;
         transform: translate( -95%, -90%);
-        z-index: 1;
+        z-index: -1;
         @media ${theme.media.mobile} {
             height: 100px;
             width: 100px;
@@ -311,6 +324,7 @@ const AppText = styled.span`
 
 export const S = {
     Main,
+    MainContainer,
     BannerWrapper,
     BannerLeft,
     BannerRight,
