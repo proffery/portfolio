@@ -29,7 +29,7 @@ export const ThemeChangeButton: React.FC<ThemeChangeButtonTypes> = ({ className,
                 iconId={theme === 'light' ? 'moon' : 'sun'}
                 width="40px"
                 height="40px"
-                viewBox={theme === 'light' ? '0 0 50 50' : '30 20 500 500'}
+                viewBox={theme === 'light' ? '0 0 45 50' : '10 20 500 500'}
             />
         </Button>
     )

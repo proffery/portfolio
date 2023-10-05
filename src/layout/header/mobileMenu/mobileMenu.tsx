@@ -5,6 +5,7 @@ import { theme }  from "../../../styles/Theme.styled"
 import { ThemeChangeButton } from "../themeChangeButton/ThemeChangeButton"
 import { menuItems } from "../../../data/menuItems"
 import {S} from "./MibileMenu_Styles"
+import { Fade } from "react-awesome-reveal"
 
 type MobileMenuTypes = {
     setCurrentTheme: any,
@@ -20,18 +21,20 @@ export const MobileMenu: React.FC<MobileMenuTypes> = (props: MobileMenuTypes) =>
             </S.BurgerButton>
             <S.MobileMenuPopup theme={themeName} isOpen={isOpen}>
                 <ul role="menu" aria-label="menu">
-                    {menuItems.map((item, index) => (
-                        <li role="menuitem" key={index}>
-                            <Link 
-                                theme={themeName} 
-                                color={themeName === 'light' ? 
+                    <Fade triggerOnce duration={500} cascade>
+                        {menuItems.map((item, index) => (
+                            <li role="menuitem" key={index}>
+                                <Link 
+                                    theme={themeName} 
+                                    color={themeName === 'light' ? 
                                     theme.light.color.text.primary :
                                     theme.dark.color.text.primary
                                 }
                                 href={item.item_href}
                                 onClick={() => {setIsOpen(!isOpen)}}>{item.item_name}</Link>
-                        </li>
-                    ))}
+                            </li>
+                        ))}
+                    </Fade>
                     <li>
                         <ThemeChangeButton setCurrentTheme={props.setCurrentTheme} />
                     </li>

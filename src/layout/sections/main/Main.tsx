@@ -8,6 +8,7 @@ import { Container } from "../../../components/Container"
 import { theme } from "../../../styles/Theme.styled"
 import { S } from "./Main_Styles"
 import Tilt from 'react-parallax-tilt'
+import { Hinge } from "react-awesome-reveal"
 
 
 export const Main: React.FC = () => {
@@ -15,12 +16,17 @@ export const Main: React.FC = () => {
     const [isDeleting, setIsDeleting] = useState(false)
     const [text, setText] = useState('')
     const [delta, setDelta] = useState(300 - Math.random() * 100)
+    const [jsIsShow, setJsIsShow] = useState(true)
     const toRotate = ['Web Developer', 'JS/TS Developer', 'React Developer']
     const themeName = useContext(ThemeContext)
     const period = 2000
     const [width, setWidth] = React.useState(window.innerWidth);
     const breakpoint = 768;
 
+    useEffect(() => {
+        setTimeout(() => {setJsIsShow(false)}, 4500)
+    }, [])
+    
     useEffect(() => {
         let ticker = setInterval(() => {
             tick()
@@ -71,9 +77,9 @@ export const Main: React.FC = () => {
                             <FlexWrapper wrap="wrap">
                                 <S.BannerTitleSecond theme={themeName}>I’m &nbsp;</S.BannerTitleSecond>
                                 <S.BannerTitleSecond theme={themeName}>
-                                    <Link href="#">Dmitry Shamko&nbsp;</Link>
+                                    <Link href="#">Dmitry Shamko</Link>
                                 </S.BannerTitleSecond>
-                                <S.BannerTitleMain theme={themeName} aria-label="Web Developer">{text}&nbsp;</S.BannerTitleMain>
+                                <S.BannerTitleMain theme={themeName} aria-label="Web Developer">{text}</S.BannerTitleMain>
                             </FlexWrapper>
                             <S.BannerDescription>Draft is a revolutionary web app built to help you manage your business easily and save your money.</S.BannerDescription>
                             <S.BannerLinksWrapper align="center" justify="start" wrap="wrap">
@@ -93,6 +99,16 @@ export const Main: React.FC = () => {
                 <S.AppsLeft theme={themeName}></S.AppsLeft>
                 <S.AppsRight theme={themeName} direction="column" justify="end">
                     <S.AppsWrapper justify="center" gap="12px" wrap="wrap">
+                        {jsIsShow && 
+                            <Hinge delay={3000} triggerOnce>
+                                    <S.App theme={themeName}>
+                                        <S.AppIconWrapper theme={themeName}>
+                                            <Icon iconId="javaScript" height="100%" width="100%" viewBox="-26 -28 180 180" />
+                                        </S.AppIconWrapper>
+                                        <S.AppText>JavaScript</S.AppText>
+                                    </S.App>
+                            </Hinge>
+                        }
                         <S.App theme={themeName}>
                             <S.AppIconWrapper theme={themeName}>
                                 <Icon iconId="typeScript" height="100%" width="100%" viewBox="-26 -28 180 180" />

@@ -7,6 +7,7 @@ import { ElementRef, useContext, useRef, useState } from "react"
 import { ThemeContext } from "../../../context/ThemeContext"
 import { S } from "./Contact_Styles"
 import emailjs from '@emailjs/browser';
+import { Zoom } from "react-awesome-reveal"
 
 export const Contact: React.FC = () => {
     const form = useRef<ElementRef<'form'>>(null)
@@ -76,33 +77,35 @@ export const Contact: React.FC = () => {
                             </FlexWrapper>
                         </S.ContactForm>
                         <S.ContactsAddsWrapper direction="column" align="start" gap="30px" width="100%" height="100%">
-                            <S.ContactsAddWrapper theme={theme} align="center">
-                                <S.AddIconWrapper>
-                                    <Icon iconId="location" height="100%" width="100%" viewBox="94 405 47 47"/>
-                                </S.AddIconWrapper>
-                                <FlexWrapper direction="column">
-                                    <S.AddTitle theme={theme}>Location</S.AddTitle>
-                                    <S.AddDescription theme={theme}>Belarus</S.AddDescription>
-                                </FlexWrapper>
-                            </S.ContactsAddWrapper>
-                            <S.ContactsAddWrapper theme={theme} align="center">
-                                <S.AddIconWrapper>
-                                    <Icon iconId="phone" height="100%" width="100%" viewBox="-3 -6 34 34"/>
-                                </S.AddIconWrapper>
-                                <FlexWrapper direction="column">
-                                    <S.AddTitle theme={theme}>Phone</S.AddTitle>
-                                    <S.AddDescription theme={theme}>+375256979075</S.AddDescription>
-                                </FlexWrapper>
-                            </S.ContactsAddWrapper>
-                            <S.ContactsAddWrapper theme={theme} align="center">
-                                <S.AddIconWrapper>
-                                    <Icon iconId="email" height="100%" width="100%" viewBox="-3 -4 31 31"/>
-                                </S.AddIconWrapper>
-                                <FlexWrapper direction="column">
-                                    <S.AddTitle theme={theme}>Email</S.AddTitle>
-                                    <S.AddDescription theme={theme}>proffery@gmail.com</S.AddDescription>
-                                </FlexWrapper>
-                            </S.ContactsAddWrapper>
+                            <Zoom cascade triggerOnce>
+                                <S.ContactsAddWrapper theme={theme} align="center">
+                                    <S.AddIconWrapper>
+                                        <Icon iconId="location" height="100%" width="100%" viewBox="94 405 47 47"/>
+                                    </S.AddIconWrapper>
+                                    <FlexWrapper direction="column">
+                                        <S.AddTitle theme={theme}>Location</S.AddTitle>
+                                        <S.AddDescription theme={theme}>Belarus</S.AddDescription>
+                                    </FlexWrapper>
+                                </S.ContactsAddWrapper>
+                                <S.ContactsAddWrapper theme={theme} align="center">
+                                    <S.AddIconWrapper>
+                                        <Icon iconId="phone" height="100%" width="100%" viewBox="-3 -6 34 34"/>
+                                    </S.AddIconWrapper>
+                                    <FlexWrapper direction="column">
+                                        <S.AddTitle theme={theme}>Phone</S.AddTitle>
+                                        <S.AddDescription theme={theme}>+375256979075</S.AddDescription>
+                                    </FlexWrapper>
+                                </S.ContactsAddWrapper>
+                                <S.ContactsAddWrapper theme={theme} align="center">
+                                    <S.AddIconWrapper>
+                                        <Icon iconId="email" height="100%" width="100%" viewBox="-3 -4 31 31"/>
+                                    </S.AddIconWrapper>
+                                    <FlexWrapper direction="column">
+                                        <S.AddTitle theme={theme}>Email</S.AddTitle>
+                                        <S.AddDescription theme={theme}>proffery@gmail.com</S.AddDescription>
+                                    </FlexWrapper>
+                                </S.ContactsAddWrapper>
+                            </Zoom>
                         </S.ContactsAddsWrapper>
                     </S.ContactFormWrapper>
                 </S.ContactWrapper>

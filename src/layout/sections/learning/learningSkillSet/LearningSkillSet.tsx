@@ -1,3 +1,4 @@
+import { Fade } from 'react-awesome-reveal'
 import { LerningCard } from '../card/LearningCard'
 import { S } from './LearningSkillSet_Styles'
   
@@ -17,9 +18,11 @@ export const LearningSkillSet = (props: PropType) => {
 
   return (
     <S.Skills>
-        {slides.map((slide, index) => (
-            <LerningCard imageId={slide.imageId} viewBox={slide.viewBox || "0 0 128 128"} title={slide.title} key={slide.category + index.toString()}/>
-        ))}
+        <Fade cascade triggerOnce>
+          {slides.map((slide, index) => (
+              <LerningCard imageId={slide.imageId} viewBox={slide.viewBox || "0 0 128 128"} title={slide.title} key={slide.category + index.toString()}/>
+          ))}
+        </Fade>
     </S.Skills>
   )
 }

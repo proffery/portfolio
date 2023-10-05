@@ -29,7 +29,7 @@ const MainContainer = styled(Container)`
 
 const BannerWrapper = styled(FlexWrapper)`
     margin: 80px auto;
-    padding: 40px 44px;
+    padding: 42px;
     min-height: 508px;
     width: 95%;
     left: 5%;
@@ -49,7 +49,7 @@ const BannerWrapper = styled(FlexWrapper)`
     z-index: 999999;
     @media ${theme.media.mobile} {
         border-radius: 112px 0;
-        width: 60%;
+        width: 65%;
     }
 `
 
@@ -139,6 +139,7 @@ const BannerPhoto = styled.img`
 `
 
 const BannerTitleMain = styled.h1`
+    white-space: nowrap;
     ${font({weight: 700, lineHeight: 1.36, Fmin: 34, Fmax: 60})}
     text-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.text :
@@ -176,6 +177,12 @@ const ProjectsLink = styled(Link)`
     min-height: 54px;
     border-radius: 20px; 
     padding: 5px 30px;
+    @media ${theme.media.tablet} {
+        min-width: 132px;
+        min-height: 40px;
+        border-radius: 13px; 
+        padding: 0px 10px;
+    }
     @media ${theme.media.mobile} {
         min-width: 112px;
         min-height: 30px;

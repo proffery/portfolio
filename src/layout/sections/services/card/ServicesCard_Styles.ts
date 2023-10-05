@@ -1,14 +1,23 @@
+import { Icon } from './../../../../components/icon/Icon';
 import styled from "styled-components"
 import { FlexWrapper } from "../../../../components/FlexWrapper"
 import { theme } from "../../../../styles/Theme.styled"
-import { Link } from "../../../../components/link/Link.styled"
 import { font } from "../../../../styles/Font"
+import { Button } from "../../../../components/button/Button.styled"
 
-const ServicesCard = styled(FlexWrapper)`
+type ServiceCardPropsType = {
+    isFlip: boolean
+}
+
+const ServicesCard = styled(FlexWrapper)<ServiceCardPropsType>`
     min-width: 334px;
     min-height: 402px;
     width: 30%;
     padding: 45px 60px;
+    color: ${props => props.theme === 'light' ?
+        theme.light.color.text.primary :
+        theme.dark.color.text.primary
+    };
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.card :
         theme.dark.color.background.card
@@ -17,6 +26,14 @@ const ServicesCard = styled(FlexWrapper)`
         theme.light.shadow.card :
         theme.dark.shadow.card
     };
+    p {
+        text-align: justify;
+        transform:  ${props => props.isFlip ? 'rotateY(-180deg)' : 'rotateY(0deg)'};
+    }
+    align-items: start;
+    transition: all 0.6s;
+    transform-style: preserve-3d;
+    transform:  ${props => props.isFlip ? 'rotateY(-180deg)' : 'rotateY(0deg)'};
 
     @media ${theme.media.tablet} {
         min-width: 280px;
@@ -44,13 +61,20 @@ const ServicesCardIconWrapper = styled(FlexWrapper)`
     }
 `
 
-const ServicesCardLink = styled(Link)`
+const ServicesCardButton = styled(Button)<ServiceCardPropsType>`
     ${font({weight: 400, lineHeight: 1.96, Fmin: 8, Fmax: 16})}
+    display: flex;
+    align-items: center;
     justify-content: flex-start;
+    background-color: transparent;
     color: ${props => props.theme === 'light' ?
         theme.light.color.text.link :
         theme.dark.color.text.link
     };
+    transform:  ${props => props.isFlip ? 'rotateY(-180deg)' : 'rotateY(0deg)'};
+    svg {
+        transform: ${props => props.isFlip ? 'rotateY(-180deg)' : 'rotateY(0deg)'};
+    }
 `
 
 const ServicesCardTitle = styled.h3`
@@ -65,5 +89,5 @@ export const S = {
     ServicesCard,
     ServicesCardIconWrapper,
     ServicesCardTitle,
-    ServicesCardLink
+    ServicesCardButton
 }
