@@ -19,7 +19,7 @@ const DesktopMenu = styled.nav`
     z-index: 999;
     @media ${theme.media.tablet} {
         li {
-            margin-right: 20px;
+            margin-right: 15px;
         }
     }
 `

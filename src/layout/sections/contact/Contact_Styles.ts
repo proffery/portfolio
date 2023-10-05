@@ -14,6 +14,7 @@ const Contact = styled.section`
         theme.dark.color.background.primary
     };
     gap: 20px;
+    padding: 60px 0 0 0;
     @media ${theme.media.mobile} {
         padding-top: 60px 0;
     }
@@ -226,7 +227,6 @@ const AddDescription = styled.span`
 `
 
 const SocialIconsWrapper = styled(FlexWrapper)`
-    height: 200px;
     margin-top: 65px;
     @media ${theme.media.tablet} {
         margin-top: 43px;
@@ -237,7 +237,8 @@ const SocialIconsWrapper = styled(FlexWrapper)`
     `
 
 
-    const FixedSocialIconsWrapper = styled(FlexWrapper)`
+const FixedSocialIconsWrapper = styled(FlexWrapper)`
+        height: 200px;
         position: fixed;
         left: 0;
         top: 70%;

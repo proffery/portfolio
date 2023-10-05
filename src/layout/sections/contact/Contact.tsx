@@ -3,31 +3,76 @@ import { FlexWrapper } from "../../../components/FlexWrapper"
 import { Icon } from "../../../components/icon/Icon"
 import { Link } from "../../../components/link/Link.styled"
 import { Container } from "../../../components/Container"
-import { useContext } from "react"
+import { ElementRef, useContext, useRef, useState } from "react"
 import { ThemeContext } from "../../../context/ThemeContext"
 import { S } from "./Contact_Styles"
+import emailjs from '@emailjs/browser';
 
 export const Contact: React.FC = () => {
+    const form = useRef<ElementRef<'form'>>(null)
     const theme = useContext(ThemeContext)
+    const [submitButtonText, setSubmitButtonText] = useState('Send')
+
+    const sendEmail = (e: any) => {
+        e.preventDefault()
+        if(!form.current) return
+        emailjs.sendForm('service_ypumi3n', 'template_mnxi9t4', form.current, 'u6DZWsUFpg84ikb5W')
+          .then((result) => {
+              console.log(result.text);
+              setSubmitButtonText('Sended!')
+              setTimeout(() => {
+                    e.target.reset()
+                    setSubmitButtonText('Send')
+                }, 2000)
+          }, (error) => {
+              console.log(error.text);
+              setSubmitButtonText('Error!')
+          })
+        
+    }
+
     return (
         <S.Contact id="contact" theme={theme}>
             <Container direction="column" align="center" justify="center">
                 <SectionTitle theme={theme}>Contact</SectionTitle>
                 <S.ContactWrapper theme={theme} direction="column" >
                     <S.ContactFormWrapper theme={theme} align="start">
-                        <S.ContactForm>
+                        <S.ContactForm ref={form} onSubmit={sendEmail}>
                             <FlexWrapper direction="column" align="center" justify="center" width="100%" gap="30px">
                                 <S.ContactFormTitle theme={theme}>Get in touch</S.ContactFormTitle>
                                 <FlexWrapper gap="10px" width="100%">
-                                    <S.ContactFormField theme={theme} type="text" aria-label="enter email" placeholder="E-mail" />
-                                    <S.ContactFormField theme={theme} type="text" aria-label="enter phone number" placeholder="Phone"/>
+                                    <S.ContactFormField 
+                                        theme={theme} 
+                                        type="text" 
+                                        aria-label="enter name" 
+                                        placeholder="Name" 
+                                        name={'user_name'}
+                                        minlength="3"
+                                        required
+                                    />
+                                    <S.ContactFormField 
+                                        theme={theme} 
+                                        type="email" 
+                                        aria-label="enter email" 
+                                        placeholder="Email" 
+                                        name={'user_email'} 
+                                        required
+                                    />
                                 </FlexWrapper>
-                                <S.ContactFormField theme={theme} as={"textarea"} aria-label="enter your message" placeholder="Message"/>
+                                <S.ContactFormField 
+                                    theme={theme} 
+                                    as={"textarea"} 
+                                    aria-label="enter your message" 
+                                    placeholder="Message" 
+                                    name={'message'}
+                                    minlength="3"
+                                    required
+                                />
                                 <S.ContactFormSubmitButton
                                     type="submit" 
                                     color="white" 
                                     hoverBackground="none"
-                                >Send</S.ContactFormSubmitButton>
+                                >{submitButtonText}</S.ContactFormSubmitButton>
                             </FlexWrapper>
                         </S.ContactForm>
                         <S.ContactsAddsWrapper direction="column" align="start" gap="30px" width="100%" height="100%">
