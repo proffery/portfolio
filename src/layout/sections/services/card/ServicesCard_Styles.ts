@@ -1,4 +1,3 @@
-import { Icon } from './../../../../components/icon/Icon';
 import styled from "styled-components"
 import { FlexWrapper } from "../../../../components/FlexWrapper"
 import { theme } from "../../../../styles/Theme.styled"
@@ -11,7 +10,7 @@ type ServiceCardPropsType = {
 
 const ServicesCard = styled(FlexWrapper)<ServiceCardPropsType>`
     min-width: 334px;
-    min-height: 402px;
+    aspect-ratio: 3 / 4;
     width: 30%;
     padding: 45px 60px;
     color: ${props => props.theme === 'light' ?
@@ -29,6 +28,7 @@ const ServicesCard = styled(FlexWrapper)<ServiceCardPropsType>`
     p {
         text-align: justify;
         transform:  ${props => props.isFlip ? 'rotateY(-180deg)' : 'rotateY(0deg)'};
+        ${font({Fmin: 8, Fmax: 24})}
     }
     align-items: start;
     transition: all 0.6s;
@@ -37,12 +37,12 @@ const ServicesCard = styled(FlexWrapper)<ServiceCardPropsType>`
 
     @media ${theme.media.tablet} {
         min-width: 280px;
-        min-height: 336px;
+ 
         padding: 38px 50px;
     }
     @media ${theme.media.mobile} {
         min-width: 156px;
-        min-height: 186px;
+     
         padding: 20px 28px;
     }
 `
