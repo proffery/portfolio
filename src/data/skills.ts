@@ -49,5 +49,15 @@ export const skills = [
         imageId: "git",
         category: "other",
         viewBox: "0 0 128 128"
+    },{
+        title: "GitHub",
+        imageId: "gitHub",
+        category: "other",
+        viewBox: "0 0 128 128"
+    },{
+        title: "VS Code",
+        imageId: "vsCode",
+        category: "other",
+        viewBox: "0 0 128 128"
     },
 ]

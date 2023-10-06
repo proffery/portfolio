@@ -139,7 +139,6 @@ const BannerPhoto = styled.img`
 `
 
 const BannerTitleMain = styled.h1`
-    white-space: nowrap;
     ${font({weight: 700, lineHeight: 1.36, Fmin: 34, Fmax: 60})}
     text-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.text :

@@ -136,14 +136,14 @@ export const projects = [
         imageUrl: PortfolioProject,
         projectDemo: 'https://proffery.github.io/portfolio-project-one/',
         projectCode: 'https://github.com/proffery/portfolio-project-one',
-        projectTitle: 'Responsive Animated Portfolio Page. React-Bootstrap',
+        projectTitle: 'Animated Portfolio Page. React-Bootstrap',
         projectCategory: 'React'
     },
     {
         imageUrl: PhotographerHomePage,
         projectDemo: 'https://proffery.github.io/portfolio-project-two/',
         projectCode: 'https://github.com/proffery/portfolio-project-two',
-        projectTitle: 'Responsive Photographer Website React-Bootstrap. Firebase',
+        projectTitle: 'Photographer Website React-Bootstrap. Firebase',
         projectCategory: 'React'
     },
 ]
