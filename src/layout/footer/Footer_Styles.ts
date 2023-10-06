@@ -4,6 +4,7 @@ import { font } from "../../styles/Font"
 import { FlexWrapper } from "../../components/FlexWrapper"
 import footerLight from "../../assets/images/wave-light.svg"
 import footerDark from "../../assets/images/wave-dark.svg"
+import { Link } from "../../components/link/Link.styled"
 
 const Footer = styled.footer`
     height: 200px;
@@ -36,6 +37,12 @@ const Name = styled.span`
         theme.light.color.background.second :
         theme.dark.color.background.second
     };
+    ${Link} {
+        color: ${props => props.theme === 'light' ?
+            theme.light.color.text.second :
+            theme.dark.color.text.primary
+        };
+    }
 `
 
 const Copyrights = styled.span`

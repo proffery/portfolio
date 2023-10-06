@@ -13,6 +13,7 @@ type StyledLinkPropsType = {
 
 export const Link = styled.a<StyledLinkPropsType>`
     display: flex;
+    white-space: nowrap;
     align-items: center;
     justify-content: center;
     color: ${props => props.color || (props.theme === 'light' ? theme.light.color.text.link : theme.dark.color.text.link)};
@@ -24,7 +25,6 @@ export const Link = styled.a<StyledLinkPropsType>`
     ${props => props.type === 'button' && css<StyledLinkPropsType>`
         border-radius: ${props => props.borderRadius || "0px"};
         padding: ${props => props.padding || "0px"};
-        min-width: 100px;
         background-color: ${props => props.background || (props => props.theme === 'light' ? theme.light.color.text.link : theme.dark.color.text.link)};
         &:hover {
             box-shadow: ${props => props.theme === 'light' ? theme.light.shadow.card : theme.dark.shadow.card};

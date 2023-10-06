@@ -121,11 +121,14 @@ const TopButton = styled(Link)`
 
     @media ${theme.media.tablet} {
         display: flex;
+        height: 40px;
+        min-width: 80px;
+        border-radius: 0 0 18px 18px;
     }
     
     @media ${theme.media.mobile} {
-        height: 40px;
-        min-width: 80px;
+        height: 30px;
+        min-width: 70px;
         border-radius: 0 0 16px 16px;
     }
 `

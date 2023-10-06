@@ -2,7 +2,6 @@ import { Icon } from "../../../../components/icon/Icon"
 import { useContext } from "react"
 import { ThemeContext } from "../../../../context/ThemeContext"
 import { S } from "./ServicesCard_Styles"
-import { Flip } from "react-awesome-reveal"
 
 interface ServiceCard {
     title: string,
@@ -27,7 +26,13 @@ export const ServicesCard: React.FC<ServicesCardPropsTypes> = (props: ServicesCa
     const theme = useContext(ThemeContext)
 
     return (
-        <S.ServicesCard isFlip={props.isFlip} theme={theme} direction="column" justify="space-between" width="30%">
+        <S.ServicesCard 
+            isFlip={props.isFlip} 
+            theme={theme} 
+            direction="column" 
+            justify="space-between" 
+            width="30%"
+        >
             {props.isFlip ? 
                 <>
                     <p>{props.description}</p>

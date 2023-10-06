@@ -5,6 +5,7 @@ import aboutMap from "../../../assets/images/Map.webp"
 import photo from "../../../assets/images/Photo2-my.webp"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { font } from "../../../styles/Font"
+import { Link } from "../../../components/link/Link.styled"
 
 const About = styled.section`
     display: flex;
@@ -54,7 +55,7 @@ const AboutBanner = styled(FlexWrapper)`
     border-radius: 100px 0;
     min-width: 250px;
     padding: 30px;
-    padding-top: 10px;
+    padding-top: 20px;
     @media ${theme.media.tablet} {
         top: 10%;
         left: 50%;
@@ -63,15 +64,18 @@ const AboutBanner = styled(FlexWrapper)`
     }
     
     @media ${theme.media.mobile} {
-        padding-top: 30px;
+        padding-top: 10px;
         border-radius: 54px 0;
     }
 `
 
 const SocialLinksWrapper = styled(FlexWrapper)`
     align-self: flex-end;
-    @media ${theme.media.mobile} {
-        display: none;
+    ${Link} {
+        color: ${props => props.theme === 'light' ?
+            theme.light.color.text.second :
+            theme.dark.color.text.primary
+        };
     }
 `
 const AboutBannerTitle = styled.h2`

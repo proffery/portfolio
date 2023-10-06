@@ -48,16 +48,13 @@ const ProjectCardTitle = styled.h3`
     `
 const ProjectCardLink = styled(Link)`
     ${font({weight: 700, lineHeight: 1.48, Fmin: 8, Fmax: 14})}
-    min-width: 66px;
+    max-width: 100px;
+    width: 50%;
     max-height: 30px;
     aspect-ratio: 11 / 3;
     width: 50%;
-    border-radius: 12px;
-    @media ${theme.media.tablet} {
-        border-radius: 10px;
-    }
+    border-radius: 10px;
     @media ${theme.media.mobile} {
-        aspect-ratio: 17 / 5;
         border-radius: 7px;
     }    
 `
@@ -69,17 +66,16 @@ const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType>`
     background-size: cover;
     border-radius: 30px;
     max-width: 270px;
-    min-width: 163;
-    min-height: 238px;
+    /* min-width: 163;
+    min-height: 238px; */
     width: 30%;
-    aspect-ratio: 9 / 13;
+    aspect-ratio: 9 / 14;
     flex-grow: 1;
     margin-bottom: 10px;
     z-index: 0;
     @media ${theme.media.mobile} {
-        max-width: 163px;
         border-radius: 16px;
-        margin-bottom: 7px;
+        min-width: 163px;
     }
 
     ${ProjectCardLink} {

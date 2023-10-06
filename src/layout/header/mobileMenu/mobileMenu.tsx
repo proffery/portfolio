@@ -19,7 +19,7 @@ export const MobileMenu: React.FC<MobileMenuTypes> = (props: MobileMenuTypes) =>
             <S.BurgerButton theme={themeName} aria-label="Burger menu button" isOpen={isOpen} onClick={() => {setIsOpen(!isOpen)}}>
                 <span></span>
             </S.BurgerButton>
-            <S.MobileMenuPopup theme={themeName} isOpen={isOpen}>
+            <S.MobileMenuPopup theme={themeName} isOpen={isOpen} onClick={() => {setIsOpen(!isOpen)}}>
                 <ul role="menu" aria-label="menu">
                     <Fade triggerOnce duration={500} cascade>
                         {menuItems.map((item, index) => (
@@ -27,11 +27,11 @@ export const MobileMenu: React.FC<MobileMenuTypes> = (props: MobileMenuTypes) =>
                                 <Link 
                                     theme={themeName} 
                                     color={themeName === 'light' ? 
-                                    theme.light.color.text.primary :
-                                    theme.dark.color.text.primary
-                                }
-                                href={item.item_href}
-                                onClick={() => {setIsOpen(!isOpen)}}>{item.item_name}</Link>
+                                        theme.light.color.text.primary :
+                                        theme.dark.color.text.primary
+                                    }   
+                                    href={item.item_href}
+                                >{item.item_name}</Link>
                             </li>
                         ))}
                     </Fade>

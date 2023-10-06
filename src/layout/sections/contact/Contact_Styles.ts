@@ -3,6 +3,8 @@ import { theme } from "../../../styles/Theme.styled"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { font } from "../../../styles/Font"
 import { Button } from "../../../components/button/Button.styled"
+import { Link } from "../../../components/link/Link.styled"
+import { Icon } from "../../../components/icon/Icon"
 
 const Contact = styled.section`
     display: flex;
@@ -227,6 +229,10 @@ const AddDescription = styled.span`
 `
 
 const SocialIconsWrapper = styled(FlexWrapper)`
+    ${Link} :hover {
+        transition: transform .2s ease-in;
+        transform: scale(1.05);
+    }
     margin-top: 65px;
     @media ${theme.media.tablet} {
         margin-top: 43px;
@@ -242,6 +248,12 @@ const FixedSocialIconsWrapper = styled(FlexWrapper)`
         position: fixed;
         left: 0;
         top: 70%;
+    ${Link} {
+        color: ${props => props.theme === 'light' ?
+            theme.light.color.text.second :
+            theme.dark.color.text.primary
+        };
+    }
         background-color: ${props => props.theme === 'light' ?
             theme.light.color.background.second :
             theme.dark.color.background.second

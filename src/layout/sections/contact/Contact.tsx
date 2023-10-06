@@ -110,25 +110,25 @@ export const Contact: React.FC = () => {
                     </S.ContactFormWrapper>
                 </S.ContactWrapper>
                 <S.SocialIconsWrapper>
-                    <Link href="#" aria-label="Instagram account link">
-                        <Icon iconId="instagramColor" height="34px" viewBox="0 0 50 50"/>
+                    <Link href="https://www.instagram.com/proffery/" aria-label="Instagram link">
+                        <Icon iconId="instagramColor" height="50px" viewBox="0 0 55 55"/>
                     </Link>
-                    <Link href="#" aria-label="Whatsapp group link">
-                        <Icon iconId="whatsappColor" height="34px" viewBox="0 0 50 50"/>
+                    <Link href="https://wa.me/375256979075" aria-label="WhatsApp link">
+                        <Icon iconId="whatsappColor" height="50px" viewBox="-4 -4 63 63"/>
                     </Link>
-                    <Link href="#" aria-label="Telegram group link">
-                        <Icon iconId="telegramColor" height="30px" viewBox="0 -1 50 50"/>
+                    <Link href="viber://chat?number=%2B375256979075" aria-label="Viber link">
+                        <Icon iconId="viber" height="50px" viewBox="-100 -100 900 900"/>
                     </Link>
                 </S.SocialIconsWrapper>
                 <S.FixedSocialIconsWrapper theme={theme} direction="column" align="center" justify="center">
-                    <Link href="#" aria-label="Whatsapp group link">
-                        <Icon iconId="aboutWhatsapp" height="50px" width="50px" viewBox="-1 1 30 30"/>
+                    <Link href="https://github.com/proffery" aria-label="GitHub profile link">
+                        <Icon iconId="gitHub" height="50px" width="50px" viewBox="-35 -27 210 210"/>
                     </Link>
-                    <Link href="#" aria-label="Instagram account link">
-                        <Icon iconId="aboutInstagram" height="50px" width="50px" viewBox="-9 -13 50 50" />
+                    <Link href="https://www.linkedin.com/in/dmitryshamko/" aria-label="LinkedIn account">
+                        <Icon iconId="linkedIn" height="50px" width="50px" viewBox="-37 -59 220 220" />
                     </Link>
-                    <Link href="#" aria-label="Telegram group link">
-                        <Icon iconId="aboutTelegram" height="50px" width="50px" viewBox="-1 -4 37 37" />
+                    <Link href="https://t.me/ShamkoDmitry" aria-label="Telegram link">
+                        <Icon iconId="aboutTelegram" height="50px" width="50px" viewBox="0 -5 33 33" />
                     </Link>
                 </S.FixedSocialIconsWrapper>
             </Container>

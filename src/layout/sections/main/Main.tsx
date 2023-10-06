@@ -4,7 +4,6 @@ import { FlexWrapper } from "../../../components/FlexWrapper"
 import { Link } from "../../../components/link/Link.styled"
 import React, { useContext, useEffect, useState } from "react"
 import { ThemeContext } from "../../../context/ThemeContext"
-import { Container } from "../../../components/Container"
 import { theme } from "../../../styles/Theme.styled"
 import { S } from "./Main_Styles"
 import Tilt from 'react-parallax-tilt'
@@ -77,7 +76,7 @@ export const Main: React.FC = () => {
                             <FlexWrapper wrap="wrap">
                                 <S.BannerTitleSecond theme={themeName}>I’m &nbsp;</S.BannerTitleSecond>
                                 <S.BannerTitleSecond theme={themeName}>
-                                    <Link href="#">Dmitry Shamko</Link>
+                                    <Link href="#contact">Dmitry Shamko</Link>
                                 </S.BannerTitleSecond>
                                 <S.BannerTitleMain theme={themeName} aria-label="Web Developer">{text}</S.BannerTitleMain>
                             </FlexWrapper>

@@ -54,7 +54,7 @@ export const Projects: React.FC = () => {
                     </Fade>
                 </FlexWrapper>
                     <S.ProjectWrapper wrap="wrap" align="center" justify="center">
-                            {filteredProjects.map((project, index) =>     
+                            {filteredProjects.slice(0).reverse().map((project, index) =>     
                             <ProgectsCard 
                                 key={index + project.projectCategory}
                                 imageUrl={project.imageUrl} 
