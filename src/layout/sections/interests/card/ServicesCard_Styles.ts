@@ -12,7 +12,7 @@ const ServicesCard = styled(FlexWrapper)<ServiceCardPropsType>`
     min-width: 334px;
     aspect-ratio: 3 / 4;
     width: 30%;
-    padding: 45px 60px;
+    padding: 30px;
     color: ${props => props.theme === 'light' ?
         theme.light.color.text.primary :
         theme.dark.color.text.primary
@@ -37,13 +37,11 @@ const ServicesCard = styled(FlexWrapper)<ServiceCardPropsType>`
 
     @media ${theme.media.tablet} {
         min-width: 280px;
- 
-        padding: 38px 50px;
+        padding: 25px;
     }
     @media ${theme.media.mobile} {
         min-width: 156px;
-     
-        padding: 20px 28px;
+        padding: 10px;
     }
 `
 

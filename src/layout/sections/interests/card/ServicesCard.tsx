@@ -2,6 +2,7 @@ import { Icon } from "../../../../components/icon/Icon"
 import { useContext } from "react"
 import { ThemeContext } from "../../../../context/ThemeContext"
 import { S } from "./ServicesCard_Styles"
+import { Bounce, Fade } from 'react-awesome-reveal'
 
 interface ServiceCard {
     title: string,
@@ -41,18 +42,27 @@ export const ServicesCard: React.FC<ServicesCardPropsTypes> = (props: ServicesCa
         >
             {props.isFlip ?
                 <>
-                    <p>{props.description}</p>
-                    <S.ServicesCardButton
-                        theme={theme}
-                        isFlip={props.isFlip}
-                        hoverBackground="transparent"
-                        hoverShadow="none"
-                    ><Icon iconId="arrowRight" width="20%" />View Less</S.ServicesCardButton>
+                    <Fade delay={200}>
+                        <p>{props.description}</p>
+                        <S.ServicesCardButton
+                            theme={theme}
+                            isFlip={props.isFlip}
+                            hoverBackground="transparent"
+                            hoverShadow="none"
+                        ><Icon iconId="arrowRight"
+                            width="20%"
+                            />View Less
+                        </S.ServicesCardButton>
+                    </Fade>
                 </>
                 :
                 <>
-                    <S.ServicesCardIconWrapper>
-                        <Icon iconId={props.iconId} height="73px" width="73px" viewBox={props.viewBox || "0 0 70 70"} />
+                    <S.ServicesCardIconWrapper >
+                        <Icon iconId={props.iconId}
+                            height="73px"
+                            width="73px"
+                            viewBox={props.viewBox || "0 0 70 70"}
+                        />
                     </S.ServicesCardIconWrapper>
                     <S.ServicesCardTitle theme={theme}>{props.title}</S.ServicesCardTitle>
                     <S.ServicesCardButton
@@ -60,7 +70,11 @@ export const ServicesCard: React.FC<ServicesCardPropsTypes> = (props: ServicesCa
                         isFlip={props.isFlip}
                         hoverBackground="transparent"
                         hoverShadow="none"
-                    >View More<Icon iconId="arrowRight" width="20%" /></S.ServicesCardButton>
+                    >View More<Icon
+                            iconId="arrowRight"
+                            width="20%"
+                        />
+                    </S.ServicesCardButton>
                 </>
             }
         </S.ServicesCard>
