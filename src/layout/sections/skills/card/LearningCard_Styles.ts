@@ -8,9 +8,10 @@ const LearningCardTitle = styled.h3`
     top: 5%;
     left: 5%;
     transform: translate(-5%, -5%);
-
+    mix-blend-mode: revert;
     ${font({weight: 700, lineHeight: 1.36, Fmin: 11, Fmax: 22})}
     color: ${props => props.color || (props => props.theme === 'light' ? theme.light.color.text.primary : theme.dark.color.text.primary)};
+
 `
 
 const LearningCard = styled(FlexWrapper)`

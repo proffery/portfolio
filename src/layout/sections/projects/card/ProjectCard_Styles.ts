@@ -26,7 +26,11 @@ const ProjectCardContent = styled(FlexWrapper)`
         theme.dark.shadow.card
     };
     transition: height ease-in .5s;
-
+    outline: 1px solid ${props => props.theme === 'light' ?
+        theme.light.color.background.primary :
+        theme.dark.color.background.primary
+    };
+    opacity: .95;
     @media ${theme.media.mobile} {
         border-radius: 0 0 16px 16px;
         padding: 16px;

@@ -21,7 +21,7 @@ export const MobileMenu: React.FC<MobileMenuTypes> = (props: MobileMenuTypes) =>
             </S.BurgerButton>
             <S.MobileMenuPopup theme={themeName} isOpen={isOpen} onClick={() => {setIsOpen(!isOpen)}}>
                 <ul role="menu" aria-label="menu">
-                    <Fade triggerOnce duration={500} cascade>
+                    <Fade triggerOnce duration={300} cascade>
                         {menuItems.map((item, index) => (
                             <li role="menuitem" key={index}>
                                 <Link 

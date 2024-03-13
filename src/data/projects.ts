@@ -17,6 +17,7 @@ import BlogApp from '../assets/images/projects/BlogApp.webp'
 import PortfolioProject from '../assets/images/projects/PortfolioProject.webp'
 import PhotographerHomePage from '../assets/images/projects/PhotographerHomePage.webp'
 import OpenAIClient from '../assets/images/projects/OpenAIClientApp.webp'
+import SocialNetwork from '../assets/images/projects/SocialNetwork.png'
 
 
 export const projects = [
@@ -144,6 +145,13 @@ export const projects = [
         projectDemo: 'https://proffery.github.io/portfolio-project-two/',
         projectCode: 'https://github.com/proffery/portfolio-project-two',
         projectTitle: 'Photographer Website React-Bootstrap. Firebase',
+        projectCategory: 'React'
+    },
+    {
+        imageUrl: SocialNetwork,
+        projectDemo: 'https://proffery.github.io/samurai-way/',
+        projectCode: 'https://github.com/proffery/samurai-way',
+        projectTitle: 'Social Network: React. Redux. Axios. Styled-components',
         projectCategory: 'React'
     },
 ]

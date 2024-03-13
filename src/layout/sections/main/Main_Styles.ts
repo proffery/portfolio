@@ -18,14 +18,16 @@ const Main = styled.section`
     };
     z-index: 0;
     overflow-x: hidden;
+    padding-top: 60px;
+    @media ${theme.media.mobile} {
+        padding-top: 27px;
+    }
 `
 
 const MainContainer = styled(Container)`
     padding: 0;
     height: 100%;
 `
-
-
 
 const BannerWrapper = styled(FlexWrapper)`
     margin: 80px auto;
@@ -43,7 +45,7 @@ const BannerWrapper = styled(FlexWrapper)`
     backdrop-filter: blur(10px);
     border: 2px solid ${props => props.theme === 'light' ?
         theme.light.color.background.bannerBorder :
-        theme.dark.color.background.bannerBorder 
+        theme.dark.color.background.bannerBorder
     };
     border-radius: 200px 0;
     z-index: 999999;
@@ -66,9 +68,9 @@ const BannerLeft = styled(FlexWrapper)`
         width: 300%;
         height: 100%;
         background-color: ${props => props.theme === 'light' ?
-            theme.light.color.background.second :
-            theme.dark.color.background.second
-        };
+        theme.light.color.background.second :
+        theme.dark.color.background.second
+    };
         @media ${theme.media.tablet} {
             width: 500%;
         }
@@ -87,10 +89,10 @@ const BannerRight = styled(FlexWrapper)`
         transform: rotate(45deg) translate(-20%, -1%);
         height: 88px;
         width: 88px;
-        ${font({weight: 600, lineHeight: 1.36, Fmin: 100, Fmax: 150})}
+        ${font({ weight: 600, lineHeight: 1.36, Fmin: 100, Fmax: 150 })}
         color: ${props => props.theme === 'light' ?
-            theme.light.color.background.second :
-            theme.dark.color.background.second};
+        theme.light.color.background.second :
+        theme.dark.color.background.second};
         z-index: 0;
         @media ${theme.media.tablet} {
             top: 10%;
@@ -111,8 +113,8 @@ const BannerRight = styled(FlexWrapper)`
         width: 150px;
         border-radius: 50% 50%;
         border: 25px solid ${props => props.theme === 'light' ?
-            theme.light.color.background.second :
-            theme.dark.color.background.second};
+        theme.light.color.background.second :
+        theme.dark.color.background.second};
         top: 90%;
         left: 95%;
         transform: translate( -95%, -90%);
@@ -133,13 +135,13 @@ const BannerPhoto = styled.img`
     border-radius: 50% 50%;
     border: 15px solid ${props => props.theme === 'light' ?
         theme.light.color.background.primary :
-        theme.dark.color.background.primary 
+        theme.dark.color.background.primary
     };
     object-fit: cover;
 `
 
 const BannerTitleMain = styled.h1`
-    ${font({weight: 700, lineHeight: 1.36, Fmin: 34, Fmax: 60})}
+    ${font({ weight: 700, lineHeight: 1.36, Fmin: 34, Fmax: 60 })}
     text-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.text :
         theme.dark.shadow.text
@@ -147,7 +149,7 @@ const BannerTitleMain = styled.h1`
 `
 
 const BannerTitleSecond = styled.h2`
-    ${font({weight: 700, lineHeight: 1.36, Fmin: 34, Fmax: 60})}
+    ${font({ weight: 700, lineHeight: 1.36, Fmin: 34, Fmax: 60 })}
     text-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.text :
         theme.dark.shadow.text
@@ -161,7 +163,7 @@ const BannerTitleWrapper = styled(FlexWrapper)`
 `
 
 const BannerDescription = styled.p`
-    ${font({weight: 400, lineHeight: 1.5, Fmin: 11, Fmax: 20})}
+    ${font({ weight: 400, lineHeight: 1.5, Fmin: 11, Fmax: 20 })}
 `
 
 const BannerLinksWrapper = styled(FlexWrapper)`
@@ -171,7 +173,7 @@ const BannerLinksWrapper = styled(FlexWrapper)`
     }
 `
 const ProjectsLink = styled(Link)`
-    ${font({weight: 600, lineHeight: 1.5, Fmin: 8, Fmax: 15})}
+    ${font({ weight: 600, lineHeight: 1.5, Fmin: 8, Fmax: 15 })}
     max-width: 200px;
     min-height: 54px;
     border-radius: 20px; 
@@ -190,7 +192,7 @@ const ProjectsLink = styled(Link)`
     }
 `
 const ResumeLink = styled(Link)`
-    ${font({weight: 600, lineHeight: 1.5, Fmin: 8, Fmax: 15})}
+    ${font({ weight: 600, lineHeight: 1.5, Fmin: 8, Fmax: 15 })}
 `
 
 const ArrowIconWrapper = styled(FlexWrapper)`
@@ -245,10 +247,15 @@ const App = styled.div`
         min-width: 160px;
         min-height: 90px;
         border-radius: 24px;
+        outline: 1px solid ${props => props.theme === 'light' ?
+        theme.light.color.background.primary :
+        theme.dark.color.background.primary
+    };
         background-color: ${props => props.theme === 'light' ?
-            theme.light.color.background.second :
-            theme.dark.color.background.second
-        };
+        theme.light.color.background.second :
+        theme.dark.color.background.second
+    };
+        
         @media ${theme.media.tablet} {
             margin-bottom: 0;
             min-width: 270px;
@@ -278,7 +285,7 @@ const AppIconWrapper = styled.div`
     position: absolute;
     border: 10px solid ${props => props.theme === 'light' ?
         theme.light.color.background.primary :
-        theme.dark.color.background.primary 
+        theme.dark.color.background.primary
     };
     border-radius: 50%;
     left: 50%;
@@ -291,18 +298,18 @@ const AppIconWrapper = styled.div`
 
     @media ${theme.media.tablet} {
         border: 16px solid ${props => props.theme === 'light' ?
-            theme.light.color.background.primary :
-            theme.dark.color.background.primary 
-        };
+        theme.light.color.background.primary :
+        theme.dark.color.background.primary
+    };
         width: 125px;
         height: 125px;
     }
     
     @media ${theme.media.mobile} {
         border: 9px solid ${props => props.theme === 'light' ?
-            theme.light.color.background.primary :
-            theme.dark.color.background.primary 
-        };
+        theme.light.color.background.primary :
+        theme.dark.color.background.primary
+    };
         width: 72px;
         height: 72px;
     }

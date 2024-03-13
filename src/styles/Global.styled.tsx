@@ -50,7 +50,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
     }
 
     section {
-        padding: 60px 0;
+        padding:  0 0 60px  0;
         @media ${theme.media.mobile} {
             padding: 27px 0;
         }

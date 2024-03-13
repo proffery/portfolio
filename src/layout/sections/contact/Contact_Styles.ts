@@ -4,7 +4,6 @@ import { FlexWrapper } from "../../../components/FlexWrapper"
 import { font } from "../../../styles/Font"
 import { Button } from "../../../components/button/Button.styled"
 import { Link } from "../../../components/link/Link.styled"
-import { Icon } from "../../../components/icon/Icon"
 
 const Contact = styled.section`
     display: flex;
@@ -16,7 +15,6 @@ const Contact = styled.section`
         theme.dark.color.background.primary
     };
     gap: 20px;
-    padding: 60px 0 0 0;
     @media ${theme.media.mobile} {
         padding-top: 60px 0;
     }
@@ -73,9 +71,9 @@ const ContactForm = styled.form`
     }
     @media ${theme.media.tablet} {
         box-shadow: ${props => props.theme === 'light' ?
-            theme.light.shadow.main :
-            theme.dark.shadow.main
-        };
+        theme.light.shadow.main :
+        theme.dark.shadow.main
+    };
         padding: 53px 82px;
         width: 100%;
     }
@@ -87,7 +85,7 @@ const ContactForm = styled.form`
 const ContactFormTitle = styled.h3`
     display: flex;
     align-self: flex-start;
-    ${font({weight: 500, lineHeight: 1.36, Fmin: 22, Fmax: 36})}
+    ${font({ weight: 500, lineHeight: 1.36, Fmin: 22, Fmax: 36 })}
 
     color: ${props => props.theme === 'light' ?
         theme.light.color.text.primary :
@@ -100,7 +98,7 @@ const ContactFormField = styled.input.attrs((type) => ({
 }))`
     display: flex;
     width: 50%;
-    ${font({weight: 400, lineHeight: 1.36, Fmin: 7, Fmax: 13})}
+    ${font({ weight: 400, lineHeight: 1.36, Fmin: 7, Fmax: 13 })}
 
     padding: 0 18px;
     color: ${props => props.theme === 'light' ?
@@ -117,16 +115,16 @@ const ContactFormField = styled.input.attrs((type) => ({
     border: none;
     &::placeholder {
         color: ${props => props.theme === 'light' ?
-            theme.light.color.text.placeholder :
-            theme.dark.color.text.placeholder
-        };
+        theme.light.color.text.placeholder :
+        theme.dark.color.text.placeholder
+    };
     }
     
     &:focus-visible {
         outline: 1px solid ${props => props.theme === 'light' ?
-            theme.light.color.text.placeholder :
-            theme.dark.color.text.placeholder
-        };
+        theme.light.color.text.placeholder :
+        theme.dark.color.text.placeholder
+    };
     }
     @media ${theme.media.mobile} {
         height: 22px;
@@ -143,7 +141,7 @@ const ContactFormSubmitButton = styled(Button)`
         theme.light.color.text.link :
         theme.dark.color.text.link
     };
-    ${font({weight: 500, lineHeight: 1.36, Fmin: 10, Fmax: 16})}
+    ${font({ weight: 500, lineHeight: 1.36, Fmin: 10, Fmax: 16 })}
 
     @media ${theme.media.tablet} {
         min-width: 92px;
@@ -164,9 +162,9 @@ const ContactsAddsWrapper = styled(FlexWrapper)`
     width: 28%;
     @media ${theme.media.tablet} {
         box-shadow: ${props => props.theme === 'light' ?
-            theme.light.shadow.main :
-            theme.dark.shadow.main
-        };
+        theme.light.shadow.main :
+        theme.dark.shadow.main
+    };
         padding: 50px;
         width: 100%;
     }
@@ -233,6 +231,12 @@ const SocialIconsWrapper = styled(FlexWrapper)`
         transition: transform .2s ease-in;
         transform: scale(1.05);
     }
+    ${Link} {
+        color:${props => props.theme === 'light'
+            ? theme.light.color.background.primary
+            : theme.dark.color.background.primary
+        }
+    }
     margin-top: 65px;
     @media ${theme.media.tablet} {
         margin-top: 43px;
@@ -250,19 +254,19 @@ const FixedSocialIconsWrapper = styled(FlexWrapper)`
         top: 70%;
     ${Link} {
         color: ${props => props.theme === 'light' ?
-            theme.light.color.text.second :
-            theme.dark.color.text.primary
-        };
+        theme.light.color.text.second :
+        theme.dark.color.text.primary
+    };
     }
         background-color: ${props => props.theme === 'light' ?
-            theme.light.color.background.second :
-            theme.dark.color.background.second
-        };
+        theme.light.color.background.second :
+        theme.dark.color.background.second
+    };
         border-radius: 0 25px 25px 0;
         border: 2px solid ${props => props.theme === 'light' ?
-            theme.light.color.background.bannerBorder :
-            theme.dark.color.background.bannerBorder 
-        };
+        theme.light.color.background.bannerBorder :
+        theme.dark.color.background.bannerBorder
+    };
         border-left: none;
         z-index: 200;
         @media ${theme.media.tablet} {

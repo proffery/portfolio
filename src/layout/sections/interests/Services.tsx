@@ -1,12 +1,11 @@
-import { SectionTitle } from "../../../components/SectionTitle.styled"
-import { FlexWrapper } from "../../../components/FlexWrapper"
-import { ServicesCard } from "./card/ServicesCard"
-import { Container } from "../../../components/Container"
 import { useContext, useState } from "react"
+import { Container } from "../../../components/Container"
+import { FlexWrapper } from "../../../components/FlexWrapper"
+import { SectionTitle } from "../../../components/SectionTitle.styled"
 import { ThemeContext } from "../../../context/ThemeContext"
-import { S } from "./Services_Styles"
 import { services } from "../../../data/services"
-import { Flip } from "react-awesome-reveal"
+import { S } from "./Services_Styles"
+import { ServicesCard } from "./card/ServicesCard"
 
 export const Services: React.FC = () => {
     const theme = useContext(ThemeContext)
@@ -14,9 +13,9 @@ export const Services: React.FC = () => {
 
 
     return (
-        <S.Services id="services" theme={theme}>
+        <S.Services id="interests" theme={theme}>
             <Container direction="column">
-                <SectionTitle theme={theme}>Services</SectionTitle>
+                <SectionTitle theme={theme}>Interests</SectionTitle>
                 <FlexWrapper wrap="wrap" align="center" justify="center">
                     {servicesWithFlip.map((service, index) => 
                         <ServicesCard 

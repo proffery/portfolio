@@ -10,7 +10,7 @@ export const Container = styled(FlexWrapper)`
     width: 90%;
     height: 100%;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 0 0 60px 0;
     @media ${theme.media.mobile} {
         padding: 27px 0;
     }

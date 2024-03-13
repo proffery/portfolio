@@ -21,7 +21,7 @@ export const ProgectsCard: React.FC<ProjectsCardPropsTypes> = (props: ProjectsCa
                 </Fade>
                 <FlexWrapper align="center" justify="center" width="100%">
                         <S.ProjectCardLink href={props.githubUrl} target='_blank' theme={theme} type="button">Code</S.ProjectCardLink>
-                        <S.ProjectCardLink href={props.previewUrl} target='_blank' theme={theme}>see preview</S.ProjectCardLink>
+                        <S.ProjectCardLink href={props.previewUrl} target='_blank' theme={theme}>Demo</S.ProjectCardLink>
                 </FlexWrapper>
             </S.ProjectCardContent>
         </S.ProjectCard>

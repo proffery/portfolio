@@ -1,11 +1,10 @@
+import { useContext, useEffect, useState } from "react"
 import { FlexWrapper } from "../../../components/FlexWrapper"
-import { Link } from "../../../components/link/Link.styled"
+import { SectionTitle } from "../../../components/SectionTitle.styled"
 import { Icon } from "../../../components/icon/Icon"
-import { useContext, useEffect, useState} from "react"
+import { Link } from "../../../components/link/Link.styled"
 import { ThemeContext } from "../../../context/ThemeContext"
 import { S } from "./About_Styles"
-import { SectionTitle } from "../../../components/SectionTitle.styled"
-import { Fade, Flip, Hinge, JackInTheBox, Rotate, Zoom } from "react-awesome-reveal"
 
 export const About = () => {
     const theme = useContext(ThemeContext)

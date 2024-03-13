@@ -12,6 +12,7 @@ const Footer = styled.footer`
     flex-direction: column;
     align-items: center;
     justify-content: end;
+    border-bottom: 1px solid;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.primary :
         theme.dark.color.background.primary

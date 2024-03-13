@@ -11,7 +11,7 @@ export const Learning: React.FC = () => {
     return (
         <S.Learning id="skills" theme={theme}>
             <S.LearningContainer theme={theme} direction="column" gap="30px" align="center">
-                <SectionTitle theme={theme} color="white">Learning</SectionTitle>
+                <SectionTitle theme={theme} color="white">Skills</SectionTitle>
                 <S.LearningSkillContainer theme={theme} direction="column">
                     <S.LearningSkillsTitle>Frontend:</S.LearningSkillsTitle>
                     <LearningSkillSet slides={skills.filter(skill => skill.category === 'front')} />  

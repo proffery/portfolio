@@ -25,6 +25,7 @@ const About = styled.section`
 const AboutContainer = styled(Container)`
     position: relative;
     height: 100vh;
+    padding-top: 60px;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second

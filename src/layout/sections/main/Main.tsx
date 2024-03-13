@@ -23,7 +23,7 @@ export const Main: React.FC = () => {
     const breakpoint = 768;
 
     useEffect(() => {
-        setTimeout(() => {setJsIsShow(false)}, 4500)
+        setTimeout(() => {setJsIsShow(false)}, 5000)
     }, [])
     
     useEffect(() => {
@@ -99,7 +99,7 @@ export const Main: React.FC = () => {
                 <S.AppsRight theme={themeName} direction="column" justify="end">
                     <S.AppsWrapper justify="center" gap="12px" wrap="wrap">
                         {jsIsShow && 
-                            <Hinge delay={3000} triggerOnce>
+                            <Hinge duration={2000} delay={3000} triggerOnce>
                                     <S.App theme={themeName}>
                                         <S.AppIconWrapper theme={themeName}>
                                             <Icon iconId="javaScript" height="100%" width="100%" viewBox="-26 -28 180 180" />
@@ -122,15 +122,15 @@ export const Main: React.FC = () => {
                         </S.App>
                         <S.App theme={themeName}>
                             <S.AppIconWrapper theme={themeName}>
-                                <Icon iconId="styled" height="100%" width="100%" viewBox="2 -0 30 30" />
+                                <Icon iconId="redux" height="100%" width="100%" viewBox="-18 -11 165 165" />
                             </S.AppIconWrapper>
-                            <S.AppText>Styled Components</S.AppText>
+                            <S.AppText>Redux</S.AppText>
                         </S.App>
                         <S.App theme={themeName}>
                             <S.AppIconWrapper theme={themeName}>
-                                <Icon iconId="git" height="100%" width="100%" viewBox="-18 -18 165 165" />
+                                <Icon iconId="styled" height="100%" width="100%" viewBox="2 -0 30 30" />
                             </S.AppIconWrapper>
-                            <S.AppText>Git</S.AppText>
+                            <S.AppText>Styled Components</S.AppText>
                         </S.App>
                     </S.AppsWrapper>
                 </S.AppsRight>

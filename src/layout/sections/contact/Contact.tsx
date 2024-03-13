@@ -109,15 +109,15 @@ export const Contact: React.FC = () => {
                         </S.ContactsAddsWrapper>
                     </S.ContactFormWrapper>
                 </S.ContactWrapper>
-                <S.SocialIconsWrapper>
+                <S.SocialIconsWrapper theme={theme}>
                     <Link href="https://www.instagram.com/proffery/" aria-label="Instagram link">
                         <Icon iconId="instagramColor" height="50px" viewBox="0 0 55 55"/>
                     </Link>
                     <Link href="https://wa.me/375256979075" aria-label="WhatsApp link">
-                        <Icon iconId="whatsappColor" height="50px" viewBox="-4 -4 63 63"/>
+                        <Icon iconId="whatsappColor" height="50px" viewBox="-4 -3 59 59"/>
                     </Link>
                     <Link href="viber://chat?number=%2B375256979075" aria-label="Viber link">
-                        <Icon iconId="viber" height="50px" viewBox="-100 -100 900 900"/>
+                        <Icon iconId="viberColor" height="50px" viewBox="-100 -100 900 900"/>
                     </Link>
                 </S.SocialIconsWrapper>
                 <S.FixedSocialIconsWrapper theme={theme} direction="column" align="center" justify="center">

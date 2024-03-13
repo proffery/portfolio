@@ -5,7 +5,6 @@ const Skills = styled(FlexWrapper)`
     display: flex;
     justify-content: start;
     padding: 30px;
-    gap: 30px;
     padding-top: 0;
 `
 export const S = {
