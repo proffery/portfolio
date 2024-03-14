@@ -1,8 +1,8 @@
-import { Icon } from "../../../../components/icon/Icon"
 import { useContext } from "react"
+import { Fade } from 'react-awesome-reveal'
+import { Icon } from "../../../../components/icon/Icon"
 import { ThemeContext } from "../../../../context/ThemeContext"
 import { S } from "./ServicesCard_Styles"
-import { Bounce, Fade } from 'react-awesome-reveal'
 
 interface ServiceCard {
     title: string,
@@ -59,8 +59,8 @@ export const ServicesCard: React.FC<ServicesCardPropsTypes> = (props: ServicesCa
                 <>
                     <S.ServicesCardIconWrapper >
                         <Icon iconId={props.iconId}
-                            height="73px"
-                            width="73px"
+                            height="100%"
+                            width="100%"
                             viewBox={props.viewBox || "0 0 70 70"}
                         />
                     </S.ServicesCardIconWrapper>
