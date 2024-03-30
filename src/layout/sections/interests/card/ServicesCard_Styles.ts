@@ -12,7 +12,7 @@ const ServicesCard = styled(FlexWrapper) <ServiceCardPropsType>`
     min-width: 320px;
     aspect-ratio: 3 / 4;
     width: 31%;
-    padding: 45px;
+    padding: 0 45px;
     color: ${props => props.theme === 'light' ?
         theme.light.color.text.primary :
         theme.dark.color.text.primary
@@ -36,19 +36,19 @@ const ServicesCard = styled(FlexWrapper) <ServiceCardPropsType>`
     }
 
     @media ${theme.media.tablet} {
-        padding: 35px;
+        padding: 0 35px;
     }
 `
 
 const ServicesCardIconWrapper = styled(FlexWrapper)`
-    height: 73px;
-    width: 73px;
+    height: 173px;
+    width: 173px;
+    align-self: center;
     @media ${theme.media.tablet} {
-        width: 62px;
-        height: 62px;
+        width: 162px;
+        height: 162px;
     }
     @media ${theme.media.mobile} {
-        align-self: center;
         width: 154px;
         height: 154px;
     }

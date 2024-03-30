@@ -16,7 +16,7 @@ export const Main: React.FC = () => {
     const [text, setText] = useState('')
     const [delta, setDelta] = useState(300 - Math.random() * 100)
     const [jsIsShow, setJsIsShow] = useState(true)
-    const toRotate = ['Web Developer', 'JS/TS Developer', 'React Developer']
+    const toRotate = ['Web dev.' , 'JS/TS dev.', 'React dev.']
     const themeName = useContext(ThemeContext)
     const period = 2000
     const [width, setWidth] = React.useState(window.innerWidth);
@@ -76,10 +76,10 @@ export const Main: React.FC = () => {
                             <FlexWrapper wrap="wrap">
                                 <S.BannerTitleSecond theme={themeName}>I’m &nbsp;</S.BannerTitleSecond>
                                 <S.BannerTitleSecond theme={themeName}>
-                                    <Link href="#contact">Dmitry Shamko</Link>
+                                    <Link href="#contact">Dmitry,&nbsp;</Link>
                                 </S.BannerTitleSecond>
-                                <S.BannerTitleMain theme={themeName} aria-label="Web Developer">{text}</S.BannerTitleMain>
                             </FlexWrapper>
+                                <S.BannerTitleMain theme={themeName} aria-label="Web Developer">{text}&nbsp;</S.BannerTitleMain>
                             <S.BannerDescription>Draft is a revolutionary web app built to help you manage your business easily and save your money.</S.BannerDescription>
                             <S.BannerLinksWrapper align="center" justify="start" wrap="wrap">
                                 <S.ProjectsLink href="#projects" type="button" color={theme.light.color.text.second}>See Projects

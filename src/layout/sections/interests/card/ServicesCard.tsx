@@ -36,7 +36,7 @@ export const ServicesCard: React.FC<ServicesCardPropsTypes> = (props: ServicesCa
             isFlip={props.isFlip}
             theme={theme}
             direction="column"
-            justify="space-between"
+            justify="space-around"
             width="30%"
             onClick={onClickHandler}
         >
@@ -44,15 +44,6 @@ export const ServicesCard: React.FC<ServicesCardPropsTypes> = (props: ServicesCa
                 <>
                     <Fade delay={200}>
                         <p>{props.description}</p>
-                        <S.ServicesCardButton
-                            theme={theme}
-                            isFlip={props.isFlip}
-                            hoverBackground="transparent"
-                            hoverShadow="none"
-                        ><Icon iconId="arrowRight"
-                            width="20%"
-                            />View Less
-                        </S.ServicesCardButton>
                     </Fade>
                 </>
                 :
@@ -65,16 +56,6 @@ export const ServicesCard: React.FC<ServicesCardPropsTypes> = (props: ServicesCa
                         />
                     </S.ServicesCardIconWrapper>
                     <S.ServicesCardTitle theme={theme}>{props.title}</S.ServicesCardTitle>
-                    <S.ServicesCardButton
-                        theme={theme}
-                        isFlip={props.isFlip}
-                        hoverBackground="transparent"
-                        hoverShadow="none"
-                    >View More<Icon
-                            iconId="arrowRight"
-                            width="20%"
-                        />
-                    </S.ServicesCardButton>
                 </>
             }
         </S.ServicesCard>

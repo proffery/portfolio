@@ -1,22 +1,21 @@
+import React, { useContext, useEffect, useState } from "react"
+import { Fade } from "react-awesome-reveal"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { SectionTitle } from "../../../components/SectionTitle.styled"
-import { ProgectsCard } from "./card/ProjectsCard"
-import React, { useContext, useEffect, useState } from "react"
 import { ThemeContext } from "../../../context/ThemeContext"
-import { theme } from "../../../styles/Theme.styled"
 import { projects } from "../../../data/projects"
+import { theme } from "../../../styles/Theme.styled"
+import { ProgectsCard } from "./card/ProjectsCard"
 import { S } from "./Projects_Styles"
-import { Fade } from "react-awesome-reveal"
 
 export const Projects: React.FC = () => {
     const themeName = useContext(ThemeContext)
     const [filteredProjects, setFilteredProjects] = useState([...projects])
-    const [activeCategory, setActiveCategory] = useState('All')
+    const [activeCategory, setActiveCategory] = useState('React')
     const [categories, setCategories] = useState(['All'])
-    //const [activeCategories, setActiveCategories] = useState([])
     useEffect(() => {
         const allCategories = [...categories]
-        projects.forEach(project => { !allCategories.includes(project.projectCategory) && (allCategories.push(project.projectCategory)) })
+        projects.forEach(project => { !allCategories.includes(project.projectCategory) && (allCategories.unshift(project.projectCategory)) })
         setCategories(allCategories)
     }, [])
 

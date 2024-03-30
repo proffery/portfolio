@@ -1,11 +1,10 @@
-import { Logo } from "../../components/logo/Logo"
-import { DesktopMenu } from "./desktopMenu/DesktopMenu"
-import { ThemeContext } from "../../context/ThemeContext"
 import React, { useContext, useEffect, useState } from "react"
-import { Container } from "../../components/Container"
-import { MobileMenu } from "./mobileMenu/MobileMenu"
 import { Icon } from "../../components/icon/Icon"
-import {S} from "./Header_Styles"
+import { Logo } from "../../components/logo/Logo"
+import { ThemeContext } from "../../context/ThemeContext"
+import { DesktopMenu } from "./desktopMenu/DesktopMenu"
+import { S } from "./Header_Styles"
+import { MobileMenu } from "./mobileMenu/MobileMenu"
 
 type HeaderTypes = {
     setCurrentTheme: any,

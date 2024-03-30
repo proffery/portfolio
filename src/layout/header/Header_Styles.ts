@@ -28,7 +28,6 @@ const Header = styled.header<StyledHeaderTypes>`
         theme.dark.color.text.primary
     };
     box-shadow: ${props => props.scrolled && theme.light.shadow.main};
-    transition: all ease-in .2s;
     @media ${theme.media.mobile} {
         height: 44px;
     }
@@ -62,7 +61,6 @@ const Left = styled(FlexWrapper)<StyledHeaderTypes>`
         theme.dark.color.background.primary :
         theme.dark.color.background.second
     };
-    transition: all ease-in .2s;
     &::after {
         position: absolute;
         content: "";
@@ -90,7 +88,6 @@ const Right = styled(FlexWrapper)`
         theme.light.color.background.primary :
         theme.dark.color.background.primary
     };
-    transition: all ease-in .2s;
 `
 
 const TopButton = styled(Link)`

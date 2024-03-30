@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        transition: all ease-in .2s;
     }
 
     *:focus-visible {

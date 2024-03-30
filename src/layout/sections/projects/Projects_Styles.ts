@@ -1,10 +1,10 @@
 import styled from "styled-components"
-import { theme } from "../../../styles/Theme.styled"
-import { Container } from "../../../components/Container"
-import { FlexWrapper } from "../../../components/FlexWrapper"
 import decorationDots from "../../../assets/images/decorations-dots.svg"
 import { Button } from "../../../components/button/Button.styled"
+import { Container } from "../../../components/Container"
+import { FlexWrapper } from "../../../components/FlexWrapper"
 import { font } from "../../../styles/Font"
+import { theme } from "../../../styles/Theme.styled"
 
 const Projects = styled.section`
     display: flex;
@@ -44,11 +44,13 @@ const ProjectsContainer = styled(Container)`
 `
 const ProjectWrapper = styled(FlexWrapper)`
     margin-top: 40px;
-    max-height: 90vh;
+    max-height: 100vh;
     overflow-y: auto;
     gap: 38px;
+    padding: 0 38px;
     @media ${theme.media.mobile} {
         gap: 22px;
+        padding: 0 22px;
     }
 `
 
