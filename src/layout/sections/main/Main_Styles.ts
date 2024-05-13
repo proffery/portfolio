@@ -173,7 +173,7 @@ const BannerLinksWrapper = styled(FlexWrapper)`
     }
 `
 const ProjectsLink = styled(Link)`
-    ${font({ weight: 600, lineHeight: 1.5, Fmin: 8, Fmax: 15 })}
+    ${font({ weight: 600, lineHeight: 1.5, Fmin: 10, Fmax: 15 })}
     max-width: 200px;
     min-height: 54px;
     border-radius: 20px; 
@@ -192,7 +192,7 @@ const ProjectsLink = styled(Link)`
     }
 `
 const ResumeLink = styled(Link)`
-    ${font({ weight: 600, lineHeight: 1.5, Fmin: 8, Fmax: 15 })}
+    ${font({ weight: 600, lineHeight: 1.5, Fmin: 10, Fmax: 15 })}
 `
 
 const ArrowIconWrapper = styled(FlexWrapper)`

@@ -14,7 +14,7 @@ const DesktopMenu = styled.nav`
     }
     li {
         margin-right: 35px;
-        ${font({Fmin: 8, Fmax: 16})}
+        ${font({Fmin: 12, Fmax: 16})}
     }
     z-index: 999;
     @media ${theme.media.tablet} {

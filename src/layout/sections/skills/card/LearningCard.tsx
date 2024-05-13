@@ -9,7 +9,7 @@ type LearningCardPropsTypes = {
     viewBox?: string
 }
 
-export const LerningCard: React.FC<LearningCardPropsTypes> = (props: LearningCardPropsTypes) => {
+export const LearningCard: React.FC<LearningCardPropsTypes> = (props: LearningCardPropsTypes) => {
     const theme = useContext(ThemeContext)
     return (
         <S.LearningCard 
@@ -18,7 +18,6 @@ export const LerningCard: React.FC<LearningCardPropsTypes> = (props: LearningCar
             justify="center"
         >
             <Icon iconId={props.imageId} width="100%" height="100%" viewBox={props.viewBox}/>
-            <S.LearningCardTitle theme={theme}>{props.title}</S.LearningCardTitle>
         </S.LearningCard>
     )
 }

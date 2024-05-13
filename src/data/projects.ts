@@ -1,5 +1,3 @@
-
-import Recipes from '../assets/images/projects/MyFirstWebpage.webp'
 import LandingPage from '../assets/images/projects/LandingPage.webp'
 import SignUpForm from '../assets/images/projects/SignUpForm.webp'
 import AdminDashboard from '../assets/images/projects/AdminDashboard.webp'
@@ -14,20 +12,13 @@ import CvApplication from '../assets/images/projects/CvApplication.webp'
 import MemoryCard from '../assets/images/projects/MemoryCard.webp'
 import ShoppingCart from '../assets/images/projects/ShoppingCart.webp'
 import BlogApp from '../assets/images/projects/BlogApp.webp'
-import PortfolioProject from '../assets/images/projects/PortfolioProject.webp'
+import FlashCards from '../assets/images/projects/FlashCards.png'
 import PhotographerHomePage from '../assets/images/projects/PhotographerHomePage.webp'
 import OpenAIClient from '../assets/images/projects/OpenAIClientApp.webp'
 import SocialNetwork from '../assets/images/projects/SocialNetwork.png'
 
 
 export const projects = [
-    {
-        imageUrl: Recipes,
-        projectDemo: 'https://proffery.github.io/odin-recipes/',
-        projectCode: 'https://github.com/proffery/odin-recipes',
-        projectTitle: 'My First Webpage. Project: Recipes. Foundations Course',
-        projectCategory: 'HTML, CSS'
-    },
     {
         imageUrl: LandingPage,
         projectDemo: 'https://proffery.github.io/odin-landing-page/',
@@ -134,13 +125,6 @@ export const projects = [
         projectCategory: 'React'
     },
     {
-        imageUrl: PortfolioProject,
-        projectDemo: 'https://proffery.github.io/portfolio-project-one/',
-        projectCode: 'https://github.com/proffery/portfolio-project-one',
-        projectTitle: 'Animated Portfolio Page. React-Bootstrap',
-        projectCategory: 'React'
-    },
-    {
         imageUrl: PhotographerHomePage,
         projectDemo: 'https://proffery.github.io/portfolio-project-two/',
         projectCode: 'https://github.com/proffery/portfolio-project-two',
@@ -152,6 +136,13 @@ export const projects = [
         projectDemo: 'https://proffery.github.io/samurai-way/',
         projectCode: 'https://github.com/proffery/samurai-way',
         projectTitle: 'Social Network: React. Redux. Axios. Styled-components',
+        projectCategory: 'React'
+    },
+    {
+        imageUrl: FlashCards,
+        projectDemo: 'https://flashcards-proffery.vercel.app/',
+        projectCode: 'https://github.com/proffery/cards',
+        projectTitle: 'Flash Cards: React. RTK Query. SCSS. Storybook',
         projectCategory: 'React'
     },
 ]

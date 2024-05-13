@@ -98,7 +98,7 @@ const ContactFormField = styled.input.attrs((type) => ({
 }))`
     display: flex;
     width: 50%;
-    ${font({ weight: 400, lineHeight: 1.36, Fmin: 7, Fmax: 13 })}
+    ${font({ weight: 400, lineHeight: 1.36, Fmin: 10, Fmax: 13 })}
 
     padding: 0 18px;
     color: ${props => props.theme === 'light' ?

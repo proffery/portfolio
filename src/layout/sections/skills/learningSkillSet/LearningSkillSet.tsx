@@ -1,6 +1,6 @@
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
-import { LerningCard } from '../card/LearningCard'
+import { LearningCard } from '../card/LearningCard'
 import { S } from './LearningSkillSet_Styles'
 
 interface Slides {
@@ -19,7 +19,7 @@ type PropType = {
 export const LearningSkillSet = (props: PropType) => {
   const { slides } = props
   const items = slides.map((slide, index) => (
-    <LerningCard
+    <LearningCard
       imageId={slide.imageId}
       viewBox={slide.viewBox || "0 0 128 128"}
       title={slide.title}

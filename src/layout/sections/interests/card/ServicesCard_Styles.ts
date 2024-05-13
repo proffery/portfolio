@@ -55,7 +55,7 @@ const ServicesCardIconWrapper = styled(FlexWrapper)`
 `
 
 const ServicesCardButton = styled(Button) <ServiceCardPropsType>`
-    ${font({ weight: 400, lineHeight: 1.96, Fmin: 8, Fmax: 16 })}
+    ${font({ weight: 400, lineHeight: 1.96, Fmin: 10, Fmax: 16 })}
     display: flex;
     align-items: center;
     justify-content: flex-start;

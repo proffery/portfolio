@@ -51,7 +51,7 @@ const ProjectCardTitle = styled.h3`
     ${font({family: 'Kalameh, sans-serif', weight: 700, lineHeight: 1.36 ,Fmin: 12, Fmax: 20})}
     `
 const ProjectCardLink = styled(Link)`
-    ${font({weight: 700, lineHeight: 1.48, Fmin: 8, Fmax: 14})}
+    ${font({weight: 700, lineHeight: 1.48, Fmin: 12, Fmax: 14})}
     max-width: 100px;
     width: 50%;
     max-height: 30px;

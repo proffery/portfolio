@@ -45,6 +45,11 @@ export const skills = [
         category: "other",
         viewBox: "0 0 128 128"
     },{
+        title: "SASS",
+        imageId: "sass",
+        category: "front",
+        viewBox: "0 0 128 128"
+    },{
         title: "Git",
         imageId: "git",
         category: "other",
