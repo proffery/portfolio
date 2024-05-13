@@ -30,7 +30,7 @@ const Name = styled.span`
         theme.light.color.text.second :
         theme.dark.color.text.primary
     };
-    outline: 1px solid ${props => props.theme === 'light' ?
+    outline: 2px solid ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second
     };
