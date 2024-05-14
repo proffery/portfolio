@@ -21,6 +21,7 @@ const Contact = styled.section`
 `
 
 const ContactWrapper = styled(FlexWrapper)`
+    position: relative;
     height: 100%;
     width: 100%;
     padding: 53px 82px;
@@ -227,10 +228,6 @@ const AddDescription = styled.span`
 `
 
 const SocialIconsWrapper = styled(FlexWrapper)`
-    ${Link} :hover {
-        transition: transform .2s ease-in;
-        transform: scale(1.05);
-    }
     ${Link} {
         color:${props => props.theme === 'light'
             ? theme.light.color.background.primary

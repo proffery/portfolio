@@ -19,7 +19,7 @@ const ProjectCardContent = styled(FlexWrapper)`
     transform: translateY(-100%);
     height: 40%;
     width: 100%;
-    border-radius: 0 0 30px 30px; 
+    border-radius: 0 0 20px 20px; 
     padding: 22px 32px;
     box-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.card :
@@ -30,13 +30,11 @@ const ProjectCardContent = styled(FlexWrapper)`
         theme.light.color.background.primary :
         theme.dark.color.background.primary
     };
-    opacity: .95;
+
     @media ${theme.media.mobile} {
         border-radius: 0 0 16px 16px;
         padding: 16px;
-    }
-    
-    `
+    }`
 
 const ProjectCardTitle = styled.h3`
     color: ${props => props.theme === 'light' ?
@@ -48,7 +46,7 @@ const ProjectCardTitle = styled.h3`
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-align: left;
-    ${font({family: 'Kalameh, sans-serif', weight: 700, lineHeight: 1.36 ,Fmin: 12, Fmax: 20})}
+    ${font({weight: 700, lineHeight: 1.36 ,Fmin: 14, Fmax: 20})}
     `
 const ProjectCardLink = styled(Link)`
     ${font({weight: 700, lineHeight: 1.48, Fmin: 12, Fmax: 14})}
@@ -65,25 +63,23 @@ const ProjectCardLink = styled(Link)`
 
 const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType>`
     background-image: ${props => props.backgroundImage};
+    position: relative;
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-    border-radius: 30px;
+    border-radius: 20px;
     max-width: 270px;
-    /* min-width: 163;
-    min-height: 238px; */
     width: 30%;
     aspect-ratio: 9 / 14;
     flex-grow: 1;
     margin-bottom: 10px;
-    z-index: 0;
     @media ${theme.media.mobile} {
         border-radius: 16px;
         min-width: 163px;
     }
 
     ${ProjectCardLink} {
-        background-color: "transparent";
+        background-color: transparent;
     }
     ${ProjectCardLink}[type="button"] {
         color: ${props => props.theme === 'light' ?

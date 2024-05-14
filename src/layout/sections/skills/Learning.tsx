@@ -1,7 +1,7 @@
 import { SectionTitle } from "../../../components/SectionTitle.styled"
-import { ThemeContext } from "../../../context/ThemeContext"
+import { ThemeContext } from "../../../common/context/ThemeContext"
 import { useContext } from "react"
-import { skills } from "../../../data/skills"
+import { skills } from "../../../common/data/skills"
 import { LearningSkillSet } from "./learningSkillSet/LearningSkillSet"
 import { S } from "./Learning_Styles"
 

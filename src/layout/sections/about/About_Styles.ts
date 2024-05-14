@@ -81,7 +81,8 @@ const SocialLinksWrapper = styled(FlexWrapper)`
 `
 const AboutBannerTitle = styled.h2`
     white-space: nowrap;
-    ${font({weight: 700, lineHeight: 1.36, Fmin: 32, Fmax: 60})}
+    text-transform: uppercase;
+    ${font({family:'Montserrat', weight: 700, lineHeight: 1.36, Fmin: 20, Fmax: 40})}
 `
 
 const AboutBannerList = styled.ul`

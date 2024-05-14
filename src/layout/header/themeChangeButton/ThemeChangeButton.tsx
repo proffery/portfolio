@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { Button } from "../../../components/button/Button.styled"
 import { Icon } from "../../../components/icon/Icon"
-import { ThemeContext } from "../../../context/ThemeContext"
+import { ThemeContext } from "../../../common/context/ThemeContext"
 
 type ThemeChangeButtonTypes = {
     className?: string

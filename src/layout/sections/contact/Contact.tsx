@@ -4,7 +4,7 @@ import { Icon } from "../../../components/icon/Icon"
 import { Link } from "../../../components/link/Link.styled"
 import { Container } from "../../../components/Container"
 import { ElementRef, useContext, useRef, useState } from "react"
-import { ThemeContext } from "../../../context/ThemeContext"
+import { ThemeContext } from "../../../common/context/ThemeContext"
 import { S } from "./Contact_Styles"
 import emailjs from '@emailjs/browser';
 import { Zoom } from "react-awesome-reveal"

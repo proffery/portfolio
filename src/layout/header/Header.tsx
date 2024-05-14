@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { Icon } from "../../components/icon/Icon"
 import { Logo } from "../../components/logo/Logo"
-import { ThemeContext } from "../../context/ThemeContext"
+import { ThemeContext } from "../../common/context/ThemeContext"
 import { DesktopMenu } from "./desktopMenu/DesktopMenu"
 import { S } from "./Header_Styles"
 import { MobileMenu } from "./mobileMenu/MobileMenu"

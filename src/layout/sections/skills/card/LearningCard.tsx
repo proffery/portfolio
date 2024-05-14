@@ -1,4 +1,4 @@
-import { ThemeContext } from "../../../../context/ThemeContext"
+import { ThemeContext } from "../../../../common/context/ThemeContext"
 import { useContext } from "react"
 import { S } from "./LearningCard_Styles"
 import { Icon } from "../../../../components/icon/Icon"

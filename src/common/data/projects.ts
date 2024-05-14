@@ -1,21 +1,21 @@
-import LandingPage from '../assets/images/projects/LandingPage.webp'
-import SignUpForm from '../assets/images/projects/SignUpForm.webp'
-import AdminDashboard from '../assets/images/projects/AdminDashboard.webp'
-import RockPaperScissors from '../assets/images/projects/RockPaperScissors.webp'
-import Calculator from '../assets/images/projects/Calculator.webp'
-import EtchASketch from '../assets/images/projects/EtchASketch.webp'
-import Library from '../assets/images/projects/Library.webp'
-import TicTacToe from '../assets/images/projects/TicTacToe.webp'
-import TodoList from '../assets/images/projects/TodoList.webp'
-import WeatherApp from '../assets/images/projects/WeatherApp.webp'
-import CvApplication from '../assets/images/projects/CvApplication.webp'
-import MemoryCard from '../assets/images/projects/MemoryCard.webp'
-import ShoppingCart from '../assets/images/projects/ShoppingCart.webp'
-import BlogApp from '../assets/images/projects/BlogApp.webp'
-import FlashCards from '../assets/images/projects/FlashCards.png'
-import PhotographerHomePage from '../assets/images/projects/PhotographerHomePage.webp'
-import OpenAIClient from '../assets/images/projects/OpenAIClientApp.webp'
-import SocialNetwork from '../assets/images/projects/SocialNetwork.png'
+import LandingPage from '../../assets/images/projects/LandingPage.webp'
+import SignUpForm from '../../assets/images/projects/SignUpForm.webp'
+import AdminDashboard from '../../assets/images/projects/AdminDashboard.webp'
+import RockPaperScissors from '../../assets/images/projects/RockPaperScissors.webp'
+import Calculator from '../../assets/images/projects/Calculator.webp'
+import EtchASketch from '../../assets/images/projects/EtchASketch.webp'
+import Library from '../../assets/images/projects/Library.webp'
+import TicTacToe from '../../assets/images/projects/TicTacToe.webp'
+import TodoList from '../../assets/images/projects/TodoList.webp'
+import WeatherApp from '../../assets/images/projects/WeatherApp.webp'
+import CvApplication from '../../assets/images/projects/CvApplication.webp'
+import MemoryCard from '../../assets/images/projects/MemoryCard.webp'
+import ShoppingCart from '../../assets/images/projects/ShoppingCart.webp'
+import BlogApp from '../../assets/images/projects/BlogApp.webp'
+import FlashCards from '../../assets/images/projects/FlashCards.png'
+import PhotographerHomePage from '../../assets/images/projects/PhotographerHomePage.webp'
+import OpenAIClient from '../../assets/images/projects/OpenAIClientApp.webp'
+import SocialNetwork from '../../assets/images/projects/SocialNetwork.png'
 
 
 export const projects = [
@@ -97,17 +97,10 @@ export const projects = [
         projectCategory: 'Java Script'
     },
     {
-        imageUrl: CvApplication,
-        projectDemo: 'https://proffery.github.io/odin-cv-application/',
-        projectCode: 'https://github.com/proffery/odin-cv-application',
-        projectTitle: 'Project: CV Application.',
-        projectCategory: 'React'
-    },
-    {
         imageUrl: MemoryCard,
         projectDemo: 'https://proffery.github.io/odin-memory-card/',
         projectCode: 'https://github.com/proffery/odin-memory-card',
-        projectTitle: 'Project: Memory Card.',
+        projectTitle: 'Project: Memory Card Game',
         projectCategory: 'React'
     },
     {
@@ -121,7 +114,7 @@ export const projects = [
         imageUrl: BlogApp,
         projectDemo: 'https://proffery.github.io/blog-app/',
         projectCode: 'https://github.com/proffery/blog-app',
-        projectTitle: 'Simple Blog App. Firebase',
+        projectTitle: 'Simple Blog App. React. Firebase',
         projectCategory: 'React'
     },
     {

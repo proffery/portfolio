@@ -1,6 +1,6 @@
 import { FlexWrapper } from "../../../../components/FlexWrapper"
 import { useContext } from "react"
-import { ThemeContext } from "../../../../context/ThemeContext"
+import { ThemeContext } from "../../../../common/context/ThemeContext"
 import { S } from "./ProjectCard_Styles"
 import { Fade } from "react-awesome-reveal"
 

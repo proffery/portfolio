@@ -6,6 +6,7 @@ import { font } from "../../../styles/Font"
 
 const Learning = styled.section`
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -33,12 +34,11 @@ const LearningSkillContainer = styled(FlexWrapper)`
 `
 const LearningSkillsTitle = styled.h3`
     display: flex;
-    padding: 30px;
-    padding-top: 0;
+    padding: 0 30px 30px;
     ${font({weight: 700, lineHeight: 1.36, Fmin: 11, Fmax: 22})}
     color: ${props => props.theme === 'light' ?
-        theme.light.color.text.second :
-        theme.dark.color.text.primary};
+            theme.light.color.text.second :
+            theme.dark.color.text.primary};
     @media ${theme.media.mobile} {
         padding-top: 0;
         margin-top: 10px;

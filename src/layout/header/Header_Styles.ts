@@ -83,7 +83,6 @@ const Left = styled(FlexWrapper)<StyledHeaderTypes>`
 
 const Right = styled(FlexWrapper)`
     display: flex;
-    
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.primary :
         theme.dark.color.background.primary

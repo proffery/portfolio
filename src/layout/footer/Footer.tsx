@@ -1,5 +1,5 @@
 import { Link } from "../../components/link/Link.styled"
-import { ThemeContext } from "../../context/ThemeContext"
+import { ThemeContext } from "../../common/context/ThemeContext"
 import { useContext } from "react"
 import { S } from "./Footer_Styles"
 

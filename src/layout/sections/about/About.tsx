@@ -3,7 +3,7 @@ import { FlexWrapper } from "../../../components/FlexWrapper"
 import { SectionTitle } from "../../../components/SectionTitle.styled"
 import { Icon } from "../../../components/icon/Icon"
 import { Link } from "../../../components/link/Link.styled"
-import { ThemeContext } from "../../../context/ThemeContext"
+import { ThemeContext } from "../../../common/context/ThemeContext"
 import { S } from "./About_Styles"
 
 export const About = () => {
@@ -36,9 +36,9 @@ export const About = () => {
                             <Icon iconId="aboutTelegram" width="46px" viewBox="-4 0 35 35" />
                         </Link>
                     </S.SocialLinksWrapper>
-                    <FlexWrapper direction="column" align="flex-start" wrap="wrap" >
+                    <FlexWrapper direction="column" align="flex-start" gap={'10px'} wrap="wrap" >
                         <S.AboutBannerTitle>My name is&nbsp;</S.AboutBannerTitle>
-                        <S.AboutBannerTitle><Link href="#contact">Dmitry </Link></S.AboutBannerTitle>
+                        <S.AboutBannerTitle><Link href="#contact">Dmitry Shamko</Link></S.AboutBannerTitle>
                         <S.AboutBannerList theme={theme}>
                             <li>I was born in Belarus</li>
                             <li>I’m web developer</li>

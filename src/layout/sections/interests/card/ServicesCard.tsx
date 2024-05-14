@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { Fade } from 'react-awesome-reveal'
 import { Icon } from "../../../../components/icon/Icon"
-import { ThemeContext } from "../../../../context/ThemeContext"
+import { ThemeContext } from "../../../../common/context/ThemeContext"
 import { S } from "./ServicesCard_Styles"
 
 interface ServiceCard {

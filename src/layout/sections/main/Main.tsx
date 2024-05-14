@@ -3,12 +3,12 @@ import photo from '../../../assets/images/Photo-my.webp'
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { Link } from "../../../components/link/Link.styled"
 import React, { useContext, useEffect, useState } from "react"
-import { ThemeContext } from "../../../context/ThemeContext"
+import { ThemeContext } from "../../../common/context/ThemeContext"
 import { theme } from "../../../styles/Theme.styled"
 import { S } from "./Main_Styles"
 import Tilt from 'react-parallax-tilt'
 import { Hinge } from "react-awesome-reveal"
-
+import {ThemeType} from "../../../App";
 
 export const Main: React.FC = () => {
     const [loopNumber, setLoopNumber] = useState(0)
@@ -16,8 +16,8 @@ export const Main: React.FC = () => {
     const [text, setText] = useState('')
     const [delta, setDelta] = useState(300 - Math.random() * 100)
     const [jsIsShow, setJsIsShow] = useState(true)
-    const toRotate = ['Web dev.' , 'JS/TS dev.', 'React dev.']
-    const themeName = useContext(ThemeContext)
+    const toRotate = ['WEB DEVELOPER' , 'JS/TS DEVELOPER', 'REACT DEVELOPER']
+    const themeName = useContext<ThemeType>(ThemeContext)
     const period = 2000
     const [width, setWidth] = React.useState(window.innerWidth);
     const breakpoint = 768;
@@ -67,27 +67,31 @@ export const Main: React.FC = () => {
             <S.MainContainer theme={themeName}>
                 <S.BannerLeft theme={themeName}></S.BannerLeft>
                 <S.BannerRight theme={themeName} justify="center" >
-                <Tilt tiltEnable={width < breakpoint ? false : true}>
+                <Tilt perspective={4000} transitionSpeed={800} tiltEnable={width >= breakpoint}>
                     <S.BannerWrapper theme={themeName} align="center" justify="center">
                         <FlexWrapper align="center" justify="center" width="47%">
                             <S.BannerPhoto theme={themeName} src={photo} alt="Photography" />
                         </FlexWrapper>
                         <S.BannerTitleWrapper direction="column" gap="20px" width="47%">
                             <FlexWrapper wrap="wrap">
-                                <S.BannerTitleSecond theme={themeName}>I’m &nbsp;</S.BannerTitleSecond>
+                                <S.BannerTitleSecond theme={themeName}>I am &nbsp;</S.BannerTitleSecond>
                                 <S.BannerTitleSecond theme={themeName}>
-                                    <Link href="#contact">Dmitry,&nbsp;</Link>
+                                    <Link href="#contact">Dmitry&nbsp;</Link>
                                 </S.BannerTitleSecond>
                             </FlexWrapper>
                                 <S.BannerTitleMain theme={themeName} aria-label="Web Developer">{text}&nbsp;</S.BannerTitleMain>
-                            <S.BannerDescription>Draft is a revolutionary web app built to help you manage your business easily and save your money.</S.BannerDescription>
+                            <S.BannerDescription>
+                                Draft is a revolutionary web app built to help you manage your business easily and save your money.
+                            </S.BannerDescription>
                             <S.BannerLinksWrapper align="center" justify="start" wrap="wrap">
                                 <S.ProjectsLink href="#projects" type="button" color={theme.light.color.text.second}>See Projects
                                     <S.ArrowIconWrapper>
                                         <Icon viewBox="-8 -5 37 35" iconId="arrowRight" />
                                     </S.ArrowIconWrapper>
                                 </S.ProjectsLink>
-                                <S.ResumeLink href="#">Download Resume</S.ResumeLink>
+                                <S.ResumeLink download
+                                              href={themeName === 'dark' ? './cv/cv-eng-dark.pdf': './cv/cv-eng-light.pdf'}
+                                >Download Resume</S.ResumeLink>
                             </S.BannerLinksWrapper>
                         </S.BannerTitleWrapper>
                     </S.BannerWrapper>

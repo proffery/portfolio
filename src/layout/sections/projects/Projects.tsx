@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from "react"
 import { Fade } from "react-awesome-reveal"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { SectionTitle } from "../../../components/SectionTitle.styled"
-import { ThemeContext } from "../../../context/ThemeContext"
-import { projects } from "../../../data/projects"
+import { ThemeContext } from "../../../common/context/ThemeContext"
+import { projects } from "../../../common/data/projects"
 import { theme } from "../../../styles/Theme.styled"
 import { ProgectsCard } from "./card/ProjectsCard"
 import { S } from "./Projects_Styles"
@@ -25,7 +25,7 @@ export const Projects: React.FC = () => {
 
     return (
         <S.Projects id="projects" theme={themeName}>
-            <S.ProjectsContainer direction="column">
+            <S.ProjectsContainer theme={themeName} direction="column">
                 <SectionTitle theme={themeName}>Projects</SectionTitle>
                 <FlexWrapper align="center" justify="center" wrap="wrap" gap="20px">
                     <Fade cascade duration={700} triggerOnce>

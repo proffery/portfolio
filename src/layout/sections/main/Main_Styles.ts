@@ -51,7 +51,7 @@ const BannerWrapper = styled(FlexWrapper)`
     z-index: 999999;
     @media ${theme.media.mobile} {
         border-radius: 112px 0;
-        width: 65%;
+        width: 60%;
     }
 `
 
@@ -141,7 +141,7 @@ const BannerPhoto = styled.img`
 `
 
 const BannerTitleMain = styled.h1`
-    ${font({ weight: 700, lineHeight: 1.36, Fmin: 34, Fmax: 60 })}
+    ${font({ weight: 700, lineHeight: 1.36, Fmin: 18, Fmax: 36 })}
     text-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.text :
         theme.dark.shadow.text
@@ -149,7 +149,8 @@ const BannerTitleMain = styled.h1`
 `
 
 const BannerTitleSecond = styled.h2`
-    ${font({ weight: 700, lineHeight: 1.36, Fmin: 34, Fmax: 60 })}
+    ${font({family:'Montserrat', weight: 700, lineHeight: 1.36, Fmin: 34, Fmax: 54 })}
+    text-transform: uppercase;
     text-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.text :
         theme.dark.shadow.text
@@ -173,26 +174,23 @@ const BannerLinksWrapper = styled(FlexWrapper)`
     }
 `
 const ProjectsLink = styled(Link)`
-    ${font({ weight: 600, lineHeight: 1.5, Fmin: 10, Fmax: 15 })}
+    ${font({ weight: 600, lineHeight: 1.5, Fmin: 12, Fmax: 18 })}
     max-width: 200px;
     min-height: 54px;
-    border-radius: 20px; 
+    border-radius: 12px; 
     padding: 5px 30px;
     @media ${theme.media.tablet} {
         min-width: 132px;
         min-height: 40px;
-        border-radius: 13px; 
-        padding: 0px 10px;
-    }
-    @media ${theme.media.mobile} {
-        min-width: 112px;
-        min-height: 30px;
-        border-radius: 11px; 
+        border-radius: 10px; 
         padding: 0px 10px;
     }
 `
 const ResumeLink = styled(Link)`
-    ${font({ weight: 600, lineHeight: 1.5, Fmin: 10, Fmax: 15 })}
+    ${font({ weight: 600, lineHeight: 1.5, Fmin: 12, Fmax: 18 })}
+    @media ${theme.media.mobile} {
+        margin-left: 10px;
+    }
 `
 
 const ArrowIconWrapper = styled(FlexWrapper)`
@@ -203,6 +201,7 @@ const ArrowIconWrapper = styled(FlexWrapper)`
 
 const AppsLeft = styled(FlexWrapper)`
     width: 30%;
+    z-index: 0;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second
@@ -214,10 +213,6 @@ const AppsLeft = styled(FlexWrapper)`
 
 const AppsRight = styled(FlexWrapper)`
     width: 70%;
-    background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.primary :
-        theme.dark.color.background.primary
-    };
     padding-left: 32px;
     z-index: 0;
     @media ${theme.media.tablet} {
@@ -232,6 +227,7 @@ const AppsRight = styled(FlexWrapper)`
 const AppsWrapper = styled(FlexWrapper)`
     bottom: 0;
     margin-right: auto;
+    z-index: 0;
 `
 
 const App = styled.div`

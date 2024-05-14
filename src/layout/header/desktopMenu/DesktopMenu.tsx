@@ -1,8 +1,8 @@
 import { Link } from "../../../components/link/Link.styled"
 import React, { useContext } from "react"
-import { ThemeContext } from "../../../context/ThemeContext"
+import { ThemeContext } from "../../../common/context/ThemeContext"
 import { theme }  from "../../../styles/Theme.styled"
-import { menuItems } from "../../../data/menuItems"
+import { menuItems } from "../../../common/data/menuItems"
 import {S} from "./DesktopMenu_Styles"
 import { Fade } from "react-awesome-reveal"
 

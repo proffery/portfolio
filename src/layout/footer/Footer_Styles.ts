@@ -9,6 +9,7 @@ import { Link } from "../../components/link/Link.styled"
 const Footer = styled.footer`
     height: 200px;
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: end;

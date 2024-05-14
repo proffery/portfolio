@@ -3,10 +3,10 @@ export const theme = {
         color: {
             background: {
                 primary: 'rgb(255, 255, 255)',
-                second: ' rgb(166, 188, 250)',
-                input: ' rgba(245, 245, 245, 1)',
-                form: ' rgb(255, 255, 255)',
-                card: ' rgba(249, 249, 252, 1)',
+                second: 'rgb(166, 188, 250)',
+                input: 'rgba(245, 245, 245, 1)',
+                form: 'rgb(255, 255, 255)',
+                card: 'rgba(249, 249, 252, 1)',
                 bannerBorder: 'rgba(255, 255, 255, 0.6)'
             },
             text: {
