@@ -141,16 +141,15 @@ const BannerPhoto = styled.img`
 `
 
 const BannerTitleMain = styled.h1`
-    ${font({ weight: 700, lineHeight: 1.36, Fmin: 18, Fmax: 36 })}
+    ${font({ weight: 700, lineHeight: 1.36, Fmin: 20, Fmax: 30})}
     text-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.text :
         theme.dark.shadow.text
     }
 `
 
-const BannerTitleSecond = styled.h2`
-    ${font({family:'Montserrat', weight: 700, lineHeight: 1.36, Fmin: 34, Fmax: 54 })}
-    text-transform: uppercase;
+const BannerTitleSecond = styled.div`
+    ${font({family:'Montserrat', weight: 700, lineHeight: 1.36, Fmin: 30, Fmax: 60})}
     text-shadow: ${props => props.theme === 'light' ?
         theme.light.shadow.text :
         theme.dark.shadow.text
@@ -158,8 +157,13 @@ const BannerTitleSecond = styled.h2`
 `
 const BannerTitleWrapper = styled(FlexWrapper)`
     min-width: 376px;
+    gap: 20px;
+    @media ${theme.media.tablet} {
+        gap: 15px;
+    }
     @media ${theme.media.mobile} {
         min-width: 210px;
+        gap: 10px;
     }
 `
 

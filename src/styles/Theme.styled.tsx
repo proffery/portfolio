@@ -17,9 +17,9 @@ export const theme = {
             },
         },
         shadow: {
-            main: 'rgba(0, 0, 0, 0.05) 8px 8px 34px ',
+            main: 'rgba(0, 0, 0, 0.05) 8px 8px 34px',
             card: 'rgba(0, 0, 0, 0.15) 0 4px 6px',
-            text: 'rgba(0, 0, 0,  0.25) 0 4px 4px'
+            text: 'rgba(0, 0, 0,  0.25) 0 4px 4px',
         },
         gradient: {
             dot: 'linear-gradient(180deg, rgba(166, 188, 250, 1), rgba(33, 87, 242, 1))',
@@ -31,10 +31,10 @@ export const theme = {
         color: {
             background: {
                 primary: 'rgba(34, 34, 34, 1)',
-                second: ' rgba(36, 51, 92, 1)',
-                input: ' rgba(57, 56, 56, 1)',
-                form: ' rgba(44, 43, 43, 1)',
-                card: ' rgba(53, 53, 53, 1)',
+                second: 'rgba(36, 51, 92, 1)',
+                input: 'rgba(57, 56, 56, 1)',
+                form: 'rgba(44, 43, 43, 1)',
+                card: 'rgba(53, 53, 53, 1)',
                 bannerBorder: 'rgba(71, 71, 71, 0.30)'
             },
             text: {

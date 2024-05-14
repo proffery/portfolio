@@ -45,25 +45,24 @@ const AboutBanner = styled(FlexWrapper)`
     left: 10%;
     transform: translate(-10%, -90%);
     background: ${props => props.theme === 'light' ?
-        theme.light.gradient.banner :
-        theme.dark.gradient.banner
+            theme.light.gradient.banner :
+            theme.dark.gradient.banner
     };
     backdrop-filter: blur(10px);
     border: 2px solid ${props => props.theme === 'light' ?
-        theme.light.color.background.bannerBorder :
-        theme.dark.color.background.bannerBorder 
+            theme.light.color.background.bannerBorder :
+            theme.dark.color.background.bannerBorder
     };
     border-radius: 100px 0;
     min-width: 250px;
-    padding: 30px;
-    padding-top: 20px;
+    padding: 20px 30px 30px;
     @media ${theme.media.tablet} {
         top: 10%;
         left: 50%;
         transform: translate(-50%, -10%);
         width: auto;
     }
-    
+
     @media ${theme.media.mobile} {
         padding-top: 10px;
         border-radius: 54px 0;
@@ -81,8 +80,8 @@ const SocialLinksWrapper = styled(FlexWrapper)`
 `
 const AboutBannerTitle = styled.h2`
     white-space: nowrap;
-    text-transform: uppercase;
-    ${font({family:'Montserrat', weight: 700, lineHeight: 1.36, Fmin: 20, Fmax: 40})}
+    justify-content: start;
+    ${font({family:'Montserrat', weight: 700, lineHeight: 1.36, Fmin: 20, Fmax: 30})}
 `
 
 const AboutBannerList = styled.ul`

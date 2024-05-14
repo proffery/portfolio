@@ -4,8 +4,7 @@ import { FlexWrapper } from "../../../../components/FlexWrapper";
 const Skills = styled(FlexWrapper)`
     display: flex;
     justify-content: start;
-    padding: 30px;
-    padding-top: 0;
+    padding: 0 30px 30px;
 `
 export const S = {
     Skills

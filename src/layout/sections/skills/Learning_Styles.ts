@@ -6,7 +6,6 @@ import { font } from "../../../styles/Font"
 
 const Learning = styled.section`
     display: flex;
-    position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -16,6 +15,7 @@ const Learning = styled.section`
     };
 `
 const LearningContainer = styled(Container)`
+    position: relative;
     background-color: ${props => props.theme === 'light' ?
         theme.light.color.background.second :
         theme.dark.color.background.second

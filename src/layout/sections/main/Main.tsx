@@ -72,12 +72,11 @@ export const Main: React.FC = () => {
                         <FlexWrapper align="center" justify="center" width="47%">
                             <S.BannerPhoto theme={themeName} src={photo} alt="Photography" />
                         </FlexWrapper>
-                        <S.BannerTitleWrapper direction="column" gap="20px" width="47%">
-                            <FlexWrapper wrap="wrap">
-                                <S.BannerTitleSecond theme={themeName}>I am &nbsp;</S.BannerTitleSecond>
-                                <S.BannerTitleSecond theme={themeName}>
-                                    <Link href="#contact">Dmitry&nbsp;</Link>
-                                </S.BannerTitleSecond>
+                        <S.BannerTitleWrapper direction="column" width="47%">
+                            <FlexWrapper direction="column" align="start" justify="center">
+                                    <S.BannerTitleSecond theme={themeName}>Hi, I'm<Link href="#contact">Dmitry Shamko</Link>
+                                    </S.BannerTitleSecond>
+
                             </FlexWrapper>
                                 <S.BannerTitleMain theme={themeName} aria-label="Web Developer">{text}&nbsp;</S.BannerTitleMain>
                             <S.BannerDescription>

@@ -11,8 +11,10 @@ type ServiceCardPropsType = {
 const ServicesCard = styled(FlexWrapper) <ServiceCardPropsType>`
     min-width: 320px;
     aspect-ratio: 3 / 4;
-    width: 31%;
+    width: 30%;
     padding: 0 45px;
+    border-radius: 20px;
+    cursor: pointer;
     color: ${props => props.theme === 'light' ?
         theme.light.color.text.primary :
         theme.dark.color.text.primary
@@ -26,6 +28,7 @@ const ServicesCard = styled(FlexWrapper) <ServiceCardPropsType>`
         theme.dark.shadow.card
     };
     align-items: start;
+    justify-content: space-around;
     transition: all 0.6s;
     transform-style: preserve-3d;
     transform:  ${props => props.isFlip ? 'rotateY(-180deg)' : 'rotateY(0deg)'};
@@ -76,6 +79,7 @@ const ServicesCardTitle = styled.h3`
         theme.light.color.text.primary :
         theme.dark.color.text.primary
     };
+    
 `
 
 export const S = {

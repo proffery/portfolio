@@ -33,10 +33,26 @@ export const LearningSkillSet = (props: PropType) => {
         mouseTracking
         autoPlay={true}
         autoPlayInterval={1500}
-        autoWidth={true}
         infinite={true}
         disableButtonsControls={true}
         items={items}
+        responsive={{
+          0: {
+            items: 1,
+          },
+          576: {
+            items: 2,
+            itemsFit: 'contain',
+          },
+            1024: {
+            items: 3,
+            itemsFit: 'contain',
+          },
+          1444: {
+            items: 5,
+            itemsFit: 'contain',
+          }
+        }}
       />
     </S.Skills>
   )

@@ -14,18 +14,18 @@ export const particlesObj =  {
             //     enable: true,
             //     mode: "push",
             // },
-            // onHover: {
-            //     enable: true,
-            //     mode: "repulse",
-            // },
+            onHover: {
+                enable: true,
+                mode: "repulse",
+            },
         },
         modes: {
             push: {
-                quantity: 4,
+                quantity: 8,
             },
             repulse: {
-                distance: 10,
-                duration: 0.8,
+                distance: 100,
+                duration: 0.4,
             },
         },
     },
@@ -35,7 +35,7 @@ export const particlesObj =  {
         },
         links: {
             color: theme.light.color.background.second,
-            distance: 150,
+            distance: 200,
             enable: true,
             opacity: 0.5,
             width: 1,
@@ -54,7 +54,7 @@ export const particlesObj =  {
             density: {
                 enable: true,
             },
-            value: 50,
+            value: 80,
         },
         opacity: {
             value: 0.5,

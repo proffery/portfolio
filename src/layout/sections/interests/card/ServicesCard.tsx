@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import React, { useContext } from "react"
 import { Fade } from 'react-awesome-reveal'
 import { Icon } from "../../../../components/icon/Icon"
 import { ThemeContext } from "../../../../common/context/ThemeContext"
@@ -27,9 +27,9 @@ export const ServicesCard: React.FC<ServicesCardPropsTypes> = (props: ServicesCa
     const theme = useContext(ThemeContext)
     const onClickHandler = () => {
         props.setServicesWithFlip(props.servicesWithFlip
-            .map((servise, index) => index === props.cardIndex
-                ? { ...servise, isFlip: !servise.isFlip }
-                : { ...servise, isFlip: false }))
+            .map((service, index) => index === props.cardIndex
+                ? { ...service, isFlip: !service.isFlip }
+                : { ...service, isFlip: false }))
     }
     return (
         <S.ServicesCard
@@ -42,6 +42,13 @@ export const ServicesCard: React.FC<ServicesCardPropsTypes> = (props: ServicesCa
         >
             {props.isFlip ?
                 <>
+                    <S.ServicesCardIconWrapper >
+                        <Icon iconId={props.iconId}
+                              height="100%"
+                              width="100%"
+                              viewBox={props.viewBox || "0 0 70 70"}
+                        />
+                    </S.ServicesCardIconWrapper>
                     <Fade delay={200}>
                         <p>{props.description}</p>
                     </Fade>
