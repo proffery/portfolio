@@ -10,7 +10,7 @@ export const Skills: React.FC = () => {
     const theme = useContext(ThemeContext)
     return (
         <S.Learning id="skills" theme={theme}>
-            <S.LearningContainer theme={theme} direction="column" gap="30px" align="center">
+            <S.LearningContainer theme={theme} direction="column" align="center">
                 <SectionTitle theme={theme} color="white">Skills</SectionTitle>
                 <S.LearningSkillContainer theme={theme} direction="column">
                     <S.LearningSkillsTitle>Front-end:</S.LearningSkillsTitle>
