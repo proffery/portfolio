@@ -80,8 +80,12 @@ const SocialLinksWrapper = styled(FlexWrapper)`
 `
 const AboutBannerTitle = styled.h2`
     white-space: nowrap;
-    justify-content: start;
+    align-self: center;
+    display: none;
     ${font({family:'Montserrat', weight: 700, lineHeight: 1.36, Fmin: 20, Fmax: 30})}
+    @media ${theme.media.tablet} {
+    display: flex;
+}
 `
 
 const AboutBannerList = styled.ul`

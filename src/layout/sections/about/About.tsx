@@ -37,7 +37,7 @@ export const About = () => {
                         </Link>
                     </S.SocialLinksWrapper>
                     <FlexWrapper direction="column" gap={'10px'} align="flex-start" wrap="wrap" >
-                        <S.AboutBannerTitle>My name is Dmitry</S.AboutBannerTitle>
+                        <S.AboutBannerTitle>About me:</S.AboutBannerTitle>
                         <S.AboutBannerList theme={theme}>
                             <li>I was born in Belarus</li>
                             <li>I’m web developer</li>

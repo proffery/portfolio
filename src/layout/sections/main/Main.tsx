@@ -74,11 +74,11 @@ export const Main: React.FC = () => {
                         </FlexWrapper>
                         <S.BannerTitleWrapper direction="column" width="47%">
                             <FlexWrapper direction="column" align="start" justify="center">
-                                    <S.BannerTitleSecond theme={themeName}>Hi, I'm<Link href="#contact">Dmitry Shamko</Link>
+                                    <S.BannerTitleSecond theme={themeName}>Hi, I'm
+                                        <Link href="#contact">Dmitry Shamko</Link>
                                     </S.BannerTitleSecond>
-
-                            </FlexWrapper>
                                 <S.BannerTitleMain theme={themeName} aria-label="Web Developer">{text}&nbsp;</S.BannerTitleMain>
+                            </FlexWrapper>
                             <S.BannerDescription>
                                 Draft is a revolutionary web app built to help you manage your business easily and save your money.
                             </S.BannerDescription>
