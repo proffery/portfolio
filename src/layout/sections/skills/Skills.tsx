@@ -1,24 +1,24 @@
 import { SectionTitle } from "../../../components/SectionTitle.styled"
 import { ThemeContext } from "../../../common/context/ThemeContext"
-import { useContext } from "react"
+import React, { useContext } from "react"
 import { skills } from "../../../common/data/skills"
-import { LearningSkillSet } from "./learningSkillSet/LearningSkillSet"
-import { S } from "./Learning_Styles"
+import { SkillSet } from "./SkillSet/SkillSet"
+import { S } from "./Skills_Styles"
 
 
-export const Learning: React.FC = () => {
+export const Skills: React.FC = () => {
     const theme = useContext(ThemeContext)
     return (
         <S.Learning id="skills" theme={theme}>
             <S.LearningContainer theme={theme} direction="column" gap="30px" align="center">
                 <SectionTitle theme={theme} color="white">Skills</SectionTitle>
                 <S.LearningSkillContainer theme={theme} direction="column">
-                    <S.LearningSkillsTitle>Frontend:</S.LearningSkillsTitle>
-                    <LearningSkillSet slides={skills.filter(skill => skill.category === 'front')} />  
+                    <S.LearningSkillsTitle>Front-end:</S.LearningSkillsTitle>
+                    <SkillSet slides={skills.filter(skill => skill.category === 'front')} />
                 </S.LearningSkillContainer>    
                 <S.LearningSkillContainer theme={theme} direction="column">
                     <S.LearningSkillsTitle>Other:</S.LearningSkillsTitle>
-                    <LearningSkillSet slides={skills.filter(skill => skill.category === 'other')} />
+                    <SkillSet slides={skills.filter(skill => skill.category === 'other')} />
                 </S.LearningSkillContainer>
             </S.LearningContainer>
         </S.Learning>

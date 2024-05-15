@@ -1,6 +1,6 @@
 import { ThemeContext } from "../../../../common/context/ThemeContext"
 import React, { useContext } from "react"
-import { S } from "./LearningCard_Styles"
+import { S } from "./SkillsCard_Styles"
 import { Icon } from "../../../../components/icon/Icon"
 
 type LearningCardPropsTypes = {
@@ -9,7 +9,7 @@ type LearningCardPropsTypes = {
     viewBox?: string
 }
 
-export const LearningCard: React.FC<LearningCardPropsTypes> = (props: LearningCardPropsTypes) => {
+export const SkillsCard: React.FC<LearningCardPropsTypes> = (props: LearningCardPropsTypes) => {
     const theme = useContext(ThemeContext)
     return (
         <S.LearningCard 

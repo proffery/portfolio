@@ -7,7 +7,7 @@ import { Contact } from './layout/sections/contact/Contact'
 import { Services } from './layout/sections/interests/Services'
 import { Main } from './layout/sections/main/Main'
 import { Projects } from './layout/sections/projects/Projects'
-import { Learning } from './layout/sections/skills/Learning'
+import { Skills } from './layout/sections/skills/Skills'
 import {particlesObj} from "./common/const/particlesObj";
 
 import Particles, { initParticlesEngine } from "@tsparticles/react";
@@ -45,7 +45,7 @@ function App() {
         <Projects />
         <About />
         <Services />
-        <Learning />
+        <Skills />
         <Contact />
         <Footer />
     </ThemeContext.Provider>
