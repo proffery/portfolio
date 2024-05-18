@@ -49,7 +49,7 @@ export const ServicesCard: React.FC<ServicesCardPropsTypes> = (props: ServicesCa
                               viewBox={props.viewBox || "0 0 70 70"}
                         />
                     </S.ServicesCardIconWrapper>
-                    <Fade delay={200}>
+                    <Fade delay={300}>
                         <p>{props.description}</p>
                     </Fade>
                 </>

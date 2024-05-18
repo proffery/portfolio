@@ -53,7 +53,6 @@ export const Projects: React.FC = () => {
                             >{category}
                             </S.CategoryButton>
                         })}
-
                     </Fade>
                 </FlexWrapper>
                 <S.ProjectWrapper wrap="wrap" align="center" justify="center">

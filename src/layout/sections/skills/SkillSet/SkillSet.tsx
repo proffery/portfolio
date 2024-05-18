@@ -2,6 +2,7 @@ import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import { SkillsCard } from '../card/SkillsCard'
 import { S } from './SkillSet_Styles'
+import {Bounce} from "react-awesome-reveal";
 
 interface Slides {
   imageId: string,
@@ -19,12 +20,15 @@ type PropType = {
 export const SkillSet = (props: PropType) => {
   const { slides } = props
   const items = slides.map((slide, index) => (
-    <SkillsCard
-      imageId={slide.imageId}
-      viewBox={slide.viewBox || "0 0 128 128"}
-      title={slide.title}
-      key={slide.category + index.toString()}
-    />
+      <Bounce duration={400}>
+            <SkillsCard
+              imageId={slide.imageId}
+              viewBox={slide.viewBox || "0 0 128 128"}
+              title={slide.title}
+              key={slide.category + index.toString()}
+            />
+      </Bounce>
+
   ))
 
   return (
@@ -32,7 +36,7 @@ export const SkillSet = (props: PropType) => {
       <AliceCarousel
         mouseTracking
         autoPlay={true}
-        autoPlayInterval={1500}
+        autoPlayInterval={2500}
         infinite={true}
         disableButtonsControls={true}
         items={items}
