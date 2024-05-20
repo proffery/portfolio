@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FlexWrapper } from "./FlexWrapper";
-import { theme } from "../styles/Theme.styled";
+import { themeObj } from "../common/const/themeObj";
 
 
 export const Container = styled(FlexWrapper)`
@@ -11,10 +11,10 @@ export const Container = styled(FlexWrapper)`
     height: 100%;
     margin: 0 auto;
     padding: 0 0 60px 0;
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         padding: 27px 0;
     }
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         background-position: bottom right, center;
     }
 `

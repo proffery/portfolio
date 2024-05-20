@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { theme } from "../../../styles/Theme.styled"
+import { themeObj } from "../../../common/const/themeObj"
 import { Container } from "../../../components/Container"
 import aboutMap from "../../../assets/images/Map.webp"
 import photo from "../../../assets/images/Photo2-my.webp"
@@ -13,12 +13,12 @@ const About = styled.section`
     align-items: center;
     justify-content: center;
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.primary :
-        theme.dark.color.background.primary
+        themeObj.light.color.background.primary :
+        themeObj.dark.color.background.primary
     };
     color: ${props => props.theme === 'light' ?
-        theme.light.color.text.primary :
-        theme.dark.color.text.primary
+        themeObj.light.color.text.primary :
+        themeObj.dark.color.text.primary
     };
 `
 
@@ -27,14 +27,14 @@ const AboutContainer = styled(Container)`
     height: 100vh;
     padding-top: 60px;
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.second :
-        theme.dark.color.background.second
+        themeObj.light.color.background.second :
+        themeObj.dark.color.background.second
     };
     background-image: url(${photo}), url(${aboutMap});
     background-repeat: no-repeat;
     background-position: bottom right, bottom center;
     background-size: contain;
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         height: 70vh;
     }
 `
@@ -45,25 +45,25 @@ const AboutBanner = styled(FlexWrapper)`
     left: 10%;
     transform: translate(-10%, -90%);
     background: ${props => props.theme === 'light' ?
-            theme.light.gradient.banner :
-            theme.dark.gradient.banner
+            themeObj.light.gradient.banner :
+            themeObj.dark.gradient.banner
     };
     backdrop-filter: blur(10px);
     border: 2px solid ${props => props.theme === 'light' ?
-            theme.light.color.background.bannerBorder :
-            theme.dark.color.background.bannerBorder
+            themeObj.light.color.background.bannerBorder :
+            themeObj.dark.color.background.bannerBorder
     };
     border-radius: 100px 0;
     min-width: 250px;
     padding: 20px 30px 30px;
-    @media ${theme.media.tablet} {
+    @media ${themeObj.media.tablet} {
         top: 10%;
         left: 50%;
         transform: translate(-50%, -10%);
         width: auto;
     }
 
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         padding-top: 10px;
         border-radius: 54px 0;
     }
@@ -73,8 +73,8 @@ const SocialLinksWrapper = styled(FlexWrapper)`
     align-self: flex-end;
     ${Link} {
         color: ${props => props.theme === 'light' ?
-            theme.light.color.text.second :
-            theme.dark.color.text.primary
+            themeObj.light.color.text.second :
+            themeObj.dark.color.text.primary
         };
     }
 `
@@ -83,7 +83,7 @@ const AboutBannerTitle = styled.h2`
     align-self: center;
     display: none;
     ${font({family:'Montserrat', weight: 700, lineHeight: 1.36, Fmin: 20, Fmax: 30})}
-    @media ${theme.media.tablet} {
+    @media ${themeObj.media.tablet} {
     display: flex;
 }
 `
@@ -96,11 +96,11 @@ const AboutBannerList = styled.ul`
         align-items: start;
         margin-left: 28px;
         
-        @media ${theme.media.tablet} {
+        @media ${themeObj.media.tablet} {
             margin-left: 18px;
         }
         
-        @media ${theme.media.mobile} {
+        @media ${themeObj.media.mobile} {
             margin-left: 14px;
         }
     }
@@ -114,14 +114,14 @@ const AboutBannerList = styled.ul`
         left: 0;
         width: 18px;
         height: 18px;
-        background-image: ${props => props.theme === 'light' ? theme.light.gradient.dot : theme.dark.gradient.dot};
+        background-image: ${props => props.theme === 'light' ? themeObj.light.gradient.dot : themeObj.dark.gradient.dot};
         
-        @media ${theme.media.tablet} {
+        @media ${themeObj.media.tablet} {
             width: 14px;
             height: 14px;
         }
         
-        @media ${theme.media.mobile} {
+        @media ${themeObj.media.mobile} {
             align-self: flex-start;
             width: 10px;
             height: 10px;

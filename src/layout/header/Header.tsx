@@ -1,20 +1,17 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Icon } from "../../components/icon/Icon"
 import { Logo } from "../../components/logo/Logo"
-import { ThemeContext } from "../../common/context/ThemeContext"
 import { DesktopMenu } from "./desktopMenu/DesktopMenu"
 import { S } from "./Header_Styles"
 import { MobileMenu } from "./mobileMenu/MobileMenu"
+import {useAppContext} from "../../common/context/appContext";
+import {themeObj} from "../../common/const/themeObj";
+import {extractNumberFromString} from "../../common/utils/extractNumberFromString";
 
-type HeaderTypes = {
-    setCurrentTheme: any,
-}
-
-export const Header: React.FC<HeaderTypes> = ({ setCurrentTheme }: HeaderTypes) => {
-    const theme = useContext(ThemeContext)
+export const Header = () => {
+    const {theme, width} = useAppContext()
     const [scrolled, setScrolled] = useState(false)
-    const [width, setWidth] = React.useState(window.innerWidth);
-    const breakpoint = 576;
+    const breakpoint = extractNumberFromString(themeObj.media.mobile);
     
     useEffect(() => {
         const onScroll = () => {
@@ -28,13 +25,6 @@ export const Header: React.FC<HeaderTypes> = ({ setCurrentTheme }: HeaderTypes) 
         window.addEventListener('scroll', onScroll)
         return () => window.removeEventListener('scroll', onScroll)
     }, [])
-    
-    useEffect(() => {
-        const handleWindowResize = () => setWidth(window.innerWidth)
-        window.addEventListener("resize", handleWindowResize);
-    
-        return () => window.removeEventListener("resize", handleWindowResize);
-    }, [])
 
     return (
         <S.Header scrolled={scrolled} theme={theme}>
@@ -46,12 +36,7 @@ export const Header: React.FC<HeaderTypes> = ({ setCurrentTheme }: HeaderTypes) 
                     }
                 </S.Left>
                 <S.Right theme={theme} align="center" justify="end">
-                    {width < breakpoint ? <MobileMenu setCurrentTheme={setCurrentTheme} /> :
-                        <>
-                            <DesktopMenu />
-                            <S.HeaderThemeChangeButton setCurrentTheme={setCurrentTheme}/>
-                        </>
-                    }
+                    {width < breakpoint ? <MobileMenu /> : <DesktopMenu />}
                 </S.Right>
             </S.HeaderContainer>
             {scrolled && 

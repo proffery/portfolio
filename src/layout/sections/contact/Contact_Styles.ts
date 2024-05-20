@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { theme } from "../../../styles/Theme.styled"
+import { themeObj } from "../../../common/const/themeObj"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { font } from "../../../styles/Font"
 import { Button } from "../../../components/button/Button.styled"
@@ -11,11 +11,11 @@ const Contact = styled.section`
     align-items: center;
     justify-content: center;
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.primary :
-        theme.dark.color.background.primary
+        themeObj.light.color.background.primary :
+        themeObj.dark.color.background.primary
     };
     gap: 20px;
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         padding-top: 60px 0;
     }
 `
@@ -26,16 +26,16 @@ const ContactWrapper = styled(FlexWrapper)`
     width: 100%;
     padding: 53px 82px;
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.form :
-        theme.dark.color.background.form
+        themeObj.light.color.background.form :
+        themeObj.dark.color.background.form
     };
     box-shadow: ${props => props.theme === 'light' ?
-        theme.light.shadow.main :
-        theme.dark.shadow.main
+        themeObj.light.shadow.main :
+        themeObj.dark.shadow.main
     };
     max-width: 932px;
     min-width: 300px;
-    @media ${theme.media.tablet} {
+    @media ${themeObj.media.tablet} {
         box-shadow: none;
         padding: 0;
     }
@@ -46,7 +46,7 @@ const ContactFormWrapper = styled(FlexWrapper)`
     align-items: center;
     height: 100%;
     justify-content: space-between;
-    @media ${theme.media.tablet} {
+    @media ${themeObj.media.tablet} {
         gap: 0;
     }
 `
@@ -66,19 +66,19 @@ const ContactForm = styled.form`
         &:focus {
             padding: 10px 18px;
         }
-        @media ${theme.media.mobile} {
+        @media ${themeObj.media.mobile} {
             height: 92px;
         }
     }
-    @media ${theme.media.tablet} {
+    @media ${themeObj.media.tablet} {
         box-shadow: ${props => props.theme === 'light' ?
-        theme.light.shadow.main :
-        theme.dark.shadow.main
+        themeObj.light.shadow.main :
+        themeObj.dark.shadow.main
     };
         padding: 53px 82px;
         width: 100%;
     }
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         padding: 32px 50px;
     }
 `
@@ -89,8 +89,8 @@ const ContactFormTitle = styled.h3`
     ${font({ weight: 500, lineHeight: 1.36, Fmin: 22, Fmax: 36 })}
 
     color: ${props => props.theme === 'light' ?
-        theme.light.color.text.primary :
-        theme.dark.color.text.primary
+        themeObj.light.color.text.primary :
+        themeObj.dark.color.text.primary
     };
 `
 
@@ -103,12 +103,12 @@ const ContactFormField = styled.input.attrs((type) => ({
 
     padding: 0 18px;
     color: ${props => props.theme === 'light' ?
-        theme.light.color.text.placeholder :
-        theme.dark.color.text.placeholder
+        themeObj.light.color.text.placeholder :
+        themeObj.dark.color.text.placeholder
     };
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.input :
-        theme.dark.color.background.input
+        themeObj.light.color.background.input :
+        themeObj.dark.color.background.input
     };
     border-radius: 9px;
     height: 36px;
@@ -116,18 +116,18 @@ const ContactFormField = styled.input.attrs((type) => ({
     border: none;
     &::placeholder {
         color: ${props => props.theme === 'light' ?
-        theme.light.color.text.placeholder :
-        theme.dark.color.text.placeholder
+        themeObj.light.color.text.placeholder :
+        themeObj.dark.color.text.placeholder
     };
     }
     
     &:focus-visible {
         outline: 1px solid ${props => props.theme === 'light' ?
-        theme.light.color.text.placeholder :
-        theme.dark.color.text.placeholder
+        themeObj.light.color.text.placeholder :
+        themeObj.dark.color.text.placeholder
     };
     }
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         height: 22px;
         border-radius: 5.5px;
     }
@@ -139,19 +139,19 @@ const ContactFormSubmitButton = styled(Button)`
     border-radius: 9px;
     align-self: flex-start;
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.text.link :
-        theme.dark.color.text.link
+        themeObj.light.color.text.link :
+        themeObj.dark.color.text.link
     };
     ${font({ weight: 500, lineHeight: 1.36, Fmin: 10, Fmax: 16 })}
 
-    @media ${theme.media.tablet} {
+    @media ${themeObj.media.tablet} {
         min-width: 92px;
         width: 92px;
         height: 36px;
         border-radius: 5.5px;
     }
     
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         min-width: 72px;
         width: 72px;
         height: 26px;
@@ -161,10 +161,10 @@ const ContactFormSubmitButton = styled(Button)`
 
 const ContactsAddsWrapper = styled(FlexWrapper)`
     width: 28%;
-    @media ${theme.media.tablet} {
+    @media ${themeObj.media.tablet} {
         box-shadow: ${props => props.theme === 'light' ?
-        theme.light.shadow.main :
-        theme.dark.shadow.main
+        themeObj.light.shadow.main :
+        themeObj.dark.shadow.main
     };
         padding: 50px;
         width: 100%;
@@ -174,8 +174,8 @@ const ContactsAddsWrapper = styled(FlexWrapper)`
 
 const ContactsAddWrapper = styled(FlexWrapper)`
     color: ${props => props.theme === 'light' ?
-        theme.light.color.text.link :
-        theme.dark.color.text.link
+        themeObj.light.color.text.link :
+        themeObj.dark.color.text.link
     };
 `
 
@@ -185,15 +185,15 @@ const AddTitle = styled.h4`
     font-weight: 500;
     line-height: 136%;
     color: ${props => props.theme === 'light' ?
-        theme.light.color.text.primary :
-        theme.dark.color.text.primary
+        themeObj.light.color.text.primary :
+        themeObj.dark.color.text.primary
     };
 
-    @media ${theme.media.tablet} {
+    @media ${themeObj.media.tablet} {
         font-size: 30px;
     }
 
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         font-size: 18px;
     }
 `
@@ -201,11 +201,11 @@ const AddTitle = styled.h4`
 const AddIconWrapper = styled(FlexWrapper)`
     height: 38px;
     width: 38px;
-    @media ${theme.media.tablet} {
+    @media ${themeObj.media.tablet} {
         width: 72px;
         height: 72px;
     }
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         width: 44px;
         height: 44px;
     }
@@ -216,13 +216,13 @@ const AddDescription = styled.span`
     font-weight: 400;
     line-height: 136%;
     color: ${props => props.theme === 'light' ?
-        theme.light.color.text.placeholder :
-        theme.dark.color.text.placeholder
+        themeObj.light.color.text.placeholder :
+        themeObj.dark.color.text.placeholder
     };
-    @media ${theme.media.tablet} {
+    @media ${themeObj.media.tablet} {
         font-size: 23px;
     }
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         font-size: 14px;
     }
 `
@@ -230,15 +230,15 @@ const AddDescription = styled.span`
 const SocialIconsWrapper = styled(FlexWrapper)`
     ${Link} {
         color:${props => props.theme === 'light'
-            ? theme.light.color.background.primary
-            : theme.dark.color.background.primary
+            ? themeObj.light.color.background.primary
+            : themeObj.dark.color.background.primary
         }
     }
     margin-top: 65px;
-    @media ${theme.media.tablet} {
+    @media ${themeObj.media.tablet} {
         margin-top: 43px;
     }
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         margin-top: 75px;
     }
     `
@@ -251,22 +251,22 @@ const FixedSocialIconsWrapper = styled(FlexWrapper)`
         top: 70%;
     ${Link} {
         color: ${props => props.theme === 'light' ?
-        theme.light.color.text.second :
-        theme.dark.color.text.primary
+        themeObj.light.color.text.second :
+        themeObj.dark.color.text.primary
     };
     }
         background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.second :
-        theme.dark.color.background.second
+        themeObj.light.color.background.second :
+        themeObj.dark.color.background.second
     };
         border-radius: 0 25px 25px 0;
         border: 2px solid ${props => props.theme === 'light' ?
-        theme.light.color.background.bannerBorder :
-        theme.dark.color.background.bannerBorder
+        themeObj.light.color.background.bannerBorder :
+        themeObj.dark.color.background.bannerBorder
     };
         border-left: none;
         z-index: 200;
-        @media ${theme.media.tablet} {
+        @media ${themeObj.media.tablet} {
             display: none;
         }
     `

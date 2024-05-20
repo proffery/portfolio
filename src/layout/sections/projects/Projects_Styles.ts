@@ -4,7 +4,7 @@ import { Button } from "../../../components/button/Button.styled"
 import { Container } from "../../../components/Container"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { font } from "../../../styles/Font"
-import { theme } from "../../../styles/Theme.styled"
+import { themeObj } from "../../../common/const/themeObj"
 
 const Projects = styled.section`
     display: flex;
@@ -12,12 +12,12 @@ const Projects = styled.section`
     align-items: center;
     overflow: hidden;
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.primary :
-        theme.dark.color.background.primary
+        themeObj.light.color.background.primary :
+        themeObj.dark.color.background.primary
     };
     color: ${props => props.theme === 'light' ?
-        theme.light.color.text.primary :
-        theme.dark.color.text.primary
+        themeObj.light.color.text.primary :
+        themeObj.dark.color.text.primary
     };
    
 `
@@ -35,9 +35,9 @@ const ProjectsContainer = styled(Container)`
         opacity: .3;
         ${font({weight: 600, lineHeight: 1.36, Fmin: 350, Fmax: 550})}
         color: ${props => props.theme === 'light' ?
-                theme.light.color.background.second :
-                theme.dark.color.background.second};
-        @media ${theme.media.tablet} {
+                themeObj.light.color.background.second :
+                themeObj.dark.color.background.second};
+        @media ${themeObj.media.tablet} {
             opacity: 0;
         }
     }
@@ -48,7 +48,7 @@ const ProjectWrapper = styled(FlexWrapper)`
     overflow-y: auto;
     gap: 38px;
     padding: 0 38px;
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         gap: 22px;
         padding: 0 22px;
     }
@@ -57,10 +57,10 @@ const ProjectWrapper = styled(FlexWrapper)`
 const CategoryButton = styled(Button)`
     ${font({weight: 400, lineHeight: 1.36, Fmin: 12, Fmax: 20})}
     min-width: 160px;
-    @media ${theme.media.tablet} {
+    @media ${themeObj.media.tablet} {
         min-width: 110px;
     }
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         min-width: 96px;
     }
 `

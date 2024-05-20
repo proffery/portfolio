@@ -1,13 +1,14 @@
 import { SectionTitle } from "../../../components/SectionTitle.styled"
-import { ThemeContext } from "../../../common/context/ThemeContext"
-import React, { useContext } from "react"
-import { skills } from "../../../common/data/skills"
+import { useAppContext} from "../../../common/context/appContext"
+import React from "react"
+import { skills } from "../../../common/const/data/skills"
 import { SkillSet } from "./SkillSet/SkillSet"
 import { S } from "./Skills_Styles"
 
 
-export const Skills: React.FC = () => {
-    const theme = useContext(ThemeContext)
+export const Skills = () => {
+    const { theme } = useAppContext()
+
     return (
         <S.Learning id="skills" theme={theme}>
             <S.LearningContainer theme={theme} direction="column" align="center">

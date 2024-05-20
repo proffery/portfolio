@@ -1,34 +1,30 @@
 import { Link } from "../../../components/link/Link.styled"
-import { useContext, useState } from "react"
-import { ThemeContext } from "../../../common/context/ThemeContext"
-import { theme }  from "../../../styles/Theme.styled"
+import { useState } from "react"
+import { themeObj }  from "../../../common/const/themeObj"
 import { ThemeChangeButton } from "../themeChangeButton/ThemeChangeButton"
-import { menuItems } from "../../../common/data/menuItems"
-import {S} from "./MibileMenu_Styles"
+import { menuItems } from "../../../common/const/data/menuItems"
+import { S } from "./MibileMenu_Styles"
 import { Fade } from "react-awesome-reveal"
+import { useAppContext } from "../../../common/context/appContext";
 
-type MobileMenuTypes = {
-    setCurrentTheme: any,
-}
+export const MobileMenu = () => {
+    const { theme} = useAppContext()
+    const [ isOpen, setIsOpen] = useState(false)
 
-export const MobileMenu: React.FC<MobileMenuTypes> = (props: MobileMenuTypes) => {
-    const themeName = useContext(ThemeContext)
-    const [isOpen, setIsOpen] = useState(false)
     return (
         <S.MobileMenu>
-            <S.BurgerButton theme={themeName} aria-label="Burger menu button" isOpen={isOpen} onClick={() => {setIsOpen(!isOpen)}}>
+            <S.BurgerButton theme={theme} aria-label="Burger menu button" isOpen={isOpen} onClick={() => {setIsOpen(!isOpen)}}>
                 <span></span>
             </S.BurgerButton>
-            <S.MobileMenuPopup theme={themeName} isOpen={isOpen} onClick={() => {setIsOpen(!isOpen)}}>
+            <S.MobileMenuPopup theme={theme} isOpen={isOpen} onClick={() => {setIsOpen(!isOpen)}}>
                 <ul role="menu" aria-label="menu">
                     <Fade triggerOnce duration={300} cascade>
                         {menuItems.map((item, index) => (
                             <li role="menuitem" key={index}>
-                                <Link 
-                                    theme={themeName} 
-                                    color={themeName === 'light' ? 
-                                        theme.light.color.text.primary :
-                                        theme.dark.color.text.primary
+                                <Link theme={theme} color=
+                                    {theme === 'light'
+                                        ? themeObj.light.color.text.primary
+                                        : themeObj.dark.color.text.primary
                                     }   
                                     href={item.item_href}
                                 >{item.item_name}</Link>
@@ -36,7 +32,7 @@ export const MobileMenu: React.FC<MobileMenuTypes> = (props: MobileMenuTypes) =>
                         ))}
                     </Fade>
                     <li>
-                        <ThemeChangeButton setCurrentTheme={props.setCurrentTheme} />
+                        <ThemeChangeButton />
                     </li>
                 </ul>
             </S.MobileMenuPopup>

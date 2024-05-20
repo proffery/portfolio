@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { theme } from "../../../styles/Theme.styled";
+import { themeObj } from "../../../common/const/themeObj";
 import { font } from "../../../styles/Font";
+import {ThemeChangeButton} from "../themeChangeButton/ThemeChangeButton";
 
 const DesktopMenu = styled.nav`
     display: flex;
@@ -13,17 +14,26 @@ const DesktopMenu = styled.nav`
         list-style-type: none;
     }
     li {
+        display: flex;
         margin-right: 35px;
+        align-items: center;
         ${font({Fmin: 12, Fmax: 16})}
     }
     z-index: 999;
-    @media ${theme.media.tablet} {
+    @media ${themeObj.media.tablet} {
         li {
             margin-right: 15px;
         }
     }
 `
+const HeaderThemeChangeButton = styled(ThemeChangeButton)`
+    display: inline-block;
+    @media ${themeObj.media.mobile} {
+        display: none;
+    }
+`
 
 export const S = {
-    DesktopMenu: DesktopMenu
+    DesktopMenu,
+    HeaderThemeChangeButton
 }

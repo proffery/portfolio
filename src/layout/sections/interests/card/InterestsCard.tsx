@@ -1,8 +1,8 @@
-import React, { useContext } from "react"
+import React from "react"
 import { Fade } from 'react-awesome-reveal'
 import { Icon } from "../../../../components/icon/Icon"
-import { ThemeContext } from "../../../../common/context/ThemeContext"
-import { S } from "./ServicesCard_Styles"
+import { useAppContext } from "../../../../common/context/appContext"
+import { S } from "./InterestsCard_Styles"
 
 interface ServiceCard {
     title: string,
@@ -23,8 +23,8 @@ type ServicesCardPropsTypes = {
     servicesWithFlip: ServiceCard[],
 }
 
-export const ServicesCard: React.FC<ServicesCardPropsTypes> = (props: ServicesCardPropsTypes) => {
-    const theme = useContext(ThemeContext)
+export const InterestsCard = (props: ServicesCardPropsTypes) => {
+    const { theme } = useAppContext()
     const onClickHandler = () => {
         props.setServicesWithFlip(props.servicesWithFlip
             .map((service, index) => index === props.cardIndex

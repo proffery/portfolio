@@ -1,11 +1,11 @@
 import styled from "styled-components"
 import { FlexWrapper } from "../../../../components/FlexWrapper"
-import { theme } from "../../../../styles/Theme.styled"
+import { themeObj } from "../../../../common/const/themeObj"
 
 const LearningCard = styled(FlexWrapper)`
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.primary :
-        theme.dark.color.background.primary
+        themeObj.light.color.background.primary :
+        themeObj.dark.color.background.primary
     };
 
     align-items: center;

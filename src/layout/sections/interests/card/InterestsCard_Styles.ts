@@ -1,14 +1,14 @@
 import styled from "styled-components"
 import { FlexWrapper } from "../../../../components/FlexWrapper"
-import { theme } from "../../../../styles/Theme.styled"
+import { themeObj } from "../../../../common/const/themeObj"
 import { font } from "../../../../styles/Font"
 import { Button } from "../../../../components/button/Button.styled"
 
-type ServiceCardPropsType = {
+type InterestsCardProps = {
     isFlip: boolean
 }
 
-const ServicesCard = styled(FlexWrapper) <ServiceCardPropsType>`
+const ServicesCard = styled(FlexWrapper) <InterestsCardProps>`
     min-width: 320px;
     aspect-ratio: 3 / 4;
     width: 30%;
@@ -16,16 +16,16 @@ const ServicesCard = styled(FlexWrapper) <ServiceCardPropsType>`
     border-radius: 20px;
     cursor: pointer;
     color: ${props => props.theme === 'light' ?
-        theme.light.color.text.primary :
-        theme.dark.color.text.primary
+        themeObj.light.color.text.primary :
+        themeObj.dark.color.text.primary
     };
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.card :
-        theme.dark.color.background.card
+        themeObj.light.color.background.card :
+        themeObj.dark.color.background.card
     };
     box-shadow: ${props => props.theme === 'light' ?
-        theme.light.shadow.card :
-        theme.dark.shadow.card
+        themeObj.light.shadow.card :
+        themeObj.dark.shadow.card
     };
     align-items: start;
     justify-content: space-around;
@@ -38,7 +38,7 @@ const ServicesCard = styled(FlexWrapper) <ServiceCardPropsType>`
         transform:  ${props => props.isFlip ? 'rotateY(-180deg)' : 'rotateY(0deg)'};
     }
 
-    @media ${theme.media.tablet} {
+    @media ${themeObj.media.tablet} {
         padding: 0 35px;
     }
 `
@@ -47,25 +47,25 @@ const ServicesCardIconWrapper = styled(FlexWrapper)`
     height: 173px;
     width: 173px;
     align-self: center;
-    @media ${theme.media.tablet} {
+    @media ${themeObj.media.tablet} {
         width: 162px;
         height: 162px;
     }
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         width: 154px;
         height: 154px;
     }
 `
 
-const ServicesCardButton = styled(Button) <ServiceCardPropsType>`
+const ServicesCardButton = styled(Button) <InterestsCardProps>`
     ${font({ weight: 400, lineHeight: 1.96, Fmin: 10, Fmax: 16 })}
     display: flex;
     align-items: center;
     justify-content: flex-start;
     background-color: transparent;
     color: ${props => props.theme === 'light' ?
-        theme.light.color.text.link :
-        theme.dark.color.text.link
+        themeObj.light.color.text.link :
+        themeObj.dark.color.text.link
     };
     transform:  ${props => props.isFlip ? 'rotateY(-180deg)' : 'rotateY(0deg)'};
     svg {
@@ -76,8 +76,8 @@ const ServicesCardButton = styled(Button) <ServiceCardPropsType>`
 const ServicesCardTitle = styled.h3`
     ${font({ weight: 500, lineHeight: 1.25, Fmin: 15, Fmax: 32 })}
     color: ${props => props.theme === 'light' ?
-        theme.light.color.text.primary :
-        theme.dark.color.text.primary
+        themeObj.light.color.text.primary :
+        themeObj.dark.color.text.primary
     };
     
 `

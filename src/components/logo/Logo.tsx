@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { theme }  from "../../styles/Theme.styled"
+import { themeObj }  from "../../common/const/themeObj"
 
 type LogoPropsType = {
     color: "white" | "gray"
@@ -23,8 +23,8 @@ const StyledLogoText = styled.span`
     font-family: Kalam, sans-serif;
     font-weight: 700;
     font-size: 35px;
-    color: ${props => props.color === "gray" ? theme.light.color.text.primary : theme.light.color.text.second};
-    @media ${theme.media.mobile} {
+    color: ${props => props.color === "gray" ? themeObj.light.color.text.primary : themeObj.light.color.text.second};
+    @media ${themeObj.media.mobile} {
         font-size: 26px;
     }
 `

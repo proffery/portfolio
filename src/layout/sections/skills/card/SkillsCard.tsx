@@ -1,8 +1,7 @@
-import { ThemeContext } from "../../../../common/context/ThemeContext"
-import React, { useContext } from "react"
+import { useAppContext } from "../../../../common/context/appContext"
+import React from "react"
 import { S } from "./SkillsCard_Styles"
 import { Icon } from "../../../../components/icon/Icon"
-import {Bounce, Fade, Flip, Hinge, JackInTheBox, Slide, Zoom} from "react-awesome-reveal";
 
 type LearningCardPropsTypes = {
     imageId: string,
@@ -10,8 +9,8 @@ type LearningCardPropsTypes = {
     viewBox?: string
 }
 
-export const SkillsCard: React.FC<LearningCardPropsTypes> = (props: LearningCardPropsTypes) => {
-    const theme = useContext(ThemeContext)
+export const SkillsCard = (props: LearningCardPropsTypes) => {
+    const {theme} = useAppContext()
     return (
         <S.LearningCard
             theme={theme}

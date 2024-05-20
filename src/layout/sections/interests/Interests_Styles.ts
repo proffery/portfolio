@@ -1,14 +1,14 @@
-import { theme } from '../../../styles/Theme.styled';
+import { themeObj } from '../../../common/const/themeObj';
 import { FlexWrapper } from './../../../components/FlexWrapper';
 import styled from "styled-components";
 
 const Services = styled.section`
     ${FlexWrapper} {
         gap: 30px;
-        @media ${theme.media.tablet} {
+        @media ${themeObj.media.tablet} {
             gap: 26px;
         }
-        @media ${theme.media.mobile} {
+        @media ${themeObj.media.mobile} {
             gap: 14px;
         }
     }
@@ -17,8 +17,8 @@ const Services = styled.section`
     align-items: center;
     justify-content: center;
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.primary :
-        theme.dark.color.background.primary
+        themeObj.light.color.background.primary :
+        themeObj.dark.color.background.primary
     };
 `
 

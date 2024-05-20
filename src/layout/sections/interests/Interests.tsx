@@ -2,13 +2,13 @@ import { useContext, useState } from "react"
 import { Container } from "../../../components/Container"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { SectionTitle } from "../../../components/SectionTitle.styled"
-import { ThemeContext } from "../../../common/context/ThemeContext"
-import { services } from "../../../common/data/services"
-import { S } from "./Services_Styles"
-import { ServicesCard } from "./card/ServicesCard"
+import { services } from "../../../common/const/data/services"
+import { S } from "./Interests_Styles"
+import { InterestsCard } from "./card/InterestsCard"
+import {useAppContext} from "../../../common/context/appContext";
 
-export const Services: React.FC = () => {
-    const theme = useContext(ThemeContext)
+export const Interests = () => {
+    const { theme} = useAppContext()
     const [servicesWithFlip, setServicesWithFlip] = useState(services.map((service) => ({...service, isFlip: false })))
 
 
@@ -18,7 +18,7 @@ export const Services: React.FC = () => {
                 <SectionTitle theme={theme}>Interests</SectionTitle>
                 <FlexWrapper wrap="wrap" align="center" justify="center">
                     {servicesWithFlip.map((service, index) => 
-                        <ServicesCard 
+                        <InterestsCard
                             key={service.imageId + index}
                             iconId={service.imageId} 
                             title={service.title} 

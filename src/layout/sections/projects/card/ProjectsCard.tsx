@@ -1,6 +1,5 @@
 import { FlexWrapper } from "../../../../components/FlexWrapper"
-import { useContext } from "react"
-import { ThemeContext } from "../../../../common/context/ThemeContext"
+import { useAppContext } from "../../../../common/context/appContext"
 import { S } from "./ProjectCard_Styles"
 import { Fade } from "react-awesome-reveal"
 
@@ -11,8 +10,9 @@ type ProjectsCardPropsTypes = {
     githubUrl: string
 }
 
-export const ProgectsCard: React.FC<ProjectsCardPropsTypes> = (props: ProjectsCardPropsTypes) => {
-    const theme = useContext(ThemeContext)
+export const ProjectsCard = (props: ProjectsCardPropsTypes) => {
+    const {theme} = useAppContext()
+
     return (
         <S.ProjectCard theme={theme} backgroundImage={`url("${props.imageUrl}")`} direction="column" align="center" >
             <S.ProjectCardContent theme={theme} direction="column" justify="space-between" >

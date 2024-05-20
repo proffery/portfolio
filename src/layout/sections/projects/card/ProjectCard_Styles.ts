@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { FlexWrapper } from "../../../../components/FlexWrapper"
-import { theme } from "../../../../styles/Theme.styled"
+import { themeObj } from "../../../../common/const/themeObj"
 import { font } from "../../../../styles/Font"
 import { Link } from "../../../../components/link/Link.styled"
 
@@ -11,8 +11,8 @@ type ProjectCardPropsType = {
 
 const ProjectCardContent = styled(FlexWrapper)`
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.card :
-        theme.dark.color.background.card
+        themeObj.light.color.background.card :
+        themeObj.dark.color.background.card
     };
     position: relative;
     top: 100%;
@@ -22,24 +22,24 @@ const ProjectCardContent = styled(FlexWrapper)`
     border-radius: 0 0 20px 20px; 
     padding: 22px 32px;
     box-shadow: ${props => props.theme === 'light' ?
-        theme.light.shadow.card :
-        theme.dark.shadow.card
+        themeObj.light.shadow.card :
+        themeObj.dark.shadow.card
     };
     transition: height ease-in .5s;
     outline: 1px solid ${props => props.theme === 'light' ?
-        theme.light.color.background.primary :
-        theme.dark.color.background.primary
+        themeObj.light.color.background.primary :
+        themeObj.dark.color.background.primary
     };
 
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         border-radius: 0 0 16px 16px;
         padding: 16px;
     }`
 
 const ProjectCardTitle = styled.h3`
     color: ${props => props.theme === 'light' ?
-        theme.light.color.text.link :
-        theme.dark.color.text.primary
+        themeObj.light.color.text.link :
+        themeObj.dark.color.text.primary
     };
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -56,7 +56,7 @@ const ProjectCardLink = styled(Link)`
     aspect-ratio: 11 / 3;
     width: 50%;
     border-radius: 10px;
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         border-radius: 7px;
     }    
 `
@@ -73,7 +73,7 @@ const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType>`
     aspect-ratio: 9 / 14;
     flex-grow: 1;
     margin-bottom: 10px;
-    @media ${theme.media.mobile} {
+    @media ${themeObj.media.mobile} {
         border-radius: 16px;
         min-width: 163px;
     }
@@ -83,43 +83,43 @@ const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType>`
     }
     ${ProjectCardLink}[type="button"] {
         color: ${props => props.theme === 'light' ?
-            theme.light.color.text.second :
-            theme.dark.color.text.second
+            themeObj.light.color.text.second :
+            themeObj.dark.color.text.second
         };
         background-color: ${props => props.theme === 'light' ?
-            theme.light.color.text.link :
-            theme.dark.color.text.primary
+            themeObj.light.color.text.link :
+            themeObj.dark.color.text.primary
         };
     }
     &:hover {
         ${ProjectCardContent} {
             background-color: ${props => props.theme === 'light' ?
-                theme.light.color.background.second :
-                theme.dark.color.background.second
+                themeObj.light.color.background.second :
+                themeObj.dark.color.background.second
             };
             height: 45%;
         }
         ${ProjectCardTitle} {
             color: ${props => props.theme === 'light' ?
-                theme.light.color.text.second :
-                theme.dark.color.text.primary
+                themeObj.light.color.text.second :
+                themeObj.dark.color.text.primary
             };
             display: inline-block;
         }
         ${FlexWrapper} ${Link} {
             color: ${props => props.theme === 'light' ?
-                theme.light.color.text.second :
-                theme.dark.color.text.primary
+                themeObj.light.color.text.second :
+                themeObj.dark.color.text.primary
             }
         }
         ${FlexWrapper} ${Link}[type="button"] {
             color: ${props => props.theme === 'light' ?
-                theme.light.color.text.second :
-                theme.dark.color.text.primary
+                themeObj.light.color.text.second :
+                themeObj.dark.color.text.primary
             };
             background-color: ${props => props.theme === 'light' ?
-                theme.light.color.text.link :
-                theme.dark.color.text.link
+                themeObj.light.color.text.link :
+                themeObj.dark.color.text.link
             };
         }
     }

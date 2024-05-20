@@ -1,7 +1,7 @@
 import {MoveDirection, OutMode} from "@tsparticles/engine";
-import {theme} from "../../styles/Theme.styled";
+import {themeObj} from "./themeObj";
 
-export const particlesObj =  {
+export const particlesOptions =  {
     // background: {
     //     color: {
     //         value: "transparent",
@@ -31,10 +31,10 @@ export const particlesObj =  {
     },
     particles: {
         color: {
-            value: theme.light.color.background.second,
+            value: themeObj.light.color.background.second,
         },
         links: {
-            color: theme.light.color.background.second,
+            color: themeObj.light.color.background.second,
             distance: 200,
             enable: true,
             opacity: 0.5,

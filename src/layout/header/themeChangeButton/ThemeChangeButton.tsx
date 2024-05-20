@@ -1,17 +1,17 @@
-import React, { useContext } from "react"
+import React from "react"
 import { Button } from "../../../components/button/Button.styled"
 import { Icon } from "../../../components/icon/Icon"
-import { ThemeContext } from "../../../common/context/ThemeContext"
+import { useAppContext } from "../../../common/context/appContext";
 
-type ThemeChangeButtonTypes = {
+type Props = {
     className?: string
-    setCurrentTheme: any,
 }
 
-export const ThemeChangeButton: React.FC<ThemeChangeButtonTypes> = ({ className, setCurrentTheme }: ThemeChangeButtonTypes) => {
-    const theme = useContext(ThemeContext)
+export const ThemeChangeButton = ({ className }: Props) => {
+    const { theme, setTheme} = useAppContext()
+
     const themeChangeHandler = () => {
-        theme === 'light' ? setCurrentTheme('dark') : setCurrentTheme('light')
+        theme === 'light' ? setTheme('dark') : setTheme('light')
     }
 
     return (

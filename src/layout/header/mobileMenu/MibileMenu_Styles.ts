@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { theme } from "../../../styles/Theme.styled";
+import { themeObj } from "../../../common/const/themeObj";
 
 type StyledMobileMenuTypes = {
     isOpen: boolean,
@@ -28,8 +28,8 @@ const MobileMenuPopup = styled.div<StyledMobileMenuTypes>`
     bottom: 0;
     z-index: 9999;
     background-color: ${props => props.theme === 'light' ?
-        theme.light.color.background.primary :
-        theme.dark.color.background.primary
+        themeObj.light.color.background.primary :
+        themeObj.dark.color.background.primary
     };
     
     ul {
@@ -59,8 +59,8 @@ const BurgerButton = styled.button<StyledMobileMenuTypes>`
         width: 30px;
         height: 2px;
         background-color: ${props => props.theme === 'light' ?
-            theme.light.color.text.primary :
-            theme.dark.color.text.primary
+            themeObj.light.color.text.primary :
+            themeObj.dark.color.text.primary
         };
 
         ${props => props.isOpen && css<StyledMobileMenuTypes>`
@@ -75,8 +75,8 @@ const BurgerButton = styled.button<StyledMobileMenuTypes>`
             width: 30px;
             height: 2px;
             background-color: ${props => props.theme === 'light' ?
-                theme.light.color.text.primary :
-                theme.dark.color.text.primary
+                themeObj.light.color.text.primary :
+                themeObj.dark.color.text.primary
             };
             transform: translateY(-8px);
 
@@ -92,8 +92,8 @@ const BurgerButton = styled.button<StyledMobileMenuTypes>`
             width: 30px;
             height: 2px;
             background-color: ${props => props.theme === 'light' ?
-                theme.light.color.text.primary :
-                theme.dark.color.text.primary
+                themeObj.light.color.text.primary :
+                themeObj.dark.color.text.primary
             };
             transform: translateY(8px);
 

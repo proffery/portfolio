@@ -3,33 +3,33 @@ import { FlexWrapper } from "../../../components/FlexWrapper"
 import { Icon } from "../../../components/icon/Icon"
 import { Link } from "../../../components/link/Link.styled"
 import { Container } from "../../../components/Container"
-import { ElementRef, useContext, useRef, useState } from "react"
-import { ThemeContext } from "../../../common/context/ThemeContext"
+import { ElementRef, useRef, useState } from "react"
 import { S } from "./Contact_Styles"
-import emailjs from '@emailjs/browser';
+import emailJs from '@emailjs/browser';
 import { Zoom } from "react-awesome-reveal"
+import {useAppContext} from "../../../common/context/appContext";
 
-export const Contact: React.FC = () => {
+export const Contact = () => {
     const form = useRef<ElementRef<'form'>>(null)
-    const theme = useContext(ThemeContext)
+    const {theme} = useAppContext()
     const [submitButtonText, setSubmitButtonText] = useState('Send')
 
     const sendEmail = (e: any) => {
         e.preventDefault()
         if(!form.current) return
-        emailjs.sendForm('service_ypumi3n', 'template_mnxi9t4', form.current, 'u6DZWsUFpg84ikb5W')
-          .then((result) => {
-              console.log(result.text);
-              setSubmitButtonText('Sended!')
-              setTimeout(() => {
-                    e.target.reset()
-                    setSubmitButtonText('Send')
-                }, 2000)
-          }, (error) => {
-              console.log(error.text);
-              setSubmitButtonText('Error!')
-          })
-        
+
+        emailJs.sendForm('service_ypumi3n', 'template_mnxi9t4', form.current, 'u6DZWsUFpg84ikb5W')
+              .then((result) => {
+                  console.log(result.text);
+                  setSubmitButtonText('Sended!')
+                  setTimeout(() => {
+                        e.target.reset()
+                        setSubmitButtonText('Send')
+                    }, 2000)
+              }, (error) => {
+                  console.log(error.text);
+                  setSubmitButtonText('Error!')
+              })
     }
 
     return (

@@ -1,24 +1,22 @@
-import { useContext, useEffect, useState } from "react"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { SectionTitle } from "../../../components/SectionTitle.styled"
 import { Icon } from "../../../components/icon/Icon"
 import { Link } from "../../../components/link/Link.styled"
-import { ThemeContext } from "../../../common/context/ThemeContext"
 import { S } from "./About_Styles"
+import { useAppContext } from "../../../common/context/appContext";
+import { themeObj } from "../../../common/const/themeObj";
+import {extractNumberFromString} from "../../../common/utils/extractNumberFromString";
 
 export const About = () => {
-    const theme = useContext(ThemeContext)
-    const [width, setWidth] = useState(window.innerWidth)
-    const breakpoint = 768
-    const expYears = new Date(new Date().getTime() - new Date(2023, 1, 1, 0, 0, 1).getTime()).getFullYear() - 1970
-    const myYears = new Date(new Date().getTime() - new Date(1987, 6, 16, 14, 45, 0).getTime()).getFullYear() - 1970
+    const {theme, width} = useAppContext()
 
-    useEffect(() => {
-        const handleWindowResize = () => setWidth(window.innerWidth)
-        window.addEventListener("resize", handleWindowResize)
+    const breakpoint = extractNumberFromString(themeObj.media.mobile)
 
-        return () => window.removeEventListener("resize", handleWindowResize)
-    }, [])
+    const todayDate = new Date()
+    const myBirthdayDate = new Date(1987, 6, 16, 14, 45, 0)
+    const expDate = new Date(2023, 1, 1, 0, 0, 1)
+    const expYears = new Date(todayDate.getTime() - expDate.getTime()).getFullYear() - 1970
+    const myYears = new Date(todayDate.getTime() - myBirthdayDate.getTime()).getFullYear() - 1970
 
     return (
         <S.About theme={theme} id="about">

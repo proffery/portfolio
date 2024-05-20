@@ -1,10 +1,9 @@
 import { Link } from "../../components/link/Link.styled"
-import { ThemeContext } from "../../common/context/ThemeContext"
-import { useContext } from "react"
 import { S } from "./Footer_Styles"
+import {useAppContext} from "../../common/context/appContext";
 
-export const Footer: React.FC = () => {
-    const theme = useContext(ThemeContext)
+export const Footer = () => {
+    const {theme} = useAppContext()
     return (
         <S.Footer theme={theme}>
             <S.BackgroundImgTop theme={theme} height="100%" width="100%"></S.BackgroundImgTop>

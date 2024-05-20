@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { theme } from "./Theme.styled";
+import { themeObj } from "../common/const/themeObj";
 
 type GlobalStylesTypes = {
     theme: string
@@ -12,13 +12,12 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        transition: all ease-in .2s;
     }
 
     *:focus-visible {
         outline: 2px solid ${props => props.theme === 'light' ?
-            theme.light.color.text.link :
-            theme.dark.color.text.link
+            themeObj.light.color.text.link :
+            themeObj.dark.color.text.link
         };
     }
     
@@ -36,8 +35,8 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: ${props => props.theme === 'light' ?
-            theme.light.color.background.primary :
-            theme.dark.color.background.primary
+            themeObj.light.color.background.primary :
+            themeObj.dark.color.background.primary
         };
         
     }
@@ -52,7 +51,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
 
     section {
         padding:  0 0 60px  0;
-        @media ${theme.media.mobile} {
+        @media ${themeObj.media.mobile} {
             padding: 27px 0;
         }
     }
