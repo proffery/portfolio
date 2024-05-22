@@ -1,12 +1,12 @@
 import Particles, {initParticlesEngine} from "@tsparticles/react";
-import {useEffect, useMemo, useState} from "react";
+import {memo, useEffect, useState} from "react";
 import {loadSlim} from "@tsparticles/slim";
 import {useAppContext} from "../../common/context/appContext";
 import {extractNumberFromString} from "../../common/utils/extractNumberFromString";
 import {themeObj} from "../../common/const/themeObj";
 import options from "../../common/const/particlesOptions";
 
-export const BackgroundParticles = () => {
+export const BackgroundParticles = memo(() => {
     const [init, setInit] = useState(false);
     const { width } = useAppContext()
     const breakpoint = extractNumberFromString(themeObj.media.mobile)
@@ -16,7 +16,7 @@ export const BackgroundParticles = () => {
             initParticlesEngine(async (engine) => {
                 await loadSlim(engine);
             }).then(() => {
-                setInit(true);
+               setInit(true);
             });
         } else setInit(false)
     }, [width]);
@@ -26,4 +26,4 @@ export const BackgroundParticles = () => {
         id="tsparticles"
         options={options}
     /> : null
-}
+})

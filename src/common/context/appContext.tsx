@@ -1,7 +1,7 @@
-import React, {createContext, ReactNode, useContext, useEffect, useState} from "react";
+import React, {createContext, memo, ReactNode, useContext, useEffect, useState} from "react";
 
 const initialState = {
-    theme: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' as Theme,
+    theme: 'dark' as Theme,
     width: window.innerWidth,
     setWidth: (width: number) => {},
     setTheme: (newTheme: Theme) => {},
@@ -11,7 +11,7 @@ export type Theme = 'light' | 'dark'
 const AppContext = createContext(initialState)
 
 type Props = { children: ReactNode }
-const AppContextProvider = ({ children }: Props) => {
+const AppContextProvider = memo(({ children }: Props) => {
     const [context, setContext] = useState<Omit<typeof initialState, 'setWidth' | 'setTheme'>>(initialState)
 
     const setWidth = (width: number) => {
@@ -24,11 +24,16 @@ const AppContextProvider = ({ children }: Props) => {
     useEffect(() => {
         const handleWindowResize = () => setWidth(window.innerWidth)
         window.addEventListener("resize", handleWindowResize);
+
         return () => window.removeEventListener("resize", handleWindowResize);
     }, [window.innerWidth])
 
+    useEffect(() => {
+        setTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    }, [])
+
     return <AppContext.Provider value={{...context, setWidth, setTheme}}>{children}</AppContext.Provider>
-}
+})
 
 const useAppContext = () => useContext(AppContext)
 
