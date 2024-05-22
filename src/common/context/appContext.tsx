@@ -1,7 +1,7 @@
 import React, {createContext, ReactNode, useContext, useEffect, useState} from "react";
 
 const initialState = {
-    theme: 'dark' as Theme,
+    theme: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' as Theme,
     width: window.innerWidth,
     setWidth: (width: number) => {},
     setTheme: (newTheme: Theme) => {},
@@ -24,13 +24,8 @@ const AppContextProvider = ({ children }: Props) => {
     useEffect(() => {
         const handleWindowResize = () => setWidth(window.innerWidth)
         window.addEventListener("resize", handleWindowResize);
-
         return () => window.removeEventListener("resize", handleWindowResize);
     }, [window.innerWidth])
-
-    useEffect(() => {
-        setTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-    }, [])
 
     return <AppContext.Provider value={{...context, setWidth, setTheme}}>{children}</AppContext.Provider>
 }

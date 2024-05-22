@@ -1,31 +1,60 @@
-import {MoveDirection, OutMode} from "@tsparticles/engine";
+import type { ISourceOptions } from "@tsparticles/engine";
+import polygonMask from '../../assets/images/photo.svg'
 import {themeObj} from "./themeObj";
 
-export const particlesOptions =  {
-    // background: {
-    //     color: {
-    //         value: "transparent",
-    //     },
-    // },
-    fpsLimit: 120,
+export const options: ISourceOptions =  {
+    key: "polygonMask",
+    name: "Polygon Mask",
     interactivity: {
         events: {
-            // onClick: {
-            //     enable: true,
-            //     mode: "push",
-            // },
+            onClick: {
+                enable: false,
+                mode: "push",
+            },
             onHover: {
                 enable: true,
-                mode: "repulse",
+                mode: "bubble",
+                parallax: {
+                    enable: false,
+                    force: 2,
+                    smooth: 10,
+                },
             },
         },
         modes: {
+            bubble: {
+                distance: 40,
+                duration: 2,
+                opacity: 8,
+                size: 6,
+            },
+            connect: {
+                distance: 80,
+                links: {
+                    opacity: 0.5,
+                },
+                radius: 80,
+            },
+            grab: {
+                distance: 400,
+                links: {
+                    opacity: 1,
+                },
+            },
             push: {
-                quantity: 8,
+                quantity: 4,
+            },
+            remove: {
+                quantity: 2,
             },
             repulse: {
-                distance: 100,
+                distance: 200,
                 duration: 0.4,
+            },
+            slow: {
+                active: false,
+                radius: 0,
+                factor: 1,
             },
         },
     },
@@ -33,38 +62,32 @@ export const particlesOptions =  {
         color: {
             value: themeObj.light.color.background.second,
         },
-        links: {
-            color: themeObj.light.color.background.second,
-            distance: 200,
-            enable: true,
-            opacity: 0.5,
-            width: 1,
-        },
         move: {
-            direction: MoveDirection.none,
             enable: true,
-            outModes: {
-                default: OutMode.out,
-            },
-            random: false,
-            speed: 1,
-            straight: false,
+            outModes: "bounce",
+            speed: .4,
         },
         number: {
-            density: {
-                enable: true,
-            },
-            value: 80,
+            value: 20,
         },
         opacity: {
-            value: 0.5,
+            animation: {
+                enable: true,
+                speed: .5,
+                sync: false,
+            },
+            value: {
+                min: 0.05,
+                max: 0.4,
+            },
         },
         shape: {
-            type: "circle",
+            type: ["circle", "triangle", "square"],
         },
         size: {
-            value: { min: 1, max: 5 },
+            value: {min: 5, max: 15},
         },
     },
-    detectRetina: true,
-}
+};
+
+export default options;

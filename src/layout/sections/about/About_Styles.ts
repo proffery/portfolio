@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { themeObj } from "../../../common/const/themeObj"
 import { Container } from "../../../components/Container"
-import aboutMap from "../../../assets/images/Map.webp"
+import aboutMap from "../../../assets/images/map.svg"
 import photo from "../../../assets/images/Photo2-my.webp"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 import { font } from "../../../styles/Font"
@@ -32,8 +32,8 @@ const AboutContainer = styled(Container)`
     };
     background-image: url(${photo}), url(${aboutMap});
     background-repeat: no-repeat;
-    background-position: bottom right, bottom center;
-    background-size: contain;
+    background-position: bottom right, center;
+    background-size: contain, cover;
     @media ${themeObj.media.mobile} {
         height: 70vh;
     }
