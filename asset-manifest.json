@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.7bd1a540.css",
-    "main.js": "/portfolio/static/js/main.266e871c.js",
+    "main.js": "/portfolio/static/js/main.fada4e3d.js",
     "static/media/Library.webp": "/portfolio/static/media/Library.7455b8205028ef89ea36.webp",
     "static/media/PhotographerHomePage.webp": "/portfolio/static/media/PhotographerHomePage.d68c8dec8fa2ad7fc1a0.webp",
     "static/media/MemoryCard.webp": "/portfolio/static/media/MemoryCard.d547cd803f7e638591c9.webp",
     "static/media/Photo-my.webp": "/portfolio/static/media/Photo-my.b6b562309b5998ff1789.webp",
     "static/media/Photo2-my.webp": "/portfolio/static/media/Photo2-my.2cfb7a637c4d8de382f3.webp",
     "static/media/FlashCards.png": "/portfolio/static/media/FlashCards.bed9cd2f1d1a9941e96a.png",
+    "static/media/map.svg": "/portfolio/static/media/map.a7a16c47e891b80a2ea35b08fc687653.svg",
     "static/media/WeatherApp.webp": "/portfolio/static/media/WeatherApp.c4497d9486375ab98df5.webp",
     "static/media/icons-sprite.svg": "/portfolio/static/media/icons-sprite.7d338939f149cf0fece7dcb6037e7e65.svg",
     "static/media/decorations-dots.svg": "/portfolio/static/media/decorations-dots.49f9618a01bb3141f9d54667c7d081b5.svg",
@@ -15,17 +16,16 @@
     "static/media/SocialNetwork.png": "/portfolio/static/media/SocialNetwork.7a68f2ff2ff89be4b05f.png",
     "static/media/TodoList.webp": "/portfolio/static/media/TodoList.cdb133f8cf82f35e0d9c.webp",
     "static/media/OpenAIClientApp.webp": "/portfolio/static/media/OpenAIClientApp.acf1db1c179bf1284e70.webp",
-    "static/media/Map.webp": "/portfolio/static/media/Map.bbc67a20b4840aed2423.webp",
     "static/media/TicTacToe.webp": "/portfolio/static/media/TicTacToe.03dd00bccd9fc5e95cd0.webp",
     "static/media/Calculator.webp": "/portfolio/static/media/Calculator.cb3457cbe8f5743300ff.webp",
     "static/media/wave-dark.svg": "/portfolio/static/media/wave-dark.9d34101954c267dc44b2d663681faec8.svg",
     "static/media/wave-light.svg": "/portfolio/static/media/wave-light.18009ac0a4b50c263f2753de5174c4af.svg",
     "index.html": "/portfolio/index.html",
     "main.7bd1a540.css.map": "/portfolio/static/css/main.7bd1a540.css.map",
-    "main.266e871c.js.map": "/portfolio/static/js/main.266e871c.js.map"
+    "main.fada4e3d.js.map": "/portfolio/static/js/main.fada4e3d.js.map"
   },
   "entrypoints": [
     "static/css/main.7bd1a540.css",
-    "static/js/main.266e871c.js"
+    "static/js/main.fada4e3d.js"
   ]
 }
