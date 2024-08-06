@@ -65,7 +65,7 @@ const ContactForm = styled.form<StyledTheme>`
     height: 152px;
     padding: 10px 18px;
     &::placeholder {
-      padding: 0px;
+      padding: 0;
     }
     &:focus {
       padding: 10px 18px;
@@ -110,8 +110,8 @@ const ContactFormField = styled.input<StyledTheme>`
       : themeObj.dark.color.background.input};
   border-radius: 9px;
   height: 36px;
-  resize: none;
   border: none;
+
   &::placeholder {
     color: ${props =>
       props.theme === 'light'
@@ -126,9 +126,10 @@ const ContactFormField = styled.input<StyledTheme>`
           ? themeObj.light.color.text.placeholder
           : themeObj.dark.color.text.placeholder};
   }
+
   @media ${themeObj.media.mobile} {
-    height: 22px;
-    border-radius: 5.5px;
+    height: 28px;
+    border-radius: 6px;
   }
 `
 const ContactFormTextarea = styled.textarea<StyledTheme>`
@@ -149,6 +150,7 @@ const ContactFormTextarea = styled.textarea<StyledTheme>`
   height: 36px;
   resize: none;
   border: none;
+
   &::placeholder {
     color: ${props =>
       props.theme === 'light'
@@ -163,9 +165,10 @@ const ContactFormTextarea = styled.textarea<StyledTheme>`
           ? themeObj.light.color.text.placeholder
           : themeObj.dark.color.text.placeholder};
   }
+
   @media ${themeObj.media.mobile} {
     height: 22px;
-    border-radius: 5.5px;
+    border-radius: 6px;
   }
 `
 
