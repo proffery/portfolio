@@ -1,20 +1,19 @@
-import React, { ReactNode, createContext, memo, useContext, useEffect, useState } from 'react'
+import { ReactNode, createContext, memo, useContext, useEffect, useState } from 'react'
 
-const initialState = {
-  setTheme: (newTheme: Theme) => {},
-  setWidth: (width: number) => {},
-  theme: 'dark' as Theme,
-  width: window.innerWidth,
+type Context = {
+  setTheme?: (newTheme: Theme) => void
+  setWidth?: (width: number) => void
+  theme?: Theme
+  width?: number
 }
 
 export type Theme = 'dark' | 'light'
 
-const AppContext = createContext(initialState)
+const AppContext = createContext<Context>({})
 
 type Props = { children: ReactNode }
 const AppContextProvider = memo(({ children }: Props) => {
-  const [context, setContext] =
-    useState<Omit<typeof initialState, 'setTheme' | 'setWidth'>>(initialState)
+  const [context, setContext] = useState<Omit<Context, 'setTheme' | 'setWidth'>>({ theme: 'dark' })
 
   const setWidth = (width: number) => {
     setContext({ ...context, width })

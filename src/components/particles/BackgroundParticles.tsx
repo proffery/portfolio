@@ -14,7 +14,7 @@ export const BackgroundParticles = memo(() => {
   const breakpoint = extractNumberFromString(themeObj.media.mobile)
 
   useEffect(() => {
-    if (width > breakpoint) {
+    if (width && width > breakpoint) {
       initParticlesEngine(async engine => {
         await loadSlim(engine)
       }).then(() => {
