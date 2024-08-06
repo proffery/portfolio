@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 
 import { themeObj } from '../../../common/const/themeObj'
+import { Theme } from '../../../common/context/appContext'
 import { Container } from '../../../components/Container'
 import { FlexWrapper } from '../../../components/FlexWrapper'
 import { Link } from '../../../components/link/Link.styled'
 import { font } from '../../../styles/Font'
 
-const Main = styled.section`
+type StyledTheme = {
+  theme: Theme
+}
+
+const Main = styled.section<StyledTheme>`
   display: flex;
   flex-direction: column;
   background-color: ${props =>
@@ -28,7 +33,7 @@ const MainContainer = styled(Container)`
   height: 100%;
 `
 
-const BannerWrapper = styled(FlexWrapper)`
+const BannerWrapper = styled(FlexWrapper)<StyledTheme>`
   margin: 80px auto;
   padding: 42px;
   min-height: 508px;
@@ -53,7 +58,7 @@ const BannerWrapper = styled(FlexWrapper)`
   }
 `
 
-const BannerLeft = styled(FlexWrapper)`
+const BannerLeft = styled(FlexWrapper)<StyledTheme>`
   position: relative;
   width: 10%;
   background-color: ${props =>
@@ -75,7 +80,7 @@ const BannerLeft = styled(FlexWrapper)`
   }
 `
 
-const BannerRight = styled(FlexWrapper)`
+const BannerRight = styled(FlexWrapper)<StyledTheme>`
   position: relative;
   width: 90%;
   z-index: 1;
@@ -128,7 +133,7 @@ const BannerRight = styled(FlexWrapper)`
   }
 `
 
-const BannerPhoto = styled.img`
+const BannerPhoto = styled.img<StyledTheme>`
   display: flex;
   max-width: 400px;
   min-width: 188px;
@@ -142,13 +147,13 @@ const BannerPhoto = styled.img`
   object-fit: cover;
 `
 
-const BannerTitleMain = styled.h1`
+const BannerTitleMain = styled.h1<StyledTheme>`
   ${font({ Fmax: 30, Fmin: 20, lineHeight: 1.68, weight: 700 })}
   text-shadow: ${props =>
     props.theme === 'light' ? themeObj.light.shadow.text : themeObj.dark.shadow.text};
 `
 
-const BannerTitleSecond = styled.div`
+const BannerTitleSecond = styled.div<StyledTheme>`
   ${font({ Fmax: 60, Fmin: 28, family: 'Montserrat', lineHeight: 1, weight: 700 })}
   text-shadow: ${props =>
     props.theme === 'light' ? themeObj.light.shadow.text : themeObj.dark.shadow.text};
@@ -202,7 +207,7 @@ const ArrowIconWrapper = styled(FlexWrapper)`
   align-items: center;
 `
 
-const AppsLeft = styled(FlexWrapper)`
+const AppsLeft = styled(FlexWrapper)<StyledTheme>`
   width: 30%;
   z-index: 0;
   background-color: ${props =>
@@ -233,7 +238,7 @@ const AppsWrapper = styled(FlexWrapper)`
   z-index: 0;
 `
 
-const App = styled.div`
+const App = styled.div<StyledTheme>`
   position: relative;
   min-width: 160px;
   min-height: 90px;
@@ -281,7 +286,7 @@ const App = styled.div`
   }
 `
 
-const AppIconWrapper = styled.div`
+const AppIconWrapper = styled.div<StyledTheme>`
   position: absolute;
   border: 10px solid
     ${props =>

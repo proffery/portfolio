@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Hinge } from 'react-awesome-reveal'
 import Tilt from 'react-parallax-tilt'
+
+import { Icon } from '@/components/icon/Icon'
 
 import photo from '../../../assets/images/Photo-my.webp'
 import { mainBannerTick } from '../../../common/const/data/bannerTickArr'
@@ -9,7 +11,6 @@ import { useAppContext } from '../../../common/context/appContext'
 import { useTickText } from '../../../common/customHooks/useTickText'
 import { extractNumberFromString } from '../../../common/utils/extractNumberFromString'
 import { FlexWrapper } from '../../../components/FlexWrapper'
-import { Icon } from '../../../components/icon/Icon'
 import { Link } from '../../../components/link/Link.styled'
 import { S } from './Main_Styles'
 
@@ -28,7 +29,7 @@ export const Main = () => {
 
   return (
     <S.Main id={'main'} theme={theme}>
-      <S.MainContainer theme={theme}>
+      <S.MainContainer>
         <S.BannerLeft theme={theme}></S.BannerLeft>
         <S.BannerRight justify={'center'} theme={theme}>
           <Tilt perspective={4000} tiltEnable={width >= breakpoint} transitionSpeed={800}>
@@ -39,7 +40,7 @@ export const Main = () => {
               <S.BannerTitleWrapper direction={'column'} width={'47%'}>
                 <FlexWrapper align={'start'} direction={'column'} justify={'center'}>
                   <S.BannerTitleSecond theme={theme}>
-                    Hi, I'm
+                    Hi, I&apos;m
                     <Link href={'#contact'}>Dmitry Shamko</Link>
                   </S.BannerTitleSecond>
                   <S.BannerTitleMain aria-label={'Web Developer'} theme={theme}>
@@ -75,7 +76,7 @@ export const Main = () => {
       </S.MainContainer>
       <S.MainContainer>
         <S.AppsLeft theme={theme}></S.AppsLeft>
-        <S.AppsRight direction={'column'} justify={'end'} theme={theme}>
+        <S.AppsRight direction={'column'} justify={'end'}>
           <S.AppsWrapper gap={'12px'} justify={'center'} wrap={'wrap'}>
             {jsIsShow && (
               <Hinge delay={3000} duration={2000} triggerOnce>

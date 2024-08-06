@@ -2,12 +2,17 @@ import styled from 'styled-components'
 
 import decorationDots from '../../../assets/images/decorations-dots.svg'
 import { themeObj } from '../../../common/const/themeObj'
+import { Theme } from '../../../common/context/appContext'
 import { Container } from '../../../components/Container'
 import { FlexWrapper } from '../../../components/FlexWrapper'
 import { Button } from '../../../components/button/Button.styled'
 import { font } from '../../../styles/Font'
 
-const Projects = styled.section`
+type StyledTheme = {
+  theme: Theme
+}
+
+const Projects = styled.section<StyledTheme>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +24,7 @@ const Projects = styled.section`
   color: ${props =>
     props.theme === 'light' ? themeObj.light.color.text.primary : themeObj.dark.color.text.primary};
 `
-const ProjectsContainer = styled(Container)`
+const ProjectsContainer = styled(Container)<StyledTheme>`
   background-image: url(${decorationDots});
   background-repeat: no-repeat;
   background-position: top left;

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { themeObj } from '../../../../common/const/themeObj'
+import { Theme } from '../../../../common/context/appContext'
 import { FlexWrapper } from '../../../../components/FlexWrapper'
 import { Button } from '../../../../components/button/Button.styled'
 import { font } from '../../../../styles/Font'
@@ -9,7 +10,11 @@ type InterestsCardProps = {
   isFlip: boolean
 }
 
-const ServicesCard = styled(FlexWrapper)<InterestsCardProps>`
+type StyledTheme = {
+  theme: Theme
+}
+
+const ServicesCard = styled(FlexWrapper)<InterestsCardProps & StyledTheme>`
   min-width: 320px;
   aspect-ratio: 3 / 4;
   width: 30%;
@@ -68,7 +73,7 @@ const ServicesCardButton = styled(Button)<InterestsCardProps>`
   }
 `
 
-const ServicesCardTitle = styled.h3`
+const ServicesCardTitle = styled.h3<StyledTheme>`
   ${font({ Fmax: 32, Fmin: 15, lineHeight: 1.25, weight: 500 })}
   color: ${props =>
     props.theme === 'light' ? themeObj.light.color.text.primary : themeObj.dark.color.text.primary};

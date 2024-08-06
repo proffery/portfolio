@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { themeObj } from '../../common/const/themeObj'
 import { useAppContext } from '../../common/context/appContext'
@@ -7,7 +7,7 @@ import { Icon } from '../../components/icon/Icon'
 import { Logo } from '../../components/logo/Logo'
 import { S } from './Header_Styles'
 import { DesktopMenu } from './desktopMenu/DesktopMenu'
-import { MobileMenu } from './mobileMenu/MobileMenu'
+import { MobileMenu } from './mobileMenu/mobileMenu'
 
 export const Header = () => {
   const { theme, width } = useAppContext()
@@ -32,13 +32,7 @@ export const Header = () => {
     <S.Header scrolled={scrolled} theme={theme}>
       <S.HeaderContainer justify={'space-between'}>
         <S.Left scrolled={scrolled} theme={theme}>
-          {theme === 'light' && !scrolled ? (
-            <Logo color={'white'} />
-          ) : theme === 'light' && scrolled ? (
-            <Logo color={'gray'} />
-          ) : (
-            <Logo color={'white'} />
-          )}
+          {theme === 'light' && scrolled ? <Logo color={'gray'} /> : <Logo color={'white'} />}
         </S.Left>
         <S.Right align={'center'} justify={'end'} theme={theme}>
           {width < breakpoint ? <MobileMenu /> : <DesktopMenu />}

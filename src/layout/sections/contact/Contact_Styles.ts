@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 
 import { themeObj } from '../../../common/const/themeObj'
+import { Theme } from '../../../common/context/appContext'
 import { FlexWrapper } from '../../../components/FlexWrapper'
 import { Button } from '../../../components/button/Button.styled'
 import { Link } from '../../../components/link/Link.styled'
 import { font } from '../../../styles/Font'
 
-const Contact = styled.section`
+type StyledTheme = {
+  theme: Theme
+}
+
+const Contact = styled.section<StyledTheme>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +26,7 @@ const Contact = styled.section`
   }
 `
 
-const ContactWrapper = styled(FlexWrapper)`
+const ContactWrapper = styled(FlexWrapper)<StyledTheme>`
   position: relative;
   height: 100%;
   width: 100%;
@@ -50,7 +55,7 @@ const ContactFormWrapper = styled(FlexWrapper)`
   }
 `
 
-const ContactForm = styled.form`
+const ContactForm = styled.form<StyledTheme>`
   display: flex;
   align-items: center;
   min-width: 200px;
@@ -80,7 +85,7 @@ const ContactForm = styled.form`
   }
 `
 
-const ContactFormTitle = styled.h3`
+const ContactFormTitle = styled.h3<StyledTheme>`
   display: flex;
   align-self: flex-start;
   ${font({ Fmax: 36, Fmin: 22, lineHeight: 1.36, weight: 500 })}
@@ -89,9 +94,44 @@ const ContactFormTitle = styled.h3`
     props.theme === 'light' ? themeObj.light.color.text.primary : themeObj.dark.color.text.primary};
 `
 
-const ContactFormField = styled.input.attrs(type => ({
-  type: type,
-}))`
+const ContactFormField = styled.input<StyledTheme>`
+  display: flex;
+  width: 50%;
+  ${font({ Fmax: 13, Fmin: 10, lineHeight: 1.36, weight: 400 })}
+
+  padding: 0 18px;
+  color: ${props =>
+    props.theme === 'light'
+      ? themeObj.light.color.text.placeholder
+      : themeObj.dark.color.text.placeholder};
+  background-color: ${props =>
+    props.theme === 'light'
+      ? themeObj.light.color.background.input
+      : themeObj.dark.color.background.input};
+  border-radius: 9px;
+  height: 36px;
+  resize: none;
+  border: none;
+  &::placeholder {
+    color: ${props =>
+      props.theme === 'light'
+        ? themeObj.light.color.text.placeholder
+        : themeObj.dark.color.text.placeholder};
+  }
+
+  &:focus-visible {
+    outline: 1px solid
+      ${props =>
+        props.theme === 'light'
+          ? themeObj.light.color.text.placeholder
+          : themeObj.dark.color.text.placeholder};
+  }
+  @media ${themeObj.media.mobile} {
+    height: 22px;
+    border-radius: 5.5px;
+  }
+`
+const ContactFormTextarea = styled.textarea<StyledTheme>`
   display: flex;
   width: 50%;
   ${font({ Fmax: 13, Fmin: 10, lineHeight: 1.36, weight: 400 })}
@@ -133,7 +173,6 @@ const ContactFormSubmitButton = styled(Button)`
   width: 118px;
   height: 44px;
   border-radius: 9px;
-  align-self: flex-start;
   background-color: ${props =>
     props.theme === 'light' ? themeObj.light.color.text.link : themeObj.dark.color.text.link};
   ${font({ Fmax: 16, Fmin: 10, lineHeight: 1.36, weight: 500 })}
@@ -149,11 +188,10 @@ const ContactFormSubmitButton = styled(Button)`
     min-width: 72px;
     width: 72px;
     height: 26px;
-    border-radius: 5.5px;
   }
 `
 
-const ContactsAddsWrapper = styled(FlexWrapper)`
+const ContactsAddsWrapper = styled(FlexWrapper)<StyledTheme>`
   width: 28%;
   @media ${themeObj.media.tablet} {
     box-shadow: ${props =>
@@ -163,12 +201,12 @@ const ContactsAddsWrapper = styled(FlexWrapper)`
   }
 `
 
-const ContactsAddWrapper = styled(FlexWrapper)`
+const ContactsAddWrapper = styled(FlexWrapper)<StyledTheme>`
   color: ${props =>
     props.theme === 'light' ? themeObj.light.color.text.link : themeObj.dark.color.text.link};
 `
 
-const AddTitle = styled.h4`
+const AddTitle = styled.h4<StyledTheme>`
   font-size: 16px;
   font-weight: 500;
   line-height: 136%;
@@ -197,7 +235,7 @@ const AddIconWrapper = styled(FlexWrapper)`
   }
 `
 
-const AddDescription = styled.span`
+const AddDescription = styled.span<StyledTheme>`
   font-size: 12px;
   font-weight: 400;
   line-height: 136%;
@@ -213,7 +251,7 @@ const AddDescription = styled.span`
   }
 `
 
-const SocialIconsWrapper = styled(FlexWrapper)`
+const SocialIconsWrapper = styled(FlexWrapper)<StyledTheme>`
   ${Link} {
     color: ${props =>
       props.theme === 'light'
@@ -229,7 +267,7 @@ const SocialIconsWrapper = styled(FlexWrapper)`
   }
 `
 
-const FixedSocialIconsWrapper = styled(FlexWrapper)`
+const FixedSocialIconsWrapper = styled(FlexWrapper)<StyledTheme>`
   height: 200px;
   position: fixed;
   left: 0;
@@ -265,6 +303,7 @@ export const S = {
   ContactForm,
   ContactFormField,
   ContactFormSubmitButton,
+  ContactFormTextarea,
   ContactFormTitle,
   ContactFormWrapper,
   ContactWrapper,

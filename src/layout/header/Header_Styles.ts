@@ -1,16 +1,21 @@
 import styled from 'styled-components'
 
 import { themeObj } from '../../common/const/themeObj'
+import { Theme } from '../../common/context/appContext'
 import { Container } from '../../components/Container'
 import { FlexWrapper } from '../../components/FlexWrapper'
 import { Link } from '../../components/link/Link.styled'
-import { ThemeChangeButton } from './themeChangeButton/ThemeChangeButton'
 
-type StyledHeaderTypes = {
+type StyledHeader = {
   scrolled: boolean
+  theme: Theme
 }
 
-const Header = styled.header<StyledHeaderTypes>`
+type StyledTheme = {
+  theme: Theme
+}
+
+const Header = styled.header<StyledHeader>`
   height: 75px;
   position: fixed;
   top: 0;
@@ -40,7 +45,7 @@ const HeaderContainer = styled(Container)`
   }
 `
 
-const Left = styled(FlexWrapper)<StyledHeaderTypes>`
+const Left = styled(FlexWrapper)<StyledHeader>`
   display: flex;
   position: relative;
   width: 10%;
@@ -77,7 +82,7 @@ const Left = styled(FlexWrapper)<StyledHeaderTypes>`
   }
 `
 
-const Right = styled(FlexWrapper)`
+const Right = styled(FlexWrapper)<StyledTheme>`
   display: flex;
   background-color: ${props =>
     props.theme === 'light'

@@ -1,9 +1,14 @@
 import styled from 'styled-components'
 
 import { themeObj } from '../../../../common/const/themeObj'
+import { Theme } from '../../../../common/context/appContext'
 import { FlexWrapper } from '../../../../components/FlexWrapper'
 
-const LearningCard = styled(FlexWrapper)`
+type StyledTheme = {
+  theme: Theme
+}
+
+const LearningCard = styled(FlexWrapper)<StyledTheme>`
   background-color: ${props =>
     props.theme === 'light'
       ? themeObj.light.color.background.primary

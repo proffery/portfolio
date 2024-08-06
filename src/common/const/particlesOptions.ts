@@ -1,6 +1,5 @@
 import type { ISourceOptions } from '@tsparticles/engine'
 
-import polygonMask from '../../assets/images/photo.svg'
 import { themeObj } from './themeObj'
 
 export const options: ISourceOptions = {

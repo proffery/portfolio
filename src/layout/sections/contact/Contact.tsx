@@ -43,7 +43,7 @@ export const Contact = () => {
       <Container align={'center'} direction={'column'} justify={'center'}>
         <SectionTitle theme={theme}>Contact</SectionTitle>
         <S.ContactWrapper direction={'column'} theme={theme}>
-          <S.ContactFormWrapper align={'start'} theme={theme}>
+          <S.ContactFormWrapper align={'start'}>
             <S.ContactForm onSubmit={sendEmail} ref={form}>
               <FlexWrapper
                 align={'center'}
@@ -56,7 +56,6 @@ export const Contact = () => {
                 <FlexWrapper gap={'10px'} width={'100%'}>
                   <S.ContactFormField
                     aria-label={'enter name'}
-                    minlength={'3'}
                     name={'user_name'}
                     placeholder={'Name'}
                     required
@@ -72,10 +71,8 @@ export const Contact = () => {
                     type={'email'}
                   />
                 </FlexWrapper>
-                <S.ContactFormField
+                <S.ContactFormTextarea
                   aria-label={'enter your message'}
-                  as={'textarea'}
-                  minlength={'3'}
                   name={'message'}
                   placeholder={'Message'}
                   required
@@ -103,7 +100,7 @@ export const Contact = () => {
                       width={'100%'}
                     />
                   </S.AddIconWrapper>
-                  <FlexWrapper direction={'column'}>
+                  <FlexWrapper align={'left'} direction={'column'}>
                     <S.AddTitle theme={theme}>Location</S.AddTitle>
                     <S.AddDescription theme={theme}>Belarus</S.AddDescription>
                   </FlexWrapper>
@@ -112,7 +109,7 @@ export const Contact = () => {
                   <S.AddIconWrapper>
                     <Icon height={'100%'} iconId={'phone'} viewBox={'-3 -6 34 34'} width={'100%'} />
                   </S.AddIconWrapper>
-                  <FlexWrapper direction={'column'}>
+                  <FlexWrapper align={'left'} direction={'column'}>
                     <S.AddTitle theme={theme}>Phone</S.AddTitle>
                     <S.AddDescription theme={theme}>+375256979075</S.AddDescription>
                   </FlexWrapper>
@@ -121,7 +118,7 @@ export const Contact = () => {
                   <S.AddIconWrapper>
                     <Icon height={'100%'} iconId={'email'} viewBox={'-3 -4 31 31'} width={'100%'} />
                   </S.AddIconWrapper>
-                  <FlexWrapper direction={'column'}>
+                  <FlexWrapper align={'left'} direction={'column'}>
                     <S.AddTitle theme={theme}>Email</S.AddTitle>
                     <S.AddDescription theme={theme}>proffery@gmail.com</S.AddDescription>
                   </FlexWrapper>

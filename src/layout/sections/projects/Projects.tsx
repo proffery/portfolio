@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Fade } from 'react-awesome-reveal'
 
 import { projects } from '../../../common/const/data/projects'
@@ -42,23 +42,15 @@ export const Projects = () => {
                 <S.CategoryButton
                   background={
                     category === activeCategory
-                      ? theme === 'light'
-                        ? themeObj.light.color.background.second
-                        : themeObj.dark.color.background.second
-                      : theme === 'light'
-                      ? themeObj.light.color.background.primary
-                      : themeObj.dark.color.background.primary
+                      ? themeObj[`${theme}`].color.background.second
+                      : themeObj[`${theme}`].color.background.primary
                   }
                   borderStyle={'solid'}
                   borderWidth={'3px'}
                   color={
                     category === activeCategory
-                      ? theme === 'light'
-                        ? themeObj.light.color.text.second
-                        : themeObj.dark.color.text.primary
-                      : theme === 'light'
-                      ? themeObj.light.color.text.primary
-                      : themeObj.dark.color.text.primary
+                      ? themeObj[`${theme}`].color.text.second
+                      : themeObj[`${theme}`].color.text.primary
                   }
                   hoverColor={themeObj.light.color.text.second}
                   key={index}
