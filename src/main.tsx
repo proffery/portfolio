@@ -1,11 +1,15 @@
-import React from 'react'
-
 import ReactDOM from 'react-dom/client'
+import { ThemeProvider } from 'styled-components'
 
-import { App } from './App'
+import App from './App'
+import { themeObj } from './common/const/themeObj'
+import { GlobalStyles } from './styles/Global.styled'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+
+root.render(
+  <ThemeProvider theme={themeObj}>
     <App />
-  </React.StrictMode>
+    <GlobalStyles theme={themeObj} />
+  </ThemeProvider>
 )
