@@ -8,6 +8,7 @@ import { mainBannerTick } from '@/common/const/data/bannerTickArr'
 import { themeObj } from '@/common/const/themeObj'
 import { useAppContext } from '@/common/context/appContext'
 import { useTickText } from '@/common/customHooks/useTickText'
+import { useWidth } from '@/common/customHooks/useWidth'
 import { extractNumberFromString } from '@/common/utils/extractNumberFromString'
 import { FlexWrapper } from '@/components/FlexWrapper'
 import { Icon } from '@/components/icon/Icon'
@@ -16,7 +17,8 @@ import { Link } from '@/components/link/Link.styled'
 import { S } from './Main_Styles'
 
 export const Main = () => {
-  const { theme, width } = useAppContext()
+  const { theme } = useAppContext()
+  const width = useWidth()
   const breakpoint = extractNumberFromString(themeObj.media.tablet)
   const text = useTickText(mainBannerTick)
 

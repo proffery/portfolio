@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { themeObj } from '@/common/const/themeObj'
 import { useAppContext } from '@/common/context/appContext'
+import { useWidth } from '@/common/customHooks/useWidth'
 import { extractNumberFromString } from '@/common/utils/extractNumberFromString'
 import { Icon } from '@/components/icon/Icon'
 import { Logo } from '@/components/logo/Logo'
@@ -11,7 +12,8 @@ import { DesktopMenu } from './desktopMenu/DesktopMenu'
 import { MobileMenu } from './mobileMenu/mobileMenu'
 
 export const Header = () => {
-  const { theme, width } = useAppContext()
+  const { theme } = useAppContext()
+  const width = useWidth()
   const [scrolled, setScrolled] = useState(false)
   const breakpoint = extractNumberFromString(themeObj.media.mobile)
 

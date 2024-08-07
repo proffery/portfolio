@@ -1,5 +1,6 @@
 import { themeObj } from '@/common/const/themeObj'
 import { useAppContext } from '@/common/context/appContext'
+import { useWidth } from '@/common/customHooks/useWidth'
 import { extractNumberFromString } from '@/common/utils/extractNumberFromString'
 import { FlexWrapper } from '@/components/FlexWrapper'
 import { SectionTitle } from '@/components/SectionTitle.styled'
@@ -9,7 +10,8 @@ import { Link } from '@/components/link/Link.styled'
 import { S } from './About_Styles'
 
 export const About = () => {
-  const { theme, width } = useAppContext()
+  const { theme } = useAppContext()
+  const width = useWidth()
 
   const breakpoint = extractNumberFromString(themeObj.media.mobile)
 
