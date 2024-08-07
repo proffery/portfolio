@@ -1996,6 +1996,7 @@ Error generating stack: `+o.message+`
   min-height: 630px;
   max-width: 1400px;
   width: 90vw;
+  min-width: 360px;
   left: 50%;
   flex-wrap: wrap;
   gap: 50px;
