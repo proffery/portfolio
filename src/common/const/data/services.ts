@@ -8,9 +8,9 @@ export const services = [
   },
   {
     description:
-      "I'm an avid film photographer capturing moments through the lens of an analog camera. I embrace the artistry and nostalgia of film photography, exploring different techniques and developing my own prints.",
+      "I'm an avid photographer capturing moments through my camera lens. I embrace the artistry and creativity of photography, exploring different techniques and developing my own unique prints.",
     imageId: 'camera',
-    title: 'Film Photography',
+    title: 'Photography',
     viewBox: '0 0 70 70',
   },
   {
