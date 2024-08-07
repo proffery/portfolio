@@ -1,12 +1,9 @@
+import { themeObj } from '@/common/const/themeObj'
+import { Theme } from '@/common/context/appContext'
+import { FlexWrapper } from '@/components/FlexWrapper'
+import { Link } from '@/components/link/Link.styled'
+import { font } from '@/styles/Font'
 import styled from 'styled-components'
-
-import footerDark from '../../assets/images/wave-dark.svg'
-import footerLight from '../../assets/images/wave-light.svg'
-import { themeObj } from '../../common/const/themeObj'
-import { Theme } from '../../common/context/appContext'
-import { FlexWrapper } from '../../components/FlexWrapper'
-import { Link } from '../../components/link/Link.styled'
-import { font } from '../../styles/Font'
 
 type StyledTheme = {
   theme: Theme
@@ -31,7 +28,7 @@ const Name = styled.span<StyledTheme>`
   width: 100%;
   align-items: center;
   justify-content: center;
-  ${font({ Fmax: 16, Fmin: 13, family: 'Inter, sans-serif', lineHeight: 1, weight: 700 })}
+  ${font({ fMax: 16, fMin: 13, family: 'Inter, sans-serif', lineHeight: 1, weight: 700 })}
 
   color: ${props =>
     props.theme === 'light' ? themeObj.light.color.text.second : themeObj.dark.color.text.primary};
@@ -57,7 +54,7 @@ const Copyrights = styled.span<StyledTheme>`
   width: 100%;
   align-items: center;
   justify-content: center;
-  ${font({ Fmax: 11, Fmin: 10, family: 'Inter, sans-serif', lineHeight: 1, weight: 400 })}
+  ${font({ fMax: 11, fMin: 10, family: 'Inter, sans-serif', lineHeight: 1, weight: 400 })}
   color: ${props =>
     props.theme === 'light' ? themeObj.light.color.text.second : themeObj.dark.color.text.primary};
   padding-top: 6px;
@@ -68,7 +65,8 @@ const Copyrights = styled.span<StyledTheme>`
 `
 
 const BackgroundImgTop = styled(FlexWrapper)<StyledTheme>`
-  background-image: url(${props => (props.theme === 'light' ? footerLight : footerDark)});
+  background-image: url(${props =>
+    props.theme === 'light' ? './images/wave-light.svg' : './images/wave-dark.svg'});
   background-size: contain;
   background-repeat: repeat-x;
   background-position: center bottom;

@@ -1,7 +1,6 @@
+import { themeObj } from '@/common/const/themeObj'
+import { font } from '@/styles/Font'
 import styled from 'styled-components'
-
-import { themeObj } from '../common/const/themeObj'
-import { font } from '../styles/Font'
 
 type SectionTitleTypes = {
   color?: string
@@ -20,7 +19,7 @@ export const SectionTitle = styled.h2<SectionTitleTypes>`
       props.theme === 'light'
         ? themeObj.light.color.text.primary
         : themeObj.dark.color.text.primary)};
-  ${font({ Fmax: 32, Fmin: 20, lineHeight: 1.36, weight: 600 })}
+  ${font({ fMax: 32, fMin: 20, lineHeight: 1.36, weight: 600 })}
   &::before {
     position: absolute;
     content: '';

@@ -92,7 +92,7 @@ const BannerRight = styled(FlexWrapper)<StyledTheme>`
     transform: rotate(45deg) translate(-20%, -1%);
     height: 88px;
     width: 88px;
-    ${font({ Fmax: 150, Fmin: 100, lineHeight: 1.36, weight: 600 })}
+    ${font({ fMax: 150, fMin: 100, lineHeight: 1.36, weight: 600 })}
     color: ${props =>
       props.theme === 'light'
         ? themeObj.light.color.background.second
@@ -148,13 +148,13 @@ const BannerPhoto = styled.img<StyledTheme>`
 `
 
 const BannerTitleMain = styled.h1<StyledTheme>`
-  ${font({ Fmax: 30, Fmin: 20, lineHeight: 1.68, weight: 700 })}
+  ${font({ fMax: 30, fMin: 20, lineHeight: 1.68, weight: 700 })}
   text-shadow: ${props =>
     props.theme === 'light' ? themeObj.light.shadow.text : themeObj.dark.shadow.text};
 `
 
 const BannerTitleSecond = styled.div<StyledTheme>`
-  ${font({ Fmax: 60, Fmin: 28, family: 'Montserrat', lineHeight: 1, weight: 700 })}
+  ${font({ fMax: 60, fMin: 28, family: 'Montserrat', lineHeight: 1, weight: 700 })}
   text-shadow: ${props =>
     props.theme === 'light' ? themeObj.light.shadow.text : themeObj.dark.shadow.text};
   text-align: end;
@@ -172,7 +172,7 @@ const BannerTitleWrapper = styled(FlexWrapper)`
 `
 
 const BannerDescription = styled.p`
-  ${font({ Fmax: 20, Fmin: 11, lineHeight: 1.5, weight: 400 })}
+  ${font({ fMax: 20, fMin: 11, lineHeight: 1.5, weight: 400 })}
 `
 
 const BannerLinksWrapper = styled(FlexWrapper)`
@@ -182,7 +182,7 @@ const BannerLinksWrapper = styled(FlexWrapper)`
   }
 `
 const ProjectsLink = styled(Link)`
-  ${font({ Fmax: 18, Fmin: 12, lineHeight: 1.5, weight: 600 })}
+  ${font({ fMax: 18, fMin: 12, lineHeight: 1.5, weight: 600 })}
   max-width: 200px;
   min-height: 54px;
   border-radius: 12px;
@@ -195,7 +195,7 @@ const ProjectsLink = styled(Link)`
   }
 `
 const ResumeLink = styled(Link)`
-  ${font({ Fmax: 18, Fmin: 12, lineHeight: 1.5, weight: 600 })}
+  ${font({ fMax: 18, fMin: 12, lineHeight: 1.5, weight: 600 })}
   @media ${themeObj.media.mobile} {
     margin-left: 10px;
   }

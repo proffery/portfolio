@@ -18,7 +18,7 @@ const DesktopMenu = styled.nav`
     display: flex;
     margin-right: 35px;
     align-items: center;
-    ${font({ Fmax: 16, Fmin: 12 })}
+    ${font({ fMax: 16, fMin: 12 })}
   }
   z-index: 999;
   @media ${themeObj.media.tablet} {

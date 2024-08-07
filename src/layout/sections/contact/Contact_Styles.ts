@@ -88,7 +88,7 @@ const ContactForm = styled.form<StyledTheme>`
 const ContactFormTitle = styled.h3<StyledTheme>`
   display: flex;
   align-self: flex-start;
-  ${font({ Fmax: 36, Fmin: 22, lineHeight: 1.36, weight: 500 })}
+  ${font({ fMax: 36, fMin: 22, lineHeight: 1.36, weight: 500 })}
 
   color: ${props =>
     props.theme === 'light' ? themeObj.light.color.text.primary : themeObj.dark.color.text.primary};
@@ -97,7 +97,7 @@ const ContactFormTitle = styled.h3<StyledTheme>`
 const ContactFormField = styled.input<StyledTheme>`
   display: flex;
   width: 50%;
-  ${font({ Fmax: 13, Fmin: 10, lineHeight: 1.36, weight: 400 })}
+  ${font({ fMax: 13, fMin: 10, lineHeight: 1.36, weight: 400 })}
 
   padding: 0 18px;
   color: ${props =>
@@ -135,7 +135,7 @@ const ContactFormField = styled.input<StyledTheme>`
 const ContactFormTextarea = styled.textarea<StyledTheme>`
   display: flex;
   width: 50%;
-  ${font({ Fmax: 13, Fmin: 10, lineHeight: 1.36, weight: 400 })}
+  ${font({ fMax: 13, fMin: 10, lineHeight: 1.36, weight: 400 })}
 
   padding: 0 18px;
   color: ${props =>
@@ -178,7 +178,7 @@ const ContactFormSubmitButton = styled(Button)`
   border-radius: 9px;
   background-color: ${props =>
     props.theme === 'light' ? themeObj.light.color.text.link : themeObj.dark.color.text.link};
-  ${font({ Fmax: 16, Fmin: 10, lineHeight: 1.36, weight: 500 })}
+  ${font({ fMax: 16, fMin: 10, lineHeight: 1.36, weight: 500 })}
 
   @media ${themeObj.media.tablet} {
     min-width: 92px;

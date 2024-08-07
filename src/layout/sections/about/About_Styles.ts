@@ -87,7 +87,7 @@ const AboutBannerTitle = styled.h2`
   white-space: nowrap;
   align-self: center;
   display: none;
-  ${font({ Fmax: 30, Fmin: 20, family: 'Montserrat', lineHeight: 1.36, weight: 700 })}
+  ${font({ fMax: 30, fMin: 20, family: 'Montserrat', lineHeight: 1.36, weight: 700 })}
   @media ${themeObj.media.tablet} {
     display: flex;
   }
@@ -95,7 +95,7 @@ const AboutBannerTitle = styled.h2`
 
 const AboutBannerList = styled.ul<StyledTheme>`
   position: relative;
-  ${font({ Fmax: 20, Fmin: 12, lineHeight: 1.36, weight: 400 })}
+  ${font({ fMax: 20, fMin: 12, lineHeight: 1.36, weight: 400 })}
   li {
     display: flex;
     align-items: start;

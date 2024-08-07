@@ -1,6 +1,5 @@
+import { themeObj } from '@/common/const/themeObj'
 import styled from 'styled-components'
-
-import { themeObj } from '../../common/const/themeObj'
 
 type LogoPropsType = {
   color: 'gray' | 'white'

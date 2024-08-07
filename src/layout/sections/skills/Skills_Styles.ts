@@ -41,7 +41,7 @@ const LearningSkillContainer = styled(FlexWrapper)<StyledTheme>`
 const LearningSkillsTitle = styled.h3<StyledTheme>`
   display: flex;
   padding: 0 30px 30px;
-  ${font({ Fmax: 22, Fmin: 16, lineHeight: 1.36, weight: 700 })}
+  ${font({ fMax: 22, fMin: 16, lineHeight: 1.36, weight: 700 })}
   color: ${props =>
     props.theme === 'light' ? themeObj.light.color.text.second : themeObj.dark.color.text.primary};
   @media ${themeObj.media.mobile} {

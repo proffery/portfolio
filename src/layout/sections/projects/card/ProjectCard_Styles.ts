@@ -49,10 +49,10 @@ const ProjectCardTitle = styled.h3<StyledTheme>`
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-align: left;
-  ${font({ Fmax: 20, Fmin: 14, lineHeight: 1.36, weight: 700 })}
+  ${font({ fMax: 20, fMin: 14, lineHeight: 1.36, weight: 700 })}
 `
 const ProjectCardLink = styled(Link)`
-  ${font({ Fmax: 14, Fmin: 12, lineHeight: 1.48, weight: 700 })}
+  ${font({ fMax: 14, fMin: 12, lineHeight: 1.48, weight: 700 })}
   max-width: 100px;
   width: 50%;
   max-height: 30px;

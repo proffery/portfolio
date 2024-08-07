@@ -36,7 +36,7 @@ const ProjectsContainer = styled(Container)<StyledTheme>`
     left: 50%;
     transform: rotate(45deg) translate(-50%, -110%);
     opacity: 0.3;
-    ${font({ Fmax: 550, Fmin: 350, lineHeight: 1.36, weight: 600 })}
+    ${font({ fMax: 550, fMin: 350, lineHeight: 1.36, weight: 600 })}
     color: ${props =>
       props.theme === 'light'
         ? themeObj.light.color.background.second
@@ -59,7 +59,7 @@ const ProjectWrapper = styled(FlexWrapper)`
 `
 
 const CategoryButton = styled(Button)`
-  ${font({ Fmax: 20, Fmin: 12, lineHeight: 1.36, weight: 400 })}
+  ${font({ fMax: 20, fMin: 12, lineHeight: 1.36, weight: 400 })}
   min-width: 160px;
   @media ${themeObj.media.tablet} {
     min-width: 110px;

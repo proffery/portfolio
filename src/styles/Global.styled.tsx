@@ -1,6 +1,5 @@
+import { themeObj } from '@/common/const/themeObj'
 import { createGlobalStyle } from 'styled-components'
-
-import { themeObj } from '../common/const/themeObj'
 
 export const GlobalStyles = createGlobalStyle`
     *,

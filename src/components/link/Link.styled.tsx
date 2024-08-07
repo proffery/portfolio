@@ -1,6 +1,5 @@
+import { themeObj } from '@/common/const/themeObj'
 import styled, { css } from 'styled-components'
-
-import { themeObj } from '../../common/const/themeObj'
 
 type StyledLinkPropsType = {
   background?: string

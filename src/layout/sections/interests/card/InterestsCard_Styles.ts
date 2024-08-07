@@ -35,7 +35,7 @@ const ServicesCard = styled(FlexWrapper)<InterestsCardProps & StyledTheme>`
   transform-style: preserve-3d;
   transform: ${props => (props.isFlip ? 'rotateY(-180deg)' : 'rotateY(0deg)')};
   p {
-    ${font({ Fmax: 24, Fmin: 14 })}
+    ${font({ fMax: 24, fMin: 14 })}
     text-align: justify;
     transform: ${props => (props.isFlip ? 'rotateY(-180deg)' : 'rotateY(0deg)')};
   }
@@ -60,7 +60,7 @@ const ServicesCardIconWrapper = styled(FlexWrapper)`
 `
 
 const ServicesCardButton = styled(Button)<InterestsCardProps>`
-  ${font({ Fmax: 16, Fmin: 10, lineHeight: 1.96, weight: 400 })}
+  ${font({ fMax: 16, fMin: 10, lineHeight: 1.96, weight: 400 })}
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -74,7 +74,7 @@ const ServicesCardButton = styled(Button)<InterestsCardProps>`
 `
 
 const ServicesCardTitle = styled.h3<StyledTheme>`
-  ${font({ Fmax: 32, Fmin: 15, lineHeight: 1.25, weight: 500 })}
+  ${font({ fMax: 32, fMin: 15, lineHeight: 1.25, weight: 500 })}
   color: ${props =>
     props.theme === 'light' ? themeObj.light.color.text.primary : themeObj.dark.color.text.primary};
 `

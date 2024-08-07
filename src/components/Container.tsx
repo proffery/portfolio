@@ -1,6 +1,6 @@
+import { themeObj } from '@/common/const/themeObj'
 import styled from 'styled-components'
 
-import { themeObj } from '../common/const/themeObj'
 import { FlexWrapper } from './FlexWrapper'
 
 export const Container = styled(FlexWrapper)`
