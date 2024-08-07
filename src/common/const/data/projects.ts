@@ -1,14 +1,15 @@
-import Calculator from '../../../assets/images/projects/Calculator.webp'
-import EtchASketch from '../../../assets/images/projects/EtchASketch.webp'
-import FlashCards from '../../../assets/images/projects/FlashCards.png'
-import Library from '../../../assets/images/projects/Library.webp'
-import MemoryCard from '../../../assets/images/projects/MemoryCard.webp'
-import OpenAIClient from '../../../assets/images/projects/OpenAIClientApp.webp'
-import PhotographerHomePage from '../../../assets/images/projects/PhotographerHomePage.webp'
-import SocialNetwork from '../../../assets/images/projects/SocialNetwork.png'
-import TicTacToe from '../../../assets/images/projects/TicTacToe.webp'
-import TodoList from '../../../assets/images/projects/TodoList.webp'
-import WeatherApp from '../../../assets/images/projects/WeatherApp.webp'
+import Calculator from '@/assets/images/projects/Calculator.webp'
+import EtchASketch from '@/assets/images/projects/EtchASketch.webp'
+import FlashCards from '@/assets/images/projects/FlashCards.png'
+import Library from '@/assets/images/projects/Library.webp'
+import MemoryCard from '@/assets/images/projects/MemoryCard.webp'
+import OpenAIClient from '@/assets/images/projects/OpenAIClientApp.webp'
+import PhotographerHomePage from '@/assets/images/projects/PhotographerHomePage.webp'
+import SocialNetwork from '@/assets/images/projects/SocialNetwork.png'
+import Task1 from '@/assets/images/projects/Task1.png'
+import TicTacToe from '@/assets/images/projects/TicTacToe.webp'
+import TodoList from '@/assets/images/projects/TodoList.webp'
+import WeatherApp from '@/assets/images/projects/WeatherApp.webp'
 
 export const projects = [
   {
@@ -59,6 +60,13 @@ export const projects = [
     projectCode: 'https://github.com/proffery/openaiclient',
     projectDemo: 'https://proffery.github.io/openaiclient/',
     projectTitle: 'OpenAI API Client',
+  },
+  {
+    imageUrl: Task1,
+    projectCategory: 'Test tasks',
+    projectCode: 'https://github.com/proffery/test-task',
+    projectDemo: 'https://test-task-proffery.vercel.app/',
+    projectTitle: 'React. RTK Query. React Hook Form. Zod. MUI',
   },
   {
     imageUrl: MemoryCard,

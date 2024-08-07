@@ -32,7 +32,6 @@ const Main = styled.section<StyledTheme>`
 
 const MainContainer = styled(Container)`
   padding: 0;
-
   @media ${themeObj.media.tablet} {
     width: 100vw;
   }
@@ -42,8 +41,9 @@ const BannerWrapper = styled(FlexWrapper)<StyledTheme>`
   margin: 80px auto;
   position: relative;
   padding: 42px;
-  min-height: 508px;
-  min-width: 90vw;
+  min-height: 630px;
+  max-width: 1400px;
+  width: 90vw;
   left: 50%;
   flex-wrap: wrap;
   gap: 50px;
@@ -68,7 +68,6 @@ const BannerLeft = styled(FlexWrapper)<StyledTheme>`
   position: absolute;
   width: 9%;
   height: 100vh;
-
   background-color: ${props =>
     props.theme === 'light'
       ? themeObj.light.color.background.second
@@ -77,6 +76,7 @@ const BannerLeft = styled(FlexWrapper)<StyledTheme>`
     position: absolute;
     content: '';
     width: 300%;
+    max-width: 432px;
     height: 100%;
     background-color: ${props =>
       props.theme === 'light'

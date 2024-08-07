@@ -60,6 +60,12 @@ export const skills = [
     viewBox: '0 0 128 128',
   },
   {
+    category: 'front',
+    imageId: 'next',
+    title: 'Next.js',
+    viewBox: '0 0 128 128',
+  },
+  {
     category: 'other',
     imageId: 'git',
     title: 'Git',
@@ -81,6 +87,12 @@ export const skills = [
     category: 'other',
     imageId: 'storyBook',
     title: 'Storybook',
+    viewBox: '0 0 128 128',
+  },
+  {
+    category: 'other',
+    imageId: 'gitLab',
+    title: 'GitLab',
     viewBox: '0 0 128 128',
   },
 ]
