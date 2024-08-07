@@ -3,12 +3,17 @@ import styled from 'styled-components'
 import photo from '../../../assets/images/Photo2-my.webp'
 import aboutMap from '../../../assets/images/map.svg'
 import { themeObj } from '../../../common/const/themeObj'
+import { Theme } from '../../../common/context/appContext'
 import { Container } from '../../../components/Container'
 import { FlexWrapper } from '../../../components/FlexWrapper'
 import { Link } from '../../../components/link/Link.styled'
 import { font } from '../../../styles/Font'
 
-const About = styled.section`
+type StyledTheme = {
+  theme: Theme
+}
+
+const About = styled.section<StyledTheme>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +26,7 @@ const About = styled.section`
     props.theme === 'light' ? themeObj.light.color.text.primary : themeObj.dark.color.text.primary};
 `
 
-const AboutContainer = styled(Container)`
+const AboutContainer = styled(Container)<StyledTheme>`
   position: relative;
   height: 100vh;
   padding-top: 60px;
@@ -40,7 +45,7 @@ const AboutContainer = styled(Container)`
   }
 `
 
-const AboutBanner = styled(FlexWrapper)`
+const AboutBanner = styled(FlexWrapper)<StyledTheme>`
   position: absolute;
   top: 90%;
   left: 10%;
@@ -69,7 +74,7 @@ const AboutBanner = styled(FlexWrapper)`
   }
 `
 
-const SocialLinksWrapper = styled(FlexWrapper)`
+const SocialLinksWrapper = styled(FlexWrapper)<StyledTheme>`
   align-self: flex-end;
   ${Link} {
     color: ${props =>
@@ -88,7 +93,7 @@ const AboutBannerTitle = styled.h2`
   }
 `
 
-const AboutBannerList = styled.ul`
+const AboutBannerList = styled.ul<StyledTheme>`
   position: relative;
   ${font({ Fmax: 20, Fmin: 12, lineHeight: 1.36, weight: 400 })}
   li {

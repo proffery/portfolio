@@ -3,17 +3,20 @@ import { ReactNode, createContext, memo, useContext, useEffect, useState } from 
 type Context = {
   setTheme?: (newTheme: Theme) => void
   setWidth?: (width: number) => void
-  theme?: Theme
-  width?: number
+  theme: Theme
+  width: number
 }
 
 export type Theme = 'dark' | 'light'
 
-const AppContext = createContext<Context>({})
+const AppContext = createContext<Context>({ theme: 'dark', width: 1600 })
 
 type Props = { children: ReactNode }
 const AppContextProvider = memo(({ children }: Props) => {
-  const [context, setContext] = useState<Omit<Context, 'setTheme' | 'setWidth'>>({ theme: 'dark' })
+  const [context, setContext] = useState<Omit<Context, 'setTheme' | 'setWidth'>>({
+    theme: 'dark',
+    width: 1600,
+  })
 
   const setWidth = (width: number) => {
     setContext({ ...context, width })

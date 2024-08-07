@@ -3,11 +3,16 @@ import styled from 'styled-components'
 import footerDark from '../../assets/images/wave-dark.svg'
 import footerLight from '../../assets/images/wave-light.svg'
 import { themeObj } from '../../common/const/themeObj'
+import { Theme } from '../../common/context/appContext'
 import { FlexWrapper } from '../../components/FlexWrapper'
 import { Link } from '../../components/link/Link.styled'
 import { font } from '../../styles/Font'
 
-const Footer = styled.footer`
+type StyledTheme = {
+  theme: Theme
+}
+
+const Footer = styled.footer<StyledTheme>`
   height: 200px;
   display: flex;
   position: relative;
@@ -21,7 +26,7 @@ const Footer = styled.footer`
       : themeObj.dark.color.background.primary};
 `
 
-const Name = styled.span`
+const Name = styled.span<StyledTheme>`
   display: flex;
   width: 100%;
   align-items: center;
@@ -47,7 +52,7 @@ const Name = styled.span`
   }
 `
 
-const Copyrights = styled.span`
+const Copyrights = styled.span<StyledTheme>`
   display: flex;
   width: 100%;
   align-items: center;
@@ -62,14 +67,14 @@ const Copyrights = styled.span`
       : themeObj.dark.color.background.second};
 `
 
-const BackgroundImgTop = styled(FlexWrapper)`
+const BackgroundImgTop = styled(FlexWrapper)<StyledTheme>`
   background-image: url(${props => (props.theme === 'light' ? footerLight : footerDark)});
   background-size: contain;
   background-repeat: repeat-x;
   background-position: center bottom;
 `
 
-const BackgroundBottom = styled(FlexWrapper)`
+const BackgroundBottom = styled(FlexWrapper)<StyledTheme>`
   height: 70%;
   background-color: ${props =>
     props.theme === 'light'

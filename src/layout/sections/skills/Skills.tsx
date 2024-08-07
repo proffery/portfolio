@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { skills } from '../../../common/const/data/skills'
 import { useAppContext } from '../../../common/context/appContext'
 import { SectionTitle } from '../../../components/SectionTitle.styled'

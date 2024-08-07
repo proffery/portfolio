@@ -1,11 +1,16 @@
 import styled from 'styled-components'
 
 import { themeObj } from '../../../common/const/themeObj'
+import { Theme } from '../../../common/context/appContext'
 import { Container } from '../../../components/Container'
 import { FlexWrapper } from '../../../components/FlexWrapper'
 import { font } from '../../../styles/Font'
 
-const Learning = styled.section`
+type StyledTheme = {
+  theme: Theme
+}
+
+const Learning = styled.section<StyledTheme>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +20,7 @@ const Learning = styled.section`
       ? themeObj.light.color.background.primary
       : themeObj.dark.color.background.primary};
 `
-const LearningContainer = styled(Container)`
+const LearningContainer = styled(Container)<StyledTheme>`
   position: relative;
   background-color: ${props =>
     props.theme === 'light'
@@ -26,14 +31,14 @@ const LearningContainer = styled(Container)`
     padding: 27px 0;
   }
 `
-const LearningSkillContainer = styled(FlexWrapper)`
+const LearningSkillContainer = styled(FlexWrapper)<StyledTheme>`
   width: 100%;
   background-color: ${props =>
     props.theme === 'light'
       ? themeObj.light.color.background.second
       : themeObj.dark.color.background.second};
 `
-const LearningSkillsTitle = styled.h3`
+const LearningSkillsTitle = styled.h3<StyledTheme>`
   display: flex;
   padding: 0 30px 30px;
   ${font({ Fmax: 22, Fmin: 16, lineHeight: 1.36, weight: 700 })}

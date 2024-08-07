@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { useAppContext } from '../../../../common/context/appContext'
 import { Icon } from '../../../../components/icon/Icon'
 import { S } from './SkillsCard_Styles'

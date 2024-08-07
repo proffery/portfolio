@@ -1,9 +1,14 @@
 import styled from 'styled-components'
 
 import { themeObj } from '../../../common/const/themeObj'
+import { Theme } from '../../../common/context/appContext'
 import { FlexWrapper } from './../../../components/FlexWrapper'
 
-const Services = styled.section`
+type StyledTheme = {
+  theme: Theme
+}
+
+const Services = styled.section<StyledTheme>`
   ${FlexWrapper} {
     gap: 30px;
     @media ${themeObj.media.tablet} {

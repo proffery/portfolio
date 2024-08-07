@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 
 import { services } from '../../../common/const/data/services'
 import { useAppContext } from '../../../common/context/appContext'

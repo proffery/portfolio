@@ -1,16 +1,20 @@
 import styled, { css } from 'styled-components'
 
 import { themeObj } from '../../../common/const/themeObj'
-
+import { Theme } from '../../../common/context/appContext'
 type StyledMobileMenuTypes = {
   isOpen: boolean
+}
+
+type StyledTheme = {
+  theme: Theme
 }
 
 const MobileMenu = styled.nav`
   opacity: 0.9;
 `
 
-const MobileMenuPopup = styled.div<StyledMobileMenuTypes>`
+const MobileMenuPopup = styled.div<StyledMobileMenuTypes & StyledTheme>`
   display: none;
 
   ${props =>
@@ -47,7 +51,7 @@ const MobileMenuPopup = styled.div<StyledMobileMenuTypes>`
   }
 `
 
-const BurgerButton = styled.button<StyledMobileMenuTypes>`
+const BurgerButton = styled.button<StyledMobileMenuTypes & StyledTheme>`
   position: fixed;
   right: 25px;
   top: 5px;

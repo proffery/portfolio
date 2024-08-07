@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { themeObj } from '../../../../common/const/themeObj'
+import { Theme } from '../../../../common/context/appContext'
 import { FlexWrapper } from '../../../../components/FlexWrapper'
 import { Link } from '../../../../components/link/Link.styled'
 import { font } from '../../../../styles/Font'
@@ -9,7 +10,11 @@ type ProjectCardPropsType = {
   backgroundImage: string
 }
 
-const ProjectCardContent = styled(FlexWrapper)`
+type StyledTheme = {
+  theme: Theme
+}
+
+const ProjectCardContent = styled(FlexWrapper)<StyledTheme>`
   background-color: ${props =>
     props.theme === 'light'
       ? themeObj.light.color.background.card
@@ -36,7 +41,7 @@ const ProjectCardContent = styled(FlexWrapper)`
   }
 `
 
-const ProjectCardTitle = styled.h3`
+const ProjectCardTitle = styled.h3<StyledTheme>`
   color: ${props =>
     props.theme === 'light' ? themeObj.light.color.text.link : themeObj.dark.color.text.primary};
   display: -webkit-box;
@@ -52,14 +57,13 @@ const ProjectCardLink = styled(Link)`
   width: 50%;
   max-height: 30px;
   aspect-ratio: 11 / 3;
-  width: 50%;
   border-radius: 10px;
   @media ${themeObj.media.mobile} {
     border-radius: 7px;
   }
 `
 
-const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType>`
+const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType & StyledTheme>`
   background-image: ${props => props.backgroundImage};
   position: relative;
   background-repeat: no-repeat;

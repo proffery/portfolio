@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { useAppContext } from '../../../common/context/appContext'
 import { Button } from '../../../components/button/Button.styled'
 import { Icon } from '../../../components/icon/Icon'
@@ -12,7 +10,7 @@ export const ThemeChangeButton = ({ className }: Props) => {
   const { setTheme, theme } = useAppContext()
 
   const themeChangeHandler = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light')
+    theme === 'light' ? setTheme?.('dark') : setTheme?.('light')
   }
 
   return (
