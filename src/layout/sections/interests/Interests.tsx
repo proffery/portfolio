@@ -1,10 +1,11 @@
 import { useState } from 'react'
 
-import { services } from '../../../common/const/data/services'
-import { useAppContext } from '../../../common/context/appContext'
-import { Container } from '../../../components/Container'
-import { FlexWrapper } from '../../../components/FlexWrapper'
-import { SectionTitle } from '../../../components/SectionTitle.styled'
+import { services } from '@/common/const/data/services'
+import { useAppContext } from '@/common/context/appContext'
+import { Container } from '@/components/Container'
+import { FlexWrapper } from '@/components/FlexWrapper'
+import { SectionTitle } from '@/components/SectionTitle.styled'
+
 import { S } from './Interests_Styles'
 import { InterestsCard } from './card/InterestsCard'
 

@@ -1,6 +1,7 @@
-import { skills } from '../../../common/const/data/skills'
-import { useAppContext } from '../../../common/context/appContext'
-import { SectionTitle } from '../../../components/SectionTitle.styled'
+import { skills } from '@/common/const/data/skills'
+import { useAppContext } from '@/common/context/appContext'
+import { SectionTitle } from '@/components/SectionTitle.styled'
+
 import { SkillSet } from './SkillSet/SkillSet'
 import { S } from './Skills_Styles'
 

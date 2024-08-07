@@ -1,9 +1,10 @@
 import { Fade } from 'react-awesome-reveal'
 
-import { menuItems } from '../../../common/const/data/menuItems'
-import { themeObj } from '../../../common/const/themeObj'
-import { useAppContext } from '../../../common/context/appContext'
-import { Link } from '../../../components/link/Link.styled'
+import { menuItems } from '@/common/const/data/menuItems'
+import { themeObj } from '@/common/const/themeObj'
+import { useAppContext } from '@/common/context/appContext'
+import { Link } from '@/components/link/Link.styled'
+
 import { S } from './DesktopMenu_Styles'
 
 export const DesktopMenu = () => {

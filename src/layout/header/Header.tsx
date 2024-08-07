@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 
-import { themeObj } from '../../common/const/themeObj'
-import { useAppContext } from '../../common/context/appContext'
-import { extractNumberFromString } from '../../common/utils/extractNumberFromString'
-import { Icon } from '../../components/icon/Icon'
-import { Logo } from '../../components/logo/Logo'
+import { themeObj } from '@/common/const/themeObj'
+import { useAppContext } from '@/common/context/appContext'
+import { extractNumberFromString } from '@/common/utils/extractNumberFromString'
+import { Icon } from '@/components/icon/Icon'
+import { Logo } from '@/components/logo/Logo'
+
 import { S } from './Header_Styles'
 import { DesktopMenu } from './desktopMenu/DesktopMenu'
 import { MobileMenu } from './mobileMenu/mobileMenu'
@@ -29,9 +30,9 @@ export const Header = () => {
   }, [])
 
   return (
-    <S.Header scrolled={scrolled} theme={theme}>
+    <S.Header scrolled={scrolled.toString()} theme={theme}>
       <S.HeaderContainer justify={'space-between'}>
-        <S.Left scrolled={scrolled} theme={theme}>
+        <S.Left scrolled={scrolled.toString()} theme={theme}>
           {theme === 'light' && scrolled ? <Logo color={'gray'} /> : <Logo color={'white'} />}
         </S.Left>
         <S.Right align={'center'} justify={'end'} theme={theme}>

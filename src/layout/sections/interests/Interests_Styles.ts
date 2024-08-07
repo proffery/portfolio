@@ -1,8 +1,7 @@
+import { themeObj } from '@/common/const/themeObj'
+import { Theme } from '@/common/context/appContext'
+import { FlexWrapper } from '@/components/FlexWrapper'
 import styled from 'styled-components'
-
-import { themeObj } from '../../../common/const/themeObj'
-import { Theme } from '../../../common/context/appContext'
-import { FlexWrapper } from './../../../components/FlexWrapper'
 
 type StyledTheme = {
   theme: Theme

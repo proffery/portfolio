@@ -1,13 +1,12 @@
+import { themeObj } from '@/common/const/themeObj'
+import { Theme } from '@/common/context/appContext'
+import { Container } from '@/components/Container'
+import { FlexWrapper } from '@/components/FlexWrapper'
+import { Link } from '@/components/link/Link.styled'
 import styled from 'styled-components'
 
-import { themeObj } from '../../common/const/themeObj'
-import { Theme } from '../../common/context/appContext'
-import { Container } from '../../components/Container'
-import { FlexWrapper } from '../../components/FlexWrapper'
-import { Link } from '../../components/link/Link.styled'
-
 type StyledHeader = {
-  scrolled: boolean
+  scrolled: string
   theme: Theme
 }
 
@@ -31,7 +30,7 @@ const Header = styled.header<StyledHeader>`
       : themeObj.dark.color.background.primary};
   color: ${props =>
     props.theme === 'light' ? themeObj.light.color.text.primary : themeObj.dark.color.text.primary};
-  box-shadow: ${props => props.scrolled && themeObj.light.shadow.main};
+  box-shadow: ${props => props.scrolled === 'true' && themeObj.light.shadow.main};
   @media ${themeObj.media.mobile} {
     height: 44px;
   }
@@ -66,13 +65,13 @@ const Left = styled(FlexWrapper)<StyledHeader>`
     width: 300%;
     height: 100%;
     background-color: ${props =>
-      props.theme === 'light' && props.scrolled
+      props.theme === 'light' && props.scrolled === 'true'
         ? themeObj.light.color.background.primary
         : props =>
             props.theme === 'light'
               ? themeObj.light.color.background.second
               : props =>
-                  props.theme === 'dark' && props.scrolled
+                  props.theme === 'dark' && props.scrolled === 'true'
                     ? themeObj.dark.color.background.primary
                     : themeObj.dark.color.background.second};
 

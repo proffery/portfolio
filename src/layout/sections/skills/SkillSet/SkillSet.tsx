@@ -1,9 +1,10 @@
 import { memo } from 'react'
 import AliceCarousel from 'react-alice-carousel'
 
+import { aliceCarouselOptions } from '@/common/const/aliceCarouselOptions'
+
 import 'react-alice-carousel/lib/alice-carousel.css'
 
-import { aliceCarouselOptions } from '../../../../common/const/aliceCarouselOptions'
 import { SkillsCard } from '../card/SkillsCard'
 import { S } from './SkillSet_Styles'
 

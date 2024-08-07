@@ -1,13 +1,12 @@
+import photo from '@/assets/images/Photo2-my.webp'
+import aboutMap from '@/assets/images/map.svg'
+import { themeObj } from '@/common/const/themeObj'
+import { Theme } from '@/common/context/appContext'
+import { Container } from '@/components/Container'
+import { FlexWrapper } from '@/components/FlexWrapper'
+import { Link } from '@/components/link/Link.styled'
+import { font } from '@/styles/Font'
 import styled from 'styled-components'
-
-import photo from '../../../assets/images/Photo2-my.webp'
-import aboutMap from '../../../assets/images/map.svg'
-import { themeObj } from '../../../common/const/themeObj'
-import { Theme } from '../../../common/context/appContext'
-import { Container } from '../../../components/Container'
-import { FlexWrapper } from '../../../components/FlexWrapper'
-import { Link } from '../../../components/link/Link.styled'
-import { font } from '../../../styles/Font'
 
 type StyledTheme = {
   theme: Theme

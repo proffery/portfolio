@@ -1,13 +1,12 @@
+import { themeObj } from '@/common/const/themeObj'
+import { Theme } from '@/common/context/appContext'
+import { FlexWrapper } from '@/components/FlexWrapper'
+import { Button } from '@/components/button/Button.styled'
+import { font } from '@/styles/Font'
 import styled from 'styled-components'
 
-import { themeObj } from '../../../../common/const/themeObj'
-import { Theme } from '../../../../common/context/appContext'
-import { FlexWrapper } from '../../../../components/FlexWrapper'
-import { Button } from '../../../../components/button/Button.styled'
-import { font } from '../../../../styles/Font'
-
 type InterestsCardProps = {
-  isFlip: boolean
+  is_flip: string
 }
 
 type StyledTheme = {
@@ -33,11 +32,11 @@ const ServicesCard = styled(FlexWrapper)<InterestsCardProps & StyledTheme>`
   justify-content: space-around;
   transition: all 0.6s;
   transform-style: preserve-3d;
-  transform: ${props => (props.isFlip ? 'rotateY(-180deg)' : 'rotateY(0deg)')};
+  transform: ${props => (props.is_flip === 'true' ? 'rotateY(-180deg)' : 'rotateY(0deg)')};
   p {
     ${font({ fMax: 24, fMin: 14 })}
     text-align: justify;
-    transform: ${props => (props.isFlip ? 'rotateY(-180deg)' : 'rotateY(0deg)')};
+    transform: ${props => (props.is_flip === 'true' ? 'rotateY(-180deg)' : 'rotateY(0deg)')};
   }
 
   @media ${themeObj.media.tablet} {
@@ -67,9 +66,9 @@ const ServicesCardButton = styled(Button)<InterestsCardProps>`
   background-color: transparent;
   color: ${props =>
     props.theme === 'light' ? themeObj.light.color.text.link : themeObj.dark.color.text.link};
-  transform: ${props => (props.isFlip ? 'rotateY(-180deg)' : 'rotateY(0deg)')};
+  transform: ${props => (props.is_flip === 'true' ? 'rotateY(-180deg)' : 'rotateY(0deg)')};
   svg {
-    transform: ${props => (props.isFlip ? 'rotateY(-180deg)' : 'rotateY(0deg)')};
+    transform: ${props => (props.is_flip === 'true' ? 'rotateY(-180deg)' : 'rotateY(0deg)')};
   }
 `
 

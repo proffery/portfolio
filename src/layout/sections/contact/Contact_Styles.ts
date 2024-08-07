@@ -1,11 +1,10 @@
+import { themeObj } from '@/common/const/themeObj'
+import { Theme } from '@/common/context/appContext'
+import { FlexWrapper } from '@/components/FlexWrapper'
+import { Button } from '@/components/button/Button.styled'
+import { Link } from '@/components/link/Link.styled'
+import { font } from '@/styles/Font'
 import styled from 'styled-components'
-
-import { themeObj } from '../../../common/const/themeObj'
-import { Theme } from '../../../common/context/appContext'
-import { FlexWrapper } from '../../../components/FlexWrapper'
-import { Button } from '../../../components/button/Button.styled'
-import { Link } from '../../../components/link/Link.styled'
-import { font } from '../../../styles/Font'
 
 type StyledTheme = {
   theme: Theme

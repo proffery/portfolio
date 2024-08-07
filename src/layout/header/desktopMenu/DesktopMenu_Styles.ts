@@ -1,7 +1,7 @@
+import { themeObj } from '@/common/const/themeObj'
+import { font } from '@/styles/Font'
 import styled from 'styled-components'
 
-import { themeObj } from '../../../common/const/themeObj'
-import { font } from '../../../styles/Font'
 import { ThemeChangeButton } from '../themeChangeButton/ThemeChangeButton'
 
 const DesktopMenu = styled.nav`

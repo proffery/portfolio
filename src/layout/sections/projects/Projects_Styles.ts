@@ -1,12 +1,11 @@
+import decorationDots from '@/assets/images/decorations-dots.svg'
+import { themeObj } from '@/common/const/themeObj'
+import { Theme } from '@/common/context/appContext'
+import { Container } from '@/components/Container'
+import { FlexWrapper } from '@/components/FlexWrapper'
+import { Button } from '@/components/button/Button.styled'
+import { font } from '@/styles/Font'
 import styled from 'styled-components'
-
-import decorationDots from '../../../assets/images/decorations-dots.svg'
-import { themeObj } from '../../../common/const/themeObj'
-import { Theme } from '../../../common/context/appContext'
-import { Container } from '../../../components/Container'
-import { FlexWrapper } from '../../../components/FlexWrapper'
-import { Button } from '../../../components/button/Button.styled'
-import { font } from '../../../styles/Font'
 
 type StyledTheme = {
   theme: Theme

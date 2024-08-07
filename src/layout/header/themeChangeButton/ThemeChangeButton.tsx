@@ -1,6 +1,6 @@
-import { useAppContext } from '../../../common/context/appContext'
-import { Button } from '../../../components/button/Button.styled'
-import { Icon } from '../../../components/icon/Icon'
+import { useAppContext } from '@/common/context/appContext'
+import { Button } from '@/components/button/Button.styled'
+import { Icon } from '@/components/icon/Icon'
 
 type Props = {
   className?: string
@@ -17,11 +17,11 @@ export const ThemeChangeButton = ({ className }: Props) => {
     <Button
       aria-label={'Theme change button'}
       background={'transparent'}
-      borderColor={'transparent'}
+      border_color={'transparent'}
       className={className}
-      hoverBackground={'none'}
-      hoverShadow={'none'}
-      minWidth={'0px'}
+      hover_background={'none'}
+      hover_shadow={'none'}
+      min_width={'0px'}
       onClick={themeChangeHandler}
     >
       <Icon

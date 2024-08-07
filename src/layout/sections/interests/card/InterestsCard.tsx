@@ -1,7 +1,8 @@
 import { Fade } from 'react-awesome-reveal'
 
-import { useAppContext } from '../../../../common/context/appContext'
-import { Icon } from '../../../../components/icon/Icon'
+import { useAppContext } from '@/common/context/appContext'
+import { Icon } from '@/components/icon/Icon'
+
 import { S } from './InterestsCard_Styles'
 
 interface ServiceCard {
@@ -38,7 +39,7 @@ export const InterestsCard = (props: ServicesCardPropsTypes) => {
   return (
     <S.ServicesCard
       direction={'column'}
-      isFlip={props.isFlip}
+      is_flip={props.isFlip.toString()}
       justify={'space-around'}
       onClick={onClickHandler}
       theme={theme}

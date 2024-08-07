@@ -1,5 +1,6 @@
-import { useAppContext } from '../../common/context/appContext'
-import { Link } from '../../components/link/Link.styled'
+import { useAppContext } from '@/common/context/appContext'
+import { Link } from '@/components/link/Link.styled'
+
 import { S } from './Footer_Styles'
 
 export const Footer = () => {

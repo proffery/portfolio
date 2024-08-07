@@ -9,13 +9,13 @@ type Context = {
 
 export type Theme = 'dark' | 'light'
 
-const AppContext = createContext<Context>({ theme: 'dark', width: 1600 })
+const AppContext = createContext<Context>({ theme: 'dark', width: window.innerWidth })
 
 type Props = { children: ReactNode }
 const AppContextProvider = memo(({ children }: Props) => {
-  const [context, setContext] = useState<Omit<Context, 'setTheme' | 'setWidth'>>({
+  const [context, setContext] = useState<Context>({
     theme: 'dark',
-    width: 1600,
+    width: window.innerWidth,
   })
 
   const setWidth = (width: number) => {
@@ -39,7 +39,7 @@ const AppContextProvider = memo(({ children }: Props) => {
         ? 'dark'
         : 'light'
     )
-  }, [])
+  }, [context.width])
 
   return (
     <AppContext.Provider value={{ ...context, setTheme, setWidth }}>{children}</AppContext.Provider>

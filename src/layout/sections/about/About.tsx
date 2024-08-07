@@ -1,10 +1,11 @@
-import { themeObj } from '../../../common/const/themeObj'
-import { useAppContext } from '../../../common/context/appContext'
-import { extractNumberFromString } from '../../../common/utils/extractNumberFromString'
-import { FlexWrapper } from '../../../components/FlexWrapper'
-import { SectionTitle } from '../../../components/SectionTitle.styled'
-import { Icon } from '../../../components/icon/Icon'
-import { Link } from '../../../components/link/Link.styled'
+import { themeObj } from '@/common/const/themeObj'
+import { useAppContext } from '@/common/context/appContext'
+import { extractNumberFromString } from '@/common/utils/extractNumberFromString'
+import { FlexWrapper } from '@/components/FlexWrapper'
+import { SectionTitle } from '@/components/SectionTitle.styled'
+import { Icon } from '@/components/icon/Icon'
+import { Link } from '@/components/link/Link.styled'
+
 import { S } from './About_Styles'
 
 export const About = () => {

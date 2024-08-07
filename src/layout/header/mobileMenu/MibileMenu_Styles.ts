@@ -1,9 +1,8 @@
+import { themeObj } from '@/common/const/themeObj'
+import { Theme } from '@/common/context/appContext'
 import styled, { css } from 'styled-components'
-
-import { themeObj } from '../../../common/const/themeObj'
-import { Theme } from '../../../common/context/appContext'
 type StyledMobileMenuTypes = {
-  isOpen: boolean
+  opened: string
 }
 
 type StyledTheme = {
@@ -18,8 +17,8 @@ const MobileMenuPopup = styled.div<StyledMobileMenuTypes & StyledTheme>`
   display: none;
 
   ${props =>
-    props.isOpen &&
-    css<StyledMobileMenuTypes>`
+    props.opened === 'true' &&
+    css`
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -71,8 +70,8 @@ const BurgerButton = styled.button<StyledMobileMenuTypes & StyledTheme>`
         : themeObj.dark.color.text.primary};
 
     ${props =>
-      props.isOpen &&
-      css<StyledMobileMenuTypes>`
+      props.opened === 'true' &&
+      css`
         background-color: rgba(255, 255, 255, 0);
       `}
 
@@ -90,8 +89,8 @@ const BurgerButton = styled.button<StyledMobileMenuTypes & StyledTheme>`
       transform: translateY(-8px);
 
       ${props =>
-        props.isOpen &&
-        css<{ isOpen: boolean }>`
+        props.opened === 'true' &&
+        css`
           transform: translateY(0) rotate(-45deg);
         `}
     }
@@ -109,8 +108,8 @@ const BurgerButton = styled.button<StyledMobileMenuTypes & StyledTheme>`
       transform: translateY(8px);
 
       ${props =>
-        props.isOpen &&
-        css<{ isOpen: boolean }>`
+        props.opened === 'true' &&
+        css`
           transform: translateY(0) rotate(45deg);
           width: 30px;
         `}

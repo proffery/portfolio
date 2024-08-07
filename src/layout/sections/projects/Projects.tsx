@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Fade } from 'react-awesome-reveal'
 
-import { projects } from '../../../common/const/data/projects'
-import { themeObj } from '../../../common/const/themeObj'
-import { useAppContext } from '../../../common/context/appContext'
-import { FlexWrapper } from '../../../components/FlexWrapper'
-import { SectionTitle } from '../../../components/SectionTitle.styled'
+import { projects } from '@/common/const/data/projects'
+import { themeObj } from '@/common/const/themeObj'
+import { useAppContext } from '@/common/context/appContext'
+import { FlexWrapper } from '@/components/FlexWrapper'
+import { SectionTitle } from '@/components/SectionTitle.styled'
+
 import { S } from './Projects_Styles'
 import { ProjectsCard } from './card/ProjectsCard'
 
@@ -45,14 +46,14 @@ export const Projects = () => {
                       ? themeObj[`${theme}`].color.background.second
                       : themeObj[`${theme}`].color.background.primary
                   }
-                  borderStyle={'solid'}
-                  borderWidth={'3px'}
+                  border_style={'solid'}
+                  border_width={'3px'}
                   color={
                     category === activeCategory
                       ? themeObj[`${theme}`].color.text.second
                       : themeObj[`${theme}`].color.text.primary
                   }
-                  hoverColor={themeObj.light.color.text.second}
+                  hover_color={themeObj.light.color.text.second}
                   key={index}
                   onClick={() => {
                     setActiveCategory(category)

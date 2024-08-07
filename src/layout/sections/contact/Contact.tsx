@@ -1,14 +1,14 @@
 import { ElementRef, useRef, useState } from 'react'
 import { Zoom } from 'react-awesome-reveal'
 
+import { useAppContext } from '@/common/context/appContext'
+import { Container } from '@/components/Container'
+import { FlexWrapper } from '@/components/FlexWrapper'
+import { SectionTitle } from '@/components/SectionTitle.styled'
+import { Icon } from '@/components/icon/Icon'
+import { Link } from '@/components/link/Link.styled'
 import emailJs from '@emailjs/browser'
 
-import { useAppContext } from '../../../common/context/appContext'
-import { Container } from '../../../components/Container'
-import { FlexWrapper } from '../../../components/FlexWrapper'
-import { SectionTitle } from '../../../components/SectionTitle.styled'
-import { Icon } from '../../../components/icon/Icon'
-import { Link } from '../../../components/link/Link.styled'
 import { S } from './Contact_Styles'
 
 export const Contact = () => {
@@ -78,7 +78,11 @@ export const Contact = () => {
                   required
                   theme={theme}
                 />
-                <S.ContactFormSubmitButton color={'white'} hoverBackground={'none'} type={'submit'}>
+                <S.ContactFormSubmitButton
+                  color={'white'}
+                  hover_background={'none'}
+                  type={'submit'}
+                >
                   {submitButtonText}
                 </S.ContactFormSubmitButton>
               </FlexWrapper>

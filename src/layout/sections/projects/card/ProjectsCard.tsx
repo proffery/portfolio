@@ -1,7 +1,8 @@
 import { Fade } from 'react-awesome-reveal'
 
-import { useAppContext } from '../../../../common/context/appContext'
-import { FlexWrapper } from '../../../../components/FlexWrapper'
+import { useAppContext } from '@/common/context/appContext'
+import { FlexWrapper } from '@/components/FlexWrapper'
+
 import { S } from './ProjectCard_Styles'
 
 type ProjectsCardPropsTypes = {
@@ -17,7 +18,7 @@ export const ProjectsCard = (props: ProjectsCardPropsTypes) => {
   return (
     <S.ProjectCard
       align={'center'}
-      backgroundImage={`url("${props.imageUrl}")`}
+      background_image={`url("${props.imageUrl}")`}
       direction={'column'}
       theme={theme}
     >

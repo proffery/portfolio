@@ -1,6 +1,5 @@
+import { FlexWrapper } from '@/components/FlexWrapper'
 import styled from 'styled-components'
-
-import { FlexWrapper } from '../../../../components/FlexWrapper'
 
 const Skills = styled(FlexWrapper)`
   display: flex;

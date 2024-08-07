@@ -1,13 +1,12 @@
+import { themeObj } from '@/common/const/themeObj'
+import { Theme } from '@/common/context/appContext'
+import { FlexWrapper } from '@/components/FlexWrapper'
+import { Link } from '@/components/link/Link.styled'
+import { font } from '@/styles/Font'
 import styled from 'styled-components'
 
-import { themeObj } from '../../../../common/const/themeObj'
-import { Theme } from '../../../../common/context/appContext'
-import { FlexWrapper } from '../../../../components/FlexWrapper'
-import { Link } from '../../../../components/link/Link.styled'
-import { font } from '../../../../styles/Font'
-
 type ProjectCardPropsType = {
-  backgroundImage: string
+  background_image: string
 }
 
 type StyledTheme = {
@@ -64,7 +63,7 @@ const ProjectCardLink = styled(Link)`
 `
 
 const ProjectCard = styled(FlexWrapper)<ProjectCardPropsType & StyledTheme>`
-  background-image: ${props => props.backgroundImage};
+  background-image: ${props => props.background_image};
   position: relative;
   background-repeat: no-repeat;
   background-position: top;
