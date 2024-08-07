@@ -31,7 +31,7 @@ export const Header = () => {
 
   return (
     <S.Header scrolled={scrolled.toString()} theme={theme}>
-      <S.HeaderContainer justify={'space-between'}>
+      <S.HeaderContainer justify={'space-between'} width={'100%'}>
         <S.Left scrolled={scrolled.toString()} theme={theme}>
           {theme === 'light' && scrolled ? <Logo color={'gray'} /> : <Logo color={'white'} />}
         </S.Left>

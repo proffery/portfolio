@@ -19,7 +19,6 @@ export const GlobalStyles = createGlobalStyle`
     }
     
     body {
-        margin: 0 auto;
         height: 100vh;
         min-width: 320px;
         font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

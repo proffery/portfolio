@@ -16,6 +16,7 @@ type StyledTheme = {
 
 const Header = styled.header<StyledHeader>`
   height: 75px;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -39,13 +40,15 @@ const Header = styled.header<StyledHeader>`
 const HeaderContainer = styled(Container)`
   padding: 0;
   height: 75px;
+  @media ${themeObj.media.tablet} {
+    width: 100vw;
+  }
   @media ${themeObj.media.mobile} {
     height: 44px;
   }
 `
 
 const Left = styled(FlexWrapper)<StyledHeader>`
-  display: flex;
   position: relative;
   width: 10%;
   z-index: 0;

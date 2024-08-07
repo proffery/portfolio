@@ -39,6 +39,10 @@ const AboutContainer = styled(Container)<StyledTheme>`
     bottom right,
     center;
   background-size: contain, cover;
+  @media ${themeObj.media.tablet} {
+    width: 100vw;
+  }
+
   @media ${themeObj.media.mobile} {
     height: 70vh;
   }

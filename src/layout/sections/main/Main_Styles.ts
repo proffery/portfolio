@@ -12,6 +12,9 @@ type StyledTheme = {
 
 const Main = styled.section<StyledTheme>`
   display: flex;
+  height: fit-content;
+  width: 100%;
+  margin: 0 auto;
   flex-direction: column;
   background-color: ${props =>
     props.theme === 'light'
@@ -23,24 +26,28 @@ const Main = styled.section<StyledTheme>`
   overflow-x: hidden;
   padding-top: 60px;
   @media ${themeObj.media.mobile} {
-    padding-top: 27px;
+    padding-top: 10px;
   }
 `
 
 const MainContainer = styled(Container)`
   padding: 0;
-  height: 100%;
+
+  @media ${themeObj.media.tablet} {
+    width: 100vw;
+  }
 `
 
 const BannerWrapper = styled(FlexWrapper)<StyledTheme>`
   margin: 80px auto;
+  position: relative;
   padding: 42px;
   min-height: 508px;
-  width: 95%;
-  left: 5%;
+  min-width: 90vw;
+  left: 50%;
   flex-wrap: wrap;
   gap: 50px;
-  transform: translateX(-5%);
+  transform: translateX(-50%);
   background: ${props =>
     props.theme === 'light' ? themeObj.light.gradient.banner : themeObj.dark.gradient.banner};
   backdrop-filter: blur(10px);
@@ -58,8 +65,10 @@ const BannerWrapper = styled(FlexWrapper)<StyledTheme>`
 `
 
 const BannerLeft = styled(FlexWrapper)<StyledTheme>`
-  position: relative;
-  width: 10%;
+  position: absolute;
+  width: 9%;
+  height: 100vh;
+
   background-color: ${props =>
     props.theme === 'light'
       ? themeObj.light.color.background.second
@@ -74,20 +83,24 @@ const BannerLeft = styled(FlexWrapper)<StyledTheme>`
         ? themeObj.light.color.background.second
         : themeObj.dark.color.background.second};
     @media ${themeObj.media.tablet} {
-      width: 500%;
+      width: 555%;
     }
   }
 `
 
 const BannerRight = styled(FlexWrapper)<StyledTheme>`
   position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   width: 90%;
+  height: 100vh;
   z-index: 1;
+  @media ${themeObj.media.tablet} {
+    height: 100vh;
+  }
   &::before {
     content: '+';
     position: absolute;
-    top: 1%;
-    left: 30%;
     transform: rotate(45deg) translate(-20%, -1%);
     height: 88px;
     width: 88px;
@@ -98,7 +111,7 @@ const BannerRight = styled(FlexWrapper)<StyledTheme>`
         : themeObj.dark.color.background.second};
     z-index: 0;
     @media ${themeObj.media.tablet} {
-      top: 10%;
+      top: 7%;
       left: 80%;
       transform: rotate(45deg) translate(-80%, -10%);
     }

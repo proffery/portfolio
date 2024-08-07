@@ -11,10 +11,11 @@ export const Container = styled(FlexWrapper)`
   height: 100%;
   margin: 0 auto;
   padding: 0 0 60px 0;
-  @media ${themeObj.media.mobile} {
-    padding: 27px 0;
+  @media ${themeObj.media.tablet} {
+    margin: 0;
   }
   @media ${themeObj.media.mobile} {
+    padding: 27px 0;
     background-position:
       bottom right,
       center;

@@ -26,6 +26,9 @@ const LearningContainer = styled(Container)<StyledTheme>`
       ? themeObj.light.color.background.second
       : themeObj.dark.color.background.second};
   padding: 60px 0;
+  @media ${themeObj.media.tablet} {
+    width: 100vw;
+  }
   @media ${themeObj.media.mobile} {
     padding: 27px 0;
   }
