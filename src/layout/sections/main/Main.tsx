@@ -34,7 +34,7 @@ export const Main = () => {
         <S.BannerRight justify={'center'} theme={theme}>
           <Tilt perspective={4000} tiltEnable={width >= breakpoint} transitionSpeed={800}>
             <S.BannerWrapper align={'center'} justify={'center'} theme={theme}>
-              <FlexWrapper align={'center'} justify={'center'} width={'47%'}>
+              <FlexWrapper align={'center'} justify={'center'} width={'49%'}>
                 <S.BannerPhoto alt={'Photography'} src={photo} theme={theme} />
               </FlexWrapper>
               <S.BannerTitleWrapper direction={'column'} width={'47%'}>

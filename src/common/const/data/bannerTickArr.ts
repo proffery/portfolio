@@ -1,1 +1,6 @@
-export const mainBannerTick = ['WEB DEVELOPER', 'JS/TS DEVELOPER', 'REACT DEVELOPER']
+export const mainBannerTick = [
+  'WEB DEVELOPER',
+  'JS/TS DEVELOPER',
+  'REACT DEVELOPER',
+  'NEXT.JS DEVELOPER',
+]

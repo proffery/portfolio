@@ -149,7 +149,7 @@ const BannerRight = styled(FlexWrapper)<StyledTheme>`
 const BannerPhoto = styled.img<StyledTheme>`
   display: flex;
   max-width: 400px;
-  min-width: 188px;
+  min-width: 250px;
   height: auto;
   border-radius: 50% 50%;
   border: 15px solid
