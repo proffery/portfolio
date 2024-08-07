@@ -1,5 +1,5 @@
-import photo from '@/assets/images/Photo2-my.webp'
 import aboutMap from '@/assets/images/map.svg'
+import photo from '@/assets/photos/photo-about.webp'
 import { themeObj } from '@/common/const/themeObj'
 import { Theme } from '@/common/context/appContext'
 import { Container } from '@/components/Container'
@@ -101,7 +101,8 @@ const AboutBannerList = styled.ul<StyledTheme>`
   ${font({ fMax: 20, fMin: 12, lineHeight: 1.36, weight: 400 })}
   li {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
+    text-align: left;
     margin-left: 28px;
 
     @media ${themeObj.media.tablet} {

@@ -9,12 +9,12 @@ type Context = {
 
 export type Theme = 'dark' | 'light'
 
-const AppContext = createContext<Context>({ theme: 'dark', width: window.innerWidth })
+const AppContext = createContext<Context>({ theme: detectSystemTheme(), width: window.innerWidth })
 
 type Props = { children: ReactNode }
 const AppContextProvider = memo(({ children }: Props) => {
   const [context, setContext] = useState<Context>({
-    theme: 'dark',
+    theme: detectSystemTheme(),
     width: window.innerWidth,
   })
 
@@ -33,19 +33,17 @@ const AppContextProvider = memo(({ children }: Props) => {
     return () => window.removeEventListener('resize', handleWindowResize)
   }, [window.innerWidth])
 
-  useEffect(() => {
-    setTheme(
-      window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light'
-    )
-  }, [context.width])
-
   return (
     <AppContext.Provider value={{ ...context, setTheme, setWidth }}>{children}</AppContext.Provider>
   )
 })
 
 const useAppContext = () => useContext(AppContext)
+
+function detectSystemTheme() {
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light'
+}
 
 export { AppContextProvider, useAppContext }

@@ -152,6 +152,10 @@ const BannerPhoto = styled.img<StyledTheme>`
   min-width: 250px;
   height: auto;
   border-radius: 50% 50%;
+  background-color: ${props =>
+    props.theme === 'light'
+      ? themeObj.light.color.background.primary
+      : themeObj.dark.color.background.primary};
   border: 15px solid
     ${props =>
       props.theme === 'light'
@@ -185,6 +189,7 @@ const BannerTitleWrapper = styled(FlexWrapper)`
 `
 
 const BannerDescription = styled.p`
+  text-align: left;
   ${font({ fMax: 20, fMin: 11, lineHeight: 1.5, weight: 400 })}
 `
 

@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { Hinge } from 'react-awesome-reveal'
 import Tilt from 'react-parallax-tilt'
 
-import photo from '@/assets/images/Photo-my.webp'
+import photoDark from '@/assets/photos/photo-dark.webp'
+import photoLight from '@/assets/photos/photo-light.webp'
 import { mainBannerTick } from '@/common/const/data/bannerTickArr'
 import { themeObj } from '@/common/const/themeObj'
 import { useAppContext } from '@/common/context/appContext'
@@ -35,7 +36,11 @@ export const Main = () => {
           <Tilt perspective={4000} tiltEnable={width >= breakpoint} transitionSpeed={800}>
             <S.BannerWrapper align={'center'} justify={'center'} theme={theme}>
               <FlexWrapper align={'center'} justify={'center'} width={'49%'}>
-                <S.BannerPhoto alt={'Photography'} src={photo} theme={theme} />
+                <S.BannerPhoto
+                  alt={'Photography'}
+                  src={theme === 'light' ? photoLight : photoDark}
+                  theme={theme}
+                />
               </FlexWrapper>
               <S.BannerTitleWrapper direction={'column'} width={'47%'}>
                 <FlexWrapper align={'start'} direction={'column'} justify={'center'}>
