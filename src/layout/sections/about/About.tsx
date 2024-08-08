@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 import { themeObj } from '@/common/const/themeObj'
 import { useAppContext } from '@/common/context/appContext'
 import { useWidth } from '@/common/customHooks/useWidth'
@@ -12,21 +14,16 @@ import { S } from './About_Styles'
 export const About = () => {
   const { theme } = useAppContext()
   const width = useWidth()
+  const { t } = useTranslation()
 
   const breakpoint = extractNumberFromString(themeObj.media.mobile)
-
-  const todayDate = new Date()
-  const myBirthdayDate = new Date(1987, 6, 16, 14, 45, 0)
-  const expDate = new Date(2023, 1, 1, 0, 0, 1)
-  const expYears = new Date(todayDate.getTime() - expDate.getTime()).getFullYear() - 1970
-  const myYears = new Date(todayDate.getTime() - myBirthdayDate.getTime()).getFullYear() - 1970
 
   return (
     <S.About id={'about'} theme={theme}>
       <S.AboutContainer direction={'column'} theme={theme}>
         {width > breakpoint && (
           <SectionTitle color={'white'} theme={theme}>
-            About me
+            {t('about.title')}
           </SectionTitle>
         )}
         <S.AboutBanner
@@ -51,13 +48,13 @@ export const About = () => {
             </Link>
           </S.SocialLinksWrapper>
           <FlexWrapper align={'flex-start'} direction={'column'} gap={'10px'} wrap={'wrap'}>
-            <S.AboutBannerTitle>About me:</S.AboutBannerTitle>
+            <S.AboutBannerTitle>{t('about.title')}:</S.AboutBannerTitle>
             <S.AboutBannerList theme={theme}>
-              <li>I was born in Belarus</li>
-              <li>I’m web developer</li>
-              <li>I have my interest in this field more than {expYears} years</li>
-              <li>I’m {myYears} years old</li>
-              <li>My phone number +375256979075</li>
+              <li>{t('about.items.item1')}</li>
+              <li>{t('about.items.item2')}</li>
+              <li>{t('about.items.item3')}</li>
+              <li>{t('about.items.item4')}</li>
+              <li>{t('about.items.item5')}</li>
             </S.AboutBannerList>
           </FlexWrapper>
         </S.AboutBanner>

@@ -11,7 +11,15 @@ import TicTacToe from '@/assets/images/projects/TicTacToe.webp'
 import TodoList from '@/assets/images/projects/TodoList.webp'
 import WeatherApp from '@/assets/images/projects/WeatherApp.webp'
 
-export const projectsEn = [
+export type Project = {
+  imageUrl: string
+  projectCategory: string
+  projectCode: string
+  projectDemo: string
+  projectTitle: string
+}
+
+export const projectsEn: Project[] = [
   {
     imageUrl: Calculator,
     projectCategory: 'Vanilla JS',
@@ -97,7 +105,7 @@ export const projectsEn = [
     projectTitle: 'Flash Cards. TS. React. RTK Query. SCSS. Storybook',
   },
 ]
-export const projectsRu = [
+export const projectsRu: Project[] = [
   {
     imageUrl: Calculator,
     projectCategory: 'Чистый JS',

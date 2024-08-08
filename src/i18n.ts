@@ -7,8 +7,8 @@ import { en } from './locales/en'
 import { ru } from './locales/ru'
 
 export const supportedLngs = {
-  en: 'English',
-  ru: 'Русский',
+  en: 'Eng',
+  ru: 'Рус',
 }
 
 i18n

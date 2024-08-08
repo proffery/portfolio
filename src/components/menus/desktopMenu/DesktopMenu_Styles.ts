@@ -16,7 +16,7 @@ const DesktopMenu = styled.nav`
   }
   li {
     display: flex;
-    margin-right: 35px;
+    margin-right: 25px;
     align-items: center;
     ${font({ fMax: 16, fMin: 12 })}
   }

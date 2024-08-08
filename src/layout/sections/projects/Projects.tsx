@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { projectsEn, projectsRu } from '@/common/const/data/projects'
 import { themeObj } from '@/common/const/themeObj'
 import { useAppContext } from '@/common/context/appContext'
+import { extractProjectsCategories } from '@/common/utils/extractProjectsCategories'
 import { FlexWrapper } from '@/components/FlexWrapper'
 import { SectionTitle } from '@/components/SectionTitle.styled'
 
@@ -22,26 +23,27 @@ export const Projects = () => {
   const [filteredProjects, setFilteredProjects] = useState(
     language === 'en' ? projectsEn : projectsRu
   )
+
+  const [activeCategory, setActiveCategory] = useState('')
+  const [categories, setCategories] = useState<string[]>([])
+
   const projects = language === 'en' ? projectsEn : projectsRu
 
-  const [activeCategory, setActiveCategory] = useState(language === 'en' ? 'React' : 'Реакт')
-  const [categories, setCategories] = useState(language === 'en' ? ['All'] : ['Все'])
-
   useEffect(() => {
-    const allCategories = [...categories]
+    const allCategory = language === 'en' ? ['All'] : ['Все']
 
-    projects.forEach(project => {
-      !allCategories.includes(project.projectCategory) &&
-        allCategories.unshift(project.projectCategory)
-    })
-    setCategories(allCategories)
-  }, [])
+    setActiveCategory(language === 'en' ? 'React' : 'Реакт')
+
+    const projectsCategory: string[] = extractProjectsCategories(projects).reverse()
+
+    setCategories([...projectsCategory, ...allCategory])
+  }, [language])
 
   useEffect(() => {
     activeCategory === 'All' || activeCategory === 'Все'
-      ? setFilteredProjects([...projects])
+      ? setFilteredProjects(projects)
       : setFilteredProjects(projects.filter(project => project.projectCategory === activeCategory))
-  }, [activeCategory])
+  }, [activeCategory, language])
 
   return (
     <S.Projects id={'projects'} theme={theme}>
