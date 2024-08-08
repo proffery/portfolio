@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
+import { credentials } from '@/common/const/data/credentials'
 import { themeObj } from '@/common/const/themeObj'
 import { useAppContext } from '@/common/context/appContext'
 import { useWidth } from '@/common/customHooks/useWidth'
@@ -34,16 +35,28 @@ export const About = () => {
           wrap={'wrap'}
         >
           <S.SocialLinksWrapper align={'center'}>
-            <Link aria-label={'GitHub page link'} href={'https://github.com/proffery'}>
+            <Link
+              aria-label={'GitHub page link'}
+              href={credentials.link_github}
+              rel={'noopener'}
+              target={'_blank'}
+            >
               <Icon height={'50px'} iconId={'gitHub'} viewBox={'-90 -60 260 260'} width={'50px'} />
             </Link>
             <Link
               aria-label={'LinkedIn account'}
-              href={'https://www.linkedin.com/in/dmitryshamko/'}
+              href={credentials.link_linkedin}
+              rel={'noopener'}
+              target={'_blank'}
             >
               <Icon iconId={'linkedIn'} viewBox={'-25 -12 158 158'} width={'30px'} />
             </Link>
-            <Link aria-label={'Telegram link'} href={'https://t.me/ShamkoDmitry'}>
+            <Link
+              aria-label={'Telegram link'}
+              href={credentials.link_telegram}
+              rel={'noopener'}
+              target={'_blank'}
+            >
               <Icon iconId={'aboutTelegram'} viewBox={'-4 0 35 35'} width={'46px'} />
             </Link>
           </S.SocialLinksWrapper>

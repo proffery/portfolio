@@ -1,6 +1,8 @@
-import { ElementRef, useRef, useState } from 'react'
+import { ElementRef, useEffect, useRef, useState } from 'react'
 import { Zoom } from 'react-awesome-reveal'
+import { useTranslation } from 'react-i18next'
 
+import { credentials } from '@/common/const/data/credentials'
 import { useAppContext } from '@/common/context/appContext'
 import { Container } from '@/components/Container'
 import { FlexWrapper } from '@/components/FlexWrapper'
@@ -14,7 +16,17 @@ import { S } from './Contact_Styles'
 export const Contact = () => {
   const form = useRef<ElementRef<'form'>>(null)
   const { theme } = useAppContext()
-  const [submitButtonText, setSubmitButtonText] = useState('Send')
+
+  const {
+    i18n: { language },
+    t,
+  } = useTranslation()
+
+  const [submitButtonText, setSubmitButtonText] = useState(t('contacts.form.send_button'))
+
+  useEffect(() => {
+    setSubmitButtonText(t('contacts.form.send_button'))
+  }, [language])
 
   const sendEmail = (e: any) => {
     e.preventDefault()
@@ -22,26 +34,33 @@ export const Contact = () => {
       return
     }
 
-    emailJs.sendForm('service_ypumi3n', 'template_mnxi9t4', form.current, 'u6DZWsUFpg84ikb5W').then(
-      result => {
-        console.log(result.text)
-        setSubmitButtonText('Sended!')
-        setTimeout(() => {
-          e.target.reset()
-          setSubmitButtonText('Send')
-        }, 2000)
-      },
-      error => {
-        console.log(error.text)
-        setSubmitButtonText('Error!')
-      }
-    )
+    emailJs
+      .sendForm(
+        credentials.emailJs.serviceID,
+        credentials.emailJs.templateID,
+        form.current,
+        credentials.emailJs.API_KEY
+      )
+      .then(
+        result => {
+          console.log(result.text)
+          setSubmitButtonText(t('contacts.form.sent_button'))
+          setTimeout(() => {
+            e.target.reset()
+            setSubmitButtonText(t('contacts.form.send_button'))
+          }, 2000)
+        },
+        error => {
+          console.log(error.text)
+          setSubmitButtonText('Error!')
+        }
+      )
   }
 
   return (
     <S.Contact id={'contact'} theme={theme}>
       <Container align={'center'} direction={'column'} justify={'center'}>
-        <SectionTitle theme={theme}>Contact</SectionTitle>
+        <SectionTitle theme={theme}>{t('contacts.title')}</SectionTitle>
         <S.ContactWrapper direction={'column'} theme={theme}>
           <S.ContactFormWrapper align={'start'}>
             <S.ContactForm onSubmit={sendEmail} ref={form}>
@@ -52,12 +71,12 @@ export const Contact = () => {
                 justify={'center'}
                 width={'100%'}
               >
-                <S.ContactFormTitle theme={theme}>Get in touch</S.ContactFormTitle>
+                <S.ContactFormTitle theme={theme}>{t('contacts.form.title')}</S.ContactFormTitle>
                 <FlexWrapper gap={'10px'} width={'100%'}>
                   <S.ContactFormField
                     aria-label={'enter name'}
                     name={'user_name'}
-                    placeholder={'Name'}
+                    placeholder={t('contacts.form.name')}
                     required
                     theme={theme}
                     type={'text'}
@@ -65,7 +84,7 @@ export const Contact = () => {
                   <S.ContactFormField
                     aria-label={'enter email'}
                     name={'user_email'}
-                    placeholder={'Email'}
+                    placeholder={t('contacts.form.email')}
                     required
                     theme={theme}
                     type={'email'}
@@ -74,7 +93,7 @@ export const Contact = () => {
                 <S.ContactFormTextarea
                   aria-label={'enter your message'}
                   name={'message'}
-                  placeholder={'Message'}
+                  placeholder={t('contacts.form.message')}
                   required
                   theme={theme}
                 />
@@ -105,8 +124,10 @@ export const Contact = () => {
                     />
                   </S.AddIconWrapper>
                   <FlexWrapper align={'left'} direction={'column'}>
-                    <S.AddTitle theme={theme}>Location</S.AddTitle>
-                    <S.AddDescription theme={theme}>Belarus</S.AddDescription>
+                    <S.AddTitle theme={theme}>{t('contacts.description.location')}</S.AddTitle>
+                    <S.AddDescription theme={theme}>
+                      {language === 'en' ? credentials.countryEn : credentials.countryRu}
+                    </S.AddDescription>
                   </FlexWrapper>
                 </S.ContactsAddWrapper>
                 <S.ContactsAddWrapper align={'center'} theme={theme}>
@@ -114,8 +135,8 @@ export const Contact = () => {
                     <Icon height={'100%'} iconId={'phone'} viewBox={'-3 -6 34 34'} width={'100%'} />
                   </S.AddIconWrapper>
                   <FlexWrapper align={'left'} direction={'column'}>
-                    <S.AddTitle theme={theme}>Phone</S.AddTitle>
-                    <S.AddDescription theme={theme}>+375256979075</S.AddDescription>
+                    <S.AddTitle theme={theme}>{t('contacts.description.phone')}</S.AddTitle>
+                    <S.AddDescription theme={theme}>{credentials.phone}</S.AddDescription>
                   </FlexWrapper>
                 </S.ContactsAddWrapper>
                 <S.ContactsAddWrapper align={'center'} theme={theme}>
@@ -123,8 +144,8 @@ export const Contact = () => {
                     <Icon height={'100%'} iconId={'email'} viewBox={'-3 -4 31 31'} width={'100%'} />
                   </S.AddIconWrapper>
                   <FlexWrapper align={'left'} direction={'column'}>
-                    <S.AddTitle theme={theme}>Email</S.AddTitle>
-                    <S.AddDescription theme={theme}>proffery@gmail.com</S.AddDescription>
+                    <S.AddTitle theme={theme}>{t('contacts.description.email')}</S.AddTitle>
+                    <S.AddDescription theme={theme}>{credentials.email}</S.AddDescription>
                   </FlexWrapper>
                 </S.ContactsAddWrapper>
               </Zoom>
@@ -132,13 +153,28 @@ export const Contact = () => {
           </S.ContactFormWrapper>
         </S.ContactWrapper>
         <S.SocialIconsWrapper theme={theme}>
-          <Link aria-label={'Instagram link'} href={'https://www.instagram.com/proffery/'}>
+          <Link
+            aria-label={'Instagram link'}
+            href={credentials.link_instagram}
+            rel={'noopener'}
+            target={'_blank'}
+          >
             <Icon height={'50px'} iconId={'instagramColor'} viewBox={'0 0 55 55'} />
           </Link>
-          <Link aria-label={'WhatsApp link'} href={'https://wa.me/375256979075'}>
+          <Link
+            aria-label={'WhatsApp link'}
+            href={credentials.link_whatsapp}
+            rel={'noopener'}
+            target={'_blank'}
+          >
             <Icon height={'50px'} iconId={'whatsappColor'} viewBox={'-4 -3 59 59'} />
           </Link>
-          <Link aria-label={'Viber link'} href={'viber://chat?number=%2B375256979075'}>
+          <Link
+            aria-label={'Viber link'}
+            href={credentials.link_viber}
+            rel={'noopener'}
+            target={'_blank'}
+          >
             <Icon height={'50px'} iconId={'viberColor'} viewBox={'-100 -100 900 900'} />
           </Link>
         </S.SocialIconsWrapper>
@@ -148,13 +184,28 @@ export const Contact = () => {
           justify={'center'}
           theme={theme}
         >
-          <Link aria-label={'GitHub profile link'} href={'https://github.com/proffery'}>
+          <Link
+            aria-label={'GitHub profile link'}
+            href={credentials.link_github}
+            rel={'noopener'}
+            target={'_blank'}
+          >
             <Icon height={'50px'} iconId={'gitHub'} viewBox={'-35 -27 210 210'} width={'50px'} />
           </Link>
-          <Link aria-label={'LinkedIn account'} href={'https://www.linkedin.com/in/dmitryshamko/'}>
+          <Link
+            aria-label={'LinkedIn account'}
+            href={credentials.link_linkedin}
+            rel={'noopener'}
+            target={'_blank'}
+          >
             <Icon height={'50px'} iconId={'linkedIn'} viewBox={'-37 -59 220 220'} width={'50px'} />
           </Link>
-          <Link aria-label={'Telegram link'} href={'https://t.me/ShamkoDmitry'}>
+          <Link
+            aria-label={'Telegram link'}
+            href={credentials.link_telegram}
+            rel={'noopener'}
+            target={'_blank'}
+          >
             <Icon height={'50px'} iconId={'aboutTelegram'} viewBox={'0 -5 33 33'} width={'50px'} />
           </Link>
         </S.FixedSocialIconsWrapper>

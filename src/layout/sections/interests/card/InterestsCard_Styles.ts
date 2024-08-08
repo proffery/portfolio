@@ -28,7 +28,7 @@ const ServicesCard = styled(FlexWrapper)<InterestsCardProps & StyledTheme>`
       : themeObj.dark.color.background.card};
   box-shadow: ${props =>
     props.theme === 'light' ? themeObj.light.shadow.card : themeObj.dark.shadow.card};
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-around;
   transition: all 0.6s;
   transform-style: preserve-3d;
@@ -36,6 +36,7 @@ const ServicesCard = styled(FlexWrapper)<InterestsCardProps & StyledTheme>`
   p {
     ${font({ fMax: 24, fMin: 14 })}
     text-align: justify;
+    hyphens: auto;
     transform: ${props => (props.is_flip === 'true' ? 'rotateY(-180deg)' : 'rotateY(0deg)')};
   }
 

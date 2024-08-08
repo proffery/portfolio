@@ -43,7 +43,7 @@ export const menuItemsRu = [
   },
   {
     item_href: '#skills',
-    item_name: 'Навыки',
+    item_name: 'Технологии',
   },
   {
     item_href: '#contact',

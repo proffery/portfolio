@@ -1,37 +1,37 @@
+import { Dispatch, SetStateAction } from 'react'
 import { Fade } from 'react-awesome-reveal'
 
+import { InterestsType } from '@/common/const/data/interests'
 import { useAppContext } from '@/common/context/appContext'
 import { Icon } from '@/components/icon/Icon'
 
+import { WithFlip } from '../Interests'
 import { S } from './InterestsCard_Styles'
 
-interface ServiceCard {
-  description: string
-  imageId: string
-  isFlip: boolean
-  title: string
-  viewBox: string
-}
-
-type ServicesCardPropsTypes = {
+type Props = {
   cardIndex: number
-  description: string
-  iconId: string
-  isFlip: boolean
-  servicesWithFlip: ServiceCard[]
-  setServicesWithFlip: any
-  title: string
-  viewBox?: string
+  interest: InterestsType[0] & WithFlip
+  interestsWithFlip: Array<InterestsType[0] & WithFlip>
+  setInterestsWithFlip: Dispatch<
+    SetStateAction<
+      ({ description: string; imageId: string; title: string; viewBox: string } & WithFlip)[]
+    >
+  >
 }
 
-export const InterestsCard = (props: ServicesCardPropsTypes) => {
+export const InterestsCard = ({
+  cardIndex,
+  interest,
+  interestsWithFlip,
+  setInterestsWithFlip,
+}: Props) => {
   const { theme } = useAppContext()
   const onClickHandler = () => {
-    props.setServicesWithFlip(
-      props.servicesWithFlip.map((service, index) =>
-        index === props.cardIndex
-          ? { ...service, isFlip: !service.isFlip }
-          : { ...service, isFlip: false }
+    setInterestsWithFlip(
+      interestsWithFlip.map((interest, index) =>
+        index === cardIndex
+          ? { ...interest, isFlip: !interest.isFlip }
+          : { ...interest, isFlip: false }
       )
     )
   }
@@ -39,24 +39,24 @@ export const InterestsCard = (props: ServicesCardPropsTypes) => {
   return (
     <S.ServicesCard
       direction={'column'}
-      is_flip={props.isFlip.toString()}
+      is_flip={interest.isFlip.toString()}
       justify={'space-around'}
       onClick={onClickHandler}
       theme={theme}
       width={'30%'}
     >
-      {props.isFlip ? (
+      {interest.isFlip ? (
         <>
           <S.ServicesCardIconWrapper>
             <Icon
               height={'100%'}
-              iconId={props.iconId}
-              viewBox={props.viewBox || '0 0 70 70'}
+              iconId={interest.imageId}
+              viewBox={interest.viewBox || '0 0 70 70'}
               width={'100%'}
             />
           </S.ServicesCardIconWrapper>
           <Fade delay={300}>
-            <p>{props.description}</p>
+            <p>{interest.description}</p>
           </Fade>
         </>
       ) : (
@@ -64,12 +64,12 @@ export const InterestsCard = (props: ServicesCardPropsTypes) => {
           <S.ServicesCardIconWrapper>
             <Icon
               height={'100%'}
-              iconId={props.iconId}
-              viewBox={props.viewBox || '0 0 70 70'}
+              iconId={interest.imageId}
+              viewBox={interest.viewBox || '0 0 70 70'}
               width={'100%'}
             />
           </S.ServicesCardIconWrapper>
-          <S.ServicesCardTitle theme={theme}>{props.title}</S.ServicesCardTitle>
+          <S.ServicesCardTitle theme={theme}>{interest.title}</S.ServicesCardTitle>
         </>
       )}
     </S.ServicesCard>
