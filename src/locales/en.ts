@@ -5,8 +5,8 @@ export const en = {
     about: {
       items: {
         item1: `I’m ${myYears} years old`,
-        item2: 'My location: Belarus, Gomel',
-        item3: 'I’m web developer',
+        item2: 'I’m web developer',
+        item3: 'My location: Belarus, Gomel',
         item4: `I have my interest in this field more than ${expYears} years`,
         item5: 'My phone number +375256979075',
       },
