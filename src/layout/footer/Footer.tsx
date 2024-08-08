@@ -6,7 +6,7 @@ import { Link } from '@/components/link/Link.styled'
 
 import { S } from './Footer_Styles'
 
-export const Footer = () => {
+const Footer = () => {
   const { theme } = useAppContext()
   const { t } = useTranslation()
 
@@ -27,3 +27,5 @@ export const Footer = () => {
     </S.Footer>
   )
 }
+
+export default Footer

@@ -13,7 +13,7 @@ import emailJs from '@emailjs/browser'
 
 import { S } from './Contact_Styles'
 
-export const Contact = () => {
+const Contact = () => {
   const form = useRef<ElementRef<'form'>>(null)
   const { theme } = useAppContext()
 
@@ -213,3 +213,5 @@ export const Contact = () => {
     </S.Contact>
   )
 }
+
+export default Contact

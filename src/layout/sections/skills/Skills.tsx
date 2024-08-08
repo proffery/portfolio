@@ -7,7 +7,7 @@ import { SectionTitle } from '@/components/SectionTitle.styled'
 import { SkillSet } from './SkillSet/SkillSet'
 import { S } from './Skills_Styles'
 
-export const Skills = () => {
+const Skills = () => {
   const { theme } = useAppContext()
   const { t } = useTranslation()
 
@@ -29,3 +29,5 @@ export const Skills = () => {
     </S.Learning>
   )
 }
+
+export default Skills

@@ -17,7 +17,7 @@ import { Link } from '@/components/link/Link.styled'
 
 import { S } from './Main_Styles'
 
-export const Main = () => {
+const Main = () => {
   const { theme } = useAppContext()
 
   const {
@@ -139,3 +139,5 @@ export const Main = () => {
     </S.Main>
   )
 }
+
+export default Main

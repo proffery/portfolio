@@ -7,7 +7,7 @@ import { extractNumberFromString } from '@/common/utils/extractNumberFromString'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
 
-export const BackgroundParticles = memo(() => {
+const BackgroundParticles = memo(() => {
   const [init, setInit] = useState(false)
   const width = useWidth()
   const breakpoint = extractNumberFromString(themeObj.media.mobile)
@@ -26,3 +26,5 @@ export const BackgroundParticles = memo(() => {
 
   return init ? <Particles id={'tsparticles'} options={options} /> : null
 })
+
+export default BackgroundParticles

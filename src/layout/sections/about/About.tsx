@@ -12,7 +12,7 @@ import { Link } from '@/components/link/Link.styled'
 
 import { S } from './About_Styles'
 
-export const About = () => {
+const About = () => {
   const { theme } = useAppContext()
   const width = useWidth()
   const { t } = useTranslation()
@@ -75,3 +75,5 @@ export const About = () => {
     </S.About>
   )
 }
+
+export default About

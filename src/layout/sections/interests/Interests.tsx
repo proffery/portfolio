@@ -14,7 +14,7 @@ export type WithFlip = {
   isFlip: boolean
 }
 
-export const Interests = () => {
+const Interests = () => {
   const { theme } = useAppContext()
 
   const {
@@ -50,3 +50,5 @@ export const Interests = () => {
     </S.Services>
   )
 }
+
+export default Interests

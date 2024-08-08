@@ -11,7 +11,7 @@ import { MobileMenu } from '@/components/menus/mobileMenu/mobileMenu'
 
 import { S } from './Header_Styles'
 
-export const Header = () => {
+const Header = () => {
   const { theme } = useAppContext()
   const width = useWidth()
   const [scrolled, setScrolled] = useState(false)
@@ -55,3 +55,5 @@ export const Header = () => {
     </S.Header>
   )
 }
+
+export default Header

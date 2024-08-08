@@ -12,7 +12,7 @@ import { SectionTitle } from '@/components/SectionTitle.styled'
 import { S } from './Projects_Styles'
 import { ProjectsCard } from './card/ProjectsCard'
 
-export const Projects = () => {
+const Projects = () => {
   const { theme } = useAppContext()
 
   const {
@@ -98,3 +98,5 @@ export const Projects = () => {
     </S.Projects>
   )
 }
+
+export default Projects
