@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { menuItemsEn, menuItemsRu } from '@/common/const/data/menuItems'
 import { themeObj } from '@/common/const/themeObj'
 import { useAppContext } from '@/common/context/appContext'
+import { LangSelect } from '@/components/langSelect/langSelect'
 import { Link } from '@/components/link/Link.styled'
 
 import { S } from './DesktopMenu_Styles'
@@ -35,6 +36,9 @@ export const DesktopMenu = () => {
               </Link>
             </li>
           ))}
+          <li>
+            <LangSelect />
+          </li>
         </Fade>
       </ul>
       <S.HeaderThemeChangeButton />

@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { menuItemsEn, menuItemsRu } from '@/common/const/data/menuItems'
 import { themeObj } from '@/common/const/themeObj'
 import { useAppContext } from '@/common/context/appContext'
+import { LangSelect } from '@/components/langSelect/langSelect'
 import { Link } from '@/components/link/Link.styled'
 import { ThemeChangeButton } from '@/components/themeChangeButton/ThemeChangeButton'
 
@@ -31,17 +32,17 @@ export const MobileMenu = () => {
       >
         <span></span>
       </S.BurgerButton>
-      <S.MobileMenuPopup
-        onClick={() => {
-          setIsOpen(!isOpen)
-        }}
-        opened={isOpen.toString()}
-        theme={theme}
-      >
+      <S.MobileMenuPopup opened={isOpen.toString()} theme={theme}>
         <ul aria-label={'menu'} role={'menu'}>
           <Fade cascade duration={300} triggerOnce>
             {menuItems.map(item => (
-              <li key={item.item_href} role={'menuitem'}>
+              <li
+                key={item.item_href}
+                onClick={() => {
+                  setIsOpen(!isOpen)
+                }}
+                role={'menuitem'}
+              >
                 <Link
                   color={
                     theme === 'light'
@@ -56,6 +57,9 @@ export const MobileMenu = () => {
               </li>
             ))}
           </Fade>
+          <li>
+            <LangSelect />
+          </li>
           <li>
             <ThemeChangeButton />
           </li>

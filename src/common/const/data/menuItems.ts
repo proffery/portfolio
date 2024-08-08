@@ -1,9 +1,5 @@
 export const menuItemsEn = [
   {
-    item_href: '#main',
-    item_name: 'Home',
-  },
-  {
     item_href: '#projects',
     item_name: 'Projects',
   },
@@ -25,10 +21,6 @@ export const menuItemsEn = [
   },
 ]
 export const menuItemsRu = [
-  {
-    item_href: '#main',
-    item_name: 'Главная',
-  },
   {
     item_href: '#projects',
     item_name: 'Проекты',

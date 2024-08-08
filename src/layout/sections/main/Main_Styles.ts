@@ -32,6 +32,7 @@ const Main = styled.section<StyledTheme>`
 
 const MainContainer = styled(Container)`
   padding: 0;
+  max-height: 1080px;
   @media ${themeObj.media.tablet} {
     width: 100vw;
   }

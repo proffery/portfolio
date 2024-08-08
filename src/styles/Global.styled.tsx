@@ -38,6 +38,7 @@ export const GlobalStyles = createGlobalStyle`
 
     section {
         padding:  0 0 60px  0;
+        overflow-x: hidden;
         @media ${themeObj.media.mobile} {
             padding: 27px 0;
         }
