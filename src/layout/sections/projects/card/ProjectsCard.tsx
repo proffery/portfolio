@@ -1,4 +1,5 @@
 import { Fade } from 'react-awesome-reveal'
+import { useTranslation } from 'react-i18next'
 
 import { useAppContext } from '@/common/context/appContext'
 import { FlexWrapper } from '@/components/FlexWrapper'
@@ -14,6 +15,7 @@ type ProjectsCardPropsTypes = {
 
 export const ProjectsCard = (props: ProjectsCardPropsTypes) => {
   const { theme } = useAppContext()
+  const { t } = useTranslation()
 
   return (
     <S.ProjectCard
@@ -32,10 +34,10 @@ export const ProjectsCard = (props: ProjectsCardPropsTypes) => {
               theme={theme}
               type={'button'}
             >
-              Code
+              {t('projects.card.code_link')}
             </S.ProjectCardLink>
             <S.ProjectCardLink href={props.previewUrl} target={'_blank'} theme={theme}>
-              Demo
+              {t('projects.card.demo_link')}
             </S.ProjectCardLink>
           </FlexWrapper>
         </Fade>

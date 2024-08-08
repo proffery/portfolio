@@ -1,4 +1,4 @@
-export const menuItems = [
+export const menuItemsEn = [
   {
     item_href: '#main',
     item_name: 'Home',
@@ -21,6 +21,32 @@ export const menuItems = [
   },
   {
     item_href: '#contact',
-    item_name: 'Contact',
+    item_name: 'Contacts',
+  },
+]
+export const menuItemsRu = [
+  {
+    item_href: '#main',
+    item_name: 'Главная',
+  },
+  {
+    item_href: '#projects',
+    item_name: 'Проекты',
+  },
+  {
+    item_href: '#about',
+    item_name: 'Обо мне',
+  },
+  {
+    item_href: '#interests',
+    item_name: 'Интересы',
+  },
+  {
+    item_href: '#skills',
+    item_name: 'Навыки',
+  },
+  {
+    item_href: '#contact',
+    item_name: 'Контакты',
   },
 ]

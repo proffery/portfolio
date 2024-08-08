@@ -1,6 +1,7 @@
 import { Fade } from 'react-awesome-reveal'
+import { useTranslation } from 'react-i18next'
 
-import { menuItems } from '@/common/const/data/menuItems'
+import { menuItemsEn, menuItemsRu } from '@/common/const/data/menuItems'
 import { themeObj } from '@/common/const/themeObj'
 import { useAppContext } from '@/common/context/appContext'
 import { Link } from '@/components/link/Link.styled'
@@ -9,6 +10,11 @@ import { S } from './DesktopMenu_Styles'
 
 export const DesktopMenu = () => {
   const { theme } = useAppContext()
+  const {
+    i18n: { language },
+  } = useTranslation()
+
+  const menuItems = language === 'en' ? menuItemsEn : menuItemsRu
 
   return (
     <S.DesktopMenu>

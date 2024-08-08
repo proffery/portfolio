@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Fade } from 'react-awesome-reveal'
+import { useTranslation } from 'react-i18next'
 
-import { projects } from '@/common/const/data/projects'
+import { projectsEn, projectsRu } from '@/common/const/data/projects'
 import { themeObj } from '@/common/const/themeObj'
 import { useAppContext } from '@/common/context/appContext'
 import { FlexWrapper } from '@/components/FlexWrapper'
@@ -12,9 +13,19 @@ import { ProjectsCard } from './card/ProjectsCard'
 
 export const Projects = () => {
   const { theme } = useAppContext()
-  const [filteredProjects, setFilteredProjects] = useState([...projects])
-  const [activeCategory, setActiveCategory] = useState('React')
-  const [categories, setCategories] = useState(['All'])
+
+  const {
+    i18n: { language },
+    t,
+  } = useTranslation()
+
+  const [filteredProjects, setFilteredProjects] = useState(
+    language === 'en' ? projectsEn : projectsRu
+  )
+  const projects = language === 'en' ? projectsEn : projectsRu
+
+  const [activeCategory, setActiveCategory] = useState(language === 'en' ? 'React' : 'Реакт')
+  const [categories, setCategories] = useState(language === 'en' ? ['All'] : ['Все'])
 
   useEffect(() => {
     const allCategories = [...categories]
@@ -27,7 +38,7 @@ export const Projects = () => {
   }, [])
 
   useEffect(() => {
-    activeCategory === 'All'
+    activeCategory === 'All' || activeCategory === 'Все'
       ? setFilteredProjects([...projects])
       : setFilteredProjects(projects.filter(project => project.projectCategory === activeCategory))
   }, [activeCategory])
@@ -35,7 +46,7 @@ export const Projects = () => {
   return (
     <S.Projects id={'projects'} theme={theme}>
       <S.ProjectsContainer direction={'column'} theme={theme}>
-        <SectionTitle theme={theme}>Projects</SectionTitle>
+        <SectionTitle theme={theme}>{t('projects.title')}</SectionTitle>
         <FlexWrapper align={'center'} gap={'20px'} justify={'center'} wrap={'wrap'}>
           <Fade cascade duration={700} triggerOnce>
             {categories.map((category, index) => {
@@ -50,7 +61,7 @@ export const Projects = () => {
                   border_width={'3px'}
                   color={
                     category === activeCategory
-                      ? themeObj[`${theme}`].color.text.second
+                      ? themeObj[`${theme}`].color.text.primary
                       : themeObj[`${theme}`].color.text.primary
                   }
                   hover_color={themeObj.light.color.text.second}

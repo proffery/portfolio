@@ -5,11 +5,12 @@ import { useAppContext } from '@/common/context/appContext'
 import { useWidth } from '@/common/customHooks/useWidth'
 import { extractNumberFromString } from '@/common/utils/extractNumberFromString'
 import { Icon } from '@/components/icon/Icon'
+import { LangSelect } from '@/components/langSelect/langSelect'
 import { Logo } from '@/components/logo/Logo'
+import { DesktopMenu } from '@/components/menus/desktopMenu/DesktopMenu'
+import { MobileMenu } from '@/components/menus/mobileMenu/mobileMenu'
 
 import { S } from './Header_Styles'
-import { DesktopMenu } from './desktopMenu/DesktopMenu'
-import { MobileMenu } from './mobileMenu/mobileMenu'
 
 export const Header = () => {
   const { theme } = useAppContext()
@@ -36,6 +37,7 @@ export const Header = () => {
       <S.HeaderContainer justify={'space-between'} width={'100%'}>
         <S.Left scrolled={scrolled.toString()} theme={theme}>
           {theme === 'light' && scrolled ? <Logo color={'gray'} /> : <Logo color={'white'} />}
+          <LangSelect />
         </S.Left>
         <S.Right align={'center'} justify={'end'} theme={theme}>
           {width < breakpoint ? <MobileMenu /> : <DesktopMenu />}

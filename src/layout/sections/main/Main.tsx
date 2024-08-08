@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Hinge } from 'react-awesome-reveal'
+import { useTranslation } from 'react-i18next'
 import Tilt from 'react-parallax-tilt'
 
 import photoDark from '@/assets/photos/photo-dark.webp'
 import photoLight from '@/assets/photos/photo-light.webp'
-import { mainBannerTick } from '@/common/const/data/bannerTickArr'
+import { mainBannerTickEn, mainBannerTickRu } from '@/common/const/data/bannerTickArr'
 import { themeObj } from '@/common/const/themeObj'
 import { useAppContext } from '@/common/context/appContext'
 import { useTickText } from '@/common/customHooks/useTickText'
@@ -18,9 +19,15 @@ import { S } from './Main_Styles'
 
 export const Main = () => {
   const { theme } = useAppContext()
+
+  const {
+    i18n: { language },
+    t,
+  } = useTranslation()
+
   const width = useWidth()
   const breakpoint = extractNumberFromString(themeObj.media.tablet)
-  const text = useTickText(mainBannerTick)
+  const text = useTickText(language === 'en' ? mainBannerTickEn : mainBannerTickRu)
 
   const [jsIsShow, setJsIsShow] = useState(true)
 
@@ -47,24 +54,21 @@ export const Main = () => {
               <S.BannerTitleWrapper direction={'column'} width={'47%'}>
                 <FlexWrapper align={'start'} direction={'column'} justify={'center'}>
                   <S.BannerTitleSecond theme={theme}>
-                    Hi, I&apos;m
-                    <Link href={'#contact'}>Dmitry Shamko</Link>
+                    {t('main.title_hi')}
+                    <Link href={'#contact'}>{t('main.title_name')}</Link>
                   </S.BannerTitleSecond>
                   <S.BannerTitleMain aria-label={'Web Developer'} theme={theme}>
                     {text}&nbsp;
                   </S.BannerTitleMain>
                 </FlexWrapper>
-                <S.BannerDescription>
-                  Draft is a revolutionary web app built to help you manage your business easily and
-                  save your money.
-                </S.BannerDescription>
+                <S.BannerDescription>{t('main.title_description')}</S.BannerDescription>
                 <S.BannerLinksWrapper align={'center'} justify={'start'} wrap={'wrap'}>
                   <S.ProjectsLink
                     color={themeObj.light.color.text.second}
                     href={'#projects'}
                     type={'button'}
                   >
-                    See Projects
+                    {t('main.projects_button')}
                     <S.ArrowIconWrapper>
                       <Icon iconId={'arrowRight'} viewBox={'-8 -5 37 35'} />
                     </S.ArrowIconWrapper>
@@ -73,7 +77,7 @@ export const Main = () => {
                     download
                     href={theme === 'dark' ? './cv/cv-eng-dark.pdf' : './cv/cv-eng-light.pdf'}
                   >
-                    Download Resume
+                    {t('main.download_button')}
                   </S.ResumeLink>
                 </S.BannerLinksWrapper>
               </S.BannerTitleWrapper>

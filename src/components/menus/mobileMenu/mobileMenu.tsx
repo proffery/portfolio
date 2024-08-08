@@ -1,17 +1,23 @@
 import { useState } from 'react'
 import { Fade } from 'react-awesome-reveal'
+import { useTranslation } from 'react-i18next'
 
-import { menuItems } from '@/common/const/data/menuItems'
+import { menuItemsEn, menuItemsRu } from '@/common/const/data/menuItems'
 import { themeObj } from '@/common/const/themeObj'
 import { useAppContext } from '@/common/context/appContext'
 import { Link } from '@/components/link/Link.styled'
+import { ThemeChangeButton } from '@/components/themeChangeButton/ThemeChangeButton'
 
-import { ThemeChangeButton } from '../themeChangeButton/ThemeChangeButton'
 import { S } from './MibileMenu_Styles'
 
 export const MobileMenu = () => {
   const { theme } = useAppContext()
   const [isOpen, setIsOpen] = useState(false)
+  const {
+    i18n: { language },
+  } = useTranslation()
+
+  const menuItems = language === 'en' ? menuItemsEn : menuItemsRu
 
   return (
     <S.MobileMenu>
@@ -34,8 +40,8 @@ export const MobileMenu = () => {
       >
         <ul aria-label={'menu'} role={'menu'}>
           <Fade cascade duration={300} triggerOnce>
-            {menuItems.map((item, index) => (
-              <li key={index} role={'menuitem'}>
+            {menuItems.map(item => (
+              <li key={item.item_href} role={'menuitem'}>
                 <Link
                   color={
                     theme === 'light'
