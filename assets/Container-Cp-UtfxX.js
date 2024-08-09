@@ -1,4 +1,4 @@
-import{d as a,t as i}from"./index-OakIBYLk.js";import{F as e}from"./Font-hIy2XsV-.js";const r=a(e)`
+import{d as a,t as i}from"./index-DX2VFDie.js";import{F as e}from"./Font-B0-_PHdm.js";const r=a(e)`
   display: flex;
   flex-direction: ${t=>t.direction||"row"};
   max-width: 1440px;
