@@ -354,7 +354,7 @@ const AppText = styled.span`
   font-weight: 600;
   line-height: 80%;
   @media ${themeObj.media.tablet} {
-    font-size: 34px;
+    font-size: 30px;
   }
 
   @media ${themeObj.media.mobile} {

@@ -216,7 +216,7 @@ const AddTitle = styled.h4<StyledTheme>`
     props.theme === 'light' ? themeObj.light.color.text.primary : themeObj.dark.color.text.primary};
 
   @media ${themeObj.media.tablet} {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   @media ${themeObj.media.mobile} {
@@ -246,7 +246,7 @@ const AddDescription = styled.span<StyledTheme>`
       ? themeObj.light.color.text.placeholder
       : themeObj.dark.color.text.placeholder};
   @media ${themeObj.media.tablet} {
-    font-size: 23px;
+    font-size: 20px;
   }
   @media ${themeObj.media.mobile} {
     font-size: 14px;
