@@ -73,10 +73,7 @@ const Main = () => {
                       <Icon iconId={'arrowRight'} viewBox={'-8 -5 37 35'} />
                     </S.ArrowIconWrapper>
                   </S.ProjectsLink>
-                  <S.ResumeLink
-                    download
-                    href={theme === 'dark' ? './cv/cv-eng-dark.pdf' : './cv/cv-eng-light.pdf'}
-                  >
+                  <S.ResumeLink download href={`./cv/cv-${language}-${theme}.pdf`}>
                     {t('main.download_button')}
                   </S.ResumeLink>
                 </S.BannerLinksWrapper>
