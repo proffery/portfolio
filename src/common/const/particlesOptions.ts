@@ -40,7 +40,7 @@ export const options: ISourceOptions = {
       speed: 0.4,
     },
     number: {
-      value: 30,
+      value: 20,
     },
     opacity: {
       animation: {

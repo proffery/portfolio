@@ -10,7 +10,7 @@ import { loadSlim } from '@tsparticles/slim'
 const BackgroundParticles = memo(() => {
   const [init, setInit] = useState(false)
   const width = useWidth()
-  const breakpoint = extractNumberFromString(themeObj.media.mobile)
+  const breakpoint = extractNumberFromString(themeObj.media.tablet)
 
   useEffect(() => {
     if (width && width > breakpoint) {

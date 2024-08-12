@@ -59,6 +59,6 @@ export const themeObj = {
 
   media: {
     mobile: 'screen and (max-width: 576px)',
-    tablet: 'screen and (max-width: 768px)',
+    tablet: 'screen and (max-width: 880px)',
   },
 }

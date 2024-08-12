@@ -39,16 +39,16 @@ const MainContainer = styled(Container)`
 `
 
 const BannerWrapper = styled(FlexWrapper)<StyledTheme>`
-  margin: 80px auto;
+  margin: 60px auto;
   position: relative;
-  padding: 42px;
-  min-height: 630px;
+  padding: 50px;
+
   max-width: 1400px;
   width: 90vw;
   min-width: 360px;
   left: 50%;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 20px;
   transform: translateX(-50%);
   background: ${props =>
     props.theme === 'light' ? themeObj.light.gradient.banner : themeObj.dark.gradient.banner};
@@ -62,7 +62,8 @@ const BannerWrapper = styled(FlexWrapper)<StyledTheme>`
   z-index: 999999;
   @media ${themeObj.media.mobile} {
     border-radius: 112px 0;
-    width: 70vw;
+    margin: 50px auto;
+    min-width: 95vw;
   }
 `
 
@@ -118,7 +119,7 @@ const BannerRight = styled(FlexWrapper)<StyledTheme>`
       transform: rotate(45deg) translate(-80%, -10%);
     }
     @media ${themeObj.media.mobile} {
-      top: 8%;
+      top: 60px;
       left: 80%;
       transform: rotate(45deg) translate(-80%, -8%);
     }
@@ -135,9 +136,8 @@ const BannerRight = styled(FlexWrapper)<StyledTheme>`
         props.theme === 'light'
           ? themeObj.light.color.background.second
           : themeObj.dark.color.background.second};
-    top: 90%;
-    left: 95%;
-    transform: translate(-95%, -90%);
+    bottom: 0;
+    right: 0;
     z-index: -1;
     @media ${themeObj.media.mobile} {
       height: 100px;
@@ -241,10 +241,10 @@ const AppsLeft = styled(FlexWrapper)<StyledTheme>`
 const AppsRight = styled(FlexWrapper)`
   width: 70%;
   padding-left: 32px;
-  z-index: 0;
+  z-index: 10;
   @media ${themeObj.media.tablet} {
     width: 100%;
-    padding-left: 0px;
+    padding-left: 0;
   }
   @media ${themeObj.media.mobile} {
     width: 100%;
