@@ -7,6 +7,7 @@ import OpenAIClient from '@/assets/images/projects/OpenAIClientApp.webp'
 import PhotographerHomePage from '@/assets/images/projects/PhotographerHomePage.webp'
 import SocialNetwork from '@/assets/images/projects/SocialNetwork.webp'
 import Task1 from '@/assets/images/projects/Task1.webp'
+import Task2 from '@/assets/images/projects/Task2.webp'
 import TicTacToe from '@/assets/images/projects/TicTacToe.webp'
 import TodoList from '@/assets/images/projects/TodoList.webp'
 import WeatherApp from '@/assets/images/projects/WeatherApp.webp'
@@ -75,6 +76,13 @@ export const projectsEn: Project[] = [
     projectCode: 'https://github.com/proffery/test-task',
     projectDemo: 'https://test-task-proffery.vercel.app/',
     projectTitle: 'React. RTK Query. React Hook Form. Zod. MUI',
+  },
+  {
+    imageUrl: Task2,
+    projectCategory: 'Test tasks',
+    projectCode: 'https://github.com/proffery/slmax-meow-react-testovoe-zadanie',
+    projectDemo: 'https://slmax-meow-react-testovoe-zadanie-two.vercel.app/',
+    projectTitle: 'Next.js. TS. CSS. MUI',
   },
   {
     imageUrl: MemoryCard,
@@ -161,6 +169,13 @@ export const projectsRu: Project[] = [
     projectCode: 'https://github.com/proffery/test-task',
     projectDemo: 'https://test-task-proffery.vercel.app/',
     projectTitle: 'React. TS. RTK Query. React Hook Form. Zod. MUI',
+  },
+  {
+    imageUrl: Task2,
+    projectCategory: 'Тестовые задания',
+    projectCode: 'https://github.com/proffery/slmax-meow-react-testovoe-zadanie',
+    projectDemo: 'https://slmax-meow-react-testovoe-zadanie-two.vercel.app/',
+    projectTitle: 'Next.js. TS. CSS. MUI',
   },
   {
     imageUrl: MemoryCard,
