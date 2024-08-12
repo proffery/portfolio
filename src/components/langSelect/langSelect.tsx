@@ -21,7 +21,7 @@ export const LangSelect = () => {
   }
 
   return (
-    <div style={{ alignSelf: 'center', zIndex: 999999 }}>
+    <div style={{ alignSelf: 'center', cursor: 'pointer', zIndex: 999999 }}>
       <select defaultValue={language} onChange={changeLangHandler}>
         {Object.entries(supportedLngs).map(([code, name]) => (
           <option key={code} value={code}>
