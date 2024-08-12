@@ -1,4 +1,4 @@
-import{d as t,t as r}from"./index-KA_Prp2m.js";const a=t.button`
+import{d as t,t as r}from"./index-De8iRDRw.js";const a=t.button`
   background-color: ${o=>o.background||(d=>d.theme==="light"?r.light.color.background.primary:r.dark.color.background.primary)};
   color: ${o=>o.color||(d=>d.theme==="light"?r.light.color.text.primary:r.dark.color.text.primary)};
   border-radius: ${o=>o.border_radius||"100px"};
