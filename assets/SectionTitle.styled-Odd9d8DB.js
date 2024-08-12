@@ -1,4 +1,4 @@
-import{d as o,t}from"./index-DEOBjSkE.js";import{f as r}from"./Font-Cd8JSWXI.js";const l=o.h2`
+import{d as o,t}from"./index-CDS9cnmU.js";import{f as r}from"./Font-DNYRbic6.js";const l=o.h2`
   display: flex;
   position: relative;
   flex-direction: column;

@@ -1,1 +1,0 @@
-import{r}from"./index-DEOBjSkE.js";const s=()=>{const[e,n]=r.useState(0),t=()=>n(window.innerWidth);return r.useEffect(()=>(t(),window.addEventListener("resize",t),()=>window.removeEventListener("resize",t)),[]),e},o=e=>+e.replace(/(^.+\D)(\d+)(\D.+$)/i,"$2");export{o as e,s as u};
