@@ -5,16 +5,12 @@ import { themeObj } from './themeObj'
 export const options: ISourceOptions = {
   interactivity: {
     events: {
-      onClick: {
-        enable: false,
-        mode: 'push',
-      },
       onHover: {
         enable: true,
         mode: 'bubble',
         parallax: {
-          enable: false,
-          force: 2,
+          enable: true,
+          force: 50,
           smooth: 10,
         },
       },
@@ -26,33 +22,9 @@ export const options: ISourceOptions = {
         opacity: 8,
         size: 6,
       },
-      connect: {
-        distance: 80,
-        links: {
-          opacity: 0.5,
-        },
-        radius: 80,
-      },
-      grab: {
-        distance: 400,
-        links: {
-          opacity: 1,
-        },
-      },
-      push: {
-        quantity: 4,
-      },
-      remove: {
-        quantity: 2,
-      },
       repulse: {
         distance: 200,
         duration: 0.4,
-      },
-      slow: {
-        active: false,
-        factor: 1,
-        radius: 0,
       },
     },
   },
@@ -64,11 +36,11 @@ export const options: ISourceOptions = {
     },
     move: {
       enable: true,
-      outModes: 'bounce',
+      outModes: 'none',
       speed: 0.4,
     },
     number: {
-      value: 20,
+      value: 30,
     },
     opacity: {
       animation: {
