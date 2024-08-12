@@ -39,17 +39,16 @@ const MainContainer = styled(Container)`
 `
 
 const BannerWrapper = styled(FlexWrapper)<StyledTheme>`
-  margin: 60px auto;
-  position: relative;
+  position: absolute;
   padding: 50px;
-
   max-width: 1400px;
   width: 90vw;
   min-width: 360px;
   left: 50%;
+  top: 50%;
   flex-wrap: wrap;
   gap: 20px;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   background: ${props =>
     props.theme === 'light' ? themeObj.light.gradient.banner : themeObj.dark.gradient.banner};
   backdrop-filter: blur(10px);
@@ -62,7 +61,6 @@ const BannerWrapper = styled(FlexWrapper)<StyledTheme>`
   z-index: 999999;
   @media ${themeObj.media.mobile} {
     border-radius: 112px 0;
-    margin: 50px auto;
     min-width: 95vw;
   }
 `
@@ -136,8 +134,8 @@ const BannerRight = styled(FlexWrapper)<StyledTheme>`
         props.theme === 'light'
           ? themeObj.light.color.background.second
           : themeObj.dark.color.background.second};
-    bottom: 0;
-    right: 0;
+    bottom: -10%;
+    right: -10%;
     z-index: -1;
     @media ${themeObj.media.mobile} {
       height: 100px;
