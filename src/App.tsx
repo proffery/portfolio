@@ -1,17 +1,21 @@
-import { AppContextProvider, Theme} from './common/context/appContext'
-import { Footer } from './layout/footer/Footer'
-import { Header } from './layout/header/Header'
-import { About } from './layout/sections/about/About'
-import { Contact } from './layout/sections/contact/Contact'
-import { Interests } from './layout/sections/interests/Interests'
-import { Main } from './layout/sections/main/Main'
-import { Projects } from './layout/sections/projects/Projects'
-import { Skills } from './layout/sections/skills/Skills'
-import {BackgroundParticles} from "./components/particles/BackgroundParticles";
+import { Suspense, lazy } from 'react'
 
+import { AppContextProvider } from './common/context/appContext'
+import { LoadingLoader } from './components/loader/LoadingLoader.styled'
+const BackgroundParticles = lazy(() => import('./components/particles/BackgroundParticles'))
+const Footer = lazy(() => import('./layout/footer/Footer'))
+const Header = lazy(() => import('./layout/header/Header'))
+const About = lazy(() => import('./layout/sections/about/About'))
+const Contact = lazy(() => import('./layout/sections/contact/Contact'))
+const Interests = lazy(() => import('./layout/sections/interests/Interests'))
+const Main = lazy(() => import('./layout/sections/main/Main'))
+const Projects = lazy(() => import('./layout/sections/projects/Projects'))
+const Skills = lazy(() => import('./layout/sections/skills/Skills'))
 
 function App() {
-    return <AppContextProvider>
+  return (
+    <AppContextProvider>
+      <Suspense fallback={<LoadingLoader />}>
         <BackgroundParticles />
         <Header />
         <Main />
@@ -21,7 +25,9 @@ function App() {
         <Skills />
         <Contact />
         <Footer />
+      </Suspense>
     </AppContextProvider>
+  )
 }
 
 export default App

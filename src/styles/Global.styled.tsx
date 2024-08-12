@@ -1,11 +1,7 @@
-import { createGlobalStyle } from "styled-components";
-import { themeObj } from "../common/const/themeObj";
+import { themeObj } from '@/common/const/themeObj'
+import { createGlobalStyle } from 'styled-components'
 
-type GlobalStylesTypes = {
-    theme: string
-}
-
-export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
+export const GlobalStyles = createGlobalStyle`
     *,
     *::before,
     *::after {
@@ -15,10 +11,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
     }
 
     *:focus-visible {
-        outline: 2px solid ${props => props.theme === 'light' ?
-            themeObj.light.color.text.link :
-            themeObj.dark.color.text.link
-        };
+        outline: 2px solid ${themeObj.light.color.text.link};
     }
     
     html {
@@ -26,7 +19,6 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
     }
     
     body {
-        margin: 0 auto;
         height: 100vh;
         min-width: 320px;
         font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -34,12 +26,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
             sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background-color: ${props => props.theme === 'light' ?
-            themeObj.light.color.background.primary :
-            themeObj.dark.color.background.primary
-        };
-        
-    }
+        background-color: ${themeObj.light.color.background.primary}
 
     code {
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
@@ -51,6 +38,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesTypes>`
 
     section {
         padding:  0 0 60px  0;
+        overflow-x: hidden;
         @media ${themeObj.media.mobile} {
             padding: 27px 0;
         }

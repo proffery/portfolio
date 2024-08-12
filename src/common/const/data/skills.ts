@@ -1,73 +1,98 @@
 export const skills = [
-    {
-        title: "HTML",
-        imageId: "html",
-        category: "front",
-        viewBox: "0 0 128 128"
-    },{
-        title: "CSS",
-        imageId: "css",
-        category: "front",
-        viewBox: "0 0 128 128"
-    },{
-        title: "JavaScript",
-        imageId: "javaScript",
-        category: "front",
-        viewBox: "0 0 128 128"
-    },{
-        title: "TypeScript",
-        imageId: "typeScript",
-        category: "front",
-        viewBox: "0 0 128 128"
-    },{
-        title: "React",
-        imageId: "react",
-        category: "front",
-        viewBox: "0 0 128 128"
-    },{
-        title: "Redux",
-        imageId: "redux",
-        category: "front",
-        viewBox: "0 0 128 128"
-    },{
-        title: "Styled Components",
-        imageId: "styled",
-        category: "front",
-        viewBox: "0 1 30 30"
-    },{
-        title: "Bootstrap",
-        imageId: "bootstrap",
-        category: "front",
-        viewBox: "0 0 128 128"
-    },{
-        title: "Firebase",
-        imageId: "firebase",
-        category: "other",
-        viewBox: "0 0 128 128"
-    },{
-        title: "SASS",
-        imageId: "sass",
-        category: "front",
-        viewBox: "0 0 128 128"
-    },{
-        title: "Git",
-        imageId: "git",
-        category: "other",
-        viewBox: "0 0 128 128"
-    },{
-        title: "GitHub",
-        imageId: "gitHub",
-        category: "other",
-        viewBox: "0 0 128 128"
-    },{
-        title: "VS Code",
-        imageId: "vsCode",
-        category: "other",
-        viewBox: "0 0 128 128"
-    },{
-        title: "Storybook",
-        imageId: "storyBook",
-        category: "other",
-        viewBox: "0 0 128 128"
-    },
+  {
+    category: 'front',
+    imageId: 'html',
+    title: 'HTML',
+    viewBox: '0 0 128 128',
+  },
+  {
+    category: 'front',
+    imageId: 'css',
+    title: 'CSS',
+    viewBox: '0 0 128 128',
+  },
+  {
+    category: 'front',
+    imageId: 'javaScript',
+    title: 'JavaScript',
+    viewBox: '0 0 128 128',
+  },
+  {
+    category: 'front',
+    imageId: 'typeScript',
+    title: 'TypeScript',
+    viewBox: '0 0 128 128',
+  },
+  {
+    category: 'front',
+    imageId: 'react',
+    title: 'React',
+    viewBox: '0 0 128 128',
+  },
+  {
+    category: 'front',
+    imageId: 'redux',
+    title: 'Redux',
+    viewBox: '0 0 128 128',
+  },
+  {
+    category: 'front',
+    imageId: 'styled',
+    title: 'Styled Components',
+    viewBox: '0 1 30 30',
+  },
+  {
+    category: 'front',
+    imageId: 'bootstrap',
+    title: 'Bootstrap',
+    viewBox: '0 0 128 128',
+  },
+  {
+    category: 'other',
+    imageId: 'firebase',
+    title: 'Firebase',
+    viewBox: '0 0 128 128',
+  },
+  {
+    category: 'front',
+    imageId: 'sass',
+    title: 'SASS',
+    viewBox: '0 0 128 128',
+  },
+  {
+    category: 'front',
+    imageId: 'next',
+    title: 'Next.js',
+    viewBox: '0 0 128 128',
+  },
+  {
+    category: 'other',
+    imageId: 'git',
+    title: 'Git',
+    viewBox: '0 0 128 128',
+  },
+  {
+    category: 'other',
+    imageId: 'gitHub',
+    title: 'GitHub',
+    viewBox: '0 0 128 128',
+  },
+  {
+    category: 'other',
+    imageId: 'vsCode',
+    title: 'VS Code',
+    viewBox: '0 0 128 128',
+  },
+  {
+    category: 'other',
+    imageId: 'storyBook',
+    title: 'Storybook',
+    viewBox: '0 0 128 128',
+  },
+  {
+    category: 'other',
+    imageId: 'gitLab',
+    title: 'GitLab',
+    viewBox: '0 0 128 128',
+  },
 ]

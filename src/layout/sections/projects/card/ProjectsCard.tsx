@@ -1,29 +1,47 @@
-import { FlexWrapper } from "../../../../components/FlexWrapper"
-import { useAppContext } from "../../../../common/context/appContext"
-import { S } from "./ProjectCard_Styles"
-import { Fade } from "react-awesome-reveal"
+import { Fade } from 'react-awesome-reveal'
+import { useTranslation } from 'react-i18next'
+
+import { useAppContext } from '@/common/context/appContext'
+import { FlexWrapper } from '@/components/FlexWrapper'
+
+import { S } from './ProjectCard_Styles'
 
 type ProjectsCardPropsTypes = {
-    imageUrl: string,
-    title: string,
-    previewUrl: string,
-    githubUrl: string
+  githubUrl: string
+  imageUrl: string
+  previewUrl: string
+  title: string
 }
 
 export const ProjectsCard = (props: ProjectsCardPropsTypes) => {
-    const {theme} = useAppContext()
+  const { theme } = useAppContext()
+  const { t } = useTranslation()
 
-    return (
-        <S.ProjectCard theme={theme} backgroundImage={`url("${props.imageUrl}")`} direction="column" align="center" >
-            <S.ProjectCardContent theme={theme} direction="column" justify="space-between" >
-                <Fade duration={500} cascade triggerOnce>
-                    <S.ProjectCardTitle theme={theme}>{props.title}</S.ProjectCardTitle>
-                <FlexWrapper align="center" justify="center" width="100%">
-                        <S.ProjectCardLink href={props.githubUrl} target='_blank' theme={theme} type="button">Code</S.ProjectCardLink>
-                        <S.ProjectCardLink href={props.previewUrl} target='_blank' theme={theme}>Demo</S.ProjectCardLink>
-                </FlexWrapper>
-                </Fade>
-            </S.ProjectCardContent>
-        </S.ProjectCard>
-    )
+  return (
+    <S.ProjectCard
+      align={'center'}
+      background_image={`url("${props.imageUrl}")`}
+      direction={'column'}
+      theme={theme}
+    >
+      <S.ProjectCardContent direction={'column'} justify={'space-between'} theme={theme}>
+        <Fade cascade duration={500} triggerOnce>
+          <S.ProjectCardTitle theme={theme}>{props.title}</S.ProjectCardTitle>
+          <FlexWrapper align={'center'} justify={'center'} width={'100%'}>
+            <S.ProjectCardLink
+              href={props.githubUrl}
+              target={'_blank'}
+              theme={theme}
+              type={'button'}
+            >
+              {t('projects.card.code_link')}
+            </S.ProjectCardLink>
+            <S.ProjectCardLink href={props.previewUrl} target={'_blank'} theme={theme}>
+              {t('projects.card.demo_link')}
+            </S.ProjectCardLink>
+          </FlexWrapper>
+        </Fade>
+      </S.ProjectCardContent>
+    </S.ProjectCard>
+  )
 }

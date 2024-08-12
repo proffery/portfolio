@@ -1,14 +1,17 @@
+import { memo } from 'react'
 import AliceCarousel from 'react-alice-carousel'
+
+import { aliceCarouselOptions } from '@/common/const/aliceCarouselOptions'
+
 import 'react-alice-carousel/lib/alice-carousel.css'
+
 import { SkillsCard } from '../card/SkillsCard'
 import { S } from './SkillSet_Styles'
-import {aliceCarouselOptions} from "../../../../common/const/aliceCarouselOptions";
-import {memo} from "react";
 
 interface Slides {
-  imageId: string,
-  title: string,
-  category?: string,
+  category?: string
+  imageId: string
+  title: string
   viewBox?: string
 }
 
@@ -18,23 +21,23 @@ type PropType = {
 
 export const SkillSet = memo(({ slides }: PropType) => {
   const items = slides.map((slide, index) => (
-       <SkillsCard
-          imageId={slide.imageId}
-          viewBox={slide.viewBox || "0 0 128 128"}
-          title={slide.title}
-          key={slide.category + index.toString()}
-      />
+    <SkillsCard
+      imageId={slide.imageId}
+      key={slide.category + index.toString()}
+      title={slide.title}
+      viewBox={slide.viewBox || '0 0 128 128'}
+    />
   ))
 
   return (
     <S.Skills>
       <AliceCarousel
-        mouseTracking
-        autoPlay={true}
+        autoPlay
         autoPlayInterval={2500}
-        infinite={true}
-        disableButtonsControls={true}
+        disableButtonsControls
+        infinite
         items={items}
+        mouseTracking
         responsive={aliceCarouselOptions}
       />
     </S.Skills>

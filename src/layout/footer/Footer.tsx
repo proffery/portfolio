@@ -1,16 +1,31 @@
-import { Link } from "../../components/link/Link.styled"
-import { S } from "./Footer_Styles"
-import {useAppContext} from "../../common/context/appContext";
+import { useTranslation } from 'react-i18next'
 
-export const Footer = () => {
-    const {theme} = useAppContext()
-    return (
-        <S.Footer theme={theme}>
-            <S.BackgroundImgTop theme={theme} height="100%" width="100%"></S.BackgroundImgTop>
-            <S.BackgroundBottom theme={theme} direction="column" width="100%">
-                <S.Name theme={theme}>Coded by&nbsp;<Link href="mailto:proffery@gmail.com?subject=Mail from Portfolio">Dmitry Shamko</Link></S.Name>
-                <S.Copyrights theme={theme}>All Rights Reserved {new Date().getFullYear()}</S.Copyrights>
-            </S.BackgroundBottom>
-        </S.Footer>
-    )
+import { credentials } from '@/common/const/data/credentials'
+import { useAppContext } from '@/common/context/appContext'
+import { Link } from '@/components/link/Link.styled'
+
+import { S } from './Footer_Styles'
+
+const Footer = () => {
+  const { theme } = useAppContext()
+  const { t } = useTranslation()
+
+  return (
+    <S.Footer theme={theme}>
+      <S.BackgroundImgTop height={'100%'} theme={theme} width={'100%'}></S.BackgroundImgTop>
+      <S.BackgroundBottom direction={'column'} theme={theme} width={'100%'}>
+        <S.Name theme={theme}>
+          {t('copyrights.coded')}&nbsp;
+          <Link href={`mailto:${credentials.email}?subject=${t('app_title')}`}>
+            {t('copyrights.name')}
+          </Link>
+        </S.Name>
+        <S.Copyrights theme={theme}>
+          {t('copyrights.rights')} {new Date().getFullYear()}
+        </S.Copyrights>
+      </S.BackgroundBottom>
+    </S.Footer>
+  )
 }
+
+export default Footer

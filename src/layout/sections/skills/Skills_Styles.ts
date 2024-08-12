@@ -1,53 +1,60 @@
-import styled from "styled-components"
-import { themeObj } from "../../../common/const/themeObj"
-import { Container } from "../../../components/Container"
-import { FlexWrapper } from "../../../components/FlexWrapper"
-import { font } from "../../../styles/Font"
+import { themeObj } from '@/common/const/themeObj'
+import { Theme } from '@/common/context/appContext'
+import { Container } from '@/components/Container'
+import { FlexWrapper } from '@/components/FlexWrapper'
+import { font } from '@/styles/Font'
+import styled from 'styled-components'
 
-const Learning = styled.section`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: ${props => props.theme === 'light' ?
-        themeObj.light.color.background.primary :
-        themeObj.dark.color.background.primary
-    };
+type StyledTheme = {
+  theme: Theme
+}
+
+const Learning = styled.section<StyledTheme>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: ${props =>
+    props.theme === 'light'
+      ? themeObj.light.color.background.primary
+      : themeObj.dark.color.background.primary};
 `
-const LearningContainer = styled(Container)`
-    position: relative;
-    background-color: ${props => props.theme === 'light' ?
-        themeObj.light.color.background.second :
-        themeObj.dark.color.background.second
-    };
-    padding: 60px 0;
-    @media ${themeObj.media.mobile} {
-        padding: 27px 0;
-    }
-    `
-const LearningSkillContainer = styled(FlexWrapper)`
-    width: 100%;
-    background-color: ${props => props.theme === 'light' ?
-        themeObj.light.color.background.second :
-        themeObj.dark.color.background.second
-    };
+const LearningContainer = styled(Container)<StyledTheme>`
+  position: relative;
+  background-color: ${props =>
+    props.theme === 'light'
+      ? themeObj.light.color.background.second
+      : themeObj.dark.color.background.second};
+  padding: 60px 0;
+  @media ${themeObj.media.tablet} {
+    width: 100vw;
+  }
+  @media ${themeObj.media.mobile} {
+    padding: 27px 0;
+  }
 `
-const LearningSkillsTitle = styled.h3`
-    display: flex;
-    padding: 0 30px 30px;
-    ${font({weight: 700, lineHeight: 1.36, Fmin: 16, Fmax: 22})}
-    color: ${props => props.theme === 'light' ?
-            themeObj.light.color.text.second :
-            themeObj.dark.color.text.primary};
-    @media ${themeObj.media.mobile} {
-        padding-top: 0;
-        margin-top: 10px;
-    }
+const LearningSkillContainer = styled(FlexWrapper)<StyledTheme>`
+  width: 100%;
+  background-color: ${props =>
+    props.theme === 'light'
+      ? themeObj.light.color.background.second
+      : themeObj.dark.color.background.second};
+`
+const LearningSkillsTitle = styled.h3<StyledTheme>`
+  display: flex;
+  padding: 0 30px 30px;
+  ${font({ fMax: 22, fMin: 16, lineHeight: 1.36, weight: 700 })}
+  color: ${props =>
+    props.theme === 'light' ? themeObj.light.color.text.second : themeObj.dark.color.text.primary};
+  @media ${themeObj.media.mobile} {
+    padding-top: 0;
+    margin-top: 10px;
+  }
 `
 
 export const S = {
-    Learning,
-    LearningContainer,
-    LearningSkillContainer,
-    LearningSkillsTitle
+  Learning,
+  LearningContainer,
+  LearningSkillContainer,
+  LearningSkillsTitle,
 }
