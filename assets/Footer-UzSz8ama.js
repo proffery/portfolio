@@ -1,4 +1,4 @@
-import{d as i,t,u as l,j as e,c as d}from"./index-BJqBpmzF.js";import{L as c}from"./Link.styled-DNd-m8Q4.js";import{f as a,F as s,u as g}from"./Font-jnXnfhmd.js";const h=i.footer`
+import{d as i,t,u as l,j as e,c as d}from"./index-DOWGypmr.js";import{L as c}from"./Link.styled-C8U3_2-G.js";import{f as a,F as s,u as g}from"./Font-Dov2GHGn.js";const h=i.footer`
   height: 200px;
   display: flex;
   position: relative;

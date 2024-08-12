@@ -1,4 +1,4 @@
-import{d as a,t,l as d}from"./index-BJqBpmzF.js";const l=a.a`
+import{d as a,t,l as d}from"./index-DOWGypmr.js";const l=a.a`
   display: flex;
   white-space: nowrap;
   align-items: center;
