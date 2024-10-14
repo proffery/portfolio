@@ -1,0 +1,26 @@
+:root {
+  --font-family-primary: var(--font-russo-one);
+  --font-family-second: var(--font-roboto);
+
+  // line heights
+  --line-height-s: 100%;
+  --line-height-m: 120%;
+  --line-height-l: 140%;
+  --line-height-xl: 150%;
+
+  // font sizes
+  --font-size-xxxs: 12px;
+  --font-size-xxs: 14px;
+  --font-size-xs: 16px;
+  --font-size-s: 18px;
+  --font-size-m: 20px;
+  --font-size-l: 24px;
+  --font-size-xl: 28px;
+  --font-size-xxl: 32px;
+  --font-size-xxxl: 40px;
+  --font-size-xxxxl: 48px;
+
+  // font weights
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+}
