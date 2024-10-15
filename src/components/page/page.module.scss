@@ -1,0 +1,22 @@
+@use '@/styles/breakpoints';
+
+$header-height-desktop: breakpoints.$header-height-desktop;
+$header-height-mobile: breakpoints.$header-height-mobile;
+
+.main {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: breakpoints.$max-content-width;
+  min-height: calc(100vh - $header-height-desktop);
+  margin: 0 auto;
+  padding: breakpoints.$content-padding-desktop;
+
+  @media (width <= breakpoints.$mobile) {
+    min-height: calc(100vh - $header-height-mobile);
+    padding: breakpoints.$content-padding-mobile;
+  }
+}

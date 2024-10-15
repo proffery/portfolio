@@ -11,6 +11,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "allowImportingTsExtensions": false,
+    "strictNullChecks": true,
     "jsx": "preserve",
     "incremental": true,
     "types": ["node"],
