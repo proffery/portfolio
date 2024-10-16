@@ -1,0 +1,27 @@
+@use '@/styles/breakpoints';
+
+.footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: breakpoints.$footer-height-desktop;
+  padding: breakpoints.$footer-padding-desktop;
+
+  color: inherit;
+
+  @media (width <= breakpoints.$mobile) {
+    height: breakpoints.$footer-height-mobile;
+    padding: breakpoints.$footer-padding-mobile;
+  }
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  max-width: breakpoints.$max-content-width;
+}

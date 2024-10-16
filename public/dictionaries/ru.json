@@ -1,6 +1,25 @@
 {
   "header": {
-    "test": "Тест"
+    "navigation": {
+      "home": "Главная",
+      "about": "Обо мне",
+      "projects": "Проекты",
+      "contacts": "Контакты"
+    }
+  },
+  "main": {
+    "home": {
+      "title": "Главная"
+    },
+    "about": {
+      "title": "Обо мне"
+    },
+    "projects": {
+      "title": "Проекты"
+    },
+    "contacts": {
+      "title": "Контакты"
+    }
   },
   "footer": {
     "allRights": "Все права защищены (не совсем)"

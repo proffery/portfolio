@@ -4,35 +4,23 @@ $header-height-desktop: breakpoints.$header-height-desktop;
 $header-height-mobile: breakpoints.$header-height-mobile;
 $footer-height-desktop: breakpoints.$footer-height-desktop;
 $footer-height-mobile: breakpoints.$footer-height-mobile;
+$content-padding-desktop: breakpoints.$content-padding-desktop;
+$content-padding-mobile: breakpoints.$content-padding-mobile;
 
-.main {
+.section {
   position: relative;
 
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 
   width: 100%;
   max-width: breakpoints.$max-content-width;
   min-height: calc(100vh - $header-height-desktop - $footer-height-desktop);
-  margin: 0 auto;
-  padding: breakpoints.$content-padding-desktop;
 
   color: inherit;
 
   @media (width <= breakpoints.$mobile) {
     min-height: calc(100vh - $header-height-mobile - $footer-height-mobile);
     padding: breakpoints.$content-padding-mobile;
-  }
-}
-
-.canvas {
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: calc(100vh - $header-height-desktop - $footer-height-desktop) !important;
-
-  @media (width <= breakpoints.$mobile) {
-    height: calc(100vh - $header-height-mobile - $footer-height-mobile) !important;
   }
 }

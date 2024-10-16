@@ -11,14 +11,26 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.5",
+    "@gsap/react": "^2.1.1",
+    "@react-three/drei": "^9.114.3",
+    "@react-three/fiber": "^8.17.10",
+    "@tsparticles/engine": "^3.5.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.5.0",
     "@types/negotiator": "^0.6.3",
+    "@types/three": "^0.169.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.11.9",
+    "framer-motion-3d": "^11.11.9",
     "i18next-browser-languagedetector": "^8.0.0",
+    "maath": "^0.10.8",
     "negotiator": "^0.6.3",
     "next": "14.2.15",
     "react": "^18",
     "react-dom": "^18",
-    "server-only": "^0.0.1"
+    "server-only": "^0.0.1",
+    "three": "^0.169.0",
+    "three-stdlib": "^2.33.0"
   },
   "devDependencies": {
     "@it-incubator/eslint-config": "^1.0.3",
