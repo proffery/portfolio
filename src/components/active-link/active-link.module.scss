@@ -1,0 +1,39 @@
+@use '@/styles/breakpoints';
+
+.link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: fit-content;
+  height: fit-content;
+
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xl);
+
+  &:focus-visible {
+    border-radius: 2px;
+    outline: 2px solid var(--color-info);
+  }
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-xxs);
+  }
+}
+
+.activeLink {
+  position: relative;
+  width: fit-content;
+  color: var(--color-info) !important;
+
+  &::before {
+    width: 100%;
+    background-image: linear-gradient(
+      to right,
+      rgb(255 255 255 / 0%),
+      rgb(255 255 255 / 75%),
+      rgb(255 255 255 / 0%)
+    );
+  }
+}

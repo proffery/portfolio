@@ -2,20 +2,20 @@ export const dimensions = {
   homePageScenes: {
     about: {
       desktop: {
-        earth_position: [33, -2, -9],
+        earth_position: [28, -2, -9],
         group_position: [-3, 3, -50],
         group_rotation: [0, -2, 0],
         jupiter_position: [1051, -10, -225],
-        light_position: [-90, 14, 0],
+        light_position: [-150, 14, 0],
         mars_position: [22, -10, 617],
         moon_position: [-9, 0, -13],
       },
       mobile: {
-        earth_position: [0, -2, 9],
-        group_position: [-3, -3, -50],
+        earth_position: [10, -2, 1],
+        group_position: [-8, -3, -50],
         group_rotation: [0, -1, 0],
         jupiter_position: [1051, -10, -225],
-        light_position: [-90, 14, -80],
+        light_position: [-90, 14, -100],
         mars_position: [22, -10, 617],
         moon_position: [-9, 0, -13],
       },
@@ -23,7 +23,7 @@ export const dimensions = {
     contacts: {
       desktop: {
         earth_position: [-9, -1, -16],
-        group_position: [208, 4, -1100],
+        group_position: [215, 4, -1100],
         group_rotation: [0, -2, 0],
         jupiter_position: [1051, -10, -225],
         light_position: [-390, 14, -759],
@@ -42,8 +42,8 @@ export const dimensions = {
     },
     home: {
       desktop: {
-        earth_position: [10, -4, -5],
-        group_position: [-3, 3, -15],
+        earth_position: [10, -2, -5],
+        group_position: [-5, 2, -15],
         group_rotation: [0, 0, 0],
         jupiter_position: [1051, -10, -225],
         light_position: [-350, -1, -150],
@@ -63,7 +63,7 @@ export const dimensions = {
     projects: {
       desktop: {
         earth_position: [33, -2, -9],
-        group_position: [-3, 3, -655],
+        group_position: [-6, 3, -655],
         group_rotation: [0, 0, 0],
         jupiter_position: [1051, -10, -225],
         light_position: [-390, 14, -759],

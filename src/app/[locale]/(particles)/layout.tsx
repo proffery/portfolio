@@ -1,7 +1,7 @@
 'use client'
 import { ReactNode } from 'react'
 
-import { options } from '@/common/constants/particles-options'
+import { options } from '@/common/constants/particles'
 import { useParticles } from '@/common/hooks/use-particles'
 import Particles from '@tsparticles/react'
 

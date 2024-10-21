@@ -18,7 +18,7 @@ export default function useIsVisible(ref: RefObject<HTMLElement>) {
       {
         root: null, // viewport
         rootMargin: '0px', // no margin
-        threshold: 0.7, // 70% of target visible
+        threshold: 0.6, // 60% of target visible
       }
     )
 

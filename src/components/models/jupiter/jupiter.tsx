@@ -34,7 +34,7 @@ export const Jupiter = forwardRef<ElementRef<'group'>, Props>((props: Props, ref
 
   return (
     <group dispose={null} ref={ref}>
-      <group ref={group} {...props}>
+      <group ref={group} {...props} scale={1.2}>
         <mesh
           castShadow
           // @ts-ignore

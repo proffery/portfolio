@@ -42,14 +42,20 @@ function HomePage({ children }: Props) {
 
     if (groupRef.current) {
       timeline.to(groupRef.current.position, {
-        duration: 3,
-        ease: 'sine.inOut',
+        duration: 6,
+        ease: 'power1.inOut',
         x: isMobile ? mDimensions.group_position[0] : dDimensions.group_position[0],
         y: isMobile ? mDimensions.group_position[1] : dDimensions.group_position[1],
         z: isMobile ? mDimensions.group_position[2] : dDimensions.group_position[2],
       })
+    }
+  }, [sectionInView])
+  useGSAP(() => {
+    const timeline = gsap.timeline()
+
+    if (groupRef.current) {
       timeline.to(groupRef.current.rotation, {
-        duration: 5,
+        duration: 4,
         ease: 'expo.inOut',
         x: isMobile ? mDimensions.group_rotation[0] : dDimensions.group_rotation[0],
         y: isMobile ? mDimensions.group_rotation[1] : dDimensions.group_rotation[1],
@@ -64,15 +70,19 @@ function HomePage({ children }: Props) {
     if (sunRef.current) {
       timeline.to(sunRef.current.position, {
         duration: 5,
-        ease: 'sine.inOut',
+        ease: 'power1.inOut',
         x: isMobile ? mDimensions.light_position[0] : dDimensions.light_position[0],
         y: isMobile ? mDimensions.light_position[1] : dDimensions.light_position[1],
         z: isMobile ? mDimensions.light_position[2] : dDimensions.light_position[2],
       })
     }
+  }, [sectionInView])
+  useGSAP(() => {
+    const timeline = gsap.timeline()
+
     if (earthRef.current) {
       timeline.to(earthRef.current.position, {
-        duration: 2,
+        duration: 5,
         ease: 'power1.inOut',
         x: isMobile ? mDimensions.earth_position[0] : dDimensions.earth_position[0],
         y: isMobile ? mDimensions.earth_position[1] : dDimensions.earth_position[1],

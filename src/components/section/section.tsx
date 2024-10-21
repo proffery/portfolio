@@ -16,7 +16,6 @@ function Section({ children, className, id, ...rest }: Props) {
   const classNames = {
     section: clsx(s.section, className),
   }
-
   const { setSectionInView } = useActions(appActions)
 
   const sectionRef = useRef<ElementRef<'section'>>(null)

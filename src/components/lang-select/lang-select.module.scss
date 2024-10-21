@@ -1,0 +1,39 @@
+@use '@/styles/breakpoints';
+
+$padding-desktop: 0 8px;
+$padding-mobile: 0 4px;
+$height-desktop: 24px;
+$height-mobile: 20px;
+$border-radius: 3px;
+
+.select {
+  cursor: pointer;
+
+  height: $height-desktop;
+  padding: $padding-desktop;
+
+  font-family: var(--font-family-primary), sans-serif;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-xl);
+  color: inherit;
+
+  background: transparent;
+  border-radius: $border-radius;
+
+  &:focus-visible {
+    border-radius: $border-radius;
+    outline: 2px solid var(--color-info);
+  }
+
+  @media (width <= breakpoints.$mobile) {
+    height: $height-mobile;
+    padding: $padding-mobile;
+    font-size: var(--font-size-xxs);
+  }
+}
+
+.option {
+  color: var(--color-dark);
+  background-color: transparent;
+}

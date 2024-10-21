@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react'
 
-import { Locale, getDictionary } from '@/app/[locale]/dictionaries'
 import { credentials } from '@/common/constants/credentials'
+import { Locale, getDictionary } from '@/i18n/dictionaries'
 import clsx from 'clsx'
 
 import s from './footer.module.scss'

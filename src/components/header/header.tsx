@@ -1,6 +1,7 @@
-import { Locale, getDictionary } from '@/app/[locale]/dictionaries'
+import ActiveLink from '@/components/active-link/active-link'
+import { LangSelect } from '@/components/lang-select/lang-select'
+import { Locale, getDictionary } from '@/i18n/dictionaries'
 import clsx from 'clsx'
-import Link from 'next/link'
 
 import s from './header.module.scss'
 
@@ -16,24 +17,21 @@ export const Header = async ({ locale }: Props) => {
     navWrapper: clsx(s.navWrapper),
   }
   const dict = await getDictionary(locale)
+  const {
+    header: { navigation },
+  } = dict
 
   return (
     <header className={classNames.header}>
       <div className={classNames.container}>
         <div className={classNames.navWrapper}>
-          {Object.entries(dict.header.navigation).map(key => (
-            <Link href={`#${key[0]}`} key={key[0]}>
-              {key[1]}
-            </Link>
-          ))}
+          <ActiveLink href={'#home'}>{navigation.home}</ActiveLink>
+          <ActiveLink href={'#about'}>{navigation.about}</ActiveLink>
+          <ActiveLink href={'#projects'}>{navigation.projects}</ActiveLink>
+          <ActiveLink href={'#contacts'}>{navigation.contacts}</ActiveLink>
         </div>
         <div className={classNames.langWrapper}>
-          <Link href={'/en'}>
-            <div>EN</div>
-          </Link>
-          <Link href={'/ru'}>
-            <div>RU</div>
-          </Link>
+          <LangSelect locale={locale} />
         </div>
       </div>
     </header>
