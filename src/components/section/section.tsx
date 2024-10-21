@@ -2,27 +2,28 @@
 
 import { ComponentPropsWithoutRef, ElementRef, useEffect, useRef } from 'react'
 
+import withRedux from '@/common/hocs/with-redux'
+import { useActions } from '@/common/hooks/use-actions'
 import useIsVisible from '@/common/hooks/use-is-visible'
+import { Sections, appActions } from '@/services/app/app.slice'
 import clsx from 'clsx'
 
 import s from './section.module.scss'
 
-export type SectionVisibilityData = { isSectionVisible: boolean; sectionId: string }
+type Props = ComponentPropsWithoutRef<'main'>
 
-type Props = {
-  onVisibilityChange?: (data: SectionVisibilityData) => void
-} & ComponentPropsWithoutRef<'main'>
-
-export function Section({ children, className, id, onVisibilityChange, ...rest }: Props) {
+function Section({ children, className, id, ...rest }: Props) {
   const classNames = {
     section: clsx(s.section, className),
   }
+
+  const { setSectionInView } = useActions(appActions)
 
   const sectionRef = useRef<ElementRef<'section'>>(null)
   const isSectionVisible = useIsVisible(sectionRef)
 
   useEffect(() => {
-    onVisibilityChange?.({ isSectionVisible, sectionId: id ?? '' })
+    setSectionInView(id as Sections)
   }, [isSectionVisible])
 
   return (
@@ -31,3 +32,4 @@ export function Section({ children, className, id, onVisibilityChange, ...rest }
     </section>
   )
 }
+export default withRedux(Section)

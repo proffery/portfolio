@@ -1,6 +1,7 @@
 import { ElementRef, ReactNode, forwardRef } from 'react'
 
-import { useIsMobile } from '@/common/hooks/use-is-mobile'
+import { constants } from '@/common/constants/constants'
+import { useIsWidthLess } from '@/common/hooks/use-is-width-less'
 import { useFrame } from '@react-three/fiber'
 import { easing } from 'maath'
 
@@ -9,7 +10,7 @@ type Props = {
 }
 
 export const ParallaxCamera = forwardRef<ElementRef<'group'>, Props>(({ children }: Props, ref) => {
-  const isMobile = useIsMobile()
+  const isMobile = useIsWidthLess(constants.mobileWidth)
 
   useFrame((state, delta) => {
     // @ts-ignore

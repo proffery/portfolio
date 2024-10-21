@@ -8,19 +8,15 @@ $content-padding-desktop: breakpoints.$content-padding-desktop;
 $content-padding-mobile: breakpoints.$content-padding-mobile;
 
 .section {
-  position: relative;
-
   display: flex;
   flex-direction: column;
 
   width: 100%;
-  max-width: breakpoints.$max-content-width;
   min-height: calc(100vh - $header-height-desktop - $footer-height-desktop);
 
   color: inherit;
 
   @media (width <= breakpoints.$mobile) {
     min-height: calc(100vh - $header-height-mobile - $footer-height-mobile);
-    padding: breakpoints.$content-padding-mobile;
   }
 }

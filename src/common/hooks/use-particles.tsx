@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
 
-import { sizes } from '@/common/constants/sizes'
 import { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
 

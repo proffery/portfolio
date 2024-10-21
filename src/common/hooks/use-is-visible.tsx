@@ -11,9 +11,16 @@ export default function useIsVisible(ref: RefObject<HTMLElement>) {
     }
 
     // Create an IntersectionObserver to observe the ref's visibility
-    const observer = new IntersectionObserver(([entry]) => {
-      setIntersecting(entry.isIntersecting)
-    })
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIntersecting(entry.isIntersecting)
+      },
+      {
+        root: null, // viewport
+        rootMargin: '0px', // no margin
+        threshold: 0.7, // 70% of target visible
+      }
+    )
 
     // Start observing the element
     observer.observe(ref.current) // ref.current is guaranteed to be non-null here

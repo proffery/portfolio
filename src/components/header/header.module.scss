@@ -26,6 +26,7 @@
   position: relative;
 
   display: flex;
+  gap: 64px;
   align-items: center;
   align-self: center;
   justify-content: center;
@@ -36,6 +37,7 @@
   padding: breakpoints.$header-padding-desktop;
 
   @media (width <= breakpoints.$mobile) {
+    gap: 32px;
     padding: breakpoints.$header-padding-mobile;
   }
 }
@@ -47,5 +49,15 @@
 
   @media (width <= breakpoints.$mobile) {
     gap: 16px;
+  }
+}
+
+.langWrapper {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  @media (width <= breakpoints.$mobile) {
+    gap: 8px;
   }
 }

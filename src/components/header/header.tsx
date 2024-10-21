@@ -12,20 +12,22 @@ export const Header = async ({ locale }: Props) => {
   const classNames = {
     container: clsx(s.container),
     header: clsx(s.header),
+    langWrapper: clsx(s.langWrapper),
+    navWrapper: clsx(s.navWrapper),
   }
   const dict = await getDictionary(locale)
 
   return (
     <header className={classNames.header}>
       <div className={classNames.container}>
-        <div>
+        <div className={classNames.navWrapper}>
           {Object.entries(dict.header.navigation).map(key => (
             <Link href={`#${key[0]}`} key={key[0]}>
               {key[1]}
             </Link>
           ))}
         </div>
-        <div>
+        <div className={classNames.langWrapper}>
           <Link href={'/en'}>
             <div>EN</div>
           </Link>
