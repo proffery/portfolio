@@ -11,18 +11,19 @@
   justify-content: center;
 
   height: breakpoints.$footer-height-desktop;
-  padding: breakpoints.$footer-padding-desktop;
 
   color: inherit;
 
   @media (width <= breakpoints.$mobile) {
     height: breakpoints.$footer-height-mobile;
-    padding: breakpoints.$footer-padding-mobile;
   }
 }
 
 .container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 100%;
   max-width: breakpoints.$max-content-width;
 }

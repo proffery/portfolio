@@ -42,7 +42,7 @@ export const dimensions = {
     },
     home: {
       desktop: {
-        earth_position: [13, -2, -5],
+        earth_position: [10, -4, -5],
         group_position: [-3, 3, -15],
         group_rotation: [0, 0, 0],
         jupiter_position: [1051, -10, -225],
@@ -51,7 +51,7 @@ export const dimensions = {
         moon_position: [-9, 0, -13],
       },
       mobile: {
-        earth_position: [3, -3, -15],
+        earth_position: [10, -3, -15],
         group_position: [-3, 3, -15],
         group_rotation: [0, 0, 0],
         jupiter_position: [1051, -10, -225],

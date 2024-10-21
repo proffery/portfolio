@@ -1,0 +1,188 @@
+@use '@/styles/breakpoints';
+
+.typography {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+
+  &.h1,
+  &.h2,
+  &.h3,
+  &.h4,
+  &.h5,
+  &.h6 {
+    font-family: var(--font-family-primary), sans-serif;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-m);
+  }
+
+  &.subtitle1,
+  &.subtitle2,
+  &.overline,
+  &.link1,
+  &.link2,
+  &.body1,
+  &.caption,
+  &.body2 {
+    font-family: var(--font-family-primary), sans-serif;
+  }
+}
+
+.body1 {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-xl);
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-xxs);
+  }
+}
+
+.body2 {
+  font-size: var(--font-size-xxs);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-xl);
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-xxxs);
+  }
+}
+
+.caption {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  font-style: italic;
+  line-height: var(--line-height-xl);
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-xxs);
+  }
+}
+
+.h1 {
+  font-size: var(--font-size-xxxxl);
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-xxxl);
+  }
+}
+
+.h2 {
+  font-size: var(--font-size-xxxl);
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-xxl);
+  }
+}
+
+.h3 {
+  font-size: var(--font-size-xxl);
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-xl);
+  }
+}
+
+.h4 {
+  font-size: var(--font-size-xl);
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-l);
+  }
+}
+
+.h5 {
+  font-size: var(--font-size-l);
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-m);
+  }
+}
+
+.h6 {
+  font-size: var(--font-size-m);
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-s);
+  }
+}
+
+.link1 {
+  cursor: pointer;
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-xl);
+  text-decoration: underline;
+
+  transition: color 0.2s;
+
+  &:focus-visible {
+    border-radius: 5px;
+    outline: 2px solid var(--color-info);
+  }
+
+  &:hover {
+    color: var(--color-placeholder);
+  }
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-xxs);
+  }
+}
+
+.link2 {
+  cursor: pointer;
+
+  font-size: var(--font-size-xxs);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-xl);
+  text-decoration: underline;
+
+  transition: color 0.2s;
+
+  &:focus-visible {
+    border-radius: 5px;
+    outline: 2px solid var(--color-info);
+  }
+
+  &:hover {
+    color: var(--color-placeholder);
+  }
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-xxxs);
+  }
+}
+
+.overline {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-xl);
+  text-decoration: underline;
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-xxs);
+  }
+}
+
+.subtitle1 {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-l);
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-xxs);
+  }
+}
+
+.subtitle2 {
+  font-size: var(--font-size-xxs);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-xl);
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-xxxs);
+  }
+}

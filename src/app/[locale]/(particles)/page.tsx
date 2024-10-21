@@ -1,20 +1,21 @@
 import { Locale, getDictionary } from '@/app/[locale]/dictionaries'
-import Page from '@/components/page/page'
+import HomePage from '@/components/pages/home-page/home-page'
+import { Hero } from '@/components/pages/home-page/sections/hero/hero'
 import Section from '@/components/section/section'
 
 type Props = {
   params: { locale: Locale }
 }
 
-export default async function HomePage({ params: { locale } }: Props) {
+export default async function Home({ params: { locale } }: Props) {
   const dict = await getDictionary(locale)
 
   return (
-    <Page dict={dict}>
-      <Section id={'home'}>{dict.main.home.title}</Section>
-      <Section id={'about'}>{dict.main.about.title}</Section>
-      <Section id={'projects'}>{dict.main.projects.title}</Section>
-      <Section id={'contacts'}>{dict.main.contacts.title}</Section>
-    </Page>
+    <HomePage>
+      <Hero dict={dict} id={'home'} />
+      <Section id={'about'}>{dict.homePage.about.title}</Section>
+      <Section id={'projects'}>{dict.homePage.projects.title}</Section>
+      <Section id={'contacts'}>{dict.homePage.contacts.title}</Section>
+    </HomePage>
   )
 }

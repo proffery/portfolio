@@ -30,7 +30,9 @@ export const Sun = forwardRef<ElementRef<'group'>, Props>((props: Props, ref) =>
 
   useFrame(() => {
     if (group.current) {
+      group.current.rotation.x += 0.001
       group.current.rotation.y += 0.001
+      group.current.rotation.z += 0.002
     }
   })
 

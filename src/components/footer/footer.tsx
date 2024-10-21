@@ -1,6 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react'
 
 import { Locale, getDictionary } from '@/app/[locale]/dictionaries'
+import { credentials } from '@/common/constants/credentials'
 import clsx from 'clsx'
 
 import s from './footer.module.scss'
@@ -20,8 +21,11 @@ export const Footer = async ({ className, locale }: Props) => {
   return (
     <footer className={classNames.footer}>
       <div className={classNames.container}>
-        <p>&copy; {date.getFullYear()}</p>
-        <p>{dict.footer.allRights}</p>
+        <p>
+          <a href={`mailto:${credentials.email}`}>{dict.footer.codedBy}</a>
+          &nbsp;&copy;&nbsp;
+        </p>
+        <p>{date.getFullYear()}</p>
       </div>
     </footer>
   )
