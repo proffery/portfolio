@@ -2,8 +2,10 @@
 import { ReactNode, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
-import withRedux from '@/common/hocs/with-redux'
+import { useActions } from '@/common/use-actions'
+import withRedux from '@/common/with-redux'
 import { selectSectionInView } from '@/services/app/app.selectors'
+import { appActions } from '@/services/app/app.slice'
 import clsx from 'clsx'
 import Link, { LinkProps } from 'next/link'
 import { useParams } from 'next/navigation'

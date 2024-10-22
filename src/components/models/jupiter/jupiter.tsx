@@ -28,7 +28,7 @@ export const Jupiter = forwardRef<ElementRef<'group'>, Props>((props: Props, ref
 
   useFrame(() => {
     if (group.current) {
-      group.current.rotation.y += 0.01
+      group.current.rotation.y += 0.006
     }
   })
 

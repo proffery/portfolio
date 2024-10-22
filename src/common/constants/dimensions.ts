@@ -23,12 +23,12 @@ export const dimensions = {
     contacts: {
       desktop: {
         earth_position: [-9, -1, -16],
-        group_position: [215, 4, -1100],
+        group_position: [216, 10, -1100],
         group_rotation: [0, -2, 0],
         jupiter_position: [1051, -10, -225],
         light_position: [-390, 14, -759],
         mars_position: [22, -10, 617],
-        moon_position: [-18, -8, -10],
+        moon_position: [-9, 0, -13],
       },
       mobile: {
         earth_position: [-9, -1, -16],

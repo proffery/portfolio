@@ -1,7 +1,7 @@
-import Section from '@/components/layouts/section/section'
-import HomePage from '@/components/pages/home-page/home-page'
-import { ContactsSection } from '@/components/pages/home-page/sections/contacts/contacts-section'
-import { HeroSection } from '@/components/pages/home-page/sections/hero/hero-section'
+import HomePage from '@/components/home-page/home-page'
+import ContactsSection from '@/components/home-page/sections/contacts/contacts-section'
+import HeroSection from '@/components/home-page/sections/hero/hero-section'
+import Section from '@/components/section/section'
 import { Locale, getDictionary } from '@/i18n/dictionaries'
 
 type Props = {

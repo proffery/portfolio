@@ -2,8 +2,8 @@
 import { ReactNode } from 'react'
 import { ToastContainer } from 'react-toastify'
 
-import { options } from '@/common/constants/particles'
-import { useParticles } from '@/common/hooks/use-particles'
+import { options } from '@/common/particles'
+import { useParticles } from '@/common/use-particles'
 import Particles from '@tsparticles/react'
 
 import 'react-toastify/dist/ReactToastify.css'

@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
-import { constants } from '@/common/constants/constants'
-import { useIsWidthLess } from '@/common/hooks/use-is-width-less'
-import { Button } from '@/components/ui/button/button'
-import { Input } from '@/components/ui/input/input'
-import { Dictionaries } from '@/dictionaries/en'
+import { constants } from '@/common/constants'
+import { useIsWidthLess } from '@/common/use-is-width-less'
+import { Button } from '@/components/button/button'
+import { Input } from '@/components/input/input'
+import { Dictionaries } from '@/i18n/dictionaries/en'
 import { zodResolver } from '@hookform/resolvers/zod'
 import clsx from 'clsx'
 import { z } from 'zod'
@@ -64,7 +64,9 @@ export const ContactForm = ({ dict, disabled, errorMessage, onSubmit }: Props) =
 
   const handleFormSubmit = handleSubmit(data => {
     onSubmit(data)
-    reset()
+    setTimeout(() => {
+      !errorMessage && reset()
+    }, 2000)
   })
 
   return (

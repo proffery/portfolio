@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef } from 'react'
 
-import { credentials } from '@/common/constants/credentials'
+import { credentials } from '@/common/credentials'
 import { Locale, getDictionary } from '@/i18n/dictionaries'
 import clsx from 'clsx'
 

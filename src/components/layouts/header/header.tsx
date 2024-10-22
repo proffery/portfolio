@@ -1,5 +1,5 @@
-import ActiveLink from '@/components/ui/active-link/active-link'
-import { LangSelect } from '@/components/ui/lang-select/lang-select'
+import ActiveLink from '@/components/active-link/active-link'
+import { LangSelect } from '@/components/lang-select/lang-select'
 import { Locale, getDictionary } from '@/i18n/dictionaries'
 import clsx from 'clsx'
 

@@ -1,21 +1,23 @@
 'use client'
-import { ComponentPropsWithoutRef } from 'react'
+import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 import { useSelector } from 'react-redux'
 
-import withRedux from '@/common/hocs/with-redux'
-import { useTickText } from '@/common/hooks/use-tick-text'
-import Section from '@/components/layouts/section/section'
-import { Typography } from '@/components/ui/typography/typography'
-import { Dictionaries } from '@/dictionaries/en'
+import { useTickText } from '@/common/use-tick-text'
+import withRedux from '@/common/with-redux'
+import Section from '@/components/section/section'
+import { Typography } from '@/components/typography/typography'
+import { Dictionaries } from '@/i18n/dictionaries/en'
 import { selectSectionInView } from '@/services/app/app.selectors'
 import clsx from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import s from './hero.module.scss'
 
-type Props = { dict: Dictionaries } & ComponentPropsWithoutRef<typeof Section>
+type Props = {
+  dict: Dictionaries
+} & ComponentPropsWithoutRef<typeof Section>
 
-export const HeroSection = withRedux(({ dict, id }: Props) => {
+const HeroSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id, ...rest }, ref) => {
   const classNames = {
     headerContainer: clsx(s.headerContainer),
     section: clsx(s.section),
@@ -31,18 +33,18 @@ export const HeroSection = withRedux(({ dict, id }: Props) => {
   const isSectionVisible = sectionInView === id
 
   return (
-    <Section className={classNames.section} id={id}>
+    <Section id={id} {...rest} className={classNames.section} ref={ref}>
       <AnimatePresence>
         {isSectionVisible && (
           <motion.div
             animate={{ opacity: 1, x: 0 }}
             className={classNames.headerContainer}
-            exit={{ opacity: 0, x: 5000 }}
-            initial={{ opacity: 0, x: 5000 }}
+            exit={{ opacity: 0, x: '100vw' }}
+            initial={{ opacity: 0, x: '100vw' }}
             key={id}
             transition={{
               delay: 1,
-              duration: 5,
+              duration: 4,
               ease: 'easeInOut',
               type: 'tween',
             }}
@@ -56,3 +58,5 @@ export const HeroSection = withRedux(({ dict, id }: Props) => {
     </Section>
   )
 })
+
+export default withRedux(HeroSection)

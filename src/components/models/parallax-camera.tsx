@@ -1,7 +1,7 @@
 import { ElementRef, ReactNode, forwardRef } from 'react'
 
-import { constants } from '@/common/constants/constants'
-import { useIsWidthLess } from '@/common/hooks/use-is-width-less'
+import { constants } from '@/common/constants'
+import { useIsWidthLess } from '@/common/use-is-width-less'
 import { useFrame } from '@react-three/fiber'
 import { easing } from 'maath'
 

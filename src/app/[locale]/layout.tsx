@@ -1,8 +1,8 @@
 import { ReactNode } from 'react'
 
-import { credentials } from '@/common/constants/credentials'
-import { Footer } from '@/components/layouts/footer/footer'
-import { Header } from '@/components/layouts/header/header'
+import { credentials } from '@/common/credentials'
+import { Footer } from '@/components/footer/footer'
+import { Header } from '@/components/header/header'
 import { Locale } from '@/i18n/dictionaries'
 import { locales } from '@/i18n/locales'
 import { roboto, russoOne } from '@/styles/fonts'

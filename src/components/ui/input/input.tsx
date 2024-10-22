@@ -8,8 +8,8 @@ import {
   useId,
 } from 'react'
 
-import { FieldError } from '@/components/ui/field-error/field-error'
-import { Label } from '@/components/ui/label/label'
+import { FieldError } from '@/components/field-error/field-error'
+import { Label } from '@/components/label/label'
 import clsx from 'clsx'
 
 import s from './input.module.scss'

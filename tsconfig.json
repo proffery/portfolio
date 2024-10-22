@@ -22,7 +22,21 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@/dictionaries/*": ["./public/dictionaries/*"]
+      "@/i18n/*": ["./src/i18n/*"],
+      "@/components/*": [
+        "./src/components/forms/*",
+        "./src/components/layouts/*",
+        "./src/components/models/*",
+        "./src/components/pages/*",
+        "./src/components/ui/*"
+      ],
+      "@/common/*": [
+        "./src/common/constants/*",
+        "./src/common/hocs/*",
+        "./src/common/hooks/*",
+        "./src/common/utils/*"
+      ],
+      "@/assets/*": ["./src/assets/icons/components/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
