@@ -19,6 +19,25 @@ const en = {
       title: "About"
     },
     contacts: {
+      contactForm:{
+        email: {
+          errorMessage: "Email is not valid!",
+          placeholder: "Email"
+        },
+        error: 'Error!',
+        message: {
+          errorMessage: "The message is empty!",
+          placeholder: "Type your message..."
+        },
+        name: {
+          errorMessage: "Name must be at least 3 characters long!",
+          placeholder: "Name"
+        },
+        pending: "Sending...",
+        submitButton: "Submit",
+        success: "Message sent!",
+        title: "Contact me"
+      },
       title: "Contacts"
     },
     hero: {

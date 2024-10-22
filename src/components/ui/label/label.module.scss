@@ -1,0 +1,16 @@
+@use '@/styles/breakpoints';
+
+.label {
+  margin-left: 4px;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xl);
+  color: var(--color-light);
+
+  @media (width <= breakpoints.$mobile) {
+    font-size: var(--font-size-xxs);
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+}

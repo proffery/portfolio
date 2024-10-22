@@ -1,0 +1,12 @@
+@use '@/styles/breakpoints';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+
+  @media (width <= breakpoints.$mobile) {
+    gap: 16px;
+  }
+}

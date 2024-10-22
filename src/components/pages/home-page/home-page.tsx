@@ -6,13 +6,13 @@ import { constants } from '@/common/constants/constants'
 import { dimensions } from '@/common/constants/dimensions'
 import withRedux from '@/common/hocs/with-redux'
 import { useIsWidthLess } from '@/common/hooks/use-is-width-less'
-import { CanvasLoader } from '@/components/canvas-loader/canvas-loader'
-import { Main } from '@/components/main/main'
+import { Main } from '@/components/layouts/main/main'
 import { Earth } from '@/components/models/earth/earth'
 import { Jupiter } from '@/components/models/jupiter/jupiter'
 import { Mars } from '@/components/models/mars/mars'
 import { Moon } from '@/components/models/moon/moon'
 import { Sun } from '@/components/models/sun/sun'
+import { CanvasLoader } from '@/components/ui/canvas-loader/canvas-loader'
 import { selectSectionInView } from '@/services/app/app.selectors'
 import { useGSAP } from '@gsap/react'
 import { PerspectiveCamera, Scroll, ScrollControls } from '@react-three/drei'
@@ -55,7 +55,7 @@ function HomePage({ children }: Props) {
 
     if (groupRef.current) {
       timeline.to(groupRef.current.rotation, {
-        duration: 4,
+        duration: 5,
         ease: 'expo.inOut',
         x: isMobile ? mDimensions.group_rotation[0] : dDimensions.group_rotation[0],
         y: isMobile ? mDimensions.group_rotation[1] : dDimensions.group_rotation[1],

@@ -18,10 +18,16 @@ $border-radius: 3px;
   line-height: var(--line-height-xl);
   color: inherit;
 
-  background: transparent;
+  background: var(--backgroud-gradient);
+  backdrop-filter: blur(10px);
   border-radius: $border-radius;
 
+  &:hover {
+    background: var(--hover-gradient);
+  }
+
   &:focus-visible {
+    background: var(--hover-gradient);
     border-radius: $border-radius;
     outline: 2px solid var(--color-info);
   }

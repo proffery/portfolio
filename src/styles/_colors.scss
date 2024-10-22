@@ -22,4 +22,14 @@
 
   // gradients:
   --header-gradient: linear-gradient(to right, #fff, #000);
+  --backgroud-gradient: linear-gradient(
+    147deg,
+    rgb(57 57 57 / 50%) -6.76%,
+    rgb(0 66 255 / 5%) 102.96%
+  );
+  --hover-gradient: linear-gradient(
+    147deg,
+    rgb(255 255 255 / 50%) -6.76%,
+    rgb(0 71 255 / 5%) 102.96%
+  );
 }
