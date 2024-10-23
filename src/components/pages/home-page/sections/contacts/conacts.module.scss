@@ -1,15 +1,4 @@
-@use '@/styles/breakpoints';
-
-.section {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-  justify-content: center;
-
-  @media (width <= breakpoints.$mobile) {
-    gap: 16px;
-  }
-}
+@use '@/styles/breakpoints' as *;
 
 .columnsContainer {
   display: flex;
@@ -20,7 +9,7 @@
 
   color: inherit;
 
-  @media (width <= breakpoints.$mobile) {
+  @media (width <= $mobile) {
     flex-flow: column-reverse wrap;
     gap: 16px;
   }
@@ -38,7 +27,7 @@
   background: var(--header-gradient);
   background-clip: text;
 
-  @media (width <= breakpoints.$mobile) {
+  @media (width <= $mobile) {
     gap: 16px;
     width: 100%;
   }
@@ -60,4 +49,9 @@
 
   width: fit-content;
   height: fit-content;
+
+  &:focus-visible {
+    border-radius: 5px;
+    outline: 2px solid var(--color-info);
+  }
 }

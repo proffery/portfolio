@@ -1,0 +1,56 @@
+@use '@/styles/breakpoints' as *;
+
+.section {
+  flex-direction: row;
+
+  @media (width <= $mobile) {
+    flex-direction: column;
+  }
+}
+
+.imageContainer,
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+
+  height: fit-content;
+}
+
+.imageContainer {
+  align-items: center;
+  width: 40%;
+  min-width: 290px;
+  max-width: 400px;
+
+  @media (width <= $mobile) {
+    width: 100%;
+  }
+}
+
+.descriptionContainer {
+  gap: 32px;
+  width: 50%;
+
+  @media (width <= $mobile) {
+    gap: 16px;
+    width: 100%;
+  }
+}
+
+.resumeLink {
+  align-self: center;
+}
+
+.avatar {
+  display: flex;
+
+  width: 100%;
+  height: auto;
+
+  background: var(--backgroud-gradient);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-light);
+  border-radius: 5px;
+}

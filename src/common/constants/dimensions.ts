@@ -3,10 +3,10 @@ export const dimensions = {
     about: {
       desktop: {
         earth_position: [28, -2, -9],
-        group_position: [-3, 3, -50],
+        group_position: [-4, 2, -50],
         group_rotation: [0, -2, 0],
         jupiter_position: [1051, -10, -225],
-        light_position: [-150, 14, 0],
+        light_position: [-350, 50, 0],
         mars_position: [22, -10, 617],
         moon_position: [-9, 0, -13],
       },

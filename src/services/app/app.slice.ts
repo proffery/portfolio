@@ -23,14 +23,10 @@ const slice = createSlice({
   },
   initialState: {
     isLoading: false as boolean,
-    scrollPosition: { x: 0, y: 0 } as ScrollPosition,
     sectionInView: 'home' as Sections,
   },
   name: 'app',
   reducers: {
-    setScrollPosition: (state, action: PayloadAction<ScrollPosition>) => {
-      state.scrollPosition = action.payload
-    },
     setSectionInView: (state, action: PayloadAction<Sections>) => {
       state.sectionInView = action.payload
     },
@@ -41,4 +37,3 @@ export const appActions = slice.actions
 export const appReducer = slice
 
 export type Sections = 'about' | 'contacts' | 'home' | 'projects'
-export type ScrollPosition = { x: number; y: number }

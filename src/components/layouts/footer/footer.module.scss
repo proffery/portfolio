@@ -1,4 +1,4 @@
-@use '@/styles/breakpoints';
+@use '@/styles/breakpoints' as *;
 
 .footer {
   position: relative;
@@ -10,12 +10,14 @@
   justify-content: center;
 
   width: 100%;
-  height: breakpoints.$footer-height-desktop;
+  height: $footer-height-desktop;
 
   color: inherit;
 
-  @media (width <= breakpoints.$mobile) {
-    height: breakpoints.$footer-height-mobile;
+  background-color: transparent;
+
+  @media (width <= $mobile) {
+    height: $footer-height-mobile;
   }
 }
 
@@ -25,5 +27,6 @@
   justify-content: center;
 
   width: 100%;
-  max-width: breakpoints.$max-content-width;
+  max-width: $max-content-width;
+  height: 100%;
 }

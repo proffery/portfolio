@@ -16,17 +16,13 @@ const Section = ({ children, className, id, ...rest }: Props) => {
   const classNames = {
     section: clsx(s.section, className),
   }
-  const { setScrollPosition, setSectionInView } = useActions(appActions)
+  const { setSectionInView } = useActions(appActions)
 
   const sectionRef = useRef<ElementRef<'section'>>(null)
   const isSectionVisible = useIsVisible(sectionRef)
 
   useEffect(() => {
     setSectionInView(id as Sections)
-    setScrollPosition({
-      x: sectionRef?.current?.scrollWidth ?? 0,
-      y: sectionRef?.current?.scrollHeight ?? 0,
-    })
   }, [isSectionVisible])
 
   return (

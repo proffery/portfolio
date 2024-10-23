@@ -1,4 +1,5 @@
 import HomePage from '@/components/home-page/home-page'
+import AboutSection from '@/components/home-page/sections/about/about-section'
 import ContactsSection from '@/components/home-page/sections/contacts/contacts-section'
 import HeroSection from '@/components/home-page/sections/hero/hero-section'
 import Section from '@/components/section/section'
@@ -14,7 +15,7 @@ export default async function Home({ params: { locale } }: Props) {
   return (
     <HomePage>
       <HeroSection dict={dict} id={'home'} />
-      <Section id={'about'}>{dict.homePage.about.title}</Section>
+      <AboutSection dict={dict} id={'about'} locale={locale} />
       <Section id={'projects'}>{dict.homePage.projects.title}</Section>
       <ContactsSection dict={dict} id={'contacts'} />
     </HomePage>

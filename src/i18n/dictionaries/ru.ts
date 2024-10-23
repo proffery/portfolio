@@ -2,7 +2,7 @@ import { credentials } from '@/common/credentials'
 
 import { Dictionaries } from './en'
 
-const { firstNameRu, lastNameRu } = credentials
+const { countryRu, expYears, firstNameRu, lastNameRu, myAges } = credentials
 
 const ru: Dictionaries = {
   footer: {
@@ -18,6 +18,11 @@ const ru: Dictionaries = {
   },
   homePage: {
     about: {
+      description: `Я веб-разработчик из ${countryRu}, мне ${myAges} лет. У меня более ${expYears} лет опыта в этой сфере. 
+      Я создаю визуально привлекательные и удобные для пользователей веб-сайты. От адаптивного дизайна до интерактивных
+       функций, мне нравится превращать идеи в цифровую реальность. Я увлечен постоянно развивающейся IT-индустрией и 
+       стараюсь быть в курсе последних технологий и трендов.`,
+      resumeLink: 'Загрузить резюме',
       title: 'Обо мне',
     },
     contacts: {

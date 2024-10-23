@@ -7,8 +7,11 @@ module.exports = {
     "plugin:import/warnings",
     "plugin:import/typescript",
   ],
+  ignorePatterns: [
+      "/src/assets/images/"
+  ],
   rules: {
     "import/no-unresolved": "off",
     "react/no-unknown-property": "off"
-  }
+  },
 }

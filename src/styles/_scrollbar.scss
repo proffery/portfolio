@@ -2,22 +2,17 @@
 
 /* size */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 3px;
+  height: 3px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   cursor: grab;
-  background-color: #000;
-
-  &:hover {
-    background-color: var(--color-placeholder);
-  }
+  background-color: var(--color-info);
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  opacity: 0.1;
-  background-color: var(--color-placeholder);
+  background-color: transparent;
 }

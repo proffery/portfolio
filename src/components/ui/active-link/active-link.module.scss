@@ -11,6 +11,7 @@
 
   font-size: var(--font-size-xs);
   line-height: var(--line-height-xl);
+  white-space: nowrap;
 
   &:focus-visible {
     border-radius: 2px;

@@ -15,7 +15,7 @@ import { Moon } from '@/components/moon/moon'
 import { Sun } from '@/components/sun/sun'
 import { selectSectionInView } from '@/services/app/app.selectors'
 import { useGSAP } from '@gsap/react'
-import { PerspectiveCamera, Scroll, ScrollControls } from '@react-three/drei'
+import { Html, PerspectiveCamera, Scroll, ScrollControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx'
 import { gsap } from 'gsap'
@@ -96,7 +96,7 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
     return (
       <Canvas className={classNames.canvas} {...rest} ref={ref}>
         <Suspense fallback={<CanvasLoader />}>
-          <ScrollControls damping={0.2} distance={1} pages={4} prepend>
+          <ScrollControls pages={3} prepend>
             <PerspectiveCamera makeDefault>
               <group ref={groupRef}>
                 <ambientLight intensity={0.5} />
@@ -126,9 +126,9 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
                 />
               </group>
             </PerspectiveCamera>
-            <Scroll html>
+            <Html>
               <Main ref={scrollRef}>{children}</Main>
-            </Scroll>
+            </Html>
           </ScrollControls>
         </Suspense>
       </Canvas>

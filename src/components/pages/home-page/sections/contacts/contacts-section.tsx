@@ -2,9 +2,9 @@
 import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 import { useSelector } from 'react-redux'
 
-import { GithubIcon } from '@/assets/github-icon'
-import { LinkedInIcon } from '@/assets/linkedin-icon'
-import { TelegramIcon } from '@/assets/telegram-icon'
+import { GithubIcon } from '@/assets/components/github-icon'
+import { LinkedInIcon } from '@/assets/components/linkedin-icon'
+import { TelegramIcon } from '@/assets/components/telegram-icon'
 import { credentials } from '@/common/credentials'
 import { getErrorMessage } from '@/common/get-error-message'
 import withRedux from '@/common/with-redux'
@@ -27,7 +27,6 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, 
     columnRight: clsx(s.columnRight),
     columnsContainer: clsx(s.columnsContainer),
     iconLink: clsx(s.iconLink),
-    section: clsx(s.section),
   }
 
   const {
@@ -51,7 +50,7 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, 
   const errorMessage = getErrorMessage(error)
 
   return (
-    <Section className={classNames.section} id={id} ref={ref}>
+    <Section id={id} ref={ref}>
       {isSectionVisible && (
         <div className={classNames.columnsContainer}>
           <div className={classNames.columnLeft}></div>
@@ -61,7 +60,7 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, 
             exit={{ opacity: 0, x: '100vw' }}
             initial={{ opacity: 0, x: '100vw' }}
             transition={{
-              duration: 3,
+              duration: 2,
               ease: 'easeInOut',
             }}
           >
