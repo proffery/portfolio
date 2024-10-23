@@ -8,6 +8,7 @@ export const authService = baseApi.injectEndpoints({
       query: body => ({
         body,
         method: 'POST',
+        responseHandler: response => response.text(),
         url: process.env.NEXT_PUBLIC_EMAILJS_URL ?? '/',
       }),
     }),

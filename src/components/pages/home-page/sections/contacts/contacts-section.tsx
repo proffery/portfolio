@@ -1,12 +1,13 @@
 'use client'
 import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 import { useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
 
 import { GithubIcon } from '@/assets/components/github-icon'
 import { LinkedInIcon } from '@/assets/components/linkedin-icon'
 import { TelegramIcon } from '@/assets/components/telegram-icon'
 import { credentials } from '@/common/credentials'
-import { getErrorMessage } from '@/common/get-error-message'
+import { getEmailErrorMessage } from '@/common/get-email-error-message'
 import withRedux from '@/common/with-redux'
 import { ContactForm, ContactFormValues } from '@/components/contact-form/contact-form'
 import Section from '@/components/section/section'
@@ -36,18 +37,25 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, 
   const sectionInView = useSelector(selectSectionInView)
   const isSectionVisible = sectionInView === id
 
-  const [sendEmail, { error, isLoading }] = useSendEmailMutation()
+  const [sendEmail, { error, isLoading, isSuccess }] = useSendEmailMutation()
 
-  const onFormSubmit = (data: ContactFormValues) => {
-    sendEmail({
-      service_id: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-      template_id: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-      template_params: data,
-      user_id: process.env.NEXT_PUBLIC_EMAILJS_KEY,
-    }).unwrap()
+  const onFormSubmit = async (data: ContactFormValues) => {
+    await toast.promise(
+      sendEmail({
+        service_id: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        template_id: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        template_params: data,
+        user_id: process.env.NEXT_PUBLIC_EMAILJS_KEY,
+      }).unwrap(),
+      {
+        error: contacts.contactForm.error,
+        pending: contacts.contactForm.pending,
+        success: contacts.contactForm.success,
+      }
+    )
   }
 
-  const errorMessage = getErrorMessage(error)
+  const errorMessage = getEmailErrorMessage(error)
 
   return (
     <Section id={id} ref={ref}>
@@ -68,7 +76,8 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, 
             <ContactForm
               dict={dict}
               disabled={isLoading}
-              errorMessage={errorMessage}
+              errorMessage={JSON.stringify(errorMessage)}
+              isSubmitSuccess={isSuccess}
               onSubmit={onFormSubmit}
             />
             <div className={classNames.columnLeft}>

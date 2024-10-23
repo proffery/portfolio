@@ -6,7 +6,7 @@ export const dimensions = {
         group_position: [-4, 2, -50],
         group_rotation: [0, -2, 0],
         jupiter_position: [1051, -10, -225],
-        light_position: [-350, 50, 0],
+        light_position: [-350, 45, 0],
         mars_position: [22, -10, 617],
         moon_position: [-9, 0, -13],
       },

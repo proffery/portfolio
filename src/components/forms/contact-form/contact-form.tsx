@@ -22,10 +22,17 @@ type Props = {
   dict: Dictionaries
   disabled?: boolean
   errorMessage?: string
+  isSubmitSuccess?: boolean
   onSubmit: (data: ContactFormValues) => void
 }
 
-export const ContactForm = ({ dict, disabled, errorMessage, onSubmit }: Props) => {
+export const ContactForm = ({
+  dict,
+  disabled,
+  errorMessage,
+  isSubmitSuccess = false,
+  onSubmit,
+}: Props) => {
   const classNames = {
     form: clsx(s.form),
   }
@@ -64,10 +71,11 @@ export const ContactForm = ({ dict, disabled, errorMessage, onSubmit }: Props) =
 
   const handleFormSubmit = handleSubmit(data => {
     onSubmit(data)
-    setTimeout(() => {
-      !errorMessage && reset()
-    }, 2000)
   })
+
+  useEffect(() => {
+    isSubmitSuccess && reset()
+  }, [isSubmitSuccess])
 
   return (
     <form className={classNames.form} onSubmit={handleFormSubmit}>

@@ -27,7 +27,6 @@ export default function ParticlesLayout({ children }: Props) {
         pauseOnFocusLoss
         pauseOnHover
         position={'bottom-center'}
-        style={{ zIndex: 999 }}
         theme={'dark'}
       />
     </>
