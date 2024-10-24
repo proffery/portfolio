@@ -1,4 +1,4 @@
-import { defaultLocale, locales } from '@/i18n/locales'
+import { defaultLocale, locales } from '@/common/locales'
 import { match } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 import { NextRequest, NextResponse } from 'next/server'

@@ -1,6 +1,6 @@
 import { credentials } from '@/common/credentials'
 
-const { countryRu, expYears, firstNameEn, lastNameEn, myAges } = credentials
+const { countryEn, expYears, firstNameEn, lastNameEn, myAges } = credentials
 
 const en = {
   footer: {
@@ -16,7 +16,7 @@ const en = {
   },
   homePage: {
     about: {
-      description: `I'm a ${myAges}-year-old web developer based in ${countryRu}, with over a ${expYears} years of 
+      description: `I'm a ${myAges}-year-old web developer based in ${countryEn}, with over a ${expYears} years of 
       experience in creating visually appealing and user-friendly websites. My passion lies in transforming ideas into 
       digital realities, focusing on responsive designs and interactive features. I stay up-to-date with the latest 
       technologies and trends in the ever-evolving IT industry, dedicated to delivering high-quality web solutions.`,

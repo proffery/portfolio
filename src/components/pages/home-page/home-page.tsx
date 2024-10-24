@@ -15,7 +15,7 @@ import { Moon } from '@/components/moon/moon'
 import { Sun } from '@/components/sun/sun'
 import { selectSectionInView } from '@/services/app/app.selectors'
 import { useGSAP } from '@gsap/react'
-import { Html, PerspectiveCamera, Scroll, ScrollControls } from '@react-three/drei'
+import { Html, PerspectiveCamera, ScrollControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx'
 import { gsap } from 'gsap'
@@ -38,6 +38,9 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
 
     const isMobile = useIsWidthLess(constants.mobileWidth)
     const { desktop: dDimensions, mobile: mDimensions } = dimensions.homePageScenes[sectionInView]
+    const sunInitialPosition = isMobile
+      ? dimensions.homePageScenes.home.mobile.light_position
+      : dimensions.homePageScenes.home.desktop.light_position
 
     useGSAP(() => {
       const timeline = gsap.timeline()
@@ -51,7 +54,7 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
           z: isMobile ? mDimensions.group_position[2] : dDimensions.group_position[2],
         })
       }
-    }, [sectionInView])
+    }, [sectionInView, isMobile])
     useGSAP(() => {
       const timeline = gsap.timeline()
 
@@ -64,7 +67,7 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
           z: isMobile ? mDimensions.group_rotation[2] : dDimensions.group_rotation[2],
         })
       }
-    }, [sectionInView])
+    }, [sectionInView, isMobile])
 
     useGSAP(() => {
       const timeline = gsap.timeline()
@@ -78,7 +81,7 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
           z: isMobile ? mDimensions.light_position[2] : dDimensions.light_position[2],
         })
       }
-    }, [sectionInView])
+    }, [sectionInView, isMobile])
     useGSAP(() => {
       const timeline = gsap.timeline()
 
@@ -91,7 +94,7 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
           z: isMobile ? mDimensions.earth_position[2] : dDimensions.earth_position[2],
         })
       }
-    }, [sectionInView])
+    }, [sectionInView, isMobile])
 
     return (
       <Canvas className={classNames.canvas} {...rest} ref={ref}>
@@ -100,7 +103,10 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
             <PerspectiveCamera makeDefault>
               <group ref={groupRef}>
                 <ambientLight intensity={0.5} />
-                <Sun ref={sunRef} />
+                <Sun
+                  position={[sunInitialPosition[0], sunInitialPosition[1], sunInitialPosition[2]]}
+                  ref={sunRef}
+                />
 
                 <Earth ref={earthRef} />
                 <Moon

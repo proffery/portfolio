@@ -1,4 +1,4 @@
-import { defaultLocale, locales } from '@/i18n/locales'
+import { defaultLocale, locales } from '@/common/locales'
 
 import 'server-only'
 

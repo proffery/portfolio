@@ -1,8 +1,8 @@
 'use client'
 import { ChangeEvent, ComponentPropsWithoutRef } from 'react'
 
-import { Locale } from '@/i18n/dictionaries'
-import { locales } from '@/i18n/locales'
+import { locales } from '@/common/locales'
+import { Locale } from '@/i18n/get-dictionaries'
 import clsx from 'clsx'
 import { useRouter } from 'next/navigation'
 

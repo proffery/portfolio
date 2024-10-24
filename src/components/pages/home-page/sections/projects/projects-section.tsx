@@ -3,7 +3,6 @@ import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 import { useSelector } from 'react-redux'
 
 import withRedux from '@/common/with-redux'
-import { Button } from '@/components/button/button'
 import Section from '@/components/section/section'
 import { Typography } from '@/components/typography/typography'
 import { Dictionaries } from '@/i18n/dictionaries/en'
@@ -11,27 +10,25 @@ import { Locale } from '@/i18n/get-dictionaries'
 import { selectSectionInView } from '@/services/app/app.selectors'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
-import s from './about.module.scss'
+import s from './projects.module.scss'
 
 type Props = {
   dict: Dictionaries
   locale: Locale
 } & ComponentPropsWithoutRef<typeof Section>
 
-const AboutSection = forwardRef<ElementRef<'section'>, Props>(
+const ProjectsSection = forwardRef<ElementRef<'section'>, Props>(
   ({ dict, id, locale, ...rest }, ref) => {
     const classNames = {
-      avatar: clsx(s.avatar),
-      buttonContainer: clsx(s.buttonContainer),
       descriptionContainer: clsx(s.descriptionContainer),
-      imageContainer: clsx(s.imageContainer),
+      modelContainer: clsx(s.modelContainer),
+      rowContainer: clsx(s.rowContainer),
       section: clsx(s.section),
     }
 
     const {
-      homePage: { about },
+      homePage: { projects },
     } = dict
 
     const sectionInView = useSelector(selectSectionInView)
@@ -43,49 +40,41 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(
           <>
             <motion.div
               animate={{ opacity: 1, x: 0 }}
-              className={classNames.imageContainer}
               exit={{ opacity: 0, x: '-100vw' }}
               initial={{ opacity: 0, x: '-100vw' }}
               transition={{
-                duration: 1,
+                duration: 0.5,
                 ease: 'easeInOut',
               }}
             >
-              <Image
-                alt={'Dmitry photo'}
-                className={classNames.avatar}
-                height={640}
-                src={'/images/avatar.webp'}
-                width={640}
-              />
+              <Typography.H3 as={'h2'}>{projects.title}</Typography.H3>
             </motion.div>
-            <motion.div
-              animate={{ opacity: 1, x: 0 }}
-              className={classNames.descriptionContainer}
-              exit={{ opacity: 0, x: '100vw' }}
-              initial={{ opacity: 0, x: '100vw' }}
-              transition={{
-                duration: 1,
-                ease: 'easeInOut',
-              }}
-            >
-              <Typography.H3 as={'h2'}>{about.title}</Typography.H3>
-              <Typography.Body1>{about.description}</Typography.Body1>
+            <div className={classNames.rowContainer}>
               <motion.div
                 animate={{ opacity: 1, x: 0 }}
-                className={classNames.buttonContainer}
-                exit={{ opacity: 0, x: '100vw' }}
-                initial={{ opacity: 0, x: '100vw' }}
+                className={classNames.descriptionContainer}
+                exit={{ opacity: 0, x: '-100vw' }}
+                initial={{ opacity: 0, x: '-100vw' }}
                 transition={{
                   duration: 1.5,
                   ease: 'easeInOut',
                 }}
               >
-                <Button as={'a'} download href={`/cv/cv-${locale}.pdf`}>
-                  {about.resumeLink}
-                </Button>
+                <Typography.Body1>{projects.title}</Typography.Body1>
               </motion.div>
-            </motion.div>
+              <motion.div
+                animate={{ opacity: 1, x: 0 }}
+                className={classNames.modelContainer}
+                exit={{ opacity: 0, x: '100vw' }}
+                initial={{ opacity: 0, x: '100vw' }}
+                transition={{
+                  duration: 2.5,
+                  ease: 'easeInOut',
+                }}
+              >
+                Model
+              </motion.div>
+            </div>
           </>
         )}
       </Section>
@@ -93,4 +82,4 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(
   }
 )
 
-export default withRedux(AboutSection)
+export default withRedux(ProjectsSection)

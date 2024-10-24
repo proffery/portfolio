@@ -37,7 +37,7 @@
   padding: breakpoints.$header-padding-desktop;
 
   @media (width <= breakpoints.$mobile) {
-    gap: 32px;
+    gap: 16px;
     padding: breakpoints.$header-padding-mobile;
   }
 }
@@ -48,7 +48,7 @@
   align-items: center;
 
   @media (width <= breakpoints.$mobile) {
-    gap: 16px;
+    gap: 8px;
   }
 }
 

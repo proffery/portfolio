@@ -68,11 +68,21 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, 
             exit={{ opacity: 0, x: '100vw' }}
             initial={{ opacity: 0, x: '100vw' }}
             transition={{
-              duration: 2,
+              duration: 1,
               ease: 'easeInOut',
             }}
           >
-            <Typography.H3>{contacts.contactForm.title}</Typography.H3>
+            <motion.div
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: '-100vw' }}
+              initial={{ opacity: 0, x: '-100vw' }}
+              transition={{
+                duration: 1.1,
+                ease: 'easeInOut',
+              }}
+            >
+              <Typography.H3>{contacts.contactForm.title}</Typography.H3>
+            </motion.div>
             <ContactForm
               dict={dict}
               disabled={isLoading}

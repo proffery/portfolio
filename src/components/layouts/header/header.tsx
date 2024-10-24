@@ -1,6 +1,6 @@
 import ActiveLink from '@/components/active-link/active-link'
 import { LangSelect } from '@/components/lang-select/lang-select'
-import { Locale, getDictionary } from '@/i18n/dictionaries'
+import { Locale, getDictionary } from '@/i18n/get-dictionaries'
 import clsx from 'clsx'
 
 import s from './header.module.scss'

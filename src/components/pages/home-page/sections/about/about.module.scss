@@ -26,6 +26,7 @@
 
   @media (width <= $mobile) {
     width: 100%;
+    max-width: 640px;
   }
 }
 
@@ -39,7 +40,7 @@
   }
 }
 
-.resumeLink {
+.buttonContainer {
   align-self: center;
 }
 
@@ -47,10 +48,15 @@
   display: flex;
 
   width: 100%;
+  max-width: 400px;
   height: auto;
 
   background: var(--backgroud-gradient);
   backdrop-filter: blur(10px);
   border: 1px solid var(--color-light);
   border-radius: 5px;
+
+  @media (width <= $mobile) {
+    max-width: 640px;
+  }
 }

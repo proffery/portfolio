@@ -1,10 +1,10 @@
 import { ReactNode } from 'react'
 
 import { credentials } from '@/common/credentials'
+import { locales } from '@/common/locales'
 import { Footer } from '@/components/footer/footer'
 import { Header } from '@/components/header/header'
-import { Locale } from '@/i18n/dictionaries'
-import { locales } from '@/i18n/locales'
+import { Locale } from '@/i18n/get-dictionaries'
 import { roboto, russoOne } from '@/styles/fonts'
 import clsx from 'clsx'
 import { Metadata } from 'next'
