@@ -45,33 +45,6 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
     useGSAP(() => {
       const timeline = gsap.timeline()
 
-      if (groupRef.current) {
-        timeline.to(groupRef.current.position, {
-          duration: 4,
-          ease: 'sine.inOut',
-          x: isMobile ? mDimensions.group_position[0] : dDimensions.group_position[0],
-          y: isMobile ? mDimensions.group_position[1] : dDimensions.group_position[1],
-          z: isMobile ? mDimensions.group_position[2] : dDimensions.group_position[2],
-        })
-      }
-    }, [sectionInView, isMobile])
-    useGSAP(() => {
-      const timeline = gsap.timeline()
-
-      if (groupRef.current) {
-        timeline.to(groupRef.current.rotation, {
-          duration: 4,
-          ease: 'expo.inOut',
-          x: isMobile ? mDimensions.group_rotation[0] : dDimensions.group_rotation[0],
-          y: isMobile ? mDimensions.group_rotation[1] : dDimensions.group_rotation[1],
-          z: isMobile ? mDimensions.group_rotation[2] : dDimensions.group_rotation[2],
-        })
-      }
-    }, [sectionInView, isMobile])
-
-    useGSAP(() => {
-      const timeline = gsap.timeline()
-
       if (sunRef.current) {
         timeline.to(sunRef.current.position, {
           duration: 5,
@@ -92,6 +65,33 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
           x: isMobile ? mDimensions.earth_position[0] : dDimensions.earth_position[0],
           y: isMobile ? mDimensions.earth_position[1] : dDimensions.earth_position[1],
           z: isMobile ? mDimensions.earth_position[2] : dDimensions.earth_position[2],
+        })
+      }
+    }, [sectionInView, isMobile])
+
+    useGSAP(() => {
+      const timeline = gsap.timeline()
+
+      if (groupRef.current) {
+        timeline.to(groupRef.current.position, {
+          duration: 3,
+          ease: 'sine.inOut',
+          x: isMobile ? mDimensions.group_position[0] : dDimensions.group_position[0],
+          y: isMobile ? mDimensions.group_position[1] : dDimensions.group_position[1],
+          z: isMobile ? mDimensions.group_position[2] : dDimensions.group_position[2],
+        })
+      }
+    }, [sectionInView, isMobile])
+    useGSAP(() => {
+      const timeline = gsap.timeline()
+
+      if (groupRef.current) {
+        timeline.to(groupRef.current.rotation, {
+          duration: 4,
+          ease: 'expo.inOut',
+          x: isMobile ? mDimensions.group_rotation[0] : dDimensions.group_rotation[0],
+          y: isMobile ? mDimensions.group_rotation[1] : dDimensions.group_rotation[1],
+          z: isMobile ? mDimensions.group_rotation[2] : dDimensions.group_rotation[2],
         })
       }
     }, [sectionInView, isMobile])

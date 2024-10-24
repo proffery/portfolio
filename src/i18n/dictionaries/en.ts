@@ -15,15 +15,16 @@ const en = {
     },
   },
   homePage: {
-    about: {
+    aboutSection: {
       description: `I'm a ${myAges}-year-old web developer based in ${countryEn}, with over a ${expYears} years of 
       experience in creating visually appealing and user-friendly websites. My passion lies in transforming ideas into 
       digital realities, focusing on responsive designs and interactive features. I stay up-to-date with the latest 
       technologies and trends in the ever-evolving IT industry, dedicated to delivering high-quality web solutions.`,
-      resumeLink: 'Download resume',
+      resumeButton: 'Download resume',
+      resumeLink: '/cv/cv-en.pdf',
       title: 'About me',
     },
-    contacts: {
+    contactsSection: {
       contactForm: {
         email: {
           errorMessage: 'Email is not valid!',
@@ -45,12 +46,22 @@ const en = {
       },
       title: 'Contacts',
     },
-    hero: {
+    heroSection: {
       title1: `${firstNameEn} ${lastNameEn},`,
       title2: 'Hi, I`m',
       title3: ['web - developer', 'JS/TS - developer', 'React - developer', 'Next.js - developer'],
     },
-    projects: {
+    projectsSection: {
+      projects: [
+        {
+          codeLink: 'https://github.com/proffery/my-blog',
+          coverLink: 'link3',
+          demoLink: 'https://streetphoto.world/',
+          description: 'Project 1 description',
+          technologiesLinks: ['link1', 'link2', 'link3'],
+          title: 'Blog Platform',
+        },
+      ],
       title: 'Projects',
     },
   },

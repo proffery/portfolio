@@ -40,7 +40,7 @@ export const ContactForm = ({
   const isMobile = useIsWidthLess(constants.mobileWidth)
   const {
     homePage: {
-      contacts: { contactForm },
+      contactsSection: { contactForm },
     },
   } = dict
 

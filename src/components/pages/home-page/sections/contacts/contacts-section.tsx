@@ -31,7 +31,7 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, 
   }
 
   const {
-    homePage: { contacts },
+    homePage: { contactsSection },
   } = dict
 
   const sectionInView = useSelector(selectSectionInView)
@@ -48,9 +48,9 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, 
         user_id: process.env.NEXT_PUBLIC_EMAILJS_KEY,
       }).unwrap(),
       {
-        error: contacts.contactForm.error,
-        pending: contacts.contactForm.pending,
-        success: contacts.contactForm.success,
+        error: contactsSection.contactForm.error,
+        pending: contactsSection.contactForm.pending,
+        success: contactsSection.contactForm.success,
       }
     )
   }
@@ -81,7 +81,7 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, 
                 ease: 'easeInOut',
               }}
             >
-              <Typography.H3>{contacts.contactForm.title}</Typography.H3>
+              <Typography.H3>{contactsSection.contactForm.title}</Typography.H3>
             </motion.div>
             <ContactForm
               dict={dict}

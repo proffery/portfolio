@@ -63,7 +63,7 @@ export const dimensions = {
     projects: {
       desktop: {
         earth_position: [33, -2, -9],
-        group_position: [-2, 2, -655],
+        group_position: [-40, 2, -660],
         group_rotation: [0, 0, 0],
         jupiter_position: [1051, -10, -225],
         light_position: [-390, 14, -759],

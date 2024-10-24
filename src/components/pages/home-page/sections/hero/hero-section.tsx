@@ -23,10 +23,10 @@ const HeroSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id, ...res
   }
 
   const {
-    homePage: { hero },
+    homePage: { heroSection },
   } = dict
 
-  const tickText = useTickText(hero.title3)
+  const tickText = useTickText(heroSection.title3)
 
   const sectionInView = useSelector(selectSectionInView)
   const isSectionVisible = sectionInView === id
@@ -47,8 +47,8 @@ const HeroSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id, ...res
             type: 'tween',
           }}
         >
-          <Typography.H3 as={'h2'}>{hero.title2}</Typography.H3>
-          <Typography.H1>{hero.title1}</Typography.H1>
+          <Typography.H3 as={'h2'}>{heroSection.title2}</Typography.H3>
+          <Typography.H1>{heroSection.title1}</Typography.H1>
           <Typography.H2>{tickText}&nbsp;</Typography.H2>
         </motion.div>
       )}

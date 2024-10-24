@@ -28,7 +28,7 @@ const ProjectsSection = forwardRef<ElementRef<'section'>, Props>(
     }
 
     const {
-      homePage: { projects },
+      homePage: { projectsSection },
     } = dict
 
     const sectionInView = useSelector(selectSectionInView)
@@ -43,11 +43,11 @@ const ProjectsSection = forwardRef<ElementRef<'section'>, Props>(
               exit={{ opacity: 0, x: '-100vw' }}
               initial={{ opacity: 0, x: '-100vw' }}
               transition={{
-                duration: 0.5,
+                duration: 1,
                 ease: 'easeInOut',
               }}
             >
-              <Typography.H3 as={'h2'}>{projects.title}</Typography.H3>
+              <Typography.H3 as={'h2'}>{projectsSection.title}</Typography.H3>
             </motion.div>
             <div className={classNames.rowContainer}>
               <motion.div
@@ -56,11 +56,11 @@ const ProjectsSection = forwardRef<ElementRef<'section'>, Props>(
                 exit={{ opacity: 0, x: '-100vw' }}
                 initial={{ opacity: 0, x: '-100vw' }}
                 transition={{
-                  duration: 1.5,
+                  duration: 2,
                   ease: 'easeInOut',
                 }}
               >
-                <Typography.Body1>{projects.title}</Typography.Body1>
+                <Typography.Body1>{projectsSection.title}</Typography.Body1>
               </motion.div>
               <motion.div
                 animate={{ opacity: 1, x: 0 }}
@@ -68,7 +68,7 @@ const ProjectsSection = forwardRef<ElementRef<'section'>, Props>(
                 exit={{ opacity: 0, x: '100vw' }}
                 initial={{ opacity: 0, x: '100vw' }}
                 transition={{
-                  duration: 2.5,
+                  duration: 2,
                   ease: 'easeInOut',
                 }}
               >

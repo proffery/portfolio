@@ -17,15 +17,16 @@ const ru: Dictionaries = {
     },
   },
   homePage: {
-    about: {
+    aboutSection: {
       description: `Я веб-разработчик из ${countryRu}, мне ${myAges} лет. У меня более ${expYears} лет опыта в этой сфере. 
       Я создаю визуально привлекательные и удобные для пользователей веб-сайты. От адаптивного дизайна до интерактивных
        функций, мне нравится превращать идеи в цифровую реальность. Я увлечен постоянно развивающейся IT-индустрией и 
        стараюсь быть в курсе последних технологий и трендов.`,
-      resumeLink: 'Загрузить резюме',
+      resumeButton: 'Загрузить резюме',
+      resumeLink: '/cv/cv-ru.pdf',
       title: 'Обо мне',
     },
-    contacts: {
+    contactsSection: {
       contactForm: {
         email: {
           errorMessage: 'Почта указана не верно!',
@@ -47,12 +48,22 @@ const ru: Dictionaries = {
       },
       title: 'Контакты',
     },
-    hero: {
+    heroSection: {
       title1: `${firstNameRu} ${lastNameRu},`,
       title2: 'Привет, я -',
       title3: ['Веб разработчик', 'JS/TS разработчик', 'React разработчик', 'Next.js разработчик'],
     },
-    projects: {
+    projectsSection: {
+      projects: [
+        {
+          codeLink: 'https://github.com/proffery/my-blog',
+          coverLink: 'link3',
+          demoLink: 'https://streetphoto.world/',
+          description: 'Project 1 description',
+          technologiesLinks: ['link1', 'link2', 'link3'],
+          title: 'Блог-платформа',
+        },
+      ],
       title: 'Проекты',
     },
   },

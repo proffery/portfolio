@@ -31,7 +31,7 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(
     }
 
     const {
-      homePage: { about },
+      homePage: { aboutSection },
     } = dict
 
     const sectionInView = useSelector(selectSectionInView)
@@ -69,8 +69,8 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(
                 ease: 'easeInOut',
               }}
             >
-              <Typography.H3 as={'h2'}>{about.title}</Typography.H3>
-              <Typography.Body1>{about.description}</Typography.Body1>
+              <Typography.H3 as={'h2'}>{aboutSection.title}</Typography.H3>
+              <Typography.Body1>{aboutSection.description}</Typography.Body1>
               <motion.div
                 animate={{ opacity: 1, x: 0 }}
                 className={classNames.buttonContainer}
@@ -81,8 +81,8 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(
                   ease: 'easeInOut',
                 }}
               >
-                <Button as={'a'} download href={`/cv/cv-${locale}.pdf`}>
-                  {about.resumeLink}
+                <Button as={'a'} download href={aboutSection.resumeLink}>
+                  {aboutSection.resumeButton}
                 </Button>
               </motion.div>
             </motion.div>

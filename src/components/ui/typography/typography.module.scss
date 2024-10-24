@@ -27,6 +27,11 @@
   &.body2 {
     font-family: var(--font-family-primary), sans-serif;
   }
+
+  &.body1,
+  &.body2 {
+    font-family: var(--font-family-second), sans-serif;
+  }
 }
 
 .body1 {
