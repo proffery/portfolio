@@ -1,0 +1,29 @@
+@use '@/styles/breakpoints' as *;
+
+.canvas {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  @media (width <= $mobile) {
+    height: fit-content;
+  }
+}
+
+.modelContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  aspect-ratio: 4 / 3;
+  width: 624px;
+  height: auto;
+
+  border-radius: 5px;
+
+  @media (width <= $mobile) {
+    width: 100%;
+    min-width: 290px;
+  }
+}

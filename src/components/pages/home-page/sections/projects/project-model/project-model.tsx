@@ -1,0 +1,58 @@
+import { ElementRef, Suspense, useRef } from 'react'
+
+import { Project } from '@/common/projects'
+import { CanvasLoader } from '@/components/canvas-loader/canvas-loader'
+import { Monitor } from '@/components/monitor/monitor'
+import { ParallaxCamera } from '@/components/parallax-camera'
+import { useGSAP } from '@gsap/react'
+import { Canvas } from '@react-three/fiber'
+import clsx from 'clsx'
+import { motion } from 'framer-motion'
+import { gsap } from 'gsap'
+
+import s from './project-model.module.scss'
+
+type Props = {
+  project: Project
+}
+
+export const ProjectModel = ({ project }: Props) => {
+  const classNames = {
+    canvas: clsx(s.canvas),
+    modelContainer: clsx(s.modelContainer),
+  }
+
+  const modelRef = useRef<ElementRef<typeof Monitor>>(null)
+
+  useGSAP(() => {
+    if (modelRef.current) {
+      gsap.from(modelRef.current.rotation, {
+        duration: 1,
+        ease: 'power3',
+        y: Math.PI / 2,
+      })
+    }
+  }, [project])
+
+  return (
+    <motion.div
+      animate={{ opacity: 1, x: 0 }}
+      className={classNames.modelContainer}
+      exit={{ opacity: 0, x: '100vw' }}
+      initial={{ opacity: 0, x: '100vw' }}
+      transition={{
+        duration: 1.5,
+        ease: 'easeInOut',
+      }}
+    >
+      <Canvas className={classNames.canvas}>
+        <ParallaxCamera />
+        <ambientLight intensity={1} />
+        <directionalLight intensity={3} position={[-22, -12, 5]} />
+        <Suspense fallback={<CanvasLoader />}>
+          <Monitor coverUrl={project.coverUrl} position={[-2, -12, 0]} ref={modelRef} scale={200} />
+        </Suspense>
+      </Canvas>
+    </motion.div>
+  )
+}

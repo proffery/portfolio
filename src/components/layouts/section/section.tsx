@@ -26,6 +26,7 @@ const Section = ({ children, className, id, ...rest }: Props) => {
 
   useEffect(() => {
     setSectionInView(id as Sections)
+
     sectionInView !== id && sectionRef?.current?.scrollIntoView({ behavior: 'smooth' })
   }, [isSectionVisible, id])
 

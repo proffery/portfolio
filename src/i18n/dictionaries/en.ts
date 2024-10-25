@@ -1,4 +1,5 @@
 import { credentials } from '@/common/credentials'
+import { projectsEn } from '@/common/projects'
 
 const { countryEn, expYears, firstNameEn, lastNameEn, myAges } = credentials
 
@@ -52,16 +53,10 @@ const en = {
       title3: ['web - developer', 'JS/TS - developer', 'React - developer', 'Next.js - developer'],
     },
     projectsSection: {
-      projects: [
-        {
-          codeLink: 'https://github.com/proffery/my-blog',
-          coverLink: 'link3',
-          demoLink: 'https://streetphoto.world/',
-          description: 'Project 1 description',
-          technologiesLinks: ['link1', 'link2', 'link3'],
-          title: 'Blog Platform',
-        },
-      ],
+      codeLink: 'Code',
+      demoLink: 'Check live site',
+      projects: projectsEn,
+      techSpriteUrl: '/images/technologies-sprite.svg',
       title: 'Projects',
     },
   },

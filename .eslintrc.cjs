@@ -12,6 +12,7 @@ module.exports = {
   ],
   rules: {
     "import/no-unresolved": "off",
-    "react/no-unknown-property": "off"
+    'max-lines': 1,
+    "react/no-unknown-property": "off",
   },
 }

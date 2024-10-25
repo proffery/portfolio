@@ -1,4 +1,5 @@
 import { credentials } from '@/common/credentials'
+import { projectsRu } from '@/common/projects'
 
 import { Dictionaries } from './en'
 
@@ -54,16 +55,10 @@ const ru: Dictionaries = {
       title3: ['Веб разработчик', 'JS/TS разработчик', 'React разработчик', 'Next.js разработчик'],
     },
     projectsSection: {
-      projects: [
-        {
-          codeLink: 'https://github.com/proffery/my-blog',
-          coverLink: 'link3',
-          demoLink: 'https://streetphoto.world/',
-          description: 'Project 1 description',
-          technologiesLinks: ['link1', 'link2', 'link3'],
-          title: 'Блог-платформа',
-        },
-      ],
+      codeLink: 'Смотреть код',
+      demoLink: 'Демо',
+      projects: projectsRu,
+      techSpriteUrl: '/images/technologies-sprite.svg',
       title: 'Проекты',
     },
   },

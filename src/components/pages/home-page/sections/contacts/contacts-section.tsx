@@ -74,10 +74,10 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, 
           >
             <motion.div
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: '-100vw' }}
-              initial={{ opacity: 0, x: '-100vw' }}
+              exit={{ opacity: 0, x: '100vw' }}
+              initial={{ opacity: 0, x: '100vw' }}
               transition={{
-                duration: 1.1,
+                duration: 1.5,
                 ease: 'easeInOut',
               }}
             >
