@@ -27,6 +27,7 @@
   text-align: center;
 
   @media (width <= $mobile) {
+    min-width: 100%;
     text-align: left;
   }
 }
