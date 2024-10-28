@@ -3,14 +3,8 @@
 .headerContainer {
   display: flex;
   flex-direction: column;
-
   width: 70%;
-
-  color: transparent;
   white-space: collapse;
-
-  background: var(--header-gradient);
-  background-clip: text;
 
   @media (width <= breakpoints.$mobile) {
     width: 100%;

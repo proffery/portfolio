@@ -26,8 +26,14 @@ const Section = ({ children, className, id, ...rest }: Props) => {
 
   useEffect(() => {
     setSectionInView(id as Sections)
+    const timout = setTimeout(() => {
+      sectionInView !== id &&
+        sectionRef?.current?.scrollIntoView({ behavior: 'auto', block: 'start' })
+    }, 150)
 
-    sectionInView !== id && sectionRef?.current?.scrollIntoView({ behavior: 'smooth' })
+    return () => {
+      clearTimeout(timout)
+    }
   }, [isSectionVisible, id])
 
   return (

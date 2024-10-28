@@ -39,55 +39,69 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(
 
     return (
       <Section id={id} {...rest} className={classNames.section} ref={ref}>
-        {isSectionVisible && (
-          <>
-            <motion.div
-              animate={{ opacity: 1, x: 0 }}
-              className={classNames.imageContainer}
-              exit={{ opacity: 0, x: '-100vw' }}
-              initial={{ opacity: 0, x: '-100vw' }}
-              transition={{
-                duration: 1,
-                ease: 'easeInOut',
-              }}
-            >
-              <Image
-                alt={'Dmitry photo'}
-                className={classNames.avatar}
-                height={640}
-                src={'/images/avatar.webp'}
-                width={640}
-              />
-            </motion.div>
-            <motion.div
-              animate={{ opacity: 1, x: 0 }}
-              className={classNames.descriptionContainer}
-              exit={{ opacity: 0, x: '100vw' }}
-              initial={{ opacity: 0, x: '100vw' }}
-              transition={{
-                duration: 1,
-                ease: 'easeInOut',
-              }}
-            >
-              <Typography.H3 as={'h2'}>{aboutSection.title}</Typography.H3>
-              <Typography.Body1>{aboutSection.description}</Typography.Body1>
+        <>
+          <motion.div
+            animate={isSectionVisible ? 'visible' : 'hidden'}
+            className={classNames.imageContainer}
+            initial={'hidden'}
+            transition={{
+              duration: 1,
+              ease: 'easeInOut',
+            }}
+            variants={{
+              hidden: { opacity: 0, x: '-100vw' },
+              visible: { opacity: 1, x: 0 },
+            }}
+            viewport={{ once: true }}
+            whileInView={'visible'}
+          >
+            <Image
+              alt={'Dmitry photo'}
+              className={classNames.avatar}
+              height={640}
+              src={'/images/avatar.webp'}
+              width={640}
+            />
+          </motion.div>
+          <motion.div
+            animate={isSectionVisible ? 'visible' : 'hidden'}
+            className={classNames.descriptionContainer}
+            initial={'hidden'}
+            transition={{
+              duration: 1,
+              ease: 'easeInOut',
+            }}
+            variants={{
+              hidden: { opacity: 0, x: '100vw' },
+              visible: { opacity: 1, x: 0 },
+            }}
+            viewport={{ once: true }}
+            whileInView={'visible'}
+          >
+            <Typography.H3 as={'h2'}>{aboutSection.title}</Typography.H3>
+            <Typography.Body1>{aboutSection.description}</Typography.Body1>
+            {isSectionVisible && (
               <motion.div
-                animate={{ opacity: 1, x: 0 }}
+                animate={isSectionVisible ? 'visible' : 'hidden'}
                 className={classNames.buttonContainer}
-                exit={{ opacity: 0, x: '100vw' }}
-                initial={{ opacity: 0, x: '100vw' }}
+                initial={'hidden'}
                 transition={{
-                  duration: 1.5,
+                  delay: 1,
+                  duration: 2.5,
                   ease: 'easeInOut',
+                }}
+                variants={{
+                  hidden: { opacity: 0, x: '100vw' },
+                  visible: { opacity: 1, x: 0 },
                 }}
               >
                 <Button as={'a'} download href={aboutSection.resumeLink}>
                   {aboutSection.resumeButton}
                 </Button>
               </motion.div>
-            </motion.div>
-          </>
-        )}
+            )}
+          </motion.div>
+        </>
       </Section>
     )
   }

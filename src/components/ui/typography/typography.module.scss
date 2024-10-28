@@ -15,6 +15,10 @@
     font-family: var(--font-family-primary), sans-serif;
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-m);
+    color: transparent;
+
+    background: var(--header-gradient);
+    background-clip: text;
   }
 
   &.subtitle1,

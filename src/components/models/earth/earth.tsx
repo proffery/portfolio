@@ -33,9 +33,7 @@ export const Earth = forwardRef<ElementRef<'group'>, Props>((props: Props, ref) 
       earthRef.current.rotation.z += 0.003
     }
     if (cloudsRef.current) {
-      cloudsRef.current.rotation.x += 0.0005
-      cloudsRef.current.rotation.y += 0.0005
-      cloudsRef.current.rotation.z += -0.0001
+      cloudsRef.current.rotation.y += -0.0005
     }
   })
 
@@ -56,7 +54,7 @@ export const Earth = forwardRef<ElementRef<'group'>, Props>((props: Props, ref) 
         name={'EarthClouds'}
         ref={cloudsRef}
         rotation={[-Math.PI / 2, -Math.PI / 9, 0]}
-        scale={1.02}
+        scale={1.04}
       >
         <mesh
           castShadow

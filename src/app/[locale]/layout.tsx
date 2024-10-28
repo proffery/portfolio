@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: `Portfolio | ${credentials.firstNameEn} | ${credentials.lastNameEn}`,
+  title: `Portfolio | ${credentials.firstNameEn} ${credentials.lastNameEn}`,
 }
 
 type Props = {

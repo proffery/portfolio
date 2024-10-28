@@ -25,6 +25,7 @@ export type ProjectDirection = 'next' | 'previous'
 const ProjectsSection = forwardRef<ElementRef<'section'>, Props>(
   ({ dict, id, locale, ...rest }, ref) => {
     const classNames = {
+      headedContainer: clsx(s.header),
       projectContainer: clsx(s.projectContainer),
       section: clsx(s.section),
     }
@@ -58,29 +59,34 @@ const ProjectsSection = forwardRef<ElementRef<'section'>, Props>(
 
     return (
       <Section id={id} {...rest} className={classNames.section} ref={ref}>
-        {isSectionVisible && (
-          <>
-            <motion.div
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: '-100vw' }}
-              initial={{ opacity: 0, x: '-100vw' }}
-              transition={{
-                duration: 1,
-                ease: 'easeInOut',
-              }}
-            >
-              <Typography.H3 as={'h2'}>{title}</Typography.H3>
-            </motion.div>
-            <div className={classNames.projectContainer}>
-              <ProjectDescription
-                dict={dict}
-                onProjectChange={onProjectChange}
-                project={projects[projectIndex]}
-              />
-              <ProjectModel project={projects[projectIndex]} />
-            </div>
-          </>
-        )}
+        <>
+          <motion.div
+            animate={isSectionVisible ? 'visible' : 'hidden'}
+            className={classNames.headedContainer}
+            initial={'hidden'}
+            transition={{
+              duration: 1,
+              ease: 'easeInOut',
+            }}
+            variants={{
+              hidden: { opacity: 0, x: '-100vw' },
+              visible: { opacity: 1, x: 0 },
+            }}
+            viewport={{ once: true }}
+            whileInView={'visible'}
+          >
+            <Typography.H3 as={'h2'}>{title}</Typography.H3>
+          </motion.div>
+          <div className={classNames.projectContainer}>
+            <ProjectDescription
+              dict={dict}
+              isSectionVisible={isSectionVisible}
+              onProjectChange={onProjectChange}
+              project={projects[projectIndex]}
+            />
+            <ProjectModel isSectionVisible={isSectionVisible} project={projects[projectIndex]} />
+          </div>
+        </>
       </Section>
     )
   }

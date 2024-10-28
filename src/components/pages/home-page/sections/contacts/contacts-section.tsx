@@ -59,37 +59,48 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, 
 
   return (
     <Section id={id} ref={ref}>
-      {isSectionVisible && (
-        <div className={classNames.columnsContainer}>
-          <div className={classNames.columnLeft}></div>
+      <div className={classNames.columnsContainer}>
+        <div className={classNames.columnLeft}></div>
+        <motion.div
+          animate={isSectionVisible ? 'visible' : 'hidden'}
+          className={classNames.columnRight}
+          initial={'hidden'}
+          transition={{
+            duration: 1,
+            ease: 'easeInOut',
+          }}
+          variants={{
+            hidden: { opacity: 0, x: '100vw' },
+            visible: { opacity: 1, x: 0 },
+          }}
+          viewport={{ once: true }}
+          whileInView={'visible'}
+        >
           <motion.div
-            animate={{ opacity: 1, x: 0 }}
-            className={classNames.columnRight}
-            exit={{ opacity: 0, x: '100vw' }}
-            initial={{ opacity: 0, x: '100vw' }}
+            animate={isSectionVisible ? 'visible' : 'hidden'}
+            initial={'hidden'}
             transition={{
-              duration: 1,
+              delay: 0.5,
+              duration: 1.5,
               ease: 'easeInOut',
             }}
+            variants={{
+              hidden: { opacity: 0, x: '-100vw' },
+              visible: { opacity: 1, x: 0 },
+            }}
+            viewport={{ once: true }}
+            whileInView={'visible'}
           >
-            <motion.div
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: '100vw' }}
-              initial={{ opacity: 0, x: '100vw' }}
-              transition={{
-                duration: 1.5,
-                ease: 'easeInOut',
-              }}
-            >
-              <Typography.H3>{contactsSection.contactForm.title}</Typography.H3>
-            </motion.div>
-            <ContactForm
-              dict={dict}
-              disabled={isLoading}
-              errorMessage={JSON.stringify(errorMessage)}
-              isSubmitSuccess={isSuccess}
-              onSubmit={onFormSubmit}
-            />
+            <Typography.H3>{contactsSection.contactForm.title}</Typography.H3>
+          </motion.div>
+          <ContactForm
+            dict={dict}
+            disabled={isLoading}
+            errorMessage={JSON.stringify(errorMessage)}
+            isSubmitSuccess={isSuccess}
+            onSubmit={onFormSubmit}
+          />
+          {isSectionVisible && (
             <div className={classNames.columnLeft}>
               <motion.a
                 animate={{ opacity: 1, x: 0 }}
@@ -102,7 +113,7 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, 
                 target={'_blank'}
                 transition={{
                   delay: 1.5,
-                  duration: 3,
+                  duration: 1.5,
                   ease: 'easeInOut',
                   type: 'tween',
                 }}
@@ -120,7 +131,7 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, 
                 target={'_blank'}
                 transition={{
                   delay: 1,
-                  duration: 3,
+                  duration: 1.5,
                   ease: 'easeInOut',
                 }}
               >
@@ -137,16 +148,16 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, 
                 target={'_blank'}
                 transition={{
                   delay: 0.5,
-                  duration: 3,
+                  duration: 1.5,
                   ease: 'easeInOut',
                 }}
               >
                 <TelegramIcon height={32} width={32} />
               </motion.a>
             </div>
-          </motion.div>
-        </div>
-      )}
+          )}
+        </motion.div>
+      </div>
     </Section>
   )
 })

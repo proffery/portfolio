@@ -99,7 +99,7 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
     return (
       <Canvas className={classNames.canvas} {...rest} ref={ref}>
         <Suspense fallback={<CanvasLoader />}>
-          <ScrollControls pages={3} prepend>
+          <ScrollControls pages={3}>
             <PerspectiveCamera makeDefault>
               <group ref={groupRef}>
                 <ambientLight intensity={0.5} />

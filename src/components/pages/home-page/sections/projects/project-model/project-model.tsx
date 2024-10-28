@@ -13,10 +13,11 @@ import { gsap } from 'gsap'
 import s from './project-model.module.scss'
 
 type Props = {
+  isSectionVisible: boolean
   project: Project
 }
 
-export const ProjectModel = ({ project }: Props) => {
+export const ProjectModel = ({ isSectionVisible, project }: Props) => {
   const classNames = {
     canvas: clsx(s.canvas),
     modelContainer: clsx(s.modelContainer),
@@ -36,14 +37,19 @@ export const ProjectModel = ({ project }: Props) => {
 
   return (
     <motion.div
-      animate={{ opacity: 1, x: 0 }}
+      animate={isSectionVisible ? 'visible' : 'hidden'}
       className={classNames.modelContainer}
-      exit={{ opacity: 0, x: '100vw' }}
-      initial={{ opacity: 0, x: '100vw' }}
+      initial={'hidden'}
       transition={{
         duration: 1.5,
         ease: 'easeInOut',
       }}
+      variants={{
+        hidden: { opacity: 0, x: '100vw' },
+        visible: { opacity: 1, x: 0 },
+      }}
+      viewport={{ once: true }}
+      whileInView={'visible'}
     >
       <Canvas className={classNames.canvas}>
         <ParallaxCamera />

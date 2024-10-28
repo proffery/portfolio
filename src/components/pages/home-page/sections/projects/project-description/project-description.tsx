@@ -12,11 +12,12 @@ import s from './project-description.module.scss'
 
 type Props = {
   dict: Dictionaries
+  isSectionVisible: boolean
   onProjectChange: (direction: ProjectDirection) => void
   project: Project
 }
 
-export const ProjectDescription = ({ dict, onProjectChange, project }: Props) => {
+export const ProjectDescription = ({ dict, isSectionVisible, onProjectChange, project }: Props) => {
   const classNames = {
     arrowsContainer: clsx(s.arrowsContainer),
     backArrow: clsx(s.backArrow),
@@ -37,14 +38,19 @@ export const ProjectDescription = ({ dict, onProjectChange, project }: Props) =>
 
   return (
     <motion.div
-      animate={{ opacity: 1, x: 0 }}
+      animate={isSectionVisible ? 'visible' : 'hidden'}
       className={classNames.descriptionContainer}
-      exit={{ opacity: 0, x: '-100vw' }}
-      initial={{ opacity: 0, x: '-100vw' }}
+      initial={'hidden'}
       transition={{
         duration: 1.5,
         ease: 'easeInOut',
       }}
+      variants={{
+        hidden: { opacity: 0, x: '-100vw' },
+        visible: { opacity: 1, x: 0 },
+      }}
+      viewport={{ once: true }}
+      whileInView={'visible'}
     >
       <Typography.H4 as={'h3'}>{project.title}</Typography.H4>
       <div>
@@ -65,17 +71,39 @@ export const ProjectDescription = ({ dict, onProjectChange, project }: Props) =>
         )}
       </div>
       <div className={classNames.technologiesContainer}>
-        {project.techIds.map((technology: string) => (
-          <div className={classNames.iconContainer} key={technology}>
+        {project.techIds.map((technology, index) => (
+          <motion.div
+            animate={{ opacity: 1, x: 0 }}
+            className={classNames.iconContainer}
+            exit={{ opacity: 0, x: '100vw' }}
+            initial={{ opacity: 0, x: '100vw' }}
+            key={technology + new Date()}
+            transition={{
+              delay: index / 5,
+              duration: 1,
+              ease: 'easeInOut',
+            }}
+          >
             <SvgSpriteIcon iconId={technology} spriteUrl={projectsSection.techSpriteUrl} />
-          </div>
+          </motion.div>
         ))}
       </div>
       <div className={classNames.arrowsContainer}>
-        <Button onClick={() => handleProjectChange('previous')} variant={'text'}>
+        <Button
+          disabled={project.id === 1}
+          onClick={() => handleProjectChange('previous')}
+          variant={'text'}
+        >
           <Arrow className={classNames.backArrow} height={48} width={48} />
         </Button>
-        <Button onClick={() => handleProjectChange('next')} variant={'text'}>
+        <Typography.Caption>
+          {project.id + '/' + projectsSection.projects.length}
+        </Typography.Caption>
+        <Button
+          disabled={project.id === projectsSection.projects.length}
+          onClick={() => handleProjectChange('next')}
+          variant={'text'}
+        >
           <Arrow height={48} width={48} />
         </Button>
       </div>
