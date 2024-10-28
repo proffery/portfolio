@@ -11,7 +11,7 @@ export const useIsWidthLess = (width: number) => {
     window.addEventListener('resize', handleWindowResize)
 
     return () => window.removeEventListener('resize', handleWindowResize)
-  }, [])
+  }, [width])
 
   return currentWidth < width
 }

@@ -2,9 +2,7 @@
 import { ReactNode } from 'react'
 import { ToastContainer } from 'react-toastify'
 
-import { options } from '@/common/particles'
-import { useParticles } from '@/common/use-particles'
-import Particles from '@tsparticles/react'
+import { BackgroundParticles } from '@/components/background-particles/background-particles'
 
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -12,11 +10,9 @@ type Props = {
   children: ReactNode
 }
 export default function ParticlesLayout({ children }: Props) {
-  const { isParticlesInit } = useParticles()
-
   return (
     <>
-      {isParticlesInit && <Particles id={'tsparticles'} options={options} />}
+      <BackgroundParticles />
       {children}
       <ToastContainer
         autoClose={5000}

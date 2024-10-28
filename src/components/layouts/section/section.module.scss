@@ -8,12 +8,12 @@
   justify-content: center;
 
   width: 100%;
-  min-height: calc(100vh - $header-height-desktop - $footer-height-desktop);
+  min-height: calc(100vh - $header-height-desktop);
 
   color: inherit;
 
   @media (width <= $mobile) {
     gap: 16px;
-    min-height: calc(100vh - $header-height-mobile - $footer-height-mobile);
+    min-height: calc(100vh - $header-height-mobile);
   }
 }

@@ -36,7 +36,6 @@ export default async function RootLayout({ children, params: { locale } }: Props
       <body>
         <Header locale={locale} />
         {children}
-        <Footer locale={locale} />
       </body>
     </html>
   )

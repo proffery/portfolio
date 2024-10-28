@@ -50,7 +50,7 @@ const ru: Dictionaries = {
       title: 'Контакты',
     },
     heroSection: {
-      title1: `${firstNameRu} ${lastNameRu},`,
+      title1: `${firstNameRu} ${lastNameRu}`,
       title2: 'Привет, я -',
       title3: ['Веб разработчик', 'JS/TS разработчик', 'React разработчик', 'Next.js разработчик'],
     },

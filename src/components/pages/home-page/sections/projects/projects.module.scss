@@ -21,13 +21,3 @@
     flex-direction: column;
   }
 }
-
-.header {
-  min-width: 320px;
-  text-align: center;
-
-  @media (width <= $mobile) {
-    min-width: 100%;
-    text-align: left;
-  }
-}

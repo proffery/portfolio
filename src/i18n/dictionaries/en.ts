@@ -48,9 +48,9 @@ const en = {
       title: 'Contacts',
     },
     heroSection: {
-      title1: `${firstNameEn} ${lastNameEn},`,
+      title1: `${firstNameEn} ${lastNameEn}`,
       title2: 'Hi, I`m',
-      title3: ['web - developer', 'JS/TS - developer', 'React - developer', 'Next.js - developer'],
+      title3: ['web-developer', 'JS/TS-developer', 'React-developer', 'Next.js-developer'],
     },
     projectsSection: {
       codeLink: 'Code',

@@ -1,3 +1,4 @@
+import { Footer } from '@/components/footer/footer'
 import HomePage from '@/components/home-page/home-page'
 import AboutSection from '@/components/home-page/sections/about/about-section'
 import ContactsSection from '@/components/home-page/sections/contacts/contacts-section'
@@ -18,6 +19,7 @@ export default async function Home({ params: { locale } }: Props) {
       <AboutSection dict={dict} id={'about'} />
       <ProjectsSection dict={dict} id={'projects'} locale={locale} />
       <ContactsSection dict={dict} id={'contacts'} />
+      <Footer locale={locale} />
     </HomePage>
   )
 }

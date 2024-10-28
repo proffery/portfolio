@@ -2,10 +2,10 @@
 
 .canvas {
   top: $header-height-desktop;
-  height: calc(100vh - $header-height-desktop - $footer-height-desktop) !important;
+  height: calc(100vh - $header-height-desktop) !important;
 
   @media (width <= $mobile) {
     top: $header-height-mobile;
-    height: calc(100vh - $header-height-mobile - $footer-height-mobile) !important;
+    height: calc(100vh - $header-height-mobile) !important;
   }
 }

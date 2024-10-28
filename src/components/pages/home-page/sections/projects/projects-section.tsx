@@ -25,7 +25,6 @@ export type ProjectDirection = 'next' | 'previous'
 const ProjectsSection = forwardRef<ElementRef<'section'>, Props>(
   ({ dict, id, locale, ...rest }, ref) => {
     const classNames = {
-      headedContainer: clsx(s.header),
       projectContainer: clsx(s.projectContainer),
       section: clsx(s.section),
     }
@@ -62,7 +61,6 @@ const ProjectsSection = forwardRef<ElementRef<'section'>, Props>(
         <>
           <motion.div
             animate={isSectionVisible ? 'visible' : 'hidden'}
-            className={classNames.headedContainer}
             initial={'hidden'}
             transition={{
               duration: 1,
