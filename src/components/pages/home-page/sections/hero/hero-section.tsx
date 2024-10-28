@@ -47,9 +47,9 @@ const HeroSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id, ...res
             type: 'tween',
           }}
         >
-          <Typography.H3 as={'h2'}>{heroSection.title2}</Typography.H3>
-          <Typography.H1>{heroSection.title1}</Typography.H1>
-          <Typography.H2>{tickText}&nbsp;</Typography.H2>
+          <Typography.H1 as={'h2'}>{heroSection.title2}</Typography.H1>
+          <Typography.H2 as={'h1'}>{heroSection.title1}</Typography.H2>
+          <Typography.H5 as={'h3'}>{tickText}&nbsp;</Typography.H5>
         </motion.div>
       )}
     </Section>

@@ -3,7 +3,7 @@
 .headerContainer {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 65%;
   white-space: collapse;
 
   @media (width <= breakpoints.$mobile) {

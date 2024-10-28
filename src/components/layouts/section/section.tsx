@@ -3,8 +3,10 @@
 import { ComponentPropsWithoutRef, ElementRef, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
+import { constants } from '@/common/constants'
 import { useActions } from '@/common/use-actions'
 import useIsVisible from '@/common/use-is-visible'
+import { useIsWidthLess } from '@/common/use-is-width-less'
 import withRedux from '@/common/with-redux'
 import { selectSectionInView } from '@/services/app/app.selectors'
 import { Sections, appActions } from '@/services/app/app.slice'
@@ -20,19 +22,22 @@ const Section = ({ children, className, id, ...rest }: Props) => {
   }
   const { setSectionInView } = useActions(appActions)
   const sectionInView = useSelector(selectSectionInView)
+  const isMobile = useIsWidthLess(constants.mobileWidth)
 
   const sectionRef = useRef<ElementRef<'section'>>(null)
   const isSectionVisible = useIsVisible(sectionRef)
 
   useEffect(() => {
     setSectionInView(id as Sections)
-    const timout = setTimeout(() => {
-      sectionInView !== id &&
-        sectionRef?.current?.scrollIntoView({ behavior: 'auto', block: 'start' })
-    }, 150)
+    if (!isMobile) {
+      const timout = setTimeout(() => {
+        sectionInView !== id &&
+          sectionRef?.current?.scrollIntoView({ behavior: 'auto', block: 'start' })
+      }, 150)
 
-    return () => {
-      clearTimeout(timout)
+      return () => {
+        clearTimeout(timout)
+      }
     }
   }, [isSectionVisible, id])
 
