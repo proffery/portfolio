@@ -22,22 +22,19 @@ const Section = ({ children, className, id, ...rest }: Props) => {
   }
   const { setSectionInView } = useActions(appActions)
   const sectionInView = useSelector(selectSectionInView)
-  const isMobile = useIsWidthLess(constants.mobileWidth)
 
   const sectionRef = useRef<ElementRef<'section'>>(null)
   const isSectionVisible = useIsVisible(sectionRef)
 
   useEffect(() => {
     setSectionInView(id as Sections)
-    if (!isMobile) {
-      const timout = setTimeout(() => {
-        sectionInView !== id &&
-          sectionRef?.current?.scrollIntoView({ behavior: 'auto', block: 'start' })
-      }, 150)
+    const timout = setTimeout(() => {
+      sectionInView !== id &&
+        sectionRef?.current?.scrollIntoView({ behavior: 'auto', block: 'start' })
+    }, 150)
 
-      return () => {
-        clearTimeout(timout)
-      }
+    return () => {
+      clearTimeout(timout)
     }
   }, [isSectionVisible, id])
 

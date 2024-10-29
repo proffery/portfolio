@@ -2,9 +2,9 @@ import { ReactNode } from 'react'
 
 import { credentials } from '@/common/credentials'
 import { locales } from '@/common/locales'
-import { Footer } from '@/components/footer/footer'
-import { Header } from '@/components/header/header'
-import { Locale } from '@/i18n/get-dictionaries'
+import { NavbarDesktop } from '@/components/navbar/desktop/navbar-desktop'
+import { NavbarMobile } from '@/components/navbar/mobile/navbar-mobile'
+import { Locale, getDictionary } from '@/i18n/get-dictionaries'
 import { roboto, russoOne } from '@/styles/fonts'
 import clsx from 'clsx'
 import { Metadata } from 'next'
@@ -30,12 +30,14 @@ export default async function RootLayout({ children, params: { locale } }: Props
   const classNames = {
     body: clsx(roboto.variable, russoOne.variable),
   }
+  const dict = await getDictionary(locale)
 
   return (
     <html className={classNames.body} lang={locale}>
       <body>
-        <Header locale={locale} />
+        <NavbarDesktop dict={dict} locale={locale} />
         {children}
+        <NavbarMobile locale={locale} />
       </body>
     </html>
   )

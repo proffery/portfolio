@@ -22,7 +22,7 @@ const ActiveLink = ({ children, href, ...rest }: Props) => {
 
   useEffect(() => {
     '#' + sectionInView === href ? setIsActive(true) : setIsActive(false)
-  }, [params, sectionInView])
+  }, [params, sectionInView, href])
 
   const classNames = { link: clsx(s.link, isActive && s.activeLink) }
 

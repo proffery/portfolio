@@ -1,5 +1,13 @@
 'use client'
-import { ComponentPropsWithoutRef, ElementRef, Suspense, forwardRef, useRef } from 'react'
+import {
+  ComponentPropsWithoutRef,
+  ElementRef,
+  Suspense,
+  forwardRef,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+} from 'react'
 import { useSelector } from 'react-redux'
 
 import { constants } from '@/common/constants'
@@ -9,13 +17,12 @@ import withRedux from '@/common/with-redux'
 import { CanvasLoader } from '@/components/canvas-loader/canvas-loader'
 import { Earth } from '@/components/earth/earth'
 import { Jupiter } from '@/components/jupiter/jupiter'
-import { Main } from '@/components/main/main'
 import { Mars } from '@/components/mars/mars'
 import { Moon } from '@/components/moon/moon'
 import { Sun } from '@/components/sun/sun'
 import { selectSectionInView } from '@/services/app/app.selectors'
 import { useGSAP } from '@gsap/react'
-import { Html, PerspectiveCamera, ScrollControls } from '@react-three/drei'
+import { Html, PerspectiveCamera, Scroll, ScrollControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx'
 import { gsap } from 'gsap'
@@ -28,13 +35,14 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
   ({ children, className, ...rest }: Props, ref) => {
     const classNames = {
       canvas: clsx(s.canvas, className),
+      main: clsx(s.main),
+      mainContainer: clsx(s.mainContainer),
     }
     const sectionInView = useSelector(selectSectionInView)
 
     const groupRef = useRef<ElementRef<'group'>>(null)
     const earthRef = useRef<ElementRef<'group'>>(null)
     const sunRef = useRef<ElementRef<'group'>>(null)
-    const scrollRef = useRef<ElementRef<'main'>>(null)
 
     const isMobile = useIsWidthLess(constants.mobileWidth)
     const { desktop: dDimensions, mobile: mDimensions } = dimensions.homePageScenes[sectionInView]
@@ -99,7 +107,7 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
     return (
       <Canvas className={classNames.canvas} {...rest} ref={ref}>
         <Suspense fallback={<CanvasLoader />}>
-          <ScrollControls pages={3}>
+          <ScrollControls pages={3} prepend>
             <PerspectiveCamera makeDefault>
               <group ref={groupRef}>
                 <ambientLight intensity={0.5} />
@@ -133,7 +141,9 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
               </group>
             </PerspectiveCamera>
             <Html>
-              <Main ref={scrollRef}>{children}</Main>
+              <main className={classNames.main}>
+                <div className={classNames.mainContainer}>{children}</div>
+              </main>
             </Html>
           </ScrollControls>
         </Suspense>

@@ -1,11 +1,40 @@
 @use '@/styles/breakpoints' as *;
 
 .canvas {
-  top: $header-height-desktop;
+  inset: $header-height-desktop 0 0 0 !important;
   height: calc(100vh - $header-height-desktop) !important;
 
   @media (width <= $mobile) {
-    top: $header-height-mobile;
-    height: calc(100vh - $header-height-mobile) !important;
+    inset: 0 !important;
+    height: 100vh !important;
+  }
+}
+
+.main {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  min-height: calc(100vh - $header-height-desktop);
+
+  color: inherit;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  width: 100%;
+  max-width: $max-content-width;
+  padding: $content-padding-desktop;
+
+  @media (width <= $mobile) {
+    min-height: calc(100vh - $header-height-mobile);
+    padding: $content-padding-mobile;
   }
 }

@@ -59,13 +59,13 @@ export const ProjectDescription = ({ dict, isSectionVisible, onProjectChange, pr
       <div className={classNames.linksContainer}>
         {project.codeUrl && (
           <Button as={'a'} href={project.codeUrl} target={'_blank'} variant={'text'}>
-            {projectsSection.codeLink}
+            <Typography.Link2 as={'span'}>{projectsSection.codeLink}</Typography.Link2>
             <Arrow className={classNames.linkIcon} height={20} width={20} />
           </Button>
         )}
         {project.demoUrl && (
           <Button as={'a'} href={project.demoUrl} target={'_blank'} variant={'text'}>
-            {projectsSection.demoLink}
+            <Typography.Link2 as={'span'}>{projectsSection.demoLink}</Typography.Link2>
             <Arrow className={classNames.linkIcon} height={20} width={20} />
           </Button>
         )}

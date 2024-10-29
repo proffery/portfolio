@@ -1,0 +1,20 @@
+@use '@/styles/breakpoints' as *;
+
+.navMobile {
+  display: none;
+  visibility: hidden;
+
+  @media (width <= $mobile) {
+    position: fixed;
+    z-index: 999 !important;
+    right: 0;
+    bottom: $content-padding-mobile;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    visibility: visible;
+  }
+}

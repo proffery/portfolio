@@ -1,4 +1,4 @@
-@use './breakpoints';
+@use './breakpoints' as *;
 
 // GLOBAL
 
@@ -41,7 +41,7 @@ body {
 
   background-color: var(--color-dark);
 
-  @media (width <= breakpoints.$mobile) {
+  @media (width <= $mobile) {
     font-size: var(--font-size-xxs);
   }
 

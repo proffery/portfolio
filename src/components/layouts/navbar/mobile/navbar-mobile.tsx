@@ -1,0 +1,51 @@
+import ActiveLink from '@/components/active-link/active-link'
+import { LangSelect } from '@/components/lang-select/lang-select'
+import { SvgSpriteIcon } from '@/components/svg-sprite-icon/svg-sprite-icon'
+import { Locale } from '@/i18n/get-dictionaries'
+import clsx from 'clsx'
+
+import s from './navbar-mobile.module.scss'
+
+type Props = {
+  locale: Locale
+}
+
+export const NavbarMobile = ({ locale }: Props) => {
+  const classNames = {
+    navMobile: clsx(s.navMobile),
+  }
+
+  return (
+    <nav className={classNames.navMobile}>
+      <ActiveLink href={'#home'}>
+        <SvgSpriteIcon
+          iconId={'home'}
+          spriteUrl={'/images/navbar-sprite.svg'}
+          viewBox={'0 0 96 96'}
+        />
+      </ActiveLink>
+      <ActiveLink href={'#about'}>
+        <SvgSpriteIcon
+          iconId={'about'}
+          spriteUrl={'/images/navbar-sprite.svg'}
+          viewBox={'0 0 96 96'}
+        />
+      </ActiveLink>
+      <ActiveLink href={'#projects'}>
+        <SvgSpriteIcon
+          iconId={'projects'}
+          spriteUrl={'/images/navbar-sprite.svg'}
+          viewBox={'0 0 96 96'}
+        />
+      </ActiveLink>
+      <ActiveLink href={'#contacts'}>
+        <SvgSpriteIcon
+          iconId={'contacts'}
+          spriteUrl={'/images/navbar-sprite.svg'}
+          viewBox={'0 0 96 96'}
+        />
+      </ActiveLink>
+      <LangSelect locale={locale} />
+    </nav>
+  )
+}

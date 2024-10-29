@@ -1,13 +1,12 @@
-@use '@/styles/breakpoints';
+@use '@/styles/breakpoints' as *;
 
 .link {
-  position: relative;
-
   display: flex;
   align-items: center;
 
   width: fit-content;
   height: fit-content;
+  padding: 8px;
 
   font-size: var(--font-size-xs);
   line-height: var(--line-height-xl);
@@ -18,8 +17,14 @@
     outline: 2px solid var(--color-info);
   }
 
-  @media (width <= breakpoints.$mobile) {
-    font-size: var(--font-size-xxs);
+  @media (width <= $mobile) {
+    width: $header-height-mobile;
+    height: $header-height-mobile;
+
+    background: var(--backgroud-gradient);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-placeholder);
+    border-radius: 5px;
   }
 }
 
@@ -28,13 +33,7 @@
   width: fit-content;
   color: var(--color-info) !important;
 
-  &::before {
-    width: 100%;
-    background-image: linear-gradient(
-      to right,
-      rgb(255 255 255 / 0%),
-      rgb(255 255 255 / 75%),
-      rgb(255 255 255 / 0%)
-    );
+  @media (width <= $mobile) {
+    background: var(--hover-gradient);
   }
 }

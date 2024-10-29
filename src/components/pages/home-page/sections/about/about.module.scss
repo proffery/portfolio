@@ -25,7 +25,7 @@
   max-width: 400px;
 
   @media (width <= $mobile) {
-    width: 100%;
+    width: 95%;
     max-width: 640px;
   }
 }
@@ -53,7 +53,7 @@
 
   background: var(--backgroud-gradient);
   backdrop-filter: blur(10px);
-  border: 1px solid var(--color-light);
+  border: 1px solid var(--color-placeholder);
   border-radius: 5px;
 
   @media (width <= $mobile) {
