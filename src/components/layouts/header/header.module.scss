@@ -15,6 +15,7 @@
   visibility: visible;
 
   @media (width <= breakpoints.$mobile) {
+    display: none;
     visibility: hidden;
   }
 }

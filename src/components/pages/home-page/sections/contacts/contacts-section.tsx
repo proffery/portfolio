@@ -22,7 +22,7 @@ import s from './conacts.module.scss'
 
 type Props = { dict: Dictionaries } & ComponentPropsWithoutRef<typeof Section>
 
-const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, ref) => {
+const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id, ...rest }, ref) => {
   const classNames = {
     columnLeft: clsx(s.columnLeft),
     columnRight: clsx(s.columnRight),
@@ -58,7 +58,7 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id }, 
   const errorMessage = getEmailErrorMessage(error)
 
   return (
-    <Section id={id} ref={ref}>
+    <Section {...rest} id={id} ref={ref}>
       <div className={classNames.columnsContainer}>
         <div className={classNames.columnLeft}></div>
         <motion.div

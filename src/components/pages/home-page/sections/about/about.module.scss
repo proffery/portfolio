@@ -1,10 +1,17 @@
 @use '@/styles/breakpoints' as *;
 
-.section {
+.sectionContainer {
+  display: flex;
   flex-direction: row;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
 
   @media (width <= $mobile) {
     flex-direction: column;
+    gap: 16px;
   }
 }
 

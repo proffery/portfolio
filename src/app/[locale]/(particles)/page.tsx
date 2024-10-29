@@ -15,10 +15,10 @@ export default async function Home({ params: { locale } }: Props) {
 
   return (
     <HomePage>
-      <HeroSection dict={dict} id={'home'} />
-      <AboutSection dict={dict} id={'about'} />
-      <ProjectsSection dict={dict} id={'projects'} locale={locale} />
-      <ContactsSection dict={dict} id={'contacts'} />
+      <HeroSection dict={dict} id={'home'} key={'home'} nextId={'about'} />
+      <AboutSection dict={dict} id={'about'} key={'about'} />
+      <ProjectsSection dict={dict} id={'projects'} key={'projects'} locale={locale} />
+      <ContactsSection dict={dict} id={'contacts'} key={'contacts'} prevId={'home'} />
       <Footer locale={locale} />
     </HomePage>
   )

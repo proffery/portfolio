@@ -1,6 +1,8 @@
 @use '@/styles/breakpoints' as *;
 
 .section {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -15,5 +17,53 @@
   @media (width <= $mobile) {
     gap: 16px;
     min-height: calc(100vh - $header-height-mobile);
+  }
+}
+
+.arrowUp {
+  top: $header-height-desktop;
+  transform: rotate(180deg);
+
+  @media (width <= $mobile) {
+    top: 0;
+  }
+}
+
+.arrowDown {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (width <= $mobile) {
+    bottom: $header-height-mobile + 16px;
+  }
+}
+
+.arrowUp,
+.arrowDown {
+  position: fixed;
+  z-index: 20;
+
+  &:focus-visible {
+    border-radius: 5px;
+    outline: 2px solid var(--color-info);
+  }
+}
+
+.blinkArrow {
+  animation: blink-arrow 1.5s infinite;
+}
+
+@keyframes blink-arrow {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

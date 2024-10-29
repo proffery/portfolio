@@ -27,7 +27,7 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(
       buttonContainer: clsx(s.buttonContainer),
       descriptionContainer: clsx(s.descriptionContainer),
       imageContainer: clsx(s.imageContainer),
-      section: clsx(s.section),
+      sectionContainer: clsx(s.sectionContainer),
     }
 
     const {
@@ -38,8 +38,8 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(
     const isSectionVisible = sectionInView === id
 
     return (
-      <Section id={id} {...rest} className={classNames.section} ref={ref}>
-        <>
+      <Section id={id} {...rest} ref={ref}>
+        <div className={classNames.sectionContainer}>
           <motion.div
             animate={isSectionVisible ? 'visible' : 'hidden'}
             className={classNames.imageContainer}
@@ -101,7 +101,7 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(
               </motion.div>
             )}
           </motion.div>
-        </>
+        </div>
       </Section>
     )
   }

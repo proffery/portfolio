@@ -11,6 +11,11 @@
   align-items: center;
 
   height: $header-height-desktop;
+
+  @media (width <= $mobile) {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .navDesktop {
@@ -32,6 +37,7 @@
   visibility: visible;
 
   @media (width <= $mobile) {
+    display: none;
     visibility: hidden;
   }
 }
