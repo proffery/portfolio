@@ -26,6 +26,8 @@ const Section = ({ children, className, id, nextId, prevId, ...rest }: Props) =>
     section: clsx(s.section, className),
   }
   const { setSectionInView } = useActions(appActions)
+  const isMobile = useIsWidthLess(constants.mobileWidth)
+  const arrowsSize = isMobile ? 32 : 48
 
   const sectionRef = useRef<ElementRef<'section'>>(null)
   const isSectionVisible = useIsVisible(sectionRef)
@@ -46,13 +48,13 @@ const Section = ({ children, className, id, nextId, prevId, ...rest }: Props) =>
     <section className={classNames.section} id={id} ref={sectionRef} {...rest}>
       {prevId && sectionInView === id && (
         <Link className={classNames.arrowUp} href={`#${prevId}`}>
-          <ArrowDown height={48} width={48} />
+          <ArrowDown height={arrowsSize} width={arrowsSize} />
         </Link>
       )}
       {children}
       {nextId && sectionInView === id && (
         <Link className={classNames.arrowDown} href={`#${nextId}`}>
-          <ArrowDown height={48} width={48} />
+          <ArrowDown height={arrowsSize} width={arrowsSize} />
         </Link>
       )}
     </section>
