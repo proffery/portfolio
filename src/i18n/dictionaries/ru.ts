@@ -7,7 +7,8 @@ const { countryRu, expYears, firstNameRu, lastNameRu, myAges } = credentials
 
 const ru: Dictionaries = {
   footer: {
-    codedBy: `Разработал ${firstNameRu} ${lastNameRu}`,
+    codedBy: `Разработал`,
+    name: `${firstNameRu} ${lastNameRu}`,
   },
   header: {
     navigation: {
@@ -61,6 +62,11 @@ const ru: Dictionaries = {
       techSpriteUrl: '/images/technologies-sprite.svg',
       title: 'Проекты',
     },
+  },
+  metadata: {
+    applicationName: 'Портфолио',
+    description: `Портфолио веб-разрабочика ${firstNameRu} ${lastNameRu}`,
+    title: `${firstNameRu} ${lastNameRu} | Портфолио`,
   },
   notFoundPage: {
     button: 'Назад',

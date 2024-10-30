@@ -6,21 +6,20 @@ import { useTickText } from '@/common/use-tick-text'
 import withRedux from '@/common/with-redux'
 import Section from '@/components/section/section'
 import { Typography } from '@/components/typography/typography'
-import { Dictionaries } from '@/i18n/dictionaries/en'
-import { selectSectionInView } from '@/services/app/app.selectors'
+import { selectDictionary, selectSectionInView } from '@/services/app/app.selectors'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 
 import s from './hero.module.scss'
 
-type Props = {
-  dict: Dictionaries
-} & ComponentPropsWithoutRef<typeof Section>
+type Props = ComponentPropsWithoutRef<typeof Section>
 
-const HeroSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id, ...rest }, ref) => {
+const HeroSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest }, ref) => {
   const classNames = {
     headerContainer: clsx(s.headerContainer),
   }
+  const sectionInView = useSelector(selectSectionInView)
+  const dict = useSelector(selectDictionary)
 
   const {
     homePage: { heroSection },
@@ -28,7 +27,6 @@ const HeroSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id, ...res
 
   const tickText = useTickText(heroSection.title3)
 
-  const sectionInView = useSelector(selectSectionInView)
   const isSectionVisible = sectionInView === id
 
   return (

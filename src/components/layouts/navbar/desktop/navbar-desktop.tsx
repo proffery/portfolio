@@ -1,5 +1,5 @@
 import ActiveLink from '@/components/active-link/active-link'
-import { LangSelect } from '@/components/lang-select/lang-select'
+import LangSelect from '@/components/lang-select/lang-select'
 import { Dictionaries } from '@/i18n/dictionaries/en'
 import { Locale } from '@/i18n/get-dictionaries'
 import clsx from 'clsx'
@@ -28,7 +28,7 @@ export const NavbarDesktop = ({ dict, locale }: Props) => {
         <ActiveLink href={'#about'}>{navigation.about}</ActiveLink>
         <ActiveLink href={'#projects'}>{navigation.projects}</ActiveLink>
         <ActiveLink href={'#contacts'}>{navigation.contacts}</ActiveLink>
-        <LangSelect locale={locale} />
+        <LangSelect dict={dict} locale={locale} />
       </nav>
     </header>
   )

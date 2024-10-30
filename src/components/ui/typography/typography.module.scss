@@ -125,15 +125,15 @@
   line-height: var(--line-height-xl);
   text-decoration: underline;
 
-  transition: color 0.2s;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
 
   &:focus-visible {
     border-radius: 5px;
     outline: 2px solid var(--color-info);
-  }
-
-  &:hover {
-    color: var(--color-placeholder);
   }
 
   @media (width <= breakpoints.$mobile) {
@@ -149,15 +149,15 @@
   line-height: var(--line-height-xl);
   text-decoration: underline;
 
-  transition: color 0.2s;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
 
   &:focus-visible {
     border-radius: 5px;
     outline: 2px solid var(--color-info);
-  }
-
-  &:hover {
-    color: var(--color-placeholder);
   }
 
   @media (width <= breakpoints.$mobile) {

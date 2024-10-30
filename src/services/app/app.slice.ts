@@ -1,3 +1,5 @@
+import en, { Dictionaries } from '@/i18n/dictionaries/en'
+import { Locale } from '@/i18n/get-dictionaries'
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 const slice = createSlice({
@@ -22,11 +24,19 @@ const slice = createSlice({
     )
   },
   initialState: {
+    dict: en as Dictionaries,
     isLoading: false as boolean,
+    locale: 'en' as Locale,
     sectionInView: 'home' as Sections,
   },
   name: 'app',
   reducers: {
+    setDictionary: (state, action: PayloadAction<Dictionaries>) => {
+      state.dict = action.payload
+    },
+    setLocale: (state, action: PayloadAction<Locale>) => {
+      state.locale = action.payload
+    },
     setSectionInView: (state, action: PayloadAction<Sections>) => {
       state.sectionInView = action.payload
     },

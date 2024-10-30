@@ -1,13 +1,5 @@
 'use client'
-import {
-  ComponentPropsWithoutRef,
-  ElementRef,
-  Suspense,
-  forwardRef,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-} from 'react'
+import { ComponentPropsWithoutRef, ElementRef, Suspense, forwardRef, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
 import { constants } from '@/common/constants'
@@ -23,7 +15,7 @@ import { Moon } from '@/components/moon/moon'
 import { Sun } from '@/components/sun/sun'
 import { selectSectionInView } from '@/services/app/app.selectors'
 import { useGSAP } from '@gsap/react'
-import { Html, PerspectiveCamera, Scroll, ScrollControls } from '@react-three/drei'
+import { Html, PerspectiveCamera, ScrollControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx'
 import { gsap } from 'gsap'

@@ -50,6 +50,14 @@
   width: fit-content;
   height: fit-content;
 
+  svg {
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
   &:focus-visible {
     border-radius: 5px;
     outline: 2px solid var(--color-info);

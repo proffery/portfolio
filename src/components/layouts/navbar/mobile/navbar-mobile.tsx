@@ -1,16 +1,18 @@
 import ActiveLink from '@/components/active-link/active-link'
-import { LangSelect } from '@/components/lang-select/lang-select'
+import LangSelect from '@/components/lang-select/lang-select'
 import { SvgSpriteIcon } from '@/components/svg-sprite-icon/svg-sprite-icon'
+import { Dictionaries } from '@/i18n/dictionaries/en'
 import { Locale } from '@/i18n/get-dictionaries'
 import clsx from 'clsx'
 
 import s from './navbar-mobile.module.scss'
 
 type Props = {
+  dict: Dictionaries
   locale: Locale
 }
 
-export const NavbarMobile = ({ locale }: Props) => {
+export const NavbarMobile = ({ dict, locale }: Props) => {
   const classNames = {
     navMobile: clsx(s.navMobile),
   }
@@ -45,7 +47,7 @@ export const NavbarMobile = ({ locale }: Props) => {
           viewBox={'0 0 96 96'}
         />
       </ActiveLink>
-      <LangSelect locale={locale} />
+      <LangSelect dict={dict} locale={locale} />
     </nav>
   )
 }

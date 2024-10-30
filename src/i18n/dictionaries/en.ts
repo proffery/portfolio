@@ -5,7 +5,8 @@ const { countryEn, expYears, firstNameEn, lastNameEn, myAges } = credentials
 
 const en = {
   footer: {
-    codedBy: `Coded by ${firstNameEn} ${lastNameEn}`,
+    codedBy: `Coded by`,
+    name: `${firstNameEn} ${lastNameEn}`,
   },
   header: {
     navigation: {
@@ -59,6 +60,11 @@ const en = {
       techSpriteUrl: '/images/technologies-sprite.svg',
       title: 'Projects',
     },
+  },
+  metadata: {
+    applicationName: 'Portfolio',
+    description: `${firstNameEn} ${lastNameEn} web developer portfolio`,
+    title: `${firstNameEn} ${lastNameEn} | Portfolio`,
   },
   notFoundPage: {
     button: 'Go back',

@@ -11,14 +11,12 @@ type Props = {
 }
 
 export default async function Home({ params: { locale } }: Props) {
-  const dict = await getDictionary(locale)
-
   return (
     <HomePage>
-      <HeroSection dict={dict} id={'home'} key={'home'} nextId={'about'} />
-      <AboutSection dict={dict} id={'about'} key={'about'} />
-      <ProjectsSection dict={dict} id={'projects'} key={'projects'} locale={locale} />
-      <ContactsSection dict={dict} id={'contacts'} key={'contacts'} prevId={'home'} />
+      <HeroSection id={'home'} nextId={'about'} />
+      <AboutSection id={'about'} />
+      <ProjectsSection id={'projects'} />
+      <ContactsSection id={'contacts'} prevId={'home'} />
       <Footer locale={locale} />
     </HomePage>
   )

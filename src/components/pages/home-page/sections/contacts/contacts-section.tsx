@@ -12,24 +12,23 @@ import withRedux from '@/common/with-redux'
 import { ContactForm, ContactFormValues } from '@/components/contact-form/contact-form'
 import Section from '@/components/section/section'
 import { Typography } from '@/components/typography/typography'
-import { Dictionaries } from '@/i18n/dictionaries/en'
-import { selectSectionInView } from '@/services/app/app.selectors'
+import { selectDictionary, selectSectionInView } from '@/services/app/app.selectors'
 import { useSendEmailMutation } from '@/services/email/email.service'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 
 import s from './conacts.module.scss'
 
-type Props = { dict: Dictionaries } & ComponentPropsWithoutRef<typeof Section>
+type Props = ComponentPropsWithoutRef<typeof Section>
 
-const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ dict, id, ...rest }, ref) => {
+const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest }, ref) => {
   const classNames = {
     columnLeft: clsx(s.columnLeft),
     columnRight: clsx(s.columnRight),
     columnsContainer: clsx(s.columnsContainer),
     iconLink: clsx(s.iconLink),
   }
-
+  const dict = useSelector(selectDictionary)
   const {
     homePage: { contactsSection },
   } = dict

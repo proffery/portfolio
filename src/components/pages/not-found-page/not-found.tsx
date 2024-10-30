@@ -1,14 +1,16 @@
 'use client'
 import { Suspense } from 'react'
+import { useSelector } from 'react-redux'
 
 import { Arrow } from '@/assets/components/arrow'
+import withRedux from '@/common/with-redux'
 import { Button } from '@/components/button/button'
 import { CanvasLoader } from '@/components/canvas-loader/canvas-loader'
 import { Main } from '@/components/main/main'
 import { ParallaxCamera } from '@/components/parallax-camera'
 import { Saturn } from '@/components/saturn/saturn'
 import { Typography } from '@/components/typography/typography'
-import { Dictionaries } from '@/i18n/dictionaries/en'
+import { selectDictionary } from '@/services/app/app.selectors'
 import { Scroll, ScrollControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx'
@@ -16,11 +18,7 @@ import { useRouter } from 'next/navigation'
 
 import s from './not-found.module.scss'
 
-type Props = {
-  dict: Dictionaries
-}
-
-export default function NotFoundPage({ dict }: Props) {
+function NotFoundPage() {
   const classNames = {
     backButton: clsx(s.backButton),
     canvas: clsx(s.canvas),
@@ -31,6 +29,8 @@ export default function NotFoundPage({ dict }: Props) {
   const goBackHandler = () => {
     router.back()
   }
+
+  const dict = useSelector(selectDictionary)
 
   const { notFoundPage } = dict
 
@@ -60,3 +60,5 @@ export default function NotFoundPage({ dict }: Props) {
     </Canvas>
   )
 }
+
+export default withRedux(NotFoundPage)
