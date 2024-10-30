@@ -9,32 +9,3 @@
     height: 100vh !important;
   }
 }
-
-.main {
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  width: 100vw;
-  min-height: calc(100vh - $header-height-desktop);
-
-  color: inherit;
-}
-
-.mainContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-
-  width: 100%;
-  max-width: $max-content-width;
-  padding: $content-padding-desktop;
-
-  @media (width <= $mobile) {
-    min-height: calc(100vh - $header-height-mobile);
-    padding: $content-padding-mobile;
-  }
-}

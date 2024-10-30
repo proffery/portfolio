@@ -21,21 +21,21 @@
 }
 
 .arrowUp {
-  top: $header-height-desktop;
+  top: $header-height-desktop * 2;
   transform: rotate(180deg);
 
   @media (width <= $mobile) {
-    top: 0;
+    top: $header-height-desktop;
   }
 }
 
 .arrowDown {
-  bottom: 0;
+  bottom: $header-height-desktop;
   left: 50%;
   transform: translateX(-50%);
 
   @media (width <= $mobile) {
-    bottom: $header-height-mobile + 16px;
+    bottom: $header-height-desktop * 2;
   }
 }
 

@@ -17,6 +17,7 @@ import withRedux from '@/common/with-redux'
 import { CanvasLoader } from '@/components/canvas-loader/canvas-loader'
 import { Earth } from '@/components/earth/earth'
 import { Jupiter } from '@/components/jupiter/jupiter'
+import { Main } from '@/components/main/main'
 import { Mars } from '@/components/mars/mars'
 import { Moon } from '@/components/moon/moon'
 import { Sun } from '@/components/sun/sun'
@@ -35,8 +36,6 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
   ({ children, className, ...rest }: Props, ref) => {
     const classNames = {
       canvas: clsx(s.canvas, className),
-      main: clsx(s.main),
-      mainContainer: clsx(s.mainContainer),
     }
     const sectionInView = useSelector(selectSectionInView)
 
@@ -141,9 +140,7 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
               </group>
             </PerspectiveCamera>
             <Html>
-              <main className={classNames.main}>
-                <div className={classNames.mainContainer}>{children}</div>
-              </main>
+              <Main>{children}</Main>
             </Html>
           </ScrollControls>
         </Suspense>

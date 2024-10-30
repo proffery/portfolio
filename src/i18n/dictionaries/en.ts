@@ -60,6 +60,11 @@ const en = {
       title: 'Projects',
     },
   },
+  notFoundPage: {
+    button: 'Go back',
+    description: 'Unfortunately, the requested page does not exist...',
+    title: 'Page not found!',
+  },
 }
 
 export type Dictionaries = typeof en

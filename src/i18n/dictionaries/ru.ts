@@ -52,7 +52,7 @@ const ru: Dictionaries = {
     heroSection: {
       title1: `${firstNameRu} ${lastNameRu}`,
       title2: 'Привет, я -',
-      title3: ['Веб разработчик', 'JS/TS разработчик', 'React разработчик', 'Next.js разработчик'],
+      title3: ['веб-разработчик', 'JS/TS-разработчик', 'React-разработчик', 'Next.js-разработчик'],
     },
     projectsSection: {
       codeLink: 'Смотреть код',
@@ -61,6 +61,11 @@ const ru: Dictionaries = {
       techSpriteUrl: '/images/technologies-sprite.svg',
       title: 'Проекты',
     },
+  },
+  notFoundPage: {
+    button: 'Назад',
+    description: 'С кожалению запрашиваемой страницы не существует...',
+    title: 'Страница не найдена!',
   },
 }
 
