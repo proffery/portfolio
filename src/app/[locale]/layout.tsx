@@ -8,6 +8,8 @@ import clsx from 'clsx'
 
 import '@/styles/index.scss'
 
+import image from '../opengraph-image.jpg'
+
 type Props = {
   children: ReactNode
   params: { locale: Locale }
@@ -28,6 +30,11 @@ export async function generateMetadata({ params: { locale } }: Props) {
     ),
     openGraph: {
       description: metadata.description,
+      images: [
+        {
+          url: image.src,
+        },
+      ],
       locale,
       siteName: metadata.applicationName,
       title: metadata.title,

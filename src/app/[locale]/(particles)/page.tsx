@@ -12,9 +12,9 @@ type Props = {
 }
 
 export async function generateStaticParams() {
-  return locales.map(locale => {
-    locale
-  })
+  return locales.map(locale => ({
+    locale: locale,
+  }))
 }
 
 export async function generateMetadata({ params: { locale } }: Props) {
