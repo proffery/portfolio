@@ -8,7 +8,7 @@ import clsx from 'clsx'
 
 import '@/styles/index.scss'
 
-import image from '../opengraph-image.jpg'
+import image from '../../../public/images/opengraph-image.jpg'
 
 type Props = {
   children: ReactNode
