@@ -19,18 +19,20 @@ export async function generateMetadata({ params: { locale } }: Props) {
   const { metadata } = dict
 
   return {
-    alternates: { canonical: `/` },
+    alternates: { canonical: `/${locale}/` },
     applicationName: metadata.applicationName,
     description: metadata.description,
     keywords: metadata.description.replaceAll(' ', ','),
-    metadataBase: new URL(process.env.NEXT_PUBLIC_HOST_BASE ?? `http://localhost:3000`),
+    metadataBase: new URL(
+      process.env.NEXT_PUBLIC_HOST_BASE + '/' + locale ?? `http://localhost:3000`
+    ),
     openGraph: {
       description: metadata.description,
       locale,
       siteName: metadata.applicationName,
       title: metadata.title,
       type: 'website',
-      url: process.env.NEXT_PUBLIC_HOST_BASE,
+      url: process.env.NEXT_PUBLIC_HOST_BASE + '/' + locale,
     },
     title: { default: metadata.title, template: `%s | ${metadata.title}` },
     twitter: {
