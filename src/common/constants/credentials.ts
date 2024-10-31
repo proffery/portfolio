@@ -6,8 +6,6 @@ const expYears = new Date(todayDate.getTime() - expStartDate.getTime()).getFullY
 const myAges = new Date(todayDate.getTime() - myBirthdayDate.getTime()).getFullYear() - 1970
 
 export const credentials = {
-  countryEn: 'Belarus',
-  countryRu: 'Беларуси',
   email: 'proffery@gmail.com',
   expYears,
   firstNameEn: 'Dmitry',
@@ -18,5 +16,4 @@ export const credentials = {
   link_linkedin: 'https://www.linkedin.com/in/dmitryshamko/',
   link_telegram: 'https://t.me/ShamkoDmitry',
   myAges,
-  phone: '+375256979075',
 }

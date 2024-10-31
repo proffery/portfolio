@@ -3,7 +3,7 @@ import { projectsRu } from '@/common/projects'
 
 import { Dictionaries } from './en'
 
-const { countryRu, expYears, firstNameRu, lastNameRu, myAges } = credentials
+const { expYears, firstNameRu, lastNameRu, myAges } = credentials
 
 const ru: Dictionaries = {
   footer: {
@@ -23,7 +23,7 @@ const ru: Dictionaries = {
       abouts: [
         {
           avatarUrl: '/images/avatars/image1.webp',
-          description: `Я веб-разработчик из ${countryRu}, мне ${myAges} лет. У меня более ${expYears} лет опыта в этой сфере. 
+          description: `Я веб-разработчик из Беларуси, мне ${myAges} лет. У меня более ${expYears} лет опыта в этой сфере. 
           Я создаю визуально привлекательные и удобные для пользователей веб-сайты. От адаптивного дизайна до интерактивных
           функций, мне нравится превращать идеи в цифровую реальность. Я увлечен постоянно развивающейся IT-индустрией и 
           стараюсь быть в курсе последних технологий и трендов.`,
@@ -45,8 +45,8 @@ const ru: Dictionaries = {
                         React Hook Form,
                         Formik,
                         Zod,
-                        Material-UI,
-                        RadixUI,
+                        Material UI,
+                        Radix UI,
                         Jest,
                         GIT`,
           id: 2,
