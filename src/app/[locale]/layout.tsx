@@ -8,8 +8,6 @@ import clsx from 'clsx'
 
 import '@/styles/index.scss'
 
-import image from '../../../public/images/opengraph-image.jpg'
-
 type Props = {
   children: ReactNode
   params: { locale: Locale }
@@ -21,25 +19,18 @@ export async function generateMetadata({ params: { locale } }: Props) {
   const { metadata } = dict
 
   return {
-    alternates: { canonical: `/${locale}/` },
+    alternates: { canonical: `/` },
     applicationName: metadata.applicationName,
     description: metadata.description,
     keywords: metadata.description.replaceAll(' ', ','),
-    metadataBase: new URL(
-      process.env.NEXT_PUBLIC_HOST_BASE + '/' + locale ?? `http://localhost:3000`
-    ),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_HOST_BASE ?? `http://localhost:3000`),
     openGraph: {
       description: metadata.description,
-      images: [
-        {
-          url: image.src,
-        },
-      ],
       locale,
       siteName: metadata.applicationName,
       title: metadata.title,
       type: 'website',
-      url: process.env.NEXT_PUBLIC_HOST_BASE + '/' + locale,
+      url: process.env.NEXT_PUBLIC_HOST_BASE,
     },
     title: { default: metadata.title, template: `%s | ${metadata.title}` },
     twitter: {
