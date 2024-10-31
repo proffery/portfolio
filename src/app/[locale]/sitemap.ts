@@ -7,5 +7,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${process.env.NEXT_PUBLIC_HOST_BASE}/${locale}`,
   }))
 
-  return [...pagesEntries]
+  return [
+    {
+      url: `${process.env.NEXT_PUBLIC_HOST_BASE}`,
+    },
+    ...pagesEntries,
+  ]
 }
