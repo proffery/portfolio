@@ -1,3 +1,4 @@
+import { locales } from '@/common/locales'
 import { Footer } from '@/components/footer/footer'
 import HomePage from '@/components/home-page/home-page'
 import AboutSection from '@/components/home-page/sections/about/about-section'
@@ -9,6 +10,13 @@ import { Locale, getDictionary } from '@/i18n/get-dictionaries'
 type Props = {
   params: { locale: Locale }
 }
+
+export async function generateStaticParams() {
+  return locales.map(locale => {
+    locale
+  })
+}
+
 export async function generateMetadata({ params: { locale } }: Props) {
   const dict = await getDictionary(locale)
   const { metadata } = dict

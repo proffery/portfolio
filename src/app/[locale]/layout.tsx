@@ -1,6 +1,5 @@
 import { ReactNode } from 'react'
 
-import { locales } from '@/common/locales'
 import { NavbarDesktop } from '@/components/navbar/desktop/navbar-desktop'
 import { NavbarMobile } from '@/components/navbar/mobile/navbar-mobile'
 import { Locale, getDictionary } from '@/i18n/get-dictionaries'
@@ -8,12 +7,6 @@ import { roboto, russoOne } from '@/styles/fonts'
 import clsx from 'clsx'
 
 import '@/styles/index.scss'
-
-export async function generateStaticParams() {
-  return locales.map(locale => {
-    locale
-  })
-}
 
 type Props = {
   children: ReactNode
