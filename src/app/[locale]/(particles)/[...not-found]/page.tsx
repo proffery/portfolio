@@ -11,16 +11,7 @@ export async function generateMetadata({ params: { locale } }: Props) {
   const { notFoundPage } = dict
 
   return {
-    description: notFoundPage.description,
-    openGraph: {
-      description: notFoundPage.description,
-      title: notFoundPage.title,
-    },
     title: notFoundPage.title,
-    twitter: {
-      description: notFoundPage.description,
-      title: notFoundPage.title,
-    },
   }
 }
 
