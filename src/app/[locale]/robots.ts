@@ -1,11 +1,10 @@
-import { locales } from '@/common/locales'
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        allow: locales.map(locale => `/${locale}`),
+        allow: ['/', '/en', '/ru'],
         userAgent: '*',
       },
     ],
