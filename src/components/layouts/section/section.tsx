@@ -1,6 +1,6 @@
 'use client'
 
-import { ComponentPropsWithoutRef, ElementRef, useEffect, useRef, useState } from 'react'
+import { ComponentPropsWithoutRef, ElementRef, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
 import { ArrowDown } from '@/assets/components/arrow-down'
@@ -36,7 +36,7 @@ const Section = ({ children, className, id, nextId, prevId, ...rest }: Props) =>
     setSectionInView(id as Sections)
     const timout = setTimeout(() => {
       sectionInView !== id &&
-        sectionRef?.current?.scrollIntoView({ behavior: 'auto', block: 'start' })
+        sectionRef?.current?.scrollIntoView({ behavior: 'auto', block: 'center' })
     }, 150)
 
     return () => {

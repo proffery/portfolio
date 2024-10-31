@@ -1,7 +1,9 @@
 'use client'
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+import { ComponentPropsWithoutRef, ElementRef, forwardRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 
+import { Arrow } from '@/assets/components/arrow'
+import useIndexChange from '@/common/use-index-change'
 import withRedux from '@/common/with-redux'
 import { Button } from '@/components/button/button'
 import Section from '@/components/section/section'
@@ -17,7 +19,9 @@ type Props = ComponentPropsWithoutRef<typeof Section>
 
 const AboutSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest }, ref) => {
   const classNames = {
+    arrowsContainer: clsx(s.arrowsContainer),
     avatar: clsx(s.avatar),
+    backArrow: clsx(s.backArrow),
     buttonContainer: clsx(s.buttonContainer),
     descriptionContainer: clsx(s.descriptionContainer),
     imageContainer: clsx(s.imageContainer),
@@ -29,11 +33,59 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest }, 
     homePage: { aboutSection },
   } = dict
 
+  const { index, onIndexChange } = useIndexChange(aboutSection.abouts)
+  const [touchStart, setTouchStart] = useState(0)
+  const [touchEnd, setTouchEnd] = useState(0)
+
+  const minSwipeDistance = 50
+
+  const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchEnd(0) // otherwise the swipe is fired even with usual touch events
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) =>
+    setTouchEnd(e.targetTouches[0].clientX)
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) {
+      return
+    }
+    const distance = touchStart - touchEnd
+    const isLeftSwipe =
+      distance > minSwipeDistance && aboutSection.abouts[index].id < aboutSection.abouts.length
+    const isRightSwipe = distance < -minSwipeDistance && aboutSection.abouts[index].id > 1
+
+    if (isLeftSwipe || isRightSwipe) {
+      isLeftSwipe ? onIndexChange('next') : onIndexChange('previous')
+    }
+  }
   const isSectionVisible = sectionInView === id
 
   return (
     <Section id={id} {...rest} ref={ref}>
-      <div className={classNames.sectionContainer}>
+      <motion.div
+        animate={isSectionVisible ? 'visible' : 'hidden'}
+        initial={'hidden'}
+        transition={{
+          duration: 0.5,
+          ease: 'easeInOut',
+        }}
+        variants={{
+          hidden: { opacity: 0, x: '-100vw' },
+          visible: { opacity: 1, x: 0 },
+        }}
+        viewport={{ once: true }}
+        whileInView={'visible'}
+      >
+        <Typography.H3 as={'h2'}>{aboutSection.title}</Typography.H3>
+      </motion.div>
+      <div
+        className={classNames.sectionContainer}
+        onTouchEnd={onTouchEnd}
+        onTouchMove={onTouchMove}
+        onTouchStart={onTouchStart}
+      >
         <motion.div
           animate={isSectionVisible ? 'visible' : 'hidden'}
           className={classNames.imageContainer}
@@ -53,7 +105,7 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest }, 
             alt={'Dmitry photo'}
             className={classNames.avatar}
             height={640}
-            src={'/images/avatar.webp'}
+            src={aboutSection.abouts[index].avatarUrl}
             width={640}
           />
         </motion.div>
@@ -72,8 +124,27 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest }, 
           viewport={{ once: true }}
           whileInView={'visible'}
         >
-          <Typography.H3 as={'h2'}>{aboutSection.title}</Typography.H3>
-          <Typography.Body1>{aboutSection.description}</Typography.Body1>
+          <Typography.H5 as={'h3'}>{aboutSection.abouts[index].title}</Typography.H5>
+          <Typography.Body1>{aboutSection.abouts[index].description}</Typography.Body1>
+          <div className={classNames.arrowsContainer}>
+            <Button
+              disabled={aboutSection.abouts[index].id === 1}
+              onClick={() => onIndexChange('previous')}
+              variant={'text'}
+            >
+              <Arrow className={classNames.backArrow} height={48} width={48} />
+            </Button>
+            <Typography.Caption>
+              {aboutSection.abouts[index].id + '/' + aboutSection.abouts.length}
+            </Typography.Caption>
+            <Button
+              disabled={aboutSection.abouts[index].id === aboutSection.abouts.length}
+              onClick={() => onIndexChange('next')}
+              variant={'text'}
+            >
+              <Arrow height={48} width={48} />
+            </Button>
+          </div>
           {isSectionVisible && (
             <motion.div
               animate={isSectionVisible ? 'visible' : 'hidden'}

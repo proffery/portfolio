@@ -1,7 +1,8 @@
 'use client'
-import { ComponentPropsWithoutRef, ElementRef, forwardRef, useState } from 'react'
+import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 import { useSelector } from 'react-redux'
 
+import useIndexChange from '@/common/use-index-change'
 import withRedux from '@/common/with-redux'
 import { ProjectDescription } from '@/components/home-page/sections/projects/project-description/project-description'
 import { ProjectModel } from '@/components/home-page/sections/projects/project-model/project-model'
@@ -34,23 +35,7 @@ const ProjectsSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest 
 
   const isSectionVisible = sectionInView === id
 
-  const [projectIndex, setProjectIndex] = useState(0)
-
-  const onProjectChange = (direction: ProjectDirection) => {
-    if (direction === 'next') {
-      if (projectIndex === projects.length - 1) {
-        setProjectIndex(0)
-      } else {
-        setProjectIndex(prev => prev + 1)
-      }
-    } else {
-      if (projectIndex === 0) {
-        setProjectIndex(projects.length - 1)
-      } else {
-        setProjectIndex(prev => prev - 1)
-      }
-    }
-  }
+  const { index, onIndexChange } = useIndexChange(projects)
 
   return (
     <Section id={id} {...rest} ref={ref}>
@@ -60,7 +45,7 @@ const ProjectsSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest 
           className={classNames.header}
           initial={'hidden'}
           transition={{
-            duration: 1,
+            duration: 0.5,
             ease: 'easeInOut',
           }}
           variants={{
@@ -76,10 +61,10 @@ const ProjectsSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest 
           <ProjectDescription
             dict={dict}
             isSectionVisible={isSectionVisible}
-            onProjectChange={onProjectChange}
-            project={projects[projectIndex]}
+            onProjectChange={onIndexChange}
+            project={projects[index]}
           />
-          <ProjectModel isSectionVisible={isSectionVisible} project={projects[projectIndex]} />
+          <ProjectModel isSectionVisible={isSectionVisible} project={projects[index]} />
         </div>
       </div>
     </Section>

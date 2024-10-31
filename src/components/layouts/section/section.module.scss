@@ -16,13 +16,15 @@
 
   @media (width <= $mobile) {
     gap: 16px;
+    align-items: flex-start;
     min-height: calc(100vh - $header-height-mobile);
   }
 }
 
 .arrowUp {
   top: $header-height-desktop * 2;
-  transform: rotate(180deg);
+  transform-origin: left;
+  transform: rotate(180deg) translateX(-50%);
 
   @media (width <= $mobile) {
     top: $header-height-desktop;
@@ -31,7 +33,6 @@
 
 .arrowDown {
   bottom: $header-height-desktop;
-  left: 50%;
   transform: translateX(-50%);
 
   @media (width <= $mobile) {
@@ -43,6 +44,7 @@
 .arrowDown {
   position: fixed;
   z-index: 20;
+  left: 50%;
 
   &:focus-visible {
     border-radius: 5px;

@@ -56,7 +56,7 @@ export const ProjectModel = ({ isSectionVisible, project }: Props) => {
         <ambientLight intensity={1} />
         <directionalLight intensity={3} position={[-22, -12, 5]} />
         <Suspense fallback={<CanvasLoader />}>
-          <Monitor coverUrl={project.coverUrl} position={[-2, -12, 0]} ref={modelRef} scale={200} />
+          <Monitor coverUrl={project.coverUrl} position={[-2, -8, 0]} ref={modelRef} scale={200} />
         </Suspense>
       </Canvas>
     </motion.div>

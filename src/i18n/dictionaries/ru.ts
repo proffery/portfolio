@@ -20,10 +20,47 @@ const ru: Dictionaries = {
   },
   homePage: {
     aboutSection: {
-      description: `Я веб-разработчик из ${countryRu}, мне ${myAges} лет. У меня более ${expYears} лет опыта в этой сфере. 
-      Я создаю визуально привлекательные и удобные для пользователей веб-сайты. От адаптивного дизайна до интерактивных
-       функций, мне нравится превращать идеи в цифровую реальность. Я увлечен постоянно развивающейся IT-индустрией и 
-       стараюсь быть в курсе последних технологий и трендов.`,
+      abouts: [
+        {
+          avatarUrl: '/images/avatars/image1.webp',
+          description: `Я веб-разработчик из ${countryRu}, мне ${myAges} лет. У меня более ${expYears} лет опыта в этой сфере. 
+          Я создаю визуально привлекательные и удобные для пользователей веб-сайты. От адаптивного дизайна до интерактивных
+          функций, мне нравится превращать идеи в цифровую реальность. Я увлечен постоянно развивающейся IT-индустрией и 
+          стараюсь быть в курсе последних технологий и трендов.`,
+          id: 1,
+          title: 'Давайте познакомимся!',
+        },
+        {
+          avatarUrl: '/images/avatars/image2.webp',
+          description: `TypeScript,
+                        React,
+                        Next.js,
+                        Redux,
+                        Axios,
+                        HTML,
+                        CSS,
+                        SASS/SCSS,
+                        Styled Components,
+                        Storybook,
+                        React Hook Form,
+                        Formik,
+                        Zod,
+                        Material-UI,
+                        RadixUI,
+                        Jest,
+                        GIT`,
+          id: 2,
+          title: 'Технологии и библиотеки, которые я использую чаще всего:',
+        },
+        {
+          avatarUrl: '/images/avatars/image3.webp',
+          description: `Кроме интереса к IT-сфере, я сильно увлекаюсь научной фантастикой, люблю читать книги и 
+          смотреть фильмы на эту тему. Иногда, когда позволяет время, играю в игры. А также временами выхожу на прогулку  
+          с фотоаппаратом, пытаясь запечалеть сюжеты городской и уличной жизни.`,
+          id: 3,
+          title: 'Интересы',
+        },
+      ],
       resumeButton: 'Загрузить резюме',
       resumeLink: '/cv/cv-ru.pdf',
       title: 'Обо мне',
@@ -66,7 +103,7 @@ const ru: Dictionaries = {
   metadata: {
     applicationName: 'Портфолио',
     description: `Портфолио веб-разрабочика ${firstNameRu} ${lastNameRu}`,
-    title: `${firstNameRu} ${lastNameRu} | Портфолио`,
+    title: `${firstNameRu} ${lastNameRu}`,
   },
   notFoundPage: {
     button: 'Назад',

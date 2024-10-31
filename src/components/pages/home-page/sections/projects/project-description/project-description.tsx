@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { Arrow } from '@/assets/components/arrow'
 import { Project } from '@/common/projects'
 import { Button } from '@/components/button/button'
@@ -28,6 +30,32 @@ export const ProjectDescription = ({ dict, isSectionVisible, onProjectChange, pr
     technologiesContainer: clsx(s.technologiesContainer),
   }
 
+  const [touchStart, setTouchStart] = useState(0)
+  const [touchEnd, setTouchEnd] = useState(0)
+
+  const minSwipeDistance = 50
+
+  const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchEnd(0) // otherwise the swipe is fired even with usual touch events
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) =>
+    setTouchEnd(e.targetTouches[0].clientX)
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) {
+      return
+    }
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance && project.id < projectsSection.projects.length
+    const isRightSwipe = distance < -minSwipeDistance && project.id > 1
+
+    if (isLeftSwipe || isRightSwipe) {
+      isLeftSwipe ? onProjectChange('next') : onProjectChange('previous')
+    }
+  }
+
   const {
     homePage: { projectsSection },
   } = dict
@@ -52,8 +80,8 @@ export const ProjectDescription = ({ dict, isSectionVisible, onProjectChange, pr
       viewport={{ once: true }}
       whileInView={'visible'}
     >
-      <Typography.H4 as={'h3'}>{project.title}</Typography.H4>
-      <div>
+      <Typography.H5 as={'h3'}>{project.title}</Typography.H5>
+      <div onTouchEnd={onTouchEnd} onTouchMove={onTouchMove} onTouchStart={onTouchStart}>
         <Typography.Body1>{project.description}</Typography.Body1>
       </div>
       <div className={classNames.linksContainer}>

@@ -1,7 +1,6 @@
 'use client'
-import React, { ComponentPropsWithoutRef, ElementRef, forwardRef, useRef } from 'react'
+import React, { ComponentPropsWithoutRef, ElementRef, useRef } from 'react'
 
-import { ParallaxCamera } from '@/components/parallax-camera'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
@@ -32,9 +31,10 @@ type GLTFResult = {
   }
 } & GLTF
 
-export const Saturn = forwardRef<ElementRef<'group'>, Props>((props: Props, ref) => {
+export const Saturn = (props: Props) => {
   const { materials, nodes } = useGLTF('/models/saturn.glb') as unknown as GLTFResult
 
+  const groupRef = useRef<ElementRef<'group'>>(null)
   const ringsRef = useRef<ElementRef<'group'>>(null)
   const cloudsRef = useRef<ElementRef<'group'>>(null)
   const saturnRef = useRef<ElementRef<'group'>>(null)
@@ -54,11 +54,14 @@ export const Saturn = forwardRef<ElementRef<'group'>, Props>((props: Props, ref)
     if (cloudsRef.current) {
       cloudsRef.current.rotation.z += 0.0011
     }
+    if (groupRef.current) {
+      groupRef.current.rotation.y += 0.0001
+    }
   })
 
   return (
-    <group ref={ref} {...props} dispose={null}>
-      <group name={'Saturn_Rings'} ref={ringsRef} rotation={[-Math.PI / 2, 0, 0]} scale={106}>
+    <group ref={groupRef} {...props} dispose={null}>
+      <group name={'Saturn_Rings'} ref={ringsRef} rotation={[Math.PI / 2, 0, 0]} scale={106}>
         <mesh
           castShadow
           geometry={nodes['Saturn_Rings_Material_#63_0'].geometry}
@@ -167,6 +170,6 @@ export const Saturn = forwardRef<ElementRef<'group'>, Props>((props: Props, ref)
       </group>
     </group>
   )
-})
+}
 
 useGLTF.preload('/models/saturn.glb')

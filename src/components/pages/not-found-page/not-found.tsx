@@ -7,11 +7,10 @@ import withRedux from '@/common/with-redux'
 import { Button } from '@/components/button/button'
 import { CanvasLoader } from '@/components/canvas-loader/canvas-loader'
 import { Main } from '@/components/main/main'
-import { ParallaxCamera } from '@/components/parallax-camera'
 import { Saturn } from '@/components/saturn/saturn'
 import { Typography } from '@/components/typography/typography'
 import { selectDictionary } from '@/services/app/app.selectors'
-import { Scroll, ScrollControls } from '@react-three/drei'
+import { PerspectiveCamera, Scroll, ScrollControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx'
 import { useRouter } from 'next/navigation'
@@ -37,13 +36,9 @@ function NotFoundPage() {
   return (
     <Canvas className={classNames.canvas}>
       <Suspense fallback={<CanvasLoader />}>
+        <PerspectiveCamera makeDefault position={[-1, 1, 10]} />
         <ScrollControls pages={0} prepend>
-          <ParallaxCamera />
-          <Saturn
-            position={[2, -5, 1]}
-            rotation={[Math.PI / 30, Math.PI / 5, -0.2]}
-            scale={0.013}
-          />
+          <Saturn position={[1.2, -1, 0.03]} rotation={[0.1, -1.1, 0.2]} scale={0.003} />
           <directionalLight intensity={2} position={[-8000, 0.5, 1000]} />
           <Scroll html>
             <Main>

@@ -25,6 +25,26 @@
   height: fit-content;
 }
 
+.arrowsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.backArrow {
+  transform: rotate(180deg);
+}
+
+.technologiesContainer {
+  display: flex;
+  gap: 16px;
+
+  @media (width <= $mobile) {
+    gap: 8px;
+  }
+}
+
 .imageContainer {
   align-items: center;
   width: 40%;
@@ -32,7 +52,7 @@
   max-width: 400px;
 
   @media (width <= $mobile) {
-    width: 95%;
+    width: 100%;
     max-width: 640px;
   }
 }

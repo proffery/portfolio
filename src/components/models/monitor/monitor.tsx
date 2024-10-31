@@ -1,5 +1,5 @@
 'use client'
-import React, { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+import React, { ComponentPropsWithoutRef, ElementRef, forwardRef, useState } from 'react'
 
 import { useGLTF, useTexture } from '@react-three/drei'
 import * as THREE from 'three'
@@ -48,13 +48,16 @@ export const Monitor = forwardRef<ElementRef<'group'>, Props>(
     const { materials, nodes } = useGLTF('/models/monitor.glb') as unknown as GLTFResult
     const screen = useTexture(coverUrl)
 
+    const [zoom, setZoom] = useState(false)
+
     return (
-      <group ref={ref} {...rest} dispose={null}>
+      <group ref={ref} {...rest} dispose={null} onClick={() => setZoom(!zoom)}>
         <group name={'Sketchfab_model'} rotation={[-Math.PI / 2, 0, 0]}>
           <group
             name={'4e4541ff511d406b8a3dfc7144802368fbx'}
+            position-z={zoom ? -0.05 : -0.012}
             rotation={[Math.PI / 2, 0, 0]}
-            scale={0.01}
+            scale={zoom ? 0.015 : 0.01}
           >
             <group name={'TV_ALL'}>
               <group name={'BG'} position={[0, -2.5, 1.5]} scale={1.5}>

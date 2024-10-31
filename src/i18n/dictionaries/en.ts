@@ -18,10 +18,48 @@ const en = {
   },
   homePage: {
     aboutSection: {
-      description: `I'm a ${myAges}-year-old web developer based in ${countryEn}, with over a ${expYears} years of 
-      experience in creating visually appealing and user-friendly websites. My passion lies in transforming ideas into 
-      digital realities, focusing on responsive designs and interactive features. I stay up-to-date with the latest 
-      technologies and trends in the ever-evolving IT industry, dedicated to delivering high-quality web solutions.`,
+      abouts: [
+        {
+          avatarUrl: '/images/avatars/image1.webp',
+          description: `I'm a ${myAges}-year-old web developer based in ${countryEn}, with over a ${expYears} years of 
+          experience in creating visually appealing and user-friendly websites. My passion lies in transforming ideas into 
+          digital realities, focusing on responsive designs and interactive features. I stay up-to-date with the latest 
+          technologies and trends in the ever-evolving IT industry, dedicated to delivering high-quality web solutions.`,
+          id: 1,
+          title: `Let's get to know each other!`,
+        },
+        {
+          avatarUrl: '/images/avatars/image2.webp',
+          description: `TypeScript,
+                        React,
+                        Next.js,
+                        Redux,
+                        Axios,
+                        HTML,
+                        CSS,
+                        SASS/SCSS,
+                        Styled Components,
+                        Storybook,
+                        React Hook Form,
+                        Formik,
+                        Zod,
+                        Material-UI,
+                        RadixUI,
+                        Jest,
+                        GIT`,
+          id: 2,
+          title: 'Technologies and libraries that I use most often:',
+        },
+        {
+          avatarUrl: '/images/avatars/image3.webp',
+          description: `Besides my interest in the IT field, I am very passionate about science fiction and love 
+          reading books and watching films on this topic. Sometimes, when time allows, I play games. I also 
+          occasionally go for walks with my camera, trying to capture the stories of urban and street life.`,
+          id: 3,
+          title: 'Interests',
+        },
+      ],
+
       resumeButton: 'Download resume',
       resumeLink: '/cv/cv-en.pdf',
       title: 'About me',
@@ -64,7 +102,7 @@ const en = {
   metadata: {
     applicationName: 'Portfolio',
     description: `${firstNameEn} ${lastNameEn} web developer portfolio`,
-    title: `${firstNameEn} ${lastNameEn} | Portfolio`,
+    title: `${firstNameEn} ${lastNameEn}`,
   },
   notFoundPage: {
     button: 'Go back',
