@@ -37,7 +37,7 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest }, 
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
 
-  const minSwipeDistance = 50
+  const minSwipeDistance = 40
 
   const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchEnd(0) // otherwise the swipe is fired even with usual touch events

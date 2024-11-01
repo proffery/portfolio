@@ -33,36 +33,38 @@ const HomeSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest }, r
     <Section id={id} {...rest} ref={ref}>
       {isSectionVisible && (
         <div className={classNames.headerContainer}>
-          <motion.div
-            animate={{ opacity: 1, x: 0 }}
-            className={classNames.headerContainer}
-            exit={{ opacity: 0, x: '100vw' }}
-            initial={{ opacity: 0, x: '100vw' }}
-            key={id}
-            transition={{
-              delay: 0.3,
-              duration: 1.5,
-              ease: 'easeInOut',
-              type: 'tween',
-            }}
-          >
-            <Typography.H2 as={'h2'}>{heroSection.title2}</Typography.H2>
-          </motion.div>
-          <motion.div
-            animate={{ opacity: 1, x: 0 }}
-            className={classNames.headerContainer}
-            exit={{ opacity: 0, x: '100vw' }}
-            initial={{ opacity: 0, x: '100vw' }}
-            key={id}
-            transition={{
-              delay: 0.6,
-              duration: 1.5,
-              ease: 'easeInOut',
-              type: 'tween',
-            }}
-          >
-            <Typography.H1 as={'h1'}>{heroSection.title1}</Typography.H1>
-          </motion.div>
+          <div>
+            <motion.div
+              animate={{ opacity: 1, x: 0 }}
+              className={classNames.headerContainer}
+              exit={{ opacity: 0, x: '100vw' }}
+              initial={{ opacity: 0, x: '100vw' }}
+              key={id}
+              transition={{
+                delay: 0.3,
+                duration: 1.5,
+                ease: 'easeInOut',
+                type: 'tween',
+              }}
+            >
+              <Typography.H3 as={'h2'}>{heroSection.title2}</Typography.H3>
+            </motion.div>
+            <motion.div
+              animate={{ opacity: 1, x: 0 }}
+              className={classNames.headerContainer}
+              exit={{ opacity: 0, x: '100vw' }}
+              initial={{ opacity: 0, x: '100vw' }}
+              key={id}
+              transition={{
+                delay: 0.6,
+                duration: 1.5,
+                ease: 'easeInOut',
+                type: 'tween',
+              }}
+            >
+              <Typography.H2 as={'h1'}>{heroSection.title1}</Typography.H2>
+            </motion.div>
+          </div>
           <motion.div
             animate={{ opacity: 1, x: 0 }}
             className={classNames.headerContainer}
