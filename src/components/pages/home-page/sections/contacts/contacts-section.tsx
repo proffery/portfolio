@@ -79,7 +79,7 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest 
             animate={isSectionVisible ? 'visible' : 'hidden'}
             initial={'hidden'}
             transition={{
-              delay: 0.5,
+              delay: 1,
               duration: 1.5,
               ease: 'easeInOut',
             }}

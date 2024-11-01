@@ -46,7 +46,7 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
 
       if (sunRef.current) {
         timeline.to(sunRef.current.position, {
-          duration: 5,
+          duration: 4,
           ease: 'power1.inOut',
           x: isMobile ? mDimensions.light_position[0] : dDimensions.light_position[0],
           y: isMobile ? mDimensions.light_position[1] : dDimensions.light_position[1],
@@ -59,7 +59,7 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
 
       if (earthRef.current) {
         timeline.to(earthRef.current.position, {
-          duration: 5,
+          duration: 4,
           ease: 'power1.inOut',
           x: isMobile ? mDimensions.earth_position[0] : dDimensions.earth_position[0],
           y: isMobile ? mDimensions.earth_position[1] : dDimensions.earth_position[1],
@@ -86,7 +86,7 @@ const HomePage = forwardRef<ElementRef<'canvas'>, Props>(
 
       if (groupRef.current) {
         timeline.to(groupRef.current.rotation, {
-          duration: 4,
+          duration: 3,
           ease: 'expo.inOut',
           x: isMobile ? mDimensions.group_rotation[0] : dDimensions.group_rotation[0],
           y: isMobile ? mDimensions.group_rotation[1] : dDimensions.group_rotation[1],

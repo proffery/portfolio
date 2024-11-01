@@ -3,10 +3,14 @@
 .headerContainer {
   display: flex;
   flex-direction: column;
+  gap: 6px;
+
   width: 60%;
+
   white-space: collapse;
 
   @media (width <= breakpoints.$mobile) {
+    gap: 4px;
     width: 100%;
   }
 }

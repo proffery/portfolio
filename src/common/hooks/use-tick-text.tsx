@@ -6,12 +6,12 @@ export const useTickText = (textArr: string[]) => {
   const [text, setText] = useState('')
   const [delta, setDelta] = useState(300 - Math.random() * 100)
 
-  const period = 2000
+  const period = 3000
 
   useEffect(() => {
     const ticker = setInterval(() => {
       tick()
-    }, delta)
+    }, delta / 3)
 
     return () => {
       clearInterval(ticker)
@@ -28,7 +28,7 @@ export const useTickText = (textArr: string[]) => {
     setText(updatedText)
 
     if (isDeleting) {
-      setDelta(prevDelta => prevDelta / 2)
+      setDelta(prevDelta => prevDelta / 1.5)
     }
 
     if (!isDeleting && updatedText === fullText) {

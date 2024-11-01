@@ -29,7 +29,7 @@ const en = {
           title: `Let's get to know each other!`,
         },
         {
-          avatarUrl: '/images/avatars/image2.webp',
+          avatarUrl: '/images/avatars/image1.webp',
           description: `TypeScript,
                         React,
                         Next.js,
@@ -48,7 +48,7 @@ const en = {
                         Jest,
                         GIT`,
           id: 2,
-          title: 'Technologies and libraries that I use most often:',
+          title: 'Technologies and libraries that I use most often',
         },
         {
           avatarUrl: '/images/avatars/image3.webp',

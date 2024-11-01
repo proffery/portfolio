@@ -1,10 +1,11 @@
-import { ElementRef, Suspense, useRef } from 'react'
+import { ElementRef, Suspense, useRef, useState } from 'react'
 
 import { Project } from '@/common/projects'
 import { CanvasLoader } from '@/components/canvas-loader/canvas-loader'
-import { Monitor } from '@/components/monitor/monitor'
 import { ParallaxCamera } from '@/components/parallax-camera'
+import { Screen } from '@/components/screen/screen'
 import { useGSAP } from '@gsap/react'
+import { Environment } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
@@ -22,8 +23,8 @@ export const ProjectModel = ({ isSectionVisible, project }: Props) => {
     canvas: clsx(s.canvas),
     modelContainer: clsx(s.modelContainer),
   }
-
-  const modelRef = useRef<ElementRef<typeof Monitor>>(null)
+  const [zoom, setZoom] = useState(false)
+  const modelRef = useRef<ElementRef<typeof Screen>>(null)
 
   useGSAP(() => {
     if (modelRef.current) {
@@ -34,6 +35,20 @@ export const ProjectModel = ({ isSectionVisible, project }: Props) => {
       })
     }
   }, [project])
+
+  useGSAP(() => {
+    const timeline = gsap.timeline()
+
+    if (modelRef.current) {
+      timeline.to(modelRef.current.position, {
+        duration: 1,
+        ease: 'power3',
+        x: zoom ? -6 : -7,
+        y: 0,
+        z: zoom ? 13 : 0,
+      })
+    }
+  }, [zoom])
 
   return (
     <motion.div
@@ -53,10 +68,15 @@ export const ProjectModel = ({ isSectionVisible, project }: Props) => {
     >
       <Canvas className={classNames.canvas}>
         <ParallaxCamera />
-        <ambientLight intensity={1} />
-        <directionalLight intensity={3} position={[-22, -12, 5]} />
+        <directionalLight intensity={3} position={[-1, 1, 3]} />
+        <Environment environmentIntensity={2} preset={'night'} />
         <Suspense fallback={<CanvasLoader />}>
-          <Monitor coverUrl={project.coverUrl} position={[-2, -8, 0]} ref={modelRef} scale={200} />
+          <Screen
+            coverUrl={project.coverUrl}
+            onClick={() => setZoom(!zoom)}
+            ref={modelRef}
+            scale={80}
+          />
         </Suspense>
       </Canvas>
     </motion.div>
