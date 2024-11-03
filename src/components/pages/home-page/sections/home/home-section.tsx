@@ -1,5 +1,5 @@
 'use client'
-import React, { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+import React, { ComponentPropsWithoutRef } from 'react'
 import { useSelector } from 'react-redux'
 
 import { useTickText } from '@/common/use-tick-text'

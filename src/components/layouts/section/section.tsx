@@ -1,14 +1,11 @@
 'use client'
 
-import { ComponentPropsWithoutRef, ElementRef, useEffect, useLayoutEffect, useRef } from 'react'
+import { ComponentPropsWithoutRef, ElementRef, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
 import { ArrowDown } from '@/assets/components/arrow-down'
-import { constants } from '@/common/constants'
 import { useActions } from '@/common/use-actions'
 import useIsVisible from '@/common/use-is-visible'
-import { useIsWidthLess } from '@/common/use-is-width-less'
-import withRedux from '@/common/with-redux'
 import { selectIsMobile, selectSectionInView } from '@/services/app/app.selectors'
 import { Sections, appActions } from '@/services/app/app.slice'
 import clsx from 'clsx'

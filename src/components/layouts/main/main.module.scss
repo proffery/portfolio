@@ -17,6 +17,7 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
+  gap: 64px;
 
   width: 100%;
   max-width: $max-content-width;

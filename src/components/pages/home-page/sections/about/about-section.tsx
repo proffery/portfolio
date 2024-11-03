@@ -1,5 +1,5 @@
 'use client'
-import { ComponentPropsWithoutRef, ElementRef, forwardRef, useState } from 'react'
+import { ComponentPropsWithoutRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import { Arrow } from '@/assets/components/arrow'
