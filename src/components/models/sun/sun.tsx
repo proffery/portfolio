@@ -39,7 +39,7 @@ export const Sun = forwardRef<ElementRef<'group'>, Props>((props: Props, ref) =>
   return (
     <group {...props} dispose={null} ref={ref} scale={0.5}>
       <group ref={group} rotation={[-Math.PI / 2, 0, 0]}>
-        <directionalLight intensity={20} />
+        <directionalLight color={'#f8efe0'} intensity={25} />
         <mesh
           castShadow
           // @ts-ignore

@@ -1,15 +1,30 @@
 'use client'
-import { ReactNode } from 'react'
+import { ReactNode, useEffect } from 'react'
 import { ToastContainer } from 'react-toastify'
 
+import { constants } from '@/common/constants'
+import { useActions } from '@/common/use-actions'
+import { useGpuTier } from '@/common/use-gpu-tier'
+import { useIsWidthLess } from '@/common/use-is-width-less'
+import withRedux from '@/common/with-redux'
 import { BackgroundParticles } from '@/components/background-particles/background-particles'
+import { appActions } from '@/services/app/app.slice'
 
 import 'react-toastify/dist/ReactToastify.css'
 
 type Props = {
   children: ReactNode
 }
-export default function ParticlesLayout({ children }: Props) {
+function ParticlesLayout({ children }: Props) {
+  const { setGpuData, setIsMobile } = useActions(appActions)
+  const gpuData = useGpuTier()
+  const isMobile = useIsWidthLess(constants.mobileWidth)
+
+  useEffect(() => {
+    setGpuData(gpuData)
+    setIsMobile(isMobile)
+  }, [gpuData, isMobile])
+
   return (
     <>
       <BackgroundParticles />
@@ -28,3 +43,5 @@ export default function ParticlesLayout({ children }: Props) {
     </>
   )
 }
+
+export default withRedux(ParticlesLayout)

@@ -42,8 +42,8 @@
 
 .arrowUp,
 .arrowDown {
-  position: fixed;
-  z-index: 20;
+  position: absolute;
+  z-index: 99;
   left: 50%;
 
   &:focus-visible {

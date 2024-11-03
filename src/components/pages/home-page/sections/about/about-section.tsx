@@ -17,7 +17,7 @@ import s from './about.module.scss'
 
 type Props = ComponentPropsWithoutRef<typeof Section>
 
-const AboutSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest }, ref) => {
+const AboutSection = ({ id, ...rest }: Props) => {
   const classNames = {
     arrowsContainer: clsx(s.arrowsContainer),
     avatar: clsx(s.avatar),
@@ -63,7 +63,7 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest }, 
   const isSectionVisible = sectionInView === id
 
   return (
-    <Section id={id} {...rest} ref={ref}>
+    <Section id={id} {...rest}>
       <motion.div
         animate={isSectionVisible ? 'visible' : 'hidden'}
         initial={'hidden'}
@@ -91,7 +91,7 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest }, 
           className={classNames.imageContainer}
           initial={'hidden'}
           transition={{
-            duration: 1,
+            duration: 0.5,
             ease: 'easeInOut',
           }}
           variants={{
@@ -114,7 +114,7 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest }, 
           className={classNames.descriptionContainer}
           initial={'hidden'}
           transition={{
-            duration: 1,
+            duration: 0.5,
             ease: 'easeInOut',
           }}
           variants={{
@@ -169,6 +169,6 @@ const AboutSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest }, 
       </div>
     </Section>
   )
-})
+}
 
 export default withRedux(AboutSection)

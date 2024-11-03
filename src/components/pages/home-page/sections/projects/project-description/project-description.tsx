@@ -70,7 +70,7 @@ export const ProjectDescription = ({ dict, isSectionVisible, onProjectChange, pr
       className={classNames.descriptionContainer}
       initial={'hidden'}
       transition={{
-        duration: 1.5,
+        duration: 0.5,
         ease: 'easeInOut',
       }}
       variants={{

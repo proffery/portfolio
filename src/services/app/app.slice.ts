@@ -1,6 +1,8 @@
 import en, { Dictionaries } from '@/i18n/dictionaries/en'
 import { Locale } from '@/i18n/get-dictionaries'
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { TierResult } from 'detect-gpu'
+import { boolean } from 'zod'
 
 const slice = createSlice({
   extraReducers: builder => {
@@ -25,7 +27,9 @@ const slice = createSlice({
   },
   initialState: {
     dict: en as Dictionaries,
+    gpuData: { tier: 1, type: 'WEBGL_UNSUPPORTED' } as TierResult,
     isLoading: false as boolean,
+    isMobile: false as boolean,
     locale: 'en' as Locale,
     sectionInView: 'home' as Sections,
   },
@@ -33,6 +37,12 @@ const slice = createSlice({
   reducers: {
     setDictionary: (state, action: PayloadAction<Dictionaries>) => {
       state.dict = action.payload
+    },
+    setGpuData: (state, action: PayloadAction<TierResult>) => {
+      state.gpuData = action.payload
+    },
+    setIsMobile: (state, action: PayloadAction<boolean>) => {
+      state.isMobile = action.payload
     },
     setLocale: (state, action: PayloadAction<Locale>) => {
       state.locale = action.payload

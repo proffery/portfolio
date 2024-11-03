@@ -26,6 +26,7 @@
         "./src/components/forms/*",
         "./src/components/layouts/*",
         "./src/components/models/*",
+        "./src/components/effects/*",
         "./src/components/pages/*",
         "./src/components/ui/*"
       ],

@@ -21,7 +21,7 @@ import s from './conacts.module.scss'
 
 type Props = ComponentPropsWithoutRef<typeof Section>
 
-const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest }, ref) => {
+const ContactsSection = ({ id, ...rest }: Props) => {
   const classNames = {
     columnLeft: clsx(s.columnLeft),
     columnRight: clsx(s.columnRight),
@@ -57,7 +57,7 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest 
   const errorMessage = getEmailErrorMessage(error)
 
   return (
-    <Section {...rest} id={id} ref={ref}>
+    <Section {...rest} id={id}>
       <div className={classNames.columnsContainer}>
         <div className={classNames.columnLeft}></div>
         <motion.div
@@ -80,7 +80,7 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest 
             initial={'hidden'}
             transition={{
               delay: 1,
-              duration: 1.5,
+              duration: 0.5,
               ease: 'easeInOut',
             }}
             variants={{
@@ -159,6 +159,6 @@ const ContactsSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest 
       </div>
     </Section>
   )
-})
+}
 
 export default withRedux(ContactsSection)

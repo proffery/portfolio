@@ -1,11 +1,10 @@
 @use '@/styles/breakpoints' as *;
 
 .canvas {
-  inset: $header-height-desktop 0 0 0 !important;
-  height: calc(100vh - $header-height-desktop) !important;
+  inset: 0 !important;
+  height: 100vh !important;
 
   @media (width <= $mobile) {
-    inset: 0 !important;
-    height: 100vh !important;
+    inset: 0;
   }
 }

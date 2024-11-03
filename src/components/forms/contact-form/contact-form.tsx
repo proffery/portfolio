@@ -1,11 +1,13 @@
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+import { useSelector } from 'react-redux'
 
 import { constants } from '@/common/constants'
 import { useIsWidthLess } from '@/common/use-is-width-less'
 import { Button } from '@/components/button/button'
 import { Input } from '@/components/input/input'
 import { Dictionaries } from '@/i18n/dictionaries/en'
+import { selectIsMobile } from '@/services/app/app.selectors'
 import { zodResolver } from '@hookform/resolvers/zod'
 import clsx from 'clsx'
 import { z } from 'zod'
@@ -37,7 +39,7 @@ export const ContactForm = ({
     form: clsx(s.form),
   }
 
-  const isMobile = useIsWidthLess(constants.mobileWidth)
+  const isMobile = useSelector(selectIsMobile)
   const {
     homePage: {
       contactsSection: { contactForm },

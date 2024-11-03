@@ -1,15 +1,15 @@
 @use '@/styles/breakpoints' as *;
 
 .main {
-  position: relative;
-
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center;
   justify-content: center;
 
   width: 100vw;
-  min-height: calc(100vh - $header-height-desktop);
+  min-height: 100vh;
+  margin: 0 auto;
 
   color: inherit;
 }
@@ -17,7 +17,6 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  gap: 32px;
 
   width: 100%;
   max-width: $max-content-width;

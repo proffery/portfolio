@@ -1,5 +1,5 @@
 'use client'
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+import { ComponentPropsWithoutRef } from 'react'
 import { useSelector } from 'react-redux'
 
 import useIndexChange from '@/common/use-index-change'
@@ -18,10 +18,11 @@ type Props = ComponentPropsWithoutRef<typeof Section>
 
 export type ProjectDirection = 'next' | 'previous'
 
-const ProjectsSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest }, ref) => {
+const ProjectsSection = ({ id, ...rest }: Props) => {
   const classNames = {
     header: clsx(s.header),
     projectContainer: clsx(s.projectContainer),
+
     sectionContainer: clsx(s.sectionContainer),
   }
   const sectionInView = useSelector(selectSectionInView)
@@ -38,7 +39,7 @@ const ProjectsSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest 
   const { index, onIndexChange } = useIndexChange(projects)
 
   return (
-    <Section id={id} {...rest} ref={ref}>
+    <Section id={id} {...rest}>
       <div className={classNames.sectionContainer}>
         <motion.div
           animate={isSectionVisible ? 'visible' : 'hidden'}
@@ -69,6 +70,6 @@ const ProjectsSection = forwardRef<ElementRef<'section'>, Props>(({ id, ...rest 
       </div>
     </Section>
   )
-})
+}
 
 export default withRedux(ProjectsSection)

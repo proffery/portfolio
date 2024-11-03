@@ -1,6 +1,6 @@
 'use client'
 
-import { ComponentPropsWithoutRef, ElementRef, useEffect, useRef } from 'react'
+import { ComponentPropsWithoutRef, ElementRef, useEffect, useLayoutEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
 import { ArrowDown } from '@/assets/components/arrow-down'
@@ -9,7 +9,7 @@ import { useActions } from '@/common/use-actions'
 import useIsVisible from '@/common/use-is-visible'
 import { useIsWidthLess } from '@/common/use-is-width-less'
 import withRedux from '@/common/with-redux'
-import { selectSectionInView } from '@/services/app/app.selectors'
+import { selectIsMobile, selectSectionInView } from '@/services/app/app.selectors'
 import { Sections, appActions } from '@/services/app/app.slice'
 import clsx from 'clsx'
 import Link from 'next/link'
@@ -26,7 +26,7 @@ const Section = ({ children, className, id, nextId, prevId, ...rest }: Props) =>
     section: clsx(s.section, className),
   }
   const { setSectionInView } = useActions(appActions)
-  const isMobile = useIsWidthLess(constants.mobileWidth)
+  const isMobile = useSelector(selectIsMobile)
   const arrowsSize = isMobile ? 32 : 48
 
   const sectionRef = useRef<ElementRef<'section'>>(null)
@@ -34,14 +34,13 @@ const Section = ({ children, className, id, nextId, prevId, ...rest }: Props) =>
 
   useEffect(() => {
     setSectionInView(id as Sections)
-    const timout = setTimeout(() => {
-      sectionInView !== id &&
-        sectionRef?.current?.scrollIntoView({ behavior: 'auto', block: 'center' })
-    }, 150)
-
-    return () => {
-      clearTimeout(timout)
-    }
+    // const timout = setTimeout(() => {
+    //   sectionInView !== id && sectionRef?.current?.scrollTo(0, 0)
+    // }, 200)
+    //
+    // return () => {
+    //   clearTimeout(timout)
+    // }
   }, [isSectionVisible, id])
 
   return (
@@ -61,4 +60,4 @@ const Section = ({ children, className, id, nextId, prevId, ...rest }: Props) =>
   )
 }
 
-export default withRedux(Section)
+export default Section
