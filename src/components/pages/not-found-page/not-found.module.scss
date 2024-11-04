@@ -1,11 +1,19 @@
 @use '@/styles/breakpoints' as *;
 
 .canvas {
-  width: 100%;
-  height: 100%;
+  inset: 0 !important;
+  height: 100vh !important;
+
+  @media (width <= $mobile) {
+    inset: 0;
+  }
 }
 
 .backButton {
+  svg {
+    transform: rotate(180deg);
+  }
+
   @media (width <= $mobile) {
     align-self: center;
   }

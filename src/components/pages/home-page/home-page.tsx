@@ -12,18 +12,12 @@ import { Mars } from '@/components/mars/mars'
 import { Moon } from '@/components/moon/moon'
 import { SceneEffect } from '@/components/scene-effect'
 import { Sun } from '@/components/sun/sun'
-import {
-  selectGpuData,
-  selectIsMobile,
-  selectLocale,
-  selectSectionInView,
-} from '@/services/app/app.selectors'
+import { selectGpuData, selectIsMobile, selectSectionInView } from '@/services/app/app.selectors'
 import { useGSAP } from '@gsap/react'
-import { Center, Html, PerspectiveCamera, Scroll, ScrollControls } from '@react-three/drei'
+import { Center, Html, PerspectiveCamera, ScrollControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx'
 import { gsap } from 'gsap'
-import { useRouter } from 'next/navigation'
 
 import s from './home-page.module.scss'
 
@@ -37,8 +31,6 @@ const HomePage = ({ children }: Props) => {
   const sectionInView = useSelector(selectSectionInView)
   const { isMobile: isGpuMobile, tier: gpuTier } = useSelector(selectGpuData)
   const isScreenSizeMobile = useSelector(selectIsMobile)
-  const locale = useSelector(selectLocale)
-  const router = useRouter()
 
   const groupRef = useRef<ElementRef<'group'>>(null)
   const earthRef = useRef<ElementRef<'group'>>(null)

@@ -48,7 +48,7 @@ export const ProjectModel = ({ isSectionVisible, project }: Props) => {
       timeline.to(modelRef.current.position, {
         duration: 1,
         ease: 'power3',
-        x: -7,
+        x: -15,
         y: 0,
         z: zoom ? 13 : 0,
       })

@@ -28,7 +28,7 @@ const ActiveLink = ({ children, href, ...rest }: Props) => {
       } else {
         setIsActive(false)
       }
-    }, 200)
+    }, 250)
 
     return () => {
       clearTimeout(timout)

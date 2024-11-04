@@ -45,8 +45,8 @@ function NotFoundPage() {
               <Typography.H2 as={'h1'}>{notFoundPage.title}</Typography.H2>
               <Typography.H5 as={'h2'}>{notFoundPage.description}</Typography.H5>
               <Button className={classNames.backButton} onClick={goBackHandler}>
-                {notFoundPage.button}
                 <Arrow />
+                {notFoundPage.button}
               </Button>
             </Main>
           </Scroll>
