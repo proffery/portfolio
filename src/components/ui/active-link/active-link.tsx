@@ -38,12 +38,7 @@ const ActiveLink = ({ children, href, ...rest }: Props) => {
   const classNames = { link: clsx(s.link, isActive && s.activeLink) }
 
   return (
-    <Link
-      href={href}
-      onClick={() => router.push(`${locale}#${href}`)}
-      {...rest}
-      className={classNames.link}
-    >
+    <Link href={href} {...rest} className={classNames.link}>
       {children}
     </Link>
   )

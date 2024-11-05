@@ -1,5 +1,5 @@
 'use client'
-import { Suspense } from 'react'
+import React, { Suspense } from 'react'
 import { useSelector } from 'react-redux'
 
 import { Arrow } from '@/assets/components/arrow'
@@ -8,8 +8,9 @@ import { Button } from '@/components/button/button'
 import { CanvasLoader } from '@/components/canvas-loader/canvas-loader'
 import { Main } from '@/components/main/main'
 import { Saturn } from '@/components/saturn/saturn'
+import { SceneEffect } from '@/components/scene-effect'
 import { Typography } from '@/components/typography/typography'
-import { selectDictionary } from '@/services/app/app.selectors'
+import { selectDictionary, selectGpuData, selectIsMobile } from '@/services/app/app.selectors'
 import { PerspectiveCamera, Scroll, ScrollControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx'
@@ -22,7 +23,8 @@ function NotFoundPage() {
     backButton: clsx(s.backButton),
     canvas: clsx(s.canvas),
   }
-
+  const { isMobile: isGpuMobile, tier: gpuTier } = useSelector(selectGpuData)
+  const isScreenSizeMobile = useSelector(selectIsMobile)
   const router = useRouter()
 
   const goBackHandler = () => {
@@ -40,6 +42,7 @@ function NotFoundPage() {
         <ScrollControls pages={0} prepend>
           <Saturn position={[1.2, -1, 0.03]} rotation={[0.1, -1.1, 0.2]} scale={0.003} />
           <directionalLight intensity={2} position={[-8000, 0.5, 1000]} />
+          {!isScreenSizeMobile && !isGpuMobile && gpuTier >= 2 && <SceneEffect />}
           <Scroll html>
             <Main>
               <Typography.H2 as={'h1'}>{notFoundPage.title}</Typography.H2>

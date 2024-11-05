@@ -35,8 +35,8 @@ const HomePage = ({ children }: Props) => {
   const groupRef = useRef<ElementRef<'group'>>(null)
   const earthRef = useRef<ElementRef<'group'>>(null)
   const sunRef = useRef<ElementRef<'group'>>(null)
-
   const { desktop: dDimensions, mobile: mDimensions } = dimensions.homePageScenes[sectionInView]
+
   const sunInitialPosition = isScreenSizeMobile
     ? dimensions.homePageScenes.home.mobile.light_position
     : dimensions.homePageScenes.home.desktop.light_position
