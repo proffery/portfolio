@@ -22,9 +22,9 @@ const ru: Dictionaries = {
     aboutSection: {
       abouts: [
         {
-          avatarUrl: '/images/avatars/image1.webp',
+          avatarUrl: '/images/avatars/image3.webp',
           description: `Я веб-разработчик из Беларуси, мне ${myAges} лет. У меня более ${expYears} ${
-            expYears <= 1 ? 'года' : 'krm'
+            expYears <= 1 ? 'года' : 'лет'
           } опыта в этой сфере. 
           Я создаю визуально привлекательные и удобные для пользователей веб-сайты. От адаптивного дизайна до интерактивных
           функций, мне нравится превращать идеи в цифровую реальность. Я слежу за постоянно развивающейся IT-индустрией и 
@@ -33,29 +33,31 @@ const ru: Dictionaries = {
           title: 'Давайте познакомимся!',
         },
         {
-          avatarUrl: '/images/avatars/image1.webp',
-          description: `TypeScript,
-                        React,
-                        Next.js,
-                        Redux,
-                        Axios,
-                        HTML,
-                        CSS,
-                        SASS/SCSS,
-                        Styled Components,
-                        Storybook,
-                        React Hook Form,
-                        Formik,
-                        Zod,
-                        Material UI,
-                        Radix UI,
-                        Jest,
-                        GIT`,
+          avatarUrl: '/images/avatars/image2.webp',
+          description: `<ul>
+                          <li>TypeScript</li>
+                          <li>React</li>
+                          <li>Next.js</li>
+                          <li>Redux</li>
+                          <li>Axios</li>
+                          <li>HTML</li>
+                          <li>CSS</li>
+                          <li>SASS/SCSS</li>
+                          <li>Styled Components</li>
+                          <li>Storybook</li>
+                          <li>React Hook Form</li>
+                          <li>Formik</li>
+                          <li>Zod</li>
+                          <li>Material UI</li>
+                          <li>Radix UI</li>
+                          <li>Jest</li>
+                          <li>GIT</li>
+                        </ul>`,
           id: 2,
           title: 'Технологии и библиотеки, которые я использую',
         },
         {
-          avatarUrl: '/images/avatars/image3.webp',
+          avatarUrl: '/images/avatars/image1.webp',
           description: `Кроме интереса к IT-сфере, я также увлекаюсь научной фантастикой, люблю читать книги и 
           смотреть фильмы на эту тему. Иногда, когда позволяет время, играю в игры. Временами выхожу на прогулку  
           с фотоаппаратом, пытаясь запечатлеть сюжеты городской и уличной жизни.`,

@@ -1,6 +1,7 @@
 @use '@/styles/breakpoints' as *;
 
 .canvas {
+position: relative;
   inset: 0 !important;
   height: 100vh !important;
 
@@ -17,4 +18,12 @@
   @media (width <= $mobile) {
     align-self: center;
   }
+}
+
+.backgroundImage {
+  position: absolute;
+  z-index: -1;
+  top: 90%;
+  left: 70%;
+  transform: translate(-50%, -50%);
 }

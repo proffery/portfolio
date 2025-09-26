@@ -1,5 +1,5 @@
 'use client'
-import { ComponentPropsWithoutRef, useState } from 'react'
+import React, { ComponentPropsWithoutRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import { Arrow } from '@/assets/components/arrow'
@@ -8,7 +8,7 @@ import withRedux from '@/common/with-redux'
 import { Button } from '@/components/button/button'
 import Section from '@/components/section/section'
 import { Typography } from '@/components/typography/typography'
-import { selectDictionary, selectSectionInView } from '@/services/app/app.selectors'
+import { selectDictionary, selectGpuData, selectSectionInView } from '@/services/app/app.selectors'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -22,6 +22,7 @@ const AboutSection = ({ id, ...rest }: Props) => {
     arrowsContainer: clsx(s.arrowsContainer),
     avatar: clsx(s.avatar),
     backArrow: clsx(s.backArrow),
+    backgroundImage: clsx(s.backgroundImage),
     buttonContainer: clsx(s.buttonContainer),
     descriptionContainer: clsx(s.descriptionContainer),
     imageContainer: clsx(s.imageContainer),
@@ -32,6 +33,7 @@ const AboutSection = ({ id, ...rest }: Props) => {
   const {
     homePage: { aboutSection },
   } = dict
+  const { tier: gpuTier } = useSelector(selectGpuData)
 
   const { index, onIndexChange } = useIndexChange(aboutSection.abouts)
   const [touchStart, setTouchStart] = useState(0)
@@ -64,6 +66,15 @@ const AboutSection = ({ id, ...rest }: Props) => {
 
   return (
     <Section id={id} {...rest}>
+      {gpuTier < 2 && (
+        <Image
+          alt={'Mars'}
+          className={classNames.backgroundImage}
+          height={800}
+          src={'/images/sections/mars.webp'}
+          width={800}
+        />
+      )}
       <motion.div
         animate={isSectionVisible ? 'visible' : 'hidden'}
         initial={'hidden'}
@@ -125,7 +136,9 @@ const AboutSection = ({ id, ...rest }: Props) => {
           whileInView={'visible'}
         >
           <Typography.H5 as={'h3'}>{aboutSection.abouts[index].title}</Typography.H5>
-          <Typography.Body1>{aboutSection.abouts[index].description}</Typography.Body1>
+          <Typography.Body1
+            dangerouslySetInnerHTML={{ __html: aboutSection.abouts[index].description }}
+          />
           <div className={classNames.arrowsContainer}>
             <Button
               disabled={aboutSection.abouts[index].id === 1}

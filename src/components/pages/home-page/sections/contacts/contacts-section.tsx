@@ -1,5 +1,5 @@
 'use client'
-import { ComponentPropsWithoutRef } from 'react'
+import React, { ComponentPropsWithoutRef } from 'react'
 import { useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 
@@ -12,10 +12,11 @@ import withRedux from '@/common/with-redux'
 import { ContactForm, ContactFormValues } from '@/components/contact-form/contact-form'
 import Section from '@/components/section/section'
 import { Typography } from '@/components/typography/typography'
-import { selectDictionary, selectSectionInView } from '@/services/app/app.selectors'
+import { selectDictionary, selectGpuData, selectSectionInView } from '@/services/app/app.selectors'
 import { useSendEmailMutation } from '@/services/email/email.service'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 import s from './conacts.module.scss'
 
@@ -23,6 +24,7 @@ type Props = ComponentPropsWithoutRef<typeof Section>
 
 const ContactsSection = ({ id, ...rest }: Props) => {
   const classNames = {
+    backgroundImage: clsx(s.backgroundImage),
     columnLeft: clsx(s.columnLeft),
     columnRight: clsx(s.columnRight),
     columnsContainer: clsx(s.columnsContainer),
@@ -32,6 +34,7 @@ const ContactsSection = ({ id, ...rest }: Props) => {
   const {
     homePage: { contactsSection },
   } = dict
+  const { tier: gpuTier } = useSelector(selectGpuData)
 
   const sectionInView = useSelector(selectSectionInView)
   const isSectionVisible = sectionInView === id
@@ -58,6 +61,15 @@ const ContactsSection = ({ id, ...rest }: Props) => {
 
   return (
     <Section {...rest} id={id}>
+      {gpuTier < 2 && (
+        <Image
+          alt={'Jupiter'}
+          className={classNames.backgroundImage}
+          height={800}
+          src={'/images/sections/jupiter.webp'}
+          width={800}
+        />
+      )}
       <div className={classNames.columnsContainer}>
         <div className={classNames.columnLeft}></div>
         <motion.div

@@ -2,7 +2,7 @@ export const projectsEn = [
   {
     codeUrl: '',
     coverUrl: '/images/projects/care-service.webp',
-    demoUrl: 'https://streetphoto.world',
+    demoUrl: 'https://careserv.ru',
     description:
       'This startup, in which I had the opportunity to participate, is a service for finding and selecting personnel. ' +
       'The implemented features allow users to search for assistants in their region, and thanks to extensive ' +
@@ -16,7 +16,7 @@ export const projectsEn = [
   {
     codeUrl: 'https://github.com/proffery/my-blog',
     coverUrl: '/images/projects/blog.webp',
-    demoUrl: 'https://streetphoto.world',
+    demoUrl: 'https://shamko-blog.vercel.app',
     description:
       'This platform is designed for writing articles. Utilizing internationalization ' +
       'features, users can create posts on the topic of street photography in their native language. An intuitive ' +
@@ -64,13 +64,24 @@ export const projectsEn = [
     techIds: ['javaScript', 'react', 'bootstrap', 'css', 'firebase'],
     title: `Photographer's page`,
   },
+  {
+    codeUrl: '',
+    coverUrl: '/images/projects/coolpass.webp',
+    demoUrl: 'https://coolpass-dmitryshamko.web.app',
+    description:
+      'A copy of the main page of a well-known website, created during an internship at one of the companies where I was fortunate ' +
+      'to work. This uses a production backend.',
+    id: 6,
+    techIds: ['typeScript', 'react', 'redux', 'sass', 'storyBook'],
+    title: 'Copy of a well-known website',
+  },
 ]
 
 export const projectsRu: Project[] = [
   {
     codeUrl: '',
     coverUrl: '/images/projects/care-service.webp',
-    demoUrl: 'https://care-service.online',
+    demoUrl: 'https://careserv.ru',
     description:
       'Этот стартап, в котором мне удалось поучавствовать - сервис по поиску и подбору персонала. ' +
       'Реализованные возможности, позволяют пользователям искать помощников в своем регионе, а благодаря ' +
@@ -84,7 +95,7 @@ export const projectsRu: Project[] = [
   {
     codeUrl: 'https://github.com/proffery/my-blog',
     coverUrl: '/images/projects/blog.webp',
-    demoUrl: 'https://streetphoto.world',
+    demoUrl: 'https://shamko-blog.vercel.app',
     description:
       'Эта платформа предназначена для написания статей. Используя ' +
       'возможности интернационализации, пользователи могут создавать посты на тему уличной фотографии на своем родном ' +
@@ -132,6 +143,17 @@ export const projectsRu: Project[] = [
     id: 5,
     techIds: ['javaScript', 'react', 'bootstrap', 'css', 'firebase'],
     title: 'Страничка фотографа',
+  },
+  {
+    codeUrl: '',
+    coverUrl: '/images/projects/coolpass.webp',
+    demoUrl: 'https://coolpass-dmitryshamko.web.app',
+    description:
+      'Копия главной страницы известного сайта, сделанная при стажировке в одной из компаний, где мне посчастливилось ' +
+      'поработать. Здесь используется продакшен бэкенд',
+    id: 6,
+    techIds: ['typeScript', 'react', 'redux', 'sass', 'storyBook'],
+    title: 'Копия известного сайта',
   },
 ]
 

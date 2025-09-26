@@ -39,7 +39,7 @@ const HomeSection = ({ id, ...rest }: Props) => {
           alt={'Earth'}
           className={classNames.backgroundImage}
           height={800}
-          src={'/images/earth.png'}
+          src={'/images/sections/earth.webp'}
           width={800}
         />
       )}

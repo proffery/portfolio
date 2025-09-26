@@ -23,6 +23,10 @@
   justify-content: center;
 
   height: fit-content;
+
+  & ul {
+    margin-left: 24px;
+  }
 }
 
 .arrowsContainer {
@@ -86,4 +90,11 @@
   @media (width <= $mobile) {
     max-width: 640px;
   }
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -36,7 +36,12 @@ const LangSelect = ({ dict, locale }: Props) => {
   }
 
   return (
-    <select className={classNames.select} defaultValue={locale} onChange={changeLangHandler}>
+    <select
+      className={classNames.select}
+      defaultValue={locale}
+      name={'Language'}
+      onChange={changeLangHandler}
+    >
       {locales.map(locale => (
         <option className={classNames.option} key={locale} value={locale}>
           {locale}

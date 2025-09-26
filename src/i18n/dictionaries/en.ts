@@ -20,7 +20,7 @@ const en = {
     aboutSection: {
       abouts: [
         {
-          avatarUrl: '/images/avatars/image1.webp',
+          avatarUrl: '/images/avatars/image3.webp',
           description: `I'm a ${myAges} years-old web developer based in Belarus, with over a ${expYears} years of 
           experience in creating visually appealing and user-friendly websites. My passion lies in transforming ideas into 
           digital realities, focusing on responsive designs and interactive features. I stay up-to-date with the latest 
@@ -29,29 +29,31 @@ const en = {
           title: `Let's get to know each other!`,
         },
         {
-          avatarUrl: '/images/avatars/image1.webp',
-          description: `TypeScript,
-                        React,
-                        Next.js,
-                        Redux,
-                        Axios,
-                        HTML,
-                        CSS,
-                        SASS/SCSS,
-                        Styled Components,
-                        Storybook,
-                        React Hook Form,
-                        Formik,
-                        Zod,
-                        Material UI,
-                        Radix UI,
-                        Jest,
-                        GIT`,
+          avatarUrl: '/images/avatars/image2.webp',
+          description: `<ul>
+                          <li>TypeScript</li>
+                          <li>React</li>
+                          <li>Next.js</li>
+                          <li>Redux</li>
+                          <li>Axios</li>
+                          <li>HTML</li>
+                          <li>CSS</li>
+                          <li>SASS/SCSS</li>
+                          <li>Styled Components</li>
+                          <li>Storybook</li>
+                          <li>React Hook Form</li>
+                          <li>Formik</li>
+                          <li>Zod</li>
+                          <li>Material UI</li>
+                          <li>Radix UI</li>
+                          <li>Jest</li>
+                          <li>GIT</li>
+                        </ul>`,
           id: 2,
           title: 'Technologies and libraries that I use most often',
         },
         {
-          avatarUrl: '/images/avatars/image3.webp',
+          avatarUrl: '/images/avatars/image1.webp',
           description: `Besides my interest in the IT field, I am very passionate about science fiction and love 
           reading books and watching films on this topic. Sometimes, when time allows, I play games. I also 
           occasionally go for walks with my camera, trying to capture the stories of urban and street life.`,

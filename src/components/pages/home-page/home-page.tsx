@@ -54,6 +54,7 @@ const HomePage = ({ children }: Props) => {
       })
     }
   }, [sectionInView, isScreenSizeMobile, isGpuMobile])
+
   useGSAP(() => {
     const timeline = gsap.timeline()
 
@@ -81,6 +82,7 @@ const HomePage = ({ children }: Props) => {
       })
     }
   }, [sectionInView, isScreenSizeMobile, isGpuMobile])
+
   useGSAP(() => {
     const timeline = gsap.timeline()
 
