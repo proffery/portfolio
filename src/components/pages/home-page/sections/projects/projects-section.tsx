@@ -1,5 +1,5 @@
 'use client'
-import { ComponentPropsWithoutRef } from 'react'
+import { ComponentPropsWithoutRef, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import useIndexChange from '@/common/use-index-change'
@@ -33,10 +33,13 @@ const ProjectsSection = ({ id, ...rest }: Props) => {
       projectsSection: { projects, title },
     },
   } = dict
-
-  const isSectionVisible = sectionInView === id
+  const [isSectionVisible, setIsSectionVisible] = useState(false)
 
   const { index, onIndexChange } = useIndexChange(projects)
+
+  useEffect(() => {
+    setIsSectionVisible(sectionInView === id)
+  }, [sectionInView, id])
 
   return (
     <Section id={id} {...rest}>

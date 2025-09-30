@@ -1,5 +1,5 @@
 'use client'
-import React, { ComponentPropsWithoutRef, useState } from 'react'
+import React, { ComponentPropsWithoutRef, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import { Arrow } from '@/assets/components/arrow'
@@ -38,6 +38,7 @@ const AboutSection = ({ id, ...rest }: Props) => {
   const { index, onIndexChange } = useIndexChange(aboutSection.abouts)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
+  const [isSectionVisible, setIsSectionVisible] = useState(false)
 
   const minSwipeDistance = 40
 
@@ -62,7 +63,10 @@ const AboutSection = ({ id, ...rest }: Props) => {
       isLeftSwipe ? onIndexChange('next') : onIndexChange('previous')
     }
   }
-  const isSectionVisible = sectionInView === id
+
+  useEffect(() => {
+    setIsSectionVisible(sectionInView === id)
+  }, [sectionInView, id])
 
   return (
     <Section id={id} {...rest}>

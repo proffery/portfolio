@@ -1,5 +1,5 @@
 'use client'
-import React, { ComponentPropsWithoutRef } from 'react'
+import React, { ComponentPropsWithoutRef, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 
@@ -37,8 +37,8 @@ const ContactsSection = ({ id, ...rest }: Props) => {
   const { tier: gpuTier } = useSelector(selectGpuData)
 
   const sectionInView = useSelector(selectSectionInView)
-  const isSectionVisible = sectionInView === id
 
+  const [isSectionVisible, setIsSectionVisible] = useState(false)
   const [sendEmail, { error, isLoading, isSuccess }] = useSendEmailMutation()
 
   const onFormSubmit = async (data: ContactFormValues) => {
@@ -56,6 +56,10 @@ const ContactsSection = ({ id, ...rest }: Props) => {
       }
     )
   }
+
+  useEffect(() => {
+    setIsSectionVisible(sectionInView === id)
+  }, [sectionInView, id])
 
   const errorMessage = getEmailErrorMessage(error)
 
