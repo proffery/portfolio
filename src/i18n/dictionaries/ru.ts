@@ -35,22 +35,15 @@ const ru: Dictionaries = {
         {
           avatarUrl: '/images/avatars/image2.webp',
           description: `<ul>
-                          <li>TypeScript</li>
-                          <li>React</li>
-                          <li>Next.js</li>
-                          <li>Redux</li>
+                          <li>TypeScript, JavaScript</li>
+                          <li>React, Next.js</li>
+                          <li>Redux Toolkit, RTK Query, Zustand</li>
                           <li>Axios</li>
-                          <li>HTML</li>
-                          <li>CSS</li>
-                          <li>SASS/SCSS</li>
-                          <li>Styled Components</li>
-                          <li>Storybook</li>
-                          <li>React Hook Form</li>
-                          <li>Formik</li>
+                          <li>CSS, SASS/SCSS, Styled Components</li>
+                          <li>React Hook Form, Formik</li>
                           <li>Zod</li>
-                          <li>Material UI</li>
-                          <li>Radix UI</li>
-                          <li>Jest</li>
+                          <li>Radix UI, Material UI</li>
+                          <li>Storybook, Jest</li>
                           <li>GIT</li>
                         </ul>`,
           id: 2,
