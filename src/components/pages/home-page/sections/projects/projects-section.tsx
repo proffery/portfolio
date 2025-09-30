@@ -64,8 +64,9 @@ const ProjectsSection = ({ id, ...rest }: Props) => {
         <div className={classNames.projectContainer}>
           <ProjectDescription
             dict={dict}
+            index={index}
             isSectionVisible={isSectionVisible}
-            onProjectChange={onIndexChange}
+            onIndexChange={onIndexChange}
             project={projects[index]}
           />
           <ProjectModel isSectionVisible={isSectionVisible} project={projects[index]} />

@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import React from 'react'
 
 import { Arrow } from '@/assets/components/arrow'
 import { Project } from '@/common/projects'
+import { IndexDirection } from '@/common/use-index-change'
 import { Button } from '@/components/button/button'
-import { ProjectDirection } from '@/components/home-page/sections/projects/projects-section'
 import { SvgSpriteIcon } from '@/components/svg-sprite-icon/svg-sprite-icon'
+import { Swiper } from '@/components/swiper/swiper'
 import { Typography } from '@/components/typography/typography'
 import { Dictionaries } from '@/i18n/dictionaries/en'
 import clsx from 'clsx'
@@ -14,12 +15,19 @@ import s from './project-description.module.scss'
 
 type Props = {
   dict: Dictionaries
+  index: number
   isSectionVisible: boolean
-  onProjectChange: (direction: ProjectDirection) => void
+  onIndexChange: (direction: IndexDirection) => void
   project: Project
 }
 
-export const ProjectDescription = ({ dict, isSectionVisible, onProjectChange, project }: Props) => {
+export const ProjectDescription = ({
+  dict,
+  index,
+  isSectionVisible,
+  onIndexChange,
+  project,
+}: Props) => {
   const classNames = {
     arrowsContainer: clsx(s.arrowsContainer),
     backArrow: clsx(s.backArrow),
@@ -30,39 +38,9 @@ export const ProjectDescription = ({ dict, isSectionVisible, onProjectChange, pr
     technologiesContainer: clsx(s.technologiesContainer),
   }
 
-  const [touchStart, setTouchStart] = useState(0)
-  const [touchEnd, setTouchEnd] = useState(0)
-
-  const minSwipeDistance = 40
-
-  const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    setTouchEnd(0) // otherwise the swipe is fired even with usual touch events
-    setTouchStart(e.targetTouches[0].clientX)
-  }
-
-  const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) =>
-    setTouchEnd(e.targetTouches[0].clientX)
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) {
-      return
-    }
-    const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > minSwipeDistance && project.id < projectsSection.projects.length
-    const isRightSwipe = distance < -minSwipeDistance && project.id > 1
-
-    if (isLeftSwipe || isRightSwipe) {
-      isLeftSwipe ? onProjectChange('next') : onProjectChange('previous')
-    }
-  }
-
   const {
     homePage: { projectsSection },
   } = dict
-
-  const handleProjectChange = (direction: ProjectDirection) => {
-    onProjectChange(direction)
-  }
 
   return (
     <motion.div
@@ -81,9 +59,9 @@ export const ProjectDescription = ({ dict, isSectionVisible, onProjectChange, pr
       whileInView={'visible'}
     >
       <Typography.H5 as={'h3'}>{project.title}</Typography.H5>
-      <div onTouchEnd={onTouchEnd} onTouchMove={onTouchMove} onTouchStart={onTouchStart}>
+      <Swiper index={index} onIndexChange={onIndexChange} sectionArr={projectsSection.projects}>
         <Typography.Body1>{project.description}</Typography.Body1>
-      </div>
+      </Swiper>
       <div className={classNames.linksContainer}>
         {project.codeUrl && (
           <Button as={'a'} href={project.codeUrl} target={'_blank'} variant={'text'}>
@@ -119,7 +97,7 @@ export const ProjectDescription = ({ dict, isSectionVisible, onProjectChange, pr
       <div className={classNames.arrowsContainer}>
         <Button
           disabled={project.id === 1}
-          onClick={() => handleProjectChange('previous')}
+          onClick={() => onIndexChange('previous')}
           variant={'text'}
         >
           <Arrow className={classNames.backArrow} height={48} width={48} />
@@ -129,7 +107,7 @@ export const ProjectDescription = ({ dict, isSectionVisible, onProjectChange, pr
         </Typography.Caption>
         <Button
           disabled={project.id === projectsSection.projects.length}
-          onClick={() => handleProjectChange('next')}
+          onClick={() => onIndexChange('next')}
           variant={'text'}
         >
           <Arrow height={48} width={48} />

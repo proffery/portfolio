@@ -24,9 +24,7 @@
 
   height: fit-content;
 
-  & ul {
-    margin-left: 24px;
-  }
+
 }
 
 .arrowsContainer {
@@ -62,8 +60,22 @@
 }
 
 .descriptionContainer {
+  pointer-events: none;
   gap: 32px;
   width: 50%;
+
+  & > * {
+    pointer-events: auto;
+  }
+
+  & ul {
+    pointer-events: none; // Prevent list from capturing events
+    margin-left: 24px;
+  }
+
+  & li {
+    pointer-events: none; // Prevent list items from capturing events
+  }
 
   @media (width <= $mobile) {
     gap: 16px;

@@ -7,6 +7,7 @@ import useIndexChange from '@/common/use-index-change'
 import withRedux from '@/common/with-redux'
 import { Button } from '@/components/button/button'
 import Section from '@/components/section/section'
+import { Swiper } from '@/components/swiper/swiper'
 import { Typography } from '@/components/typography/typography'
 import { selectDictionary, selectGpuData, selectSectionInView } from '@/services/app/app.selectors'
 import clsx from 'clsx'
@@ -34,35 +35,8 @@ const AboutSection = ({ id, ...rest }: Props) => {
     homePage: { aboutSection },
   } = dict
   const { tier: gpuTier } = useSelector(selectGpuData)
-
-  const { index, onIndexChange } = useIndexChange(aboutSection.abouts)
-  const [touchStart, setTouchStart] = useState(0)
-  const [touchEnd, setTouchEnd] = useState(0)
   const [isSectionVisible, setIsSectionVisible] = useState(false)
-
-  const minSwipeDistance = 40
-
-  const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    setTouchEnd(0) // otherwise the swipe is fired even with usual touch events
-    setTouchStart(e.targetTouches[0].clientX)
-  }
-
-  const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) =>
-    setTouchEnd(e.targetTouches[0].clientX)
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) {
-      return
-    }
-    const distance = touchStart - touchEnd
-    const isLeftSwipe =
-      distance > minSwipeDistance && aboutSection.abouts[index].id < aboutSection.abouts.length
-    const isRightSwipe = distance < -minSwipeDistance && aboutSection.abouts[index].id > 1
-
-    if (isLeftSwipe || isRightSwipe) {
-      isLeftSwipe ? onIndexChange('next') : onIndexChange('previous')
-    }
-  }
+  const { index, onIndexChange } = useIndexChange(aboutSection.abouts)
 
   useEffect(() => {
     setIsSectionVisible(sectionInView === id)
@@ -95,11 +69,11 @@ const AboutSection = ({ id, ...rest }: Props) => {
       >
         <Typography.H3 as={'h2'}>{aboutSection.title}</Typography.H3>
       </motion.div>
-      <div
+      <Swiper
         className={classNames.sectionContainer}
-        onTouchEnd={onTouchEnd}
-        onTouchMove={onTouchMove}
-        onTouchStart={onTouchStart}
+        index={index}
+        onIndexChange={onIndexChange}
+        sectionArr={aboutSection.abouts}
       >
         <motion.div
           animate={isSectionVisible ? 'visible' : 'hidden'}
@@ -183,7 +157,7 @@ const AboutSection = ({ id, ...rest }: Props) => {
             </motion.div>
           )}
         </motion.div>
-      </div>
+      </Swiper>
     </Section>
   )
 }
