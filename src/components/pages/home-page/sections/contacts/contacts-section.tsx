@@ -1,5 +1,5 @@
 'use client'
-import React, { ComponentPropsWithoutRef, useEffect, useState } from 'react'
+import React, { ComponentPropsWithoutRef } from 'react'
 import { useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 
@@ -38,7 +38,6 @@ const ContactsSection = ({ id, ...rest }: Props) => {
 
   const sectionInView = useSelector(selectSectionInView)
 
-  const [isSectionVisible, setIsSectionVisible] = useState(false)
   const [sendEmail, { error, isLoading, isSuccess }] = useSendEmailMutation()
 
   const onFormSubmit = async (data: ContactFormValues) => {
@@ -57,10 +56,6 @@ const ContactsSection = ({ id, ...rest }: Props) => {
     )
   }
 
-  useEffect(() => {
-    setIsSectionVisible(sectionInView === id)
-  }, [sectionInView, id])
-
   const errorMessage = getEmailErrorMessage(error)
 
   return (
@@ -77,7 +72,7 @@ const ContactsSection = ({ id, ...rest }: Props) => {
       <div className={classNames.columnsContainer}>
         <div className={classNames.columnLeft}></div>
         <motion.div
-          animate={isSectionVisible ? 'visible' : 'hidden'}
+          animate={sectionInView === id ? 'visible' : 'hidden'}
           className={classNames.columnRight}
           initial={'hidden'}
           transition={{
@@ -92,7 +87,7 @@ const ContactsSection = ({ id, ...rest }: Props) => {
           whileInView={'visible'}
         >
           <motion.div
-            animate={isSectionVisible ? 'visible' : 'hidden'}
+            animate={sectionInView === id ? 'visible' : 'hidden'}
             initial={'hidden'}
             transition={{
               delay: 1,
@@ -115,7 +110,7 @@ const ContactsSection = ({ id, ...rest }: Props) => {
             isSubmitSuccess={isSuccess}
             onSubmit={onFormSubmit}
           />
-          {isSectionVisible && (
+          {sectionInView === id && (
             <div className={classNames.columnLeft}>
               <motion.a
                 animate={{ opacity: 1, x: 0 }}

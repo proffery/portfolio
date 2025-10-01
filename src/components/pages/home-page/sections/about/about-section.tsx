@@ -1,5 +1,5 @@
 'use client'
-import React, { ComponentPropsWithoutRef, useEffect, useState } from 'react'
+import React, { ComponentPropsWithoutRef } from 'react'
 import { useSelector } from 'react-redux'
 
 import { Arrow } from '@/assets/components/arrow'
@@ -35,12 +35,7 @@ const AboutSection = ({ id, ...rest }: Props) => {
     homePage: { aboutSection },
   } = dict
   const { tier: gpuTier } = useSelector(selectGpuData)
-  const [isSectionVisible, setIsSectionVisible] = useState(false)
   const { index, onIndexChange } = useIndexChange(aboutSection.abouts)
-
-  useEffect(() => {
-    setIsSectionVisible(sectionInView === id)
-  }, [sectionInView, id])
 
   return (
     <Section id={id} {...rest}>
@@ -54,7 +49,7 @@ const AboutSection = ({ id, ...rest }: Props) => {
         />
       )}
       <motion.div
-        animate={isSectionVisible ? 'visible' : 'hidden'}
+        animate={sectionInView === id ? 'visible' : 'hidden'}
         initial={'hidden'}
         transition={{
           duration: 0.5,
@@ -76,7 +71,7 @@ const AboutSection = ({ id, ...rest }: Props) => {
         sectionArr={aboutSection.abouts}
       >
         <motion.div
-          animate={isSectionVisible ? 'visible' : 'hidden'}
+          animate={sectionInView === id ? 'visible' : 'hidden'}
           className={classNames.imageContainer}
           initial={'hidden'}
           transition={{
@@ -99,7 +94,7 @@ const AboutSection = ({ id, ...rest }: Props) => {
           />
         </motion.div>
         <motion.div
-          animate={isSectionVisible ? 'visible' : 'hidden'}
+          animate={sectionInView === id ? 'visible' : 'hidden'}
           className={classNames.descriptionContainer}
           initial={'hidden'}
           transition={{
@@ -136,9 +131,9 @@ const AboutSection = ({ id, ...rest }: Props) => {
               <Arrow height={48} width={48} />
             </Button>
           </div>
-          {isSectionVisible && (
+          {sectionInView === id && (
             <motion.div
-              animate={isSectionVisible ? 'visible' : 'hidden'}
+              animate={sectionInView === id ? 'visible' : 'hidden'}
               className={classNames.buttonContainer}
               initial={'hidden'}
               transition={{

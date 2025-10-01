@@ -4,11 +4,10 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  align-self: center;
-  justify-content: center;
+  place-self: center center;
 
-  aspect-ratio: 1 / 1;
   width: 624px;
+  min-height: fit-content;
   padding-right: 8px;
 
   border-radius: 5px;

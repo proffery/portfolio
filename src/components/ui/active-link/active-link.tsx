@@ -33,7 +33,7 @@ const ActiveLink = ({ children, href, ...rest }: Props) => {
     return () => {
       clearTimeout(timout)
     }
-  }, [sectionInView])
+  }, [sectionInView, href, locale, router])
 
   const classNames = { link: clsx(s.link, isActive && s.activeLink) }
 

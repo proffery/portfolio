@@ -1,5 +1,5 @@
 'use client'
-import React, { ComponentPropsWithoutRef, useEffect, useState } from 'react'
+import React, { ComponentPropsWithoutRef } from 'react'
 import { useSelector } from 'react-redux'
 
 import { useTickText } from '@/common/use-tick-text'
@@ -30,11 +30,6 @@ const HomeSection = ({ id, ...rest }: Props) => {
 
   const tickText = useTickText(heroSection.title3)
   const { tier: gpuTier } = useSelector(selectGpuData)
-  const [isSectionVisible, setIsSectionVisible] = useState(false)
-
-  useEffect(() => {
-    setIsSectionVisible(sectionInView === id)
-  }, [sectionInView, id])
 
   return (
     <Section id={id} {...rest}>
@@ -47,7 +42,7 @@ const HomeSection = ({ id, ...rest }: Props) => {
           width={800}
         />
       )}
-      {isSectionVisible && (
+      {sectionInView === id && (
         <div className={classNames.headerContainer}>
           <div>
             <motion.div

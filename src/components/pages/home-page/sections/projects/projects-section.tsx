@@ -1,5 +1,5 @@
 'use client'
-import { ComponentPropsWithoutRef, useEffect, useState } from 'react'
+import { ComponentPropsWithoutRef } from 'react'
 import { useSelector } from 'react-redux'
 
 import useIndexChange from '@/common/use-index-change'
@@ -16,8 +16,6 @@ import s from './projects.module.scss'
 
 type Props = ComponentPropsWithoutRef<typeof Section>
 
-export type ProjectDirection = 'next' | 'previous'
-
 const ProjectsSection = ({ id, ...rest }: Props) => {
   const classNames = {
     header: clsx(s.header),
@@ -33,19 +31,14 @@ const ProjectsSection = ({ id, ...rest }: Props) => {
       projectsSection: { projects, title },
     },
   } = dict
-  const [isSectionVisible, setIsSectionVisible] = useState(false)
 
   const { index, onIndexChange } = useIndexChange(projects)
-
-  useEffect(() => {
-    setIsSectionVisible(sectionInView === id)
-  }, [sectionInView, id])
 
   return (
     <Section id={id} {...rest}>
       <div className={classNames.sectionContainer}>
         <motion.div
-          animate={isSectionVisible ? 'visible' : 'hidden'}
+          animate={sectionInView === id ? 'visible' : 'hidden'}
           className={classNames.header}
           initial={'hidden'}
           transition={{
@@ -65,11 +58,11 @@ const ProjectsSection = ({ id, ...rest }: Props) => {
           <ProjectDescription
             dict={dict}
             index={index}
-            isSectionVisible={isSectionVisible}
+            isSectionVisible={sectionInView === id}
             onIndexChange={onIndexChange}
             project={projects[index]}
           />
-          <ProjectModel isSectionVisible={isSectionVisible} project={projects[index]} />
+          <ProjectModel isSectionVisible={sectionInView === id} project={projects[index]} />
         </div>
       </div>
     </Section>
