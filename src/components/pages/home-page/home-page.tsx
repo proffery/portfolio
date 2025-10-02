@@ -89,7 +89,7 @@ const HomePage = ({ children }: Props) => {
     if (groupRef.current) {
       timeline.to(groupRef.current.rotation, {
         duration: 4,
-        ease: 'expo.inOut',
+        ease: 'power1.inOut',
         x: isScreenSizeMobile ? mDimensions.group_rotation[0] : dDimensions.group_rotation[0],
         y: isScreenSizeMobile ? mDimensions.group_rotation[1] : dDimensions.group_rotation[1],
         z: isScreenSizeMobile ? mDimensions.group_rotation[2] : dDimensions.group_rotation[2],
