@@ -14,20 +14,16 @@
 .modelContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   place-self: center center;
+  align-items: center;
   justify-content: center;
 
   aspect-ratio: 4 / 3;
-  width: 624px;
+  width: 100%;
+  max-width: 624px;
   height: auto;
 
   border-radius: 5px;
-
-  @media (width <= $mobile) {
-    width: 100%;
-    min-width: 290px;
-  }
 }
 
 .projectImage {
@@ -37,7 +33,8 @@
   justify-content: center;
 
   aspect-ratio: 16 / 9;
-  width: 624px;
+  width: 100%;
+  max-width: 624px;
   height: auto;
 
   background: var(--backgroud-gradient);
