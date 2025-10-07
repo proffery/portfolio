@@ -14,7 +14,13 @@ import { SceneEffect } from '@/components/scene-effect'
 import { Sun } from '@/components/sun/sun'
 import { selectGpuData, selectIsMobile, selectSectionInView } from '@/services/app/app.selectors'
 import { useGSAP } from '@gsap/react'
-import { Center, Html, PerspectiveCamera, ScrollControls } from '@react-three/drei'
+import {
+  Center,
+  Html,
+  PerspectiveCamera,
+  PresentationControls,
+  ScrollControls,
+} from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx'
 import { gsap } from 'gsap'
@@ -104,61 +110,70 @@ const HomePage = ({ children }: Props) => {
           <ScrollControls pages={2}>
             {gpuTier >= 2 && (
               <PerspectiveCamera makeDefault>
-                <group ref={groupRef}>
-                  <ambientLight intensity={0.5} />
-                  {gpuTier >= 2 && (
-                    <Sun
-                      position={[
-                        sunInitialPosition[0],
-                        sunInitialPosition[1],
-                        sunInitialPosition[2],
-                      ]}
-                      ref={sunRef}
-                    />
-                  )}
+                <PresentationControls
+                  azimuth={[-Math.PI / 1.4, Math.PI / 2]}
+                  config={{ mass: 2, tension: 500 }}
+                  cursor={false}
+                  global
+                  polar={[-Math.PI / 3, Math.PI / 3]}
+                  snap={{ mass: 4, tension: 1500 }}
+                >
+                  <group ref={groupRef}>
+                    <ambientLight intensity={0.5} />
+                    {gpuTier >= 2 && (
+                      <Sun
+                        position={[
+                          sunInitialPosition[0],
+                          sunInitialPosition[1],
+                          sunInitialPosition[2],
+                        ]}
+                        ref={sunRef}
+                      />
+                    )}
 
-                  <Earth ref={earthRef} />
-                  <Moon
-                    position={[
-                      isScreenSizeMobile
-                        ? mDimensions.moon_position[0]
-                        : dDimensions.moon_position[0],
-                      isScreenSizeMobile
-                        ? mDimensions.moon_position[1]
-                        : dDimensions.moon_position[1],
-                      isScreenSizeMobile
-                        ? mDimensions.moon_position[2]
-                        : dDimensions.moon_position[2],
-                    ]}
-                  />
-                  <Mars
-                    position={[
-                      isScreenSizeMobile
-                        ? mDimensions.mars_position[0]
-                        : dDimensions.mars_position[0],
-                      isScreenSizeMobile
-                        ? mDimensions.mars_position[1]
-                        : dDimensions.mars_position[1],
-                      isScreenSizeMobile
-                        ? mDimensions.mars_position[2]
-                        : dDimensions.mars_position[2],
-                    ]}
-                  />
-                  <Jupiter
-                    position={[
-                      isScreenSizeMobile
-                        ? mDimensions.jupiter_position[0]
-                        : dDimensions.jupiter_position[0],
-                      isScreenSizeMobile
-                        ? mDimensions.jupiter_position[1]
-                        : dDimensions.jupiter_position[1],
-                      isScreenSizeMobile
-                        ? mDimensions.jupiter_position[2]
-                        : dDimensions.jupiter_position[2],
-                    ]}
-                  />
-                </group>
-                {!isScreenSizeMobile && !isGpuMobile && gpuTier >= 2 && <SceneEffect />}
+                    <Earth ref={earthRef} />
+                    <Moon
+                      position={[
+                        isScreenSizeMobile
+                          ? mDimensions.moon_position[0]
+                          : dDimensions.moon_position[0],
+                        isScreenSizeMobile
+                          ? mDimensions.moon_position[1]
+                          : dDimensions.moon_position[1],
+                        isScreenSizeMobile
+                          ? mDimensions.moon_position[2]
+                          : dDimensions.moon_position[2],
+                      ]}
+                    />
+                    <Mars
+                      position={[
+                        isScreenSizeMobile
+                          ? mDimensions.mars_position[0]
+                          : dDimensions.mars_position[0],
+                        isScreenSizeMobile
+                          ? mDimensions.mars_position[1]
+                          : dDimensions.mars_position[1],
+                        isScreenSizeMobile
+                          ? mDimensions.mars_position[2]
+                          : dDimensions.mars_position[2],
+                      ]}
+                    />
+                    <Jupiter
+                      position={[
+                        isScreenSizeMobile
+                          ? mDimensions.jupiter_position[0]
+                          : dDimensions.jupiter_position[0],
+                        isScreenSizeMobile
+                          ? mDimensions.jupiter_position[1]
+                          : dDimensions.jupiter_position[1],
+                        isScreenSizeMobile
+                          ? mDimensions.jupiter_position[2]
+                          : dDimensions.jupiter_position[2],
+                      ]}
+                    />
+                  </group>
+                  {!isScreenSizeMobile && !isGpuMobile && gpuTier >= 2 && <SceneEffect />}
+                </PresentationControls>
               </PerspectiveCamera>
             )}
             <Html fullscreen zIndexRange={[-100, -2]}>

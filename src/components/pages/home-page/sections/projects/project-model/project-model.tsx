@@ -89,6 +89,7 @@ export const ProjectModel = ({ isSectionVisible, project }: Props) => {
         <Image
           alt={project.title}
           className={classNames.projectImage}
+          draggable={false}
           height={320}
           src={project.coverUrl}
           width={640}

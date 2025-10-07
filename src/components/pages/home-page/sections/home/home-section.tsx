@@ -37,6 +37,7 @@ const HomeSection = ({ id, ...rest }: Props) => {
         <Image
           alt={'Earth'}
           className={classNames.backgroundImage}
+          draggable={false}
           height={800}
           src={'/images/sections/earth.webp'}
           width={800}

@@ -64,6 +64,7 @@ const ContactsSection = ({ id, ...rest }: Props) => {
         <Image
           alt={'Jupiter'}
           className={classNames.backgroundImage}
+          draggable={false}
           height={800}
           src={'/images/sections/jupiter.webp'}
           width={800}

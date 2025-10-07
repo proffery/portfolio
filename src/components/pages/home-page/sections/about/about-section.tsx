@@ -43,6 +43,7 @@ const AboutSection = ({ id, ...rest }: Props) => {
         <Image
           alt={'Mars'}
           className={classNames.backgroundImage}
+          draggable={false}
           height={800}
           src={'/images/sections/mars.webp'}
           width={800}
@@ -88,6 +89,7 @@ const AboutSection = ({ id, ...rest }: Props) => {
           <Image
             alt={'Dmitry photo'}
             className={classNames.avatar}
+            draggable={false}
             height={640}
             src={aboutSection.abouts[index].avatarUrl}
             width={640}
