@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Arrow } from '@/assets/components/arrow'
+import { capitalizeFirstLetter } from '@/common/capitalize-first-letter'
 import { Project } from '@/common/projects'
 import { IndexDirection } from '@/common/use-index-change'
 import { Button } from '@/components/button/button'
@@ -84,6 +85,7 @@ export const ProjectDescription = ({
             exit={{ opacity: 0, x: '100vw' }}
             initial={{ opacity: 0, x: '100vw' }}
             key={technology + new Date()}
+            title={capitalizeFirstLetter(technology)}
             transition={{
               delay: index / 5,
               duration: 1,

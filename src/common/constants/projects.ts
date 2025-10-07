@@ -10,7 +10,7 @@ export const projectsEn = [
       'I significantly improved my teamwork skills by collaborating with specialists from related fields, such as ' +
       'backend developers and designers. Regular code reviews provided a good boost to my technical skills.',
     id: 1,
-    techIds: ['typeScript', 'next', 'redux', 'storyBook', 'sass', 'git'],
+    techIds: ['typeScript', 'next', 'redux', 'storyBook', 'sass', 'gitLab'],
     title: 'Staffing service',
   },
   {
@@ -24,7 +24,7 @@ export const projectsEn = [
       'for convenient moderation of submitted articles. For the backend, an open-source platform is used that provides ' +
       'authentication, database, and file storage functionality.',
     id: 2,
-    techIds: ['typeScript', 'next', 'redux', 'appWrite', 'sass', 'storyBook'],
+    techIds: ['typeScript', 'next', 'redux', 'appWrite', 'sass', 'storyBook', 'gitHub'],
     title: 'Blog platform',
   },
   {
@@ -38,7 +38,7 @@ export const projectsEn = [
       'use of flashcards. Users can create and manage their own flashcards, consisting of questions and corresponding' +
       ' answers.',
     id: 3,
-    techIds: ['typeScript', 'react', 'redux', 'sass', 'storyBook'],
+    techIds: ['typeScript', 'react', 'redux', 'sass', 'storyBook', 'gitHub'],
     title: 'Flashcard learning',
   },
   {
@@ -50,7 +50,7 @@ export const projectsEn = [
       'beginner-level projects and test assignments that were completed but went unanswered. The reason I decided to ' +
       'redo it is the slightly overloaded interface and my desire to try out some technologies I have studied.',
     id: 4,
-    techIds: ['typeScript', 'react', 'styled'],
+    techIds: ['typeScript', 'react', 'styled', 'gitHub'],
     title: 'Portfolio',
   },
   {
@@ -61,7 +61,7 @@ export const projectsEn = [
       'One of the first projects I completed after finishing the basic course on React. Notably, I used a popular ' +
       'Backend-as-a-Service solution to implement authentication functionality, a database, and file storage.',
     id: 5,
-    techIds: ['javaScript', 'react', 'bootstrap', 'css', 'firebase'],
+    techIds: ['javaScript', 'react', 'bootstrap', 'css', 'firebase', 'gitHub'],
     title: `Photographer's page`,
   },
   {
@@ -72,8 +72,17 @@ export const projectsEn = [
       'A copy of the main page of a well-known website, created during an internship at one of the companies where I was fortunate ' +
       'to work. This uses a production backend.',
     id: 6,
-    techIds: ['typeScript', 'react', 'redux', 'sass', 'storyBook'],
+    techIds: ['typeScript', 'react', 'redux', 'sass', 'storyBook', 'gitLab'],
     title: 'Copy of a well-known website',
+  },
+  {
+    codeUrl: '',
+    coverUrl: '/images/projects/casino-games.webp',
+    demoUrl: 'https://24betting.com/casino/new-rapid-games',
+    description: 'Writing new functionality for the existing pool of casino games.',
+    id: 7,
+    techIds: ['typeScript', 'react', 'zustand', 'sass', 'gitLab'],
+    title: 'Casino games',
   },
 ]
 
@@ -89,7 +98,7 @@ export const projectsRu: Project[] = [
       'я сильно повысил свои навыки работы в команде, благодаря взаимодействию со специалистами смежных профессий, таких как ' +
       'бэкенд-разработчики и дизайнеры. А регулярные код-ревью дали хороший буст технической части.',
     id: 1,
-    techIds: ['typeScript', 'next', 'redux', 'sass', 'storyBook', 'git'],
+    techIds: ['typeScript', 'next', 'redux', 'sass', 'storyBook', 'gitLab'],
     title: 'Сервис по подбору персонала',
   },
   {
@@ -103,7 +112,7 @@ export const projectsRu: Project[] = [
       'а разделение ролей позволяет удобно модерировать предложенные статьи. Для бэкенд используется платформа ' +
       'с открытым исходным кодом, предоставляющая фунционал аутентификации, базы данных и хранения файлов.',
     id: 2,
-    techIds: ['typeScript', 'next', 'redux', 'appWrite', 'sass', 'storyBook'],
+    techIds: ['typeScript', 'next', 'redux', 'appWrite', 'sass', 'storyBook', 'gitHub'],
     title: 'Блог-платформа',
   },
   {
@@ -117,7 +126,7 @@ export const projectsRu: Project[] = [
       'с помощью карточек. Пользователи могут создавать и управлять своими собственными карточками, состоящими из ' +
       'вопросов и соответствующих ответов.',
     id: 3,
-    techIds: ['typeScript', 'react', 'redux', 'sass', 'storyBook'],
+    techIds: ['typeScript', 'react', 'redux', 'sass', 'storyBook', 'gitHub'],
     title: 'Обучение по карточкам',
   },
   {
@@ -129,7 +138,7 @@ export const projectsRu: Project[] = [
       'начального уровня и тестовых заданий, которые были выполнены, но остались без ответа. Причина, по которой я ' +
       'решил его переделать — это слегка перегруженный интерфейс и желание опробовать некоторые изученные мною технологии.',
     id: 4,
-    techIds: ['typeScript', 'react', 'styled'],
+    techIds: ['typeScript', 'react', 'styled', 'gitHub'],
     title: 'Портфолио',
   },
   {
@@ -141,7 +150,7 @@ export const projectsRu: Project[] = [
       'я применил популярное Backend-as-a-Service решение для реализации функционала аутентификации, базы данных и ' +
       'хранения файлов.',
     id: 5,
-    techIds: ['javaScript', 'react', 'bootstrap', 'css', 'firebase'],
+    techIds: ['javaScript', 'react', 'bootstrap', 'css', 'firebase', 'gitHub'],
     title: 'Страничка фотографа',
   },
   {
@@ -152,8 +161,17 @@ export const projectsRu: Project[] = [
       'Копия главной страницы известного сайта, сделанная при стажировке в одной из компаний, где мне посчастливилось ' +
       'поработать. Здесь используется продакшен бэкенд',
     id: 6,
-    techIds: ['typeScript', 'react', 'redux', 'sass', 'storyBook'],
+    techIds: ['typeScript', 'react', 'redux', 'sass', 'storyBook', 'gitLab'],
     title: 'Копия известного сайта',
+  },
+  {
+    codeUrl: '',
+    coverUrl: '/images/projects/casino-games.webp',
+    demoUrl: 'https://24betting.com/casino/new-rapid-games',
+    description: 'Написание нового функционала для существующего пулла казино-игр',
+    id: 7,
+    techIds: ['typeScript', 'react', 'zustand', 'sass', 'gitLab'],
+    title: 'Казино-игры',
   },
 ]
 

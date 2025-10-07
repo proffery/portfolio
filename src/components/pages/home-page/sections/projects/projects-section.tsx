@@ -20,7 +20,6 @@ const ProjectsSection = ({ id, ...rest }: Props) => {
   const classNames = {
     header: clsx(s.header),
     projectContainer: clsx(s.projectContainer),
-
     sectionContainer: clsx(s.sectionContainer),
   }
   const sectionInView = useSelector(selectSectionInView)
