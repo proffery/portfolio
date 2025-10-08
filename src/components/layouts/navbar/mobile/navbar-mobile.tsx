@@ -1,5 +1,6 @@
 import ActiveLink from '@/components/active-link/active-link'
 import LangSelect from '@/components/lang-select/lang-select'
+import SoundControl from '@/components/sound-control/sound-control'
 import { SvgSpriteIcon } from '@/components/svg-sprite-icon/svg-sprite-icon'
 import { Dictionaries } from '@/i18n/dictionaries/en'
 import { Locale } from '@/i18n/get-dictionaries'
@@ -48,6 +49,7 @@ export const NavbarMobile = ({ dict, locale }: Props) => {
         />
       </ActiveLink>
       <LangSelect dict={dict} locale={locale} />
+      <SoundControl />
     </nav>
   )
 }

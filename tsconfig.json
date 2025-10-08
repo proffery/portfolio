@@ -36,7 +36,7 @@
         "./src/common/hooks/*",
         "./src/common/utils/*"
       ],
-      "@/assets/*": ["./src/assets/icons/*", "./src/assets/images/*"]
+      "@/assets/*": ["./src/assets/icons/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
