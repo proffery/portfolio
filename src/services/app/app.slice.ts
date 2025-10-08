@@ -29,7 +29,7 @@ const slice = createSlice({
     gpuData: { tier: 1, type: 'WEBGL_UNSUPPORTED' } as TierResult,
     isLoading: false as boolean,
     isMobile: false as boolean,
-    isSound: true as boolean,
+    isSound: false as boolean,
     locale: 'en' as Locale,
     sectionInView: 'home' as Sections,
   },

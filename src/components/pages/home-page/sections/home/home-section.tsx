@@ -87,7 +87,7 @@ const HomeSection = ({ id, ...rest }: Props) => {
               type: 'tween',
             }}
           >
-            <Typography.H5 as={'h3'}>{tickText}&nbsp;</Typography.H5>
+            <Typography.H3 as={'h3'}>{tickText}&nbsp;</Typography.H3>
           </motion.div>
         </div>
       )}

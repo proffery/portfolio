@@ -2,7 +2,7 @@
 import { ReactNode, useEffect } from 'react'
 import { ToastContainer } from 'react-toastify'
 
-import { constants } from '@/common/constants'
+import { breakpoints } from '@/common/breakpoints'
 import { useActions } from '@/common/use-actions'
 import { useGpuTier } from '@/common/use-gpu-tier'
 import { useIsWidthLess } from '@/common/use-is-width-less'
@@ -18,7 +18,7 @@ type Props = {
 function ParticlesLayout({ children }: Props) {
   const { setGpuData, setIsMobile } = useActions(appActions)
   const gpuData = useGpuTier()
-  const isMobile = useIsWidthLess(constants.mobileWidth)
+  const isMobile = useIsWidthLess(breakpoints.mobileWidth)
 
   useEffect(() => {
     setGpuData(gpuData)

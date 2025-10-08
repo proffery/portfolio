@@ -23,7 +23,7 @@ const LangSelect = ({ dict, locale }: Props) => {
     select: clsx(s.select),
   }
 
-  const { setDictionary, setLocale } = useActions(appActions)
+  const { setDictionary, setIsSound, setLocale } = useActions(appActions)
 
   useEffect(() => {
     setDictionary(dict)
@@ -33,6 +33,7 @@ const LangSelect = ({ dict, locale }: Props) => {
   const router = useRouter()
   const changeLangHandler = (e: ChangeEvent<HTMLSelectElement>) => {
     router.push(e.currentTarget.value)
+    setIsSound(false)
   }
 
   return (

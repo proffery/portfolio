@@ -39,7 +39,7 @@ export const ProjectModel = ({ direction, index, isSectionVisible, projects }: P
       gsap.from(modelRef.current.rotation, {
         duration: 1,
         ease: 'power2',
-        y: Math.PI / 2,
+        y: (2 * Math.PI) / 2,
       })
     } else if (modelRef.current && direction === 'previous') {
       gsap.from(modelRef.current.rotation, {

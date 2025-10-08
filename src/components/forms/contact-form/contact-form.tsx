@@ -2,8 +2,6 @@ import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useSelector } from 'react-redux'
 
-import { constants } from '@/common/constants'
-import { useIsWidthLess } from '@/common/use-is-width-less'
 import { Button } from '@/components/button/button'
 import { Input } from '@/components/input/input'
 import { Dictionaries } from '@/i18n/dictionaries/en'
