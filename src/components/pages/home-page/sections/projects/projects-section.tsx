@@ -31,7 +31,7 @@ const ProjectsSection = ({ id, ...rest }: Props) => {
     },
   } = dict
 
-  const { index, onIndexChange } = useIndexChange(projects)
+  const { direction, index, onIndexChange } = useIndexChange(projects)
 
   return (
     <Section id={id} {...rest}>
@@ -61,7 +61,12 @@ const ProjectsSection = ({ id, ...rest }: Props) => {
             onIndexChange={onIndexChange}
             project={projects[index]}
           />
-          <ProjectModel isSectionVisible={sectionInView === id} project={projects[index]} />
+          <ProjectModel
+            direction={direction}
+            index={index}
+            isSectionVisible={sectionInView === id}
+            projects={projects}
+          />
         </div>
       </div>
     </Section>

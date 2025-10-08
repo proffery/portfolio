@@ -34,13 +34,12 @@ const en = {
                           <li>TypeScript, JavaScript</li>
                           <li>React, Next.js</li>
                           <li>Redux Toolkit, RTK Query, Zustand</li>
-                          <li>Axios</li>
+                          <li>Axios, WebSockets</li>
                           <li>CSS, SASS/SCSS, Styled Components</li>
-                          <li>React Hook Form, Formik</li>
-                          <li>Zod</li>
+                          <li>React Hook Form, Formik, Zod</li>
                           <li>Radix UI, Material UI</li>
                           <li>Storybook, Jest</li>
-                          <li>GIT</li>
+                          <li>Git, GitHub, GitLab</li>
                         </ul>`,
           id: 2,
           title: 'Technologies and libraries that I use most often',

@@ -2,6 +2,7 @@ import { ElementRef, Suspense, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import { Project } from '@/common/projects'
+import { IndexDirection } from '@/common/use-index-change'
 import { CanvasLoader } from '@/components/canvas-loader/canvas-loader'
 import { ParallaxCamera } from '@/components/parallax-camera'
 import { Screen } from '@/components/screen/screen'
@@ -17,11 +18,13 @@ import Image from 'next/image'
 import s from './project-model.module.scss'
 
 type Props = {
+  direction: IndexDirection
+  index: number
   isSectionVisible: boolean
-  project: Project
+  projects: Project[]
 }
 
-export const ProjectModel = ({ isSectionVisible, project }: Props) => {
+export const ProjectModel = ({ direction, index, isSectionVisible, projects }: Props) => {
   const classNames = {
     canvas: clsx(s.canvas),
     modelContainer: clsx(s.modelContainer),
@@ -32,14 +35,20 @@ export const ProjectModel = ({ isSectionVisible, project }: Props) => {
   const { tier: gpuTier } = useSelector(selectGpuData)
 
   useGSAP(() => {
-    if (modelRef.current) {
+    if (modelRef.current && direction === 'next') {
+      gsap.from(modelRef.current.rotation, {
+        duration: 1,
+        ease: 'power2',
+        y: Math.PI / 2,
+      })
+    } else if (modelRef.current && direction === 'previous') {
       gsap.from(modelRef.current.rotation, {
         duration: 1,
         ease: 'power3',
-        y: Math.PI / 2,
+        y: -Math.PI / 2,
       })
     }
-  }, [project])
+  }, [index])
 
   useGSAP(() => {
     const timeline = gsap.timeline()
@@ -78,7 +87,7 @@ export const ProjectModel = ({ isSectionVisible, project }: Props) => {
           <Environment environmentIntensity={2} preset={'night'} />
           <Suspense fallback={<CanvasLoader />}>
             <Screen
-              coverUrl={project.coverUrl}
+              coverUrl={projects[index].coverUrl}
               onClick={() => setZoom(!zoom)}
               ref={modelRef}
               scale={80}
@@ -87,11 +96,11 @@ export const ProjectModel = ({ isSectionVisible, project }: Props) => {
         </Canvas>
       ) : (
         <Image
-          alt={project.title}
+          alt={projects[index].title}
           className={classNames.projectImage}
           draggable={false}
           height={320}
-          src={project.coverUrl}
+          src={projects[index].coverUrl}
           width={640}
         />
       )}
