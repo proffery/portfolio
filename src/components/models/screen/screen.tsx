@@ -32,7 +32,7 @@ export const Screen = forwardRef<ElementRef<'group'>, Props>(
     const screen = useTexture(coverUrl)
 
     return (
-      <group position-x={-10} ref={ref} {...rest} dispose={null}>
+      <group position-x={-15} ref={ref} {...rest} dispose={null}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <group position={[0.07, 0.011, 0.0]}>
             <primitive object={nodes.GLTF_created_0_rootJoint} />
@@ -61,7 +61,7 @@ export const Screen = forwardRef<ElementRef<'group'>, Props>(
             position={[0.29, 0.014, 0.003]}
             receiveShadow
             rotation={[-Math.PI, 0, -Math.PI]}
-            scale={0.01}
+            scale={0.001}
           />
         </group>
       </group>
